@@ -6,21 +6,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>【Ubuntu】常用系统维护 | 哈骑士的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Ubuntu常用系统维护[TOC]
-前言
+  <meta name="description" content="前言
 纯粹笔记，以防忘记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【Ubuntu】常用系统维护">
 <meta property="og:url" content="https://ZhenshengLee.github.io/2016/07/16/160716常用系统维护/index.html">
 <meta property="og:site_name" content="哈骑士的博客">
-<meta property="og:description" content="Ubuntu常用系统维护[TOC]
-前言
+<meta property="og:description" content="前言
 纯粹笔记，以防忘记">
-<meta property="og:updated_time" content="2016-07-16T03:22:04.258Z">
+<meta property="og:updated_time" content="2016-07-16T03:52:43.050Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Ubuntu】常用系统维护">
-<meta name="twitter:description" content="Ubuntu常用系统维护[TOC]
-前言
+<meta name="twitter:description" content="前言
 纯粹笔记，以防忘记">
   
     <link rel="alternative" href="/atom.xml" title="哈骑士的博客" type="application/atom+xml">
@@ -206,7 +203,7 @@
   
     <div class="article-meta">
       <a href="/2016/07/16/160716常用系统维护/" class="article-date">
-  	<time datetime="2016-07-16T03:22:04.258Z" itemprop="datePublished">2016-07-16</time>
+  	<time datetime="2016-07-16T03:52:43.094Z" itemprop="datePublished">2016-07-16</time>
 </a>
     </div>
   
@@ -239,8 +236,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Ubuntu常用系统维护"><a href="#Ubuntu常用系统维护" class="headerlink" title="Ubuntu常用系统维护"></a>Ubuntu常用系统维护</h1><p>[TOC]</p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
 <li>纯粹笔记，以防忘记</li>
 </ul>
 <a id="more"></a>
@@ -251,31 +247,31 @@
 <blockquote>
 <p>这是某磁盘ubuntu 启动分区</p>
 </blockquote>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grub-<span class="keyword">install</span> <span class="comment">--root-directory=/mnt /dev/sdc</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grub-install --root-directory=/mnt /dev/sdc</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>重启电脑进入该磁盘，会报错，但可以正常进入ubuntu，然后在该系统中更新即可！</p>
 </blockquote>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">sudo</span> update-grub</span><br></pre></td></tr></table></figure>
-<h3 id="挂载"><a href="#挂载" class="headerlink" title="挂载"></a>挂载</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mount -o loop -t hfsplus imagefile<span class="selector-class">.img</span> /mnt</span><br></pre></td></tr></table></figure>
-<h3 id="更改主显示器"><a href="#更改主显示器" class="headerlink" title="更改主显示器"></a>更改主显示器</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xrandr</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo update-grub</span><br></pre></td></tr></table></figure>
+<h3 id="挂载"><a href="#挂载" class="headerlink" title="挂载"></a>挂载</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mount -o loop -t hfsplus imagefile.img /mnt</span><br></pre></td></tr></table></figure>
+<h3 id="更改主显示器"><a href="#更改主显示器" class="headerlink" title="更改主显示器"></a>更改主显示器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xrandr</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>查看显示器详细信息</p>
 </blockquote>
-<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">xrandr</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">output</span> <span class="comment">DFP5</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">auto</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">primary</span></span><br></pre></td></tr></table></figure>
-<h3 id="查看设备"><a href="#查看设备" class="headerlink" title="查看设备"></a>查看设备</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls <span class="regexp">/dev/</span> | <span class="keyword">grep</span> video</span><br></pre></td></tr></table></figure>
-<h3 id="grub-图形化编辑"><a href="#grub-图形化编辑" class="headerlink" title="grub 图形化编辑"></a>grub 图形化编辑</h3><figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo<span class="built_in"> add-apt-repository </span>ppa:danielrichter2007/grub-customizer</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install grub-customizer</span><br></pre></td></tr></table></figure>
-<h3 id="查找-package"><a href="#查找-package" class="headerlink" title="查找 package"></a>查找 package</h3><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg -l <span class="string">| grep xmind</span></span><br></pre></td></tr></table></figure>
-<h3 id="查询链接库依赖项"><a href="#查询链接库依赖项" class="headerlink" title="查询链接库依赖项"></a>查询链接库依赖项</h3><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.../platforms$ <span class="keyword">ldd</span> libqxcb.so</span><br></pre></td></tr></table></figure>
-<h3 id="删除文件夹"><a href="#删除文件夹" class="headerlink" title="删除文件夹"></a>删除文件夹</h3><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rm -rf .<span class="regexp">/Robai/</span></span><br></pre></td></tr></table></figure>
-<h3 id="查找包"><a href="#查找包" class="headerlink" title="查找包"></a>查找包</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-<span class="keyword">cache</span> <span class="keyword">search</span> pcl</span><br></pre></td></tr></table></figure>
-<h3 id="卸载包"><a href="#卸载包" class="headerlink" title="卸载包"></a>卸载包</h3><figure class="highlight cos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -<span class="keyword">r</span> pcl</span><br></pre></td></tr></table></figure>
-<h3 id="卸载软件"><a href="#卸载软件" class="headerlink" title="卸载软件"></a>卸载软件</h3><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="built_in">get</span> <span class="built_in">remove</span> ros-indigo-moveit-full</span><br></pre></td></tr></table></figure>
-<h3 id="grub"><a href="#grub" class="headerlink" title="grub"></a>grub</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo cp <span class="regexp">/etc/</span><span class="keyword">default</span><span class="regexp">/grub /</span>etc<span class="regexp">/default/g</span>rub.bak</span><br><span class="line">sudo gedit <span class="regexp">/etc/</span><span class="keyword">default</span><span class="regexp">/grub</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xrandr --output DFP5 --auto --primary</span><br></pre></td></tr></table></figure>
+<h3 id="查看设备"><a href="#查看设备" class="headerlink" title="查看设备"></a>查看设备</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls /dev/ | grep video</span><br></pre></td></tr></table></figure>
+<h3 id="grub-图形化编辑"><a href="#grub-图形化编辑" class="headerlink" title="grub 图形化编辑"></a>grub 图形化编辑</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:danielrichter2007/grub-customizer</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install grub-customizer</span><br></pre></td></tr></table></figure>
+<h3 id="查找-package"><a href="#查找-package" class="headerlink" title="查找 package"></a>查找 package</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg -l | grep xmind</span><br></pre></td></tr></table></figure>
+<h3 id="查询链接库依赖项"><a href="#查询链接库依赖项" class="headerlink" title="查询链接库依赖项"></a>查询链接库依赖项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.../platforms$ ldd libqxcb.so</span><br></pre></td></tr></table></figure>
+<h3 id="删除文件夹"><a href="#删除文件夹" class="headerlink" title="删除文件夹"></a>删除文件夹</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rm -rf ./Robai/</span><br></pre></td></tr></table></figure>
+<h3 id="查找包"><a href="#查找包" class="headerlink" title="查找包"></a>查找包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-cache search pcl</span><br></pre></td></tr></table></figure>
+<h3 id="卸载包"><a href="#卸载包" class="headerlink" title="卸载包"></a>卸载包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -r pcl</span><br></pre></td></tr></table></figure>
+<h3 id="卸载软件"><a href="#卸载软件" class="headerlink" title="卸载软件"></a>卸载软件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove ros-indigo-moveit-full</span><br></pre></td></tr></table></figure>
+<h3 id="grub"><a href="#grub" class="headerlink" title="grub"></a>grub</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /etc/default/grub /etc/default/grub.bak</span><br><span class="line">sudo gedit /etc/default/grub</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>GRUB_DEFAULT=<br>GRUB_TIMEOUT=5</p>
 </blockquote>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">sudo</span> update-grub</span><br></pre></td></tr></table></figure>
-<h3 id="修改hosts文件"><a href="#修改hosts文件" class="headerlink" title="修改hosts文件"></a>修改hosts文件</h3><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/hosts</span><br><span class="line">sudo rcnscd <span class="built_in">restart</span></span><br><span class="line">sudo apt-<span class="built_in">get</span> install nscd</span><br><span class="line">sudo /etc/init.d/nscd <span class="built_in">restart</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo update-grub</span><br></pre></td></tr></table></figure>
+<h3 id="修改hosts文件"><a href="#修改hosts文件" class="headerlink" title="修改hosts文件"></a>修改hosts文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/hosts</span><br><span class="line">sudo rcnscd restart</span><br><span class="line">sudo apt-get install nscd</span><br><span class="line">sudo /etc/init.d/nscd restart</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>127.0.1.1    zsUbuntu</p>
 </blockquote>
@@ -285,41 +281,41 @@
 <h3 id="su-命令失败"><a href="#su-命令失败" class="headerlink" title="su 命令失败"></a>su 命令失败</h3><ul>
 <li>试试sudo su进入root模式</li>
 </ul>
-<h3 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h3><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">env</span></span><br></pre></td></tr></table></figure>
+<h3 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">env</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>查看环境变量</p>
 </blockquote>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>查看所有变量（环境变量+自定义变量）</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;PATH&#125;</span></span><br><span class="line">PATH=<span class="string">"<span class="variable">$PATH</span>"</span>:<span class="string">'/home/zs/VSCode-linux-x64'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo $&#123;PATH&#125;</span><br><span class="line">PATH=&quot;$PATH&quot;:&apos;/home/zs/VSCode-linux-x64&apos;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>添加路径至PATH环境变量<br>路径可以不加单引号</p>
 </blockquote>
-<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo <span class="symbol">$</span><span class="symbol">$</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $$</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>当前线程的PID号码</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> $?</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $?</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>上个命令的回传码（没错为0）</p>
 </blockquote>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>自定义变量转成环境变量，子进程仅会继承父进程的的环境变量，而不会继承自定义变量<br>declare反过来</p>
 </blockquote>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PYTHONPATH=<span class="regexp">~/Documents/</span>zsProjects<span class="regexp">/zsNao/</span>zsROSNaoqi/pynaoqi-python2<span class="number">.7</span><span class="number">-2.1</span><span class="number">.4</span><span class="number">.13</span>-<span class="string">linux64:</span>$PYTHONPATH</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PYTHONPATH=~/Documents/zsProjects/zsNao/zsROSNaoqi/pynaoqi-python2.7-2.1.4.13-linux64:$PYTHONPATH</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>添加环境变量</p>
 </blockquote>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">echo</span> <span class="string">'export PYTHONPATH=~/Documents/zsProjects/zsNao/zsROSNaoqi/pynaoqi-python2.7-2.1.4.13-linux64:<span class="variable">$PYTHONPATH</span>'</span> &gt;&gt; ~/.bashrc</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &apos;export PYTHONPATH=~/Documents/zsProjects/zsNao/zsROSNaoqi/pynaoqi-python2.7-2.1.4.13-linux64:$PYTHONPATH&apos; &gt;&gt; ~/.bashrc</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>永久添加环境变量</p>
 </blockquote>
-<h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="built_in">get</span> update</span><br><span class="line">sudo apt-<span class="built_in">get</span> <span class="built_in">dist</span>-upgrade</span><br><span class="line">sudo apt-<span class="built_in">get</span> autoremove</span><br><span class="line">sudo apt-<span class="built_in">get</span> autoclean</span><br></pre></td></tr></table></figure>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo aptitude <span class="keyword">install</span> <span class="keyword">name</span></span><br></pre></td></tr></table></figure>
-<h3 id="更改计算机名"><a href="#更改计算机名" class="headerlink" title="更改计算机名"></a>更改计算机名</h3><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit <span class="meta-keyword">/etc/</span>hostname</span><br><span class="line">sudo gedit <span class="meta-keyword">/etc/</span>hosts</span><br></pre></td></tr></table></figure>
+<h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get dist-upgrade</span><br><span class="line">sudo apt-get autoremove</span><br><span class="line">sudo apt-get autoclean</span><br></pre></td></tr></table></figure>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo aptitude install name</span><br></pre></td></tr></table></figure>
+<h3 id="更改计算机名"><a href="#更改计算机名" class="headerlink" title="更改计算机名"></a>更改计算机名</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/hostname</span><br><span class="line">sudo gedit /etc/hosts</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>两个地方的名字需一致</p>
 </blockquote>
@@ -329,20 +325,20 @@
 <h3 id="查看网速"><a href="#查看网速" class="headerlink" title="查看网速"></a>查看网速</h3><blockquote>
 <p>nload</p>
 </blockquote>
-<h3 id="启动器上应用程序图标为灰色问号？"><a href="#启动器上应用程序图标为灰色问号？" class="headerlink" title="启动器上应用程序图标为灰色问号？"></a>启动器上应用程序图标为灰色问号？</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ～/.local/share/applications/</span><br><span class="line">gedit <span class="variable">$&#123;某一个桌面快捷方式文件&#125;</span></span><br><span class="line"><span class="variable">$&#123;ICON&#125;</span>变量进行设置</span><br></pre></td></tr></table></figure>
-<h3 id="处理包冲突问题技巧"><a href="#处理包冲突问题技巧" class="headerlink" title="处理包冲突问题技巧"></a>处理包冲突问题技巧</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aptitude</span><br></pre></td></tr></table></figure>
+<h3 id="启动器上应用程序图标为灰色问号？"><a href="#启动器上应用程序图标为灰色问号？" class="headerlink" title="启动器上应用程序图标为灰色问号？"></a>启动器上应用程序图标为灰色问号？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd ～/.local/share/applications/</span><br><span class="line">gedit $&#123;某一个桌面快捷方式文件&#125;</span><br><span class="line">$&#123;ICON&#125;变量进行设置</span><br></pre></td></tr></table></figure>
+<h3 id="处理包冲突问题技巧"><a href="#处理包冲突问题技巧" class="headerlink" title="处理包冲突问题技巧"></a>处理包冲突问题技巧</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aptitude</span><br></pre></td></tr></table></figure>
 <h4 id="Getting-Help"><a href="#Getting-Help" class="headerlink" title="Getting Help:"></a>Getting Help:</h4><ul>
-<li>When asking for help on Askubuntu or any other help forum, you should include the output of the following commands in your question:<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get <span class="keyword">install</span> <span class="keyword">package</span>-<span class="keyword">name</span></span><br></pre></td></tr></table></figure>
+<li>When asking for help on Askubuntu or any other help forum, you should include the output of the following commands in your question:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install package-name</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <blockquote>
 <p>Output of actual error.</p>
 </blockquote>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cat</span> /etc/apt/sources.<span class="keyword">list</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>This will show your sources.list</p>
 </blockquote>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/apt/sources<span class="selector-class">.list</span><span class="selector-class">.d</span><span class="comment">/*</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/apt/sources.list.d/*</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>This will show the list of PPAs (If any).</p>
 </blockquote>
@@ -358,34 +354,34 @@
 </blockquote>
 </li>
 </ul>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="keyword">get</span> clean</span><br><span class="line">sudo apt-<span class="keyword">get</span> autoclean</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get clean</span><br><span class="line">sudo apt-get autoclean</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>One possible cause of unmet dependencies could be corrupted package database, and/or some packages weren’t installed properly. To fix this problem, hit Alt+Ctrl+T to open terminal and try to run one of the following commands:<br>apt-get clean clears out the local repository of retrieved package files (the .deb files). It removes everything but the lock file from /var/cache/apt/archives/ and /var/cache/apt/archives/partial/. apt-get autoclean clears out the local repository of retrieved package files, but unlike apt-get clean, it only removes package files that can no longer be downloaded, and are largely useless.</p>
 </blockquote>
 <ul>
 <li>autoclean基本没什么用，clean有用一些</li>
 </ul>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="keyword">get</span> -f install</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get -f install</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>One of the most basic fixes to resolve dependencies problems is to run:<br>The -f here stands for “fix broken”. Apt will attempt to correct broken dependencies. If you manually installed a package that had unmet dependencies, apt-get will install those dependencies, if possible, otherwise it may simply remove the package that you installed in order to resolve the problem.<br>Then run:</p>
 </blockquote>
-<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg <span class="comment">--configure -a</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg --configure -a</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>Then run this again:</p>
 </blockquote>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="keyword">get</span> -f install</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get -f install</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>If the output is:<br>0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.<br>That means it failed.</p>
 </blockquote>
-<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="built_in">get</span> -u <span class="built_in">dist</span>-upgrade</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get -u dist-upgrade</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>Next solution is to run:</p>
 </blockquote>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get -o <span class="symbol">Debug:</span><span class="symbol">:pkgProblemResolver=yes</span> dist-upgrade</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get -o Debug::pkgProblemResolver=yes dist-upgrade</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>If it shows any held packages, it is best to eliminate them. Packages are held because of dependency conflicts that apt cannot resolve. Try this command to find and repair the conflicts:<br>If it cannot fix the conflicts, it will exit with:<br>0 upgraded, 0 newly installed, 0 to remove and 6 not upgraded.</p>
 </blockquote>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="built_in">get</span> <span class="built_in">remove</span> --dry-<span class="built_in">run</span> package-name</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove --dry-run package-name</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>Delete the held packages one by one, running dist-upgrade each time, until there are no more held packages. Then reinstall any needed packages. Be sure to use the –dry-runoption, so that you are fully informed of consequences:<br>Since removing the package you are trying to install may not be ideal, you might also try finding a repository that has the packages you need to satisfy the dependencies.</p>
 <p>使用命令计算处有错误的包集，尝试删除之，注意所有删除的细节，免得造成不好后果。<br>Finally, if all else fails, you can attempt to satisfy the dependencies yourself, either by finding and installing the necessary packages, or by installing them from source and then creating “deb” packages for them.</p>
@@ -401,20 +397,20 @@
 </li>
 <li>Hit Alt+F2 and run software-properties-gtk.<br>Click on Other Software tab, you’ll see that each PPA have two lines here, one for the compiled packages and one for the source, Uncheck both lines to disable a PPA. Here you can also add and remove PPAs.<h4 id="Purge"><a href="#Purge" class="headerlink" title="Purge:"></a>Purge:</h4></li>
 </ul>
-<p>Purging a PPA means, downgrading the packages in the selected PPA to the version in the official Ubuntu repositories and disabling that PPA. PPA Purge does exactly that. To install PPA Purge run the following command:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get <span class="keyword">install</span> ppa-<span class="keyword">purge</span></span><br></pre></td></tr></table></figure></p>
+<p>Purging a PPA means, downgrading the packages in the selected PPA to the version in the official Ubuntu repositories and disabling that PPA. PPA Purge does exactly that. To install PPA Purge run the following command:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install ppa-purge</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li><p>But, Considering the question apt is broken so the above command will fail. So use this command</p>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir ppa-purge &amp;&amp; cd ppa-purge &amp;&amp; wget <span class="symbol">http:</span>/<span class="regexp">/mirror.pnl.gov/ubuntu</span><span class="regexp">/pool/universe</span><span class="regexp">/p/ppa</span>-purge/ppa-purge_<span class="number">0</span>.<span class="number">2.8</span>+bzr56_all.deb &amp;&amp; wget <span class="symbol">http:</span>/<span class="regexp">/mirror.pnl.gov/ubuntu</span><span class="regexp">//pool</span><span class="regexp">/main/a</span><span class="regexp">/aptitude/aptitude</span>_<span class="number">0</span>.<span class="number">6.6</span>-<span class="number">1</span>ubuntu1_i386.deb &amp;&amp; sudo dpkg -i ./*.deb</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir ppa-purge &amp;&amp; cd ppa-purge &amp;&amp; wget http://mirror.pnl.gov/ubuntu/pool/universe/p/ppa-purge/ppa-purge_0.2.8+bzr56_all.deb &amp;&amp; wget http://mirror.pnl.gov/ubuntu//pool/main/a/aptitude/aptitude_0.6.6-1ubuntu1_i386.deb &amp;&amp; sudo dpkg -i ./*.deb</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>To use PPA Purge:</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ppa-purge <span class="keyword">pp</span><span class="variable">a:someppa</span>/ppa</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ppa-purge ppa:someppa/ppa</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>If ‘ppa-purge’ command fails for some reason, you can’t run ‘ppa-purge’ again unless you re-enable the PPA (To enable the PPA follow the same steps as disabling a PPA and Check the both lines of a particular PPA to enable it).<br>Note: PPA Purge doesn’t remove PPAs (may be in future), So you’ll have to manually remove the PPA.</p>
 </li>
 </ul>
 <h4 id="Remove"><a href="#Remove" class="headerlink" title="Remove:"></a>Remove:</h4><ul>
 <li><p>If the package installed from a PPA doesn’t exist in official Ubuntu repositories then using PPA Purge is not recommended, because there’s nothing to be downgraded and PPA Purge wouldn’t delete it either. To remove a PPA and installed packages run the following commands: (Ignore the first command if you don’t want to remove the installed packages)</p>
-<figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get autoremove --purge package-name</span><br><span class="line">sudo<span class="built_in"> add-apt-repository </span>--remove ppa:someppa/ppa</span><br><span class="line">sudo apt-get autoclean</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get autoremove --purge package-name</span><br><span class="line">sudo add-apt-repository --remove ppa:someppa/ppa</span><br><span class="line">sudo apt-get autoclean</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Alternatively you can use Y PPA Manager to disable/remove/purge PPA’s (Details at the end of answer).</p>
 </li>
@@ -425,7 +421,7 @@
 </blockquote>
 </li>
 </ul>
-<figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="built_in">get</span> <span class="keyword">update</span> </span><br><span class="line">sudo apt-<span class="built_in">get</span> upgrade</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update </span><br><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>Update: Synchronizes your list of available packages with the servers in source repositories. Upgrade: Downloads &amp; installs any newer versions of your installed packages.</p>
 </blockquote>
@@ -478,7 +474,7 @@
 <li>如果共享库文件安装到了/lib或/usr/lib目录下, 那么需执行一下ldconfig命令<br>ldconfig命令的用途, 主要是在默认搜寻目录(/lib和/usr/lib)以及动态库配置文件/etc/ld.so.conf内所列的目录下, 搜索出可共享的动态链接库(格式如lib<em>.so</em>), 进而创建出动态装入程序(ld.so)所需的连接和缓存文件. 缓存文件默认为/etc/ld.so.cache, 此文件保存已排好序的动态链接库名字列表. </li>
 <li>如果共享库文件安装到了/usr/local/lib(很多开源的共享库都会安装到该目录下)或其它”非/lib或/usr/lib”目录下, 那么在执行ldconfig命令前, 还要把新共享库目录加入到共享库配置文件/etc/ld.so.conf中, 如下:</li>
 </ol>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># <span class="keyword">cat</span> /etc/ld.<span class="keyword">so</span>.<span class="keyword">conf</span></span><br><span class="line">include ld.<span class="keyword">so</span>.<span class="keyword">conf</span>.d/*.<span class="keyword">conf</span></span><br><span class="line"># <span class="keyword">echo</span> <span class="string">"/usr/local/lib"</span> &gt;&gt; /etc/ld.<span class="keyword">so</span>.<span class="keyword">conf</span></span><br><span class="line"># ldconfig</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># cat /etc/ld.so.conf</span><br><span class="line">include ld.so.conf.d/*.conf</span><br><span class="line"># echo &quot;/usr/local/lib&quot; &gt;&gt; /etc/ld.so.conf</span><br><span class="line"># ldconfig</span><br></pre></td></tr></table></figure>
 <ol>
 <li>如果共享库文件安装到了其它”非/lib或/usr/lib” 目录下,  但是又不想在/etc/ld.so.conf中加路径(或者是没有权限加路径). 那可以export一个全局变量LD_LIBRARY_PATH, 然后运行程序的时候就会去这个目录中找共享库. </li>
 </ol>
@@ -497,11 +493,15 @@
     
 <nav id="article-nav">
   
-  
-    <a href="/2016/07/01/160619开开心心建网站/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">【建站】开开心心建网站</div>
-      <strong class="article-nav-caption">></strong>
+    <a href="/2016/07/16/160619开开心心建网站/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          【建站】开开心心建网站
+        
+      </div>
     </a>
+  
   
 </nav>
 
