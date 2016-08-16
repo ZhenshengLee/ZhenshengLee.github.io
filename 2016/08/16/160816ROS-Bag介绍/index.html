@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>【ROS】rosbag-数据记录工具 | 哈骑士的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前言
+因实验，需要将机器人坐标记录下来，在matlab上做对比实验
+
+需要学习：rosbag的基本使用，bag文件的处理，matlab上ROS工具箱使用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【ROS】rosbag-数据记录工具">
+<meta property="og:url" content="https://ZhenshengLee.github.io/2016/08/16/160816ROS-Bag介绍/index.html">
+<meta property="og:site_name" content="哈骑士的博客">
+<meta property="og:description" content="前言
+因实验，需要将机器人坐标记录下来，在matlab上做对比实验
+
+需要学习：rosbag的基本使用，bag文件的处理，matlab上ROS工具箱使用">
+<meta property="og:updated_time" content="2016-08-16T05:39:40.966Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【ROS】rosbag-数据记录工具">
+<meta name="twitter:description" content="前言
+因实验，需要将机器人坐标记录下来，在matlab上做对比实验
+
+需要学习：rosbag的基本使用，bag文件的处理，matlab上ROS工具箱使用">
+  
+    <link rel="alternative" href="/atom.xml" title="哈骑士的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://7xvunf.com1.z0.glb.clouddn.com/%E5%85%B6%E4%BB%96320X425.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">黎振胜</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">将科技固化为产品——机器人软件开发</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives/">所有文章</a></li>
+				        
+							<li><a href="/写在前面/">写在前面</a></li>
+				        
+							<li><a href="/tags/机器人软件构造/">机器人软件构造</a></li>
+				        
+							<li><a href="/tags/机器人软件设计/">机器人软件设计</a></li>
+				        
+							<li><a href="/tags/机器人系统开发/">机器人系统开发</a></li>
+				        
+							<li><a href="/tags/机械设计/">机械设计</a></li>
+				        
+							<li><a href="/tags/其他/">其他</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ZhenshengLee" title="github">github</a>
+					        
+								<a class="mail" target="_blank" href="mailto://lzs_1993@qq.com" title="mail">mail</a>
+					        
+								<a class="linkedin" target="_blank" href="https://cn.linkedin.com/in/zhenshengli" title="linkedin">linkedin</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/其他/" style="font-size: 20px;">其他</a> <a href="/tags/机器人软件设计/" style="font-size: 10px;">机器人软件设计</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">机械电子工程在读研究生，从事协作机器人软件开发，正在找工作</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">黎振胜</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://7xvunf.com1.z0.glb.clouddn.com/%E5%85%B6%E4%BB%96320X425.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">黎振胜</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">将科技固化为产品——机器人软件开发</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives/">所有文章</a></li>
+		        
+					<li><a href="/写在前面/">写在前面</a></li>
+		        
+					<li><a href="/tags/机器人软件构造/">机器人软件构造</a></li>
+		        
+					<li><a href="/tags/机器人软件设计/">机器人软件设计</a></li>
+		        
+					<li><a href="/tags/机器人系统开发/">机器人系统开发</a></li>
+		        
+					<li><a href="/tags/机械设计/">机械设计</a></li>
+		        
+					<li><a href="/tags/其他/">其他</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ZhenshengLee" title="github">github</a>
+			        
+						<a class="mail" target="_blank" href="mailto://lzs_1993@qq.com" title="mail">mail</a>
+			        
+						<a class="linkedin" target="_blank" href="https://cn.linkedin.com/in/zhenshengli" title="linkedin">linkedin</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-160816ROS-Bag介绍" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/16/160816ROS-Bag介绍/" class="article-date">
+  	<time datetime="2016-08-16T05:26:34.000Z" itemprop="datePublished">2016-08-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      【ROS】rosbag-数据记录工具
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器人软件设计/">机器人软件设计</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
+<li><p>因实验，需要将机器人坐标记录下来，在matlab上做对比实验</p>
+</li>
+<li><p>需要学习：rosbag的基本使用，bag文件的处理，matlab上ROS工具箱使用</p>
+</li>
+</ul>
+<a id="more"></a>
+<p>[TOC]</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
+<p><a href="http://wiki.ros.org/cn/rosbag/Tutorials/Recording%20and%20playing%20back%20data" target="_blank" rel="external">使用示例</a></p>
+<p><a href="http://wiki.ros.org/rosbag?distro=kinetic" target="_blank" rel="external">rosbag-wiki</a></p>
+<p><a href="http://wiki.ros.org/Bags/Format/2.0" target="_blank" rel="external">Bag file format</a></p>
+<p><a href="https://cn.mathworks.com/help/robotics/examples/work-with-rosbag-logfiles.html?requestedDomain=www.mathworks.com" target="_blank" rel="external">MATLAB working with bag file</a></p>
+<p><a href="http://wiki.ros.org/Bags" target="_blank" rel="external">Bag file</a></p>
+<p><a href="http://wiki.ros.org/rqt_bag" target="_blank" rel="external">rqt_bag</a></p>
+<p><a href="http://wiki.ros.org/rosbag/migration" target="_blank" rel="external">rosgab/migration</a></p>
+<p><a href="http://nimbus.unl.edu/2014/11/using-rosbag_pandas-to-analyze-rosbag-files/" target="_blank" rel="external">Python 分析rosbag files</a></p>
+<p><a href="http://answers.ros.org/question/9102/how-to-extract-data-from-bag/" target="_blank" rel="external">How to extract data from bag file</a></p>
+</blockquote>
+<h2 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h2><h3 id="rosbag基本使用"><a href="#rosbag基本使用" class="headerlink" title="rosbag基本使用"></a>rosbag基本使用</h3><ul>
+<li><p>bag实际上是将一个node的行为录制下来，然后可以重新播放</p>
+</li>
+<li><p>使用命令行能够：录制，从包重新发布，获取包的概括信息，检查包的消息类型，使用Python表达式过滤包中信息，压缩解压缩包，重新索引包</p>
+</li>
+<li><p>如果录制高带宽的东西，例如图像信息，建议在本地录制和存放文件</p>
+</li>
+<li><p>bag文件默认名字为日期，可以添加前缀</p>
+</li>
+<li><p>基本命令包括</p>
+<ul>
+<li>record：制定主题来录制</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">rosbag record rosout tf cmd_vel</span><br><span class="line"></span><br><span class="line">rosbag record -a #所有</span><br><span class="line"></span><br><span class="line">rosbag record --duration=30 /chatter #持续30s,5m,2h</span><br><span class="line"></span><br><span class="line">rosbag record --split --size=1024 /chatter #空间达到1024M后分文件存储</span><br><span class="line"></span><br><span class="line">rosbag record --split --duration=30 /chatter #持续时间到30s后分文件存储</span><br><span class="line"></span><br><span class="line">rosbag record -o session1 /chatter #为文件名字做前缀</span><br><span class="line"></span><br><span class="line">rosbag record -O session2_090210.bag /chatter #为文件命名</span><br><span class="line"></span><br><span class="line">rosbag record --node=/joy_teleop #录制该节点左右消息</span><br><span class="line"></span><br><span class="line">rosbag record -l 1000 /chatter  # 录制该主题1000个消息限制</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>info</p>
+</li>
+<li><p>play</p>
+<ul>
+<li>注意：如果两个包被播放，它们将作为一个包对待。比如你录制一个包，在一个小时之后再录制一个包，然后同时播放，这个时候你会经历1个小时的空白。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">rosbag play recorede1.bag</span><br><span class="line"></span><br><span class="line">rosbag play --clock recorded1.bag #发布时钟时间</span><br><span class="line"></span><br><span class="line">rosbag play --clock --hz=200 recorded1.bag #时钟频率默认100</span><br><span class="line"></span><br><span class="line">rosbag play -r 10 recorded1.bag # 发布速度翻倍</span><br><span class="line"></span><br><span class="line">rosbag play -d 5 recorded1.bag #每一次advertise后等待5秒</span><br><span class="line"></span><br><span class="line">rosbag play -u 240 recorded1.bag #只播放240s</span><br><span class="line"></span><br><span class="line">rosbag play -l recorded1.bag # 循环播放</span><br></pre></td></tr></table></figure>
+<ul>
+<li>check</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">rosbag check old.bag</span><br><span class="line"></span><br><span class="line">rosbag check -g diagnostics.bmr diag.bag #生成一个移植规则文件migration rule file</span><br></pre></td></tr></table></figure>
+<ul>
+<li>fix</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">rosbag fix old.bag repaired.bag myrules.bmr #使用规则文件恢复包文件内容</span><br></pre></td></tr></table></figure>
+<ul>
+<li>filter</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">filter &lt;in-bag&gt; &lt;out-bag&gt; &lt;expression&gt; # 详情请访问网页，可以使用topic, m, t, 等要素，分别是主题，消息，时间</span><br><span class="line"></span><br><span class="line">rosbag filter input.bag output.bag &quot;t.to_sec() &lt;= 1284703931.86&quot;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>compress</p>
+</li>
+<li><p>decompress</p>
+</li>
+<li><p>reindex</p>
+<ul>
+<li>修复包的命令</li>
+</ul>
+</li>
+</ul>
+<h3 id="rqt-bag"><a href="#rqt-bag" class="headerlink" title="rqt_bag"></a>rqt_bag</h3><ul>
+<li>提供全方位的图形化界面，具有录制，播放，显示，保存，加载文件，暂停等功能</li>
+</ul>
+<h3 id="数据修改"><a href="#数据修改" class="headerlink" title="数据修改"></a>数据修改</h3><ul>
+<li>请参考migration网页</li>
+</ul>
+<h3 id="数据导出到matlab分析"><a href="#数据导出到matlab分析" class="headerlink" title="数据导出到matlab分析"></a>数据导出到matlab分析</h3><ul>
+<li>先导出为CSV文件，逗号分隔值文件格式</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">rostopic echo -b log_file.bag /topic_name</span><br><span class="line"></span><br><span class="line">rostopic echo -p /topic_name #使用matlab友好格式进行显示</span><br></pre></td></tr></table></figure>
+<ul>
+<li>再存为文件</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">rostopic echo -b file.bag -p /topic &gt; data.txt</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/08/14/160716常用系统维护/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">【Ubuntu】常用系统维护</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="160816ROS-Bag介绍" data-title="【ROS】rosbag-数据记录工具" data-url="https://ZhenshengLee.github.io/2016/08/16/160816ROS-Bag介绍/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"zhenshenglee"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 黎振胜
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
