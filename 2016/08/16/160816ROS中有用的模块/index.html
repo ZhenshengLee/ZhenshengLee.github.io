@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>【ROS】ROS中其他有价值的模块 | 哈骑士的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="[TOC]
+前言
+记录有具有价值的ROS模块并附简单介绍">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【ROS】ROS中其他有价值的模块">
+<meta property="og:url" content="https://ZhenshengLee.github.io/2016/08/16/160816ROS中有用的模块/index.html">
+<meta property="og:site_name" content="哈骑士的博客">
+<meta property="og:description" content="[TOC]
+前言
+记录有具有价值的ROS模块并附简单介绍">
+<meta property="og:updated_time" content="2016-08-16T09:14:06.666Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【ROS】ROS中其他有价值的模块">
+<meta name="twitter:description" content="[TOC]
+前言
+记录有具有价值的ROS模块并附简单介绍">
+  
+    <link rel="alternative" href="/atom.xml" title="哈骑士的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://7xvunf.com1.z0.glb.clouddn.com/%E5%85%B6%E4%BB%96320X425.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">黎振胜</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">将科技固化为产品——机器人软件开发</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives/">所有文章</a></li>
+				        
+							<li><a href="/写在前面/">写在前面</a></li>
+				        
+							<li><a href="/tags/机器人软件构造/">机器人软件构造</a></li>
+				        
+							<li><a href="/tags/机器人软件设计/">机器人软件设计</a></li>
+				        
+							<li><a href="/tags/机器人系统开发/">机器人系统开发</a></li>
+				        
+							<li><a href="/tags/机械设计/">机械设计</a></li>
+				        
+							<li><a href="/tags/其他/">其他</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ZhenshengLee" title="github">github</a>
+					        
+								<a class="mail" target="_blank" href="mailto://lzs_1993@qq.com" title="mail">mail</a>
+					        
+								<a class="linkedin" target="_blank" href="https://cn.linkedin.com/in/zhenshengli" title="linkedin">linkedin</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/其他/" style="font-size: 10px;">其他</a> <a href="/tags/机器人系统开发/" style="font-size: 10px;">机器人系统开发</a> <a href="/tags/机器人软件构造/" style="font-size: 15px;">机器人软件构造</a> <a href="/tags/机器人软件设计/" style="font-size: 20px;">机器人软件设计</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">机械电子工程在读研究生，从事协作机器人软件开发，正在找工作</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">黎振胜</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://7xvunf.com1.z0.glb.clouddn.com/%E5%85%B6%E4%BB%96320X425.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">黎振胜</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">将科技固化为产品——机器人软件开发</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives/">所有文章</a></li>
+		        
+					<li><a href="/写在前面/">写在前面</a></li>
+		        
+					<li><a href="/tags/机器人软件构造/">机器人软件构造</a></li>
+		        
+					<li><a href="/tags/机器人软件设计/">机器人软件设计</a></li>
+		        
+					<li><a href="/tags/机器人系统开发/">机器人系统开发</a></li>
+		        
+					<li><a href="/tags/机械设计/">机械设计</a></li>
+		        
+					<li><a href="/tags/其他/">其他</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ZhenshengLee" title="github">github</a>
+			        
+						<a class="mail" target="_blank" href="mailto://lzs_1993@qq.com" title="mail">mail</a>
+			        
+						<a class="linkedin" target="_blank" href="https://cn.linkedin.com/in/zhenshengli" title="linkedin">linkedin</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-160816ROS中有用的模块" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/16/160816ROS中有用的模块/" class="article-date">
+  	<time datetime="2016-08-16T08:23:56.000Z" itemprop="datePublished">2016-08-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      【ROS】ROS中其他有价值的模块
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器人软件设计/">机器人软件设计</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
+<li>记录有具有价值的ROS模块并附简单介绍</li>
+</ul>
+<a id="more"></a>
+<h3 id="angles"><a href="#angles" class="headerlink" title="angles"></a>angles</h3><ul>
+<li>与几何相关的数学运算库，实现如角度和弧度之间的转换 </li>
+</ul>
+<h3 id="find-object-2d"><a href="#find-object-2d" class="headerlink" title="find_object_2d"></a>find_object_2d</h3><h3 id="key-teleop"><a href="#key-teleop" class="headerlink" title="key_teleop"></a>key_teleop</h3><h3 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h3><ul>
+<li>ROS内置的数据库</li>
+</ul>
+<h3 id="SMACH"><a href="#SMACH" class="headerlink" title="SMACH"></a>SMACH</h3><ul>
+<li>复杂行为生成工具</li>
+<li>SMACH is a task-level architecture for rapidly creating complex robot behavior. At its core, SMACH is a ROS-independent Python library to build hierarchical state machines. SMACH is a new library that takes advantage of very old concepts in order to quickly create robust robot behavior with maintainable and modular code.</li>
+</ul>
+<h3 id="openraveros"><a href="#openraveros" class="headerlink" title="openraveros"></a><a href="http://wiki.ros.org/openrave" target="_blank" rel="external">openraveros</a></h3><ul>
+<li>作为与<a href="http://openrave.org/" target="_blank" rel="external">openRAVE</a>库的接口端，与其无缝集成</li>
+<li>openRAVE是开源的运动规划库，robotic automation virtual environment.</li>
+</ul>
+<h3 id="Boost库"><a href="#Boost库" class="headerlink" title="Boost库"></a>Boost库</h3><ul>
+<li>boost.numeric.ublas</li>
+<li>boost.numeric.MTL</li>
+<li>boost.math</li>
+</ul>
+<h3 id="贝叶斯滤波器bfl"><a href="#贝叶斯滤波器bfl" class="headerlink" title="贝叶斯滤波器bfl"></a><a href="http://wiki.ros.org/bfl" target="_blank" rel="external">贝叶斯滤波器bfl</a></h3><ul>
+<li>这是由orocos项目制作分发的贝叶斯滤波器</li>
+<li>ROS使用boost中的数学库和随机数发生器等模块对这个库进行编译</li>
+<li>This ROS package compiles BFL with the Boost library for matrix operations and random number generation.### <a href="http://wiki.ros.org/orocos_toolchain" target="_blank" rel="external">orocos_toolchain</a></li>
+<li>由于ROS不具备实时性，所以实现了与另一个机器人软件架构orocos的联合开发，相当于用orocos的实时架构，来使用ROS中已经大量存在的可复用模块</li>
+</ul>
+<h3 id="stero-image-processing"><a href="#stero-image-processing" class="headerlink" title="stero_image_processing"></a><a href="http://wiki.ros.org/stereo_image_proc" target="_blank" rel="external">stero_image_processing</a></h3><ul>
+<li>专门处理RGBD图像的节点，可以进行预处理，以便进行后续的视觉计算</li>
+<li>还可以生成点云</li>
+</ul>
+<h3 id="viso2-ros"><a href="#viso2-ros" class="headerlink" title="viso2_ros"></a><a href="http://wiki.ros.org/libviso2?distro=indigo" target="_blank" rel="external">viso2_ros</a></h3><ul>
+<li>使用Kinect做视觉里程计的一个包</li>
+</ul>
+<h3 id="cotomap"><a href="#cotomap" class="headerlink" title="cotomap"></a><a href="http://wiki.ros.org/octomap" target="_blank" rel="external">cotomap</a></h3><ul>
+<li>使用八叉树数据结构存储地图，提供整套制图方式的一个库</li>
+<li>新版本其中已经包含<a href="http://wiki.ros.org/octovis" target="_blank" rel="external">octoviz</a>八叉树数据结构可视化工具</li>
+</ul>
+<h3 id="hector-slam"><a href="#hector-slam" class="headerlink" title="hector_slam"></a><a href="http://wiki.ros.org/hector_slam" target="_blank" rel="external">hector_slam</a></h3><ul>
+<li>使用hector_mapping的slam方法</li>
+</ul>
+<h3 id="ethzasl-icp-mapping"><a href="#ethzasl-icp-mapping" class="headerlink" title="ethzasl_icp_mapping"></a><a href="http://wiki.ros.org/ethzasl_icp_mapping" target="_blank" rel="external">ethzasl_icp_mapping</a></h3><ul>
+<li>An ICP-based slam tool</li>
+</ul>
+<h3 id="gmapping"><a href="#gmapping" class="headerlink" title="gmapping"></a><a href="http://wiki.ros.org/gmapping" target="_blank" rel="external">gmapping</a></h3><ul>
+<li>一种使用粒子滤波器进行建图的方法</li>
+</ul>
+<h3 id="rgbdslam"><a href="#rgbdslam" class="headerlink" title="rgbdslam"></a><a href="http://wiki.ros.org/rgbdslam" target="_blank" rel="external">rgbdslam</a></h3><ul>
+<li>A solution for SLAM for rgbd cameras</li>
+</ul>
+<h3 id="universal-robot"><a href="#universal-robot" class="headerlink" title="universal_robot"></a><a href="http://wiki.ros.org/universal_robot" target="_blank" rel="external">universal_robot</a></h3><ul>
+<li>最新出的ROS工业机器人的实验性机器人</li>
+</ul>
+<h3 id="abb"><a href="#abb" class="headerlink" title="abb"></a><a href="http://wiki.ros.org/abb" target="_blank" rel="external">abb</a></h3><ul>
+<li>abb机器人</li>
+</ul>
+<h3 id="sbpl"><a href="#sbpl" class="headerlink" title="sbpl"></a><a href="http://wiki.ros.org/sbpl" target="_blank" rel="external">sbpl</a></h3><ul>
+<li>search based motion planner</li>
+</ul>
+<h3 id="ompl"><a href="#ompl" class="headerlink" title="ompl"></a><a href="http://ompl.kavrakilab.org/" target="_blank" rel="external">ompl</a></h3><ul>
+<li>Open motion planner library</li>
+</ul>
+<h3 id="chomp-motion-planner"><a href="#chomp-motion-planner" class="headerlink" title="chomp_motion_planner"></a><a href="http://wiki.ros.org/chomp_motion_planner" target="_blank" rel="external">chomp_motion_planner</a></h3><ul>
+<li>chomp_motion_planner</li>
+</ul>
+<h3 id="rosbridge-suit"><a href="#rosbridge-suit" class="headerlink" title="rosbridge_suit"></a><a href="http://wiki.ros.org/rosbridge_suite" target="_blank" rel="external">rosbridge_suit</a></h3><ul>
+<li>使用JSON协议与非ROS程序沟通</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/08/16/160816ros-actionlib/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          【ROS】actionlib
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/08/16/160816-roscommon详解/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">【ROS】roscommon详解</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="160816ROS中有用的模块" data-title="【ROS】ROS中其他有价值的模块" data-url="https://ZhenshengLee.github.io/2016/08/16/160816ROS中有用的模块/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"zhenshenglee"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 黎振胜
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

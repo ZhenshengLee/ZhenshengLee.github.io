@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>【测试】gtest and rostest | 哈骑士的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="[TOC]
+前言为什么要学GTest
+开源框架，完全免费
+
+用得人多，项目多，比如ROS就用这个做测试，这是我学习GTEST的直接原因
+
+软件工程师入门啊！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【测试】gtest and rostest">
+<meta property="og:url" content="https://ZhenshengLee.github.io/2016/08/16/160816-gtest-and-rostest/index.html">
+<meta property="og:site_name" content="哈骑士的博客">
+<meta property="og:description" content="[TOC]
+前言为什么要学GTest
+开源框架，完全免费
+
+用得人多，项目多，比如ROS就用这个做测试，这是我学习GTEST的直接原因
+
+软件工程师入门啊！">
+<meta property="og:updated_time" content="2016-08-16T09:17:39.310Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【测试】gtest and rostest">
+<meta name="twitter:description" content="[TOC]
+前言为什么要学GTest
+开源框架，完全免费
+
+用得人多，项目多，比如ROS就用这个做测试，这是我学习GTEST的直接原因
+
+软件工程师入门啊！">
+  
+    <link rel="alternative" href="/atom.xml" title="哈骑士的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://7xvunf.com1.z0.glb.clouddn.com/%E5%85%B6%E4%BB%96320X425.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">黎振胜</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">将科技固化为产品——机器人软件开发</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives/">所有文章</a></li>
+				        
+							<li><a href="/写在前面/">写在前面</a></li>
+				        
+							<li><a href="/tags/机器人软件构造/">机器人软件构造</a></li>
+				        
+							<li><a href="/tags/机器人软件设计/">机器人软件设计</a></li>
+				        
+							<li><a href="/tags/机器人系统开发/">机器人系统开发</a></li>
+				        
+							<li><a href="/tags/机械设计/">机械设计</a></li>
+				        
+							<li><a href="/tags/其他/">其他</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ZhenshengLee" title="github">github</a>
+					        
+								<a class="mail" target="_blank" href="mailto://lzs_1993@qq.com" title="mail">mail</a>
+					        
+								<a class="linkedin" target="_blank" href="https://cn.linkedin.com/in/zhenshengli" title="linkedin">linkedin</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/其他/" style="font-size: 10px;">其他</a> <a href="/tags/机器人系统开发/" style="font-size: 10px;">机器人系统开发</a> <a href="/tags/机器人软件构造/" style="font-size: 15px;">机器人软件构造</a> <a href="/tags/机器人软件设计/" style="font-size: 20px;">机器人软件设计</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">机械电子工程在读研究生，从事协作机器人软件开发，正在找工作</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">黎振胜</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://7xvunf.com1.z0.glb.clouddn.com/%E5%85%B6%E4%BB%96320X425.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">黎振胜</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">将科技固化为产品——机器人软件开发</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives/">所有文章</a></li>
+		        
+					<li><a href="/写在前面/">写在前面</a></li>
+		        
+					<li><a href="/tags/机器人软件构造/">机器人软件构造</a></li>
+		        
+					<li><a href="/tags/机器人软件设计/">机器人软件设计</a></li>
+		        
+					<li><a href="/tags/机器人系统开发/">机器人系统开发</a></li>
+		        
+					<li><a href="/tags/机械设计/">机械设计</a></li>
+		        
+					<li><a href="/tags/其他/">其他</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ZhenshengLee" title="github">github</a>
+			        
+						<a class="mail" target="_blank" href="mailto://lzs_1993@qq.com" title="mail">mail</a>
+			        
+						<a class="linkedin" target="_blank" href="https://cn.linkedin.com/in/zhenshengli" title="linkedin">linkedin</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-160816-gtest-and-rostest" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/16/160816-gtest-and-rostest/" class="article-date">
+  	<time datetime="2016-08-16T08:44:05.000Z" itemprop="datePublished">2016-08-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      【测试】gtest and rostest
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器人软件构造/">机器人软件构造</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h3 id="为什么要学GTest"><a href="#为什么要学GTest" class="headerlink" title="为什么要学GTest"></a>为什么要学GTest</h3><ul>
+<li><p>开源框架，完全免费</p>
+</li>
+<li><p>用得人多，项目多，比如ROS就用这个做测试，这是我学习GTEST的直接原因</p>
+</li>
+<li><p>软件工程师入门啊！</p>
+</li>
+</ul>
+<a id="more"></a>
+<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><blockquote>
+<p><a href="http://roclinux.cn/?p=2873" target="_blank" rel="external">Linux 大棚</a></p>
+<p><a href="http://wiki.ros.org/rostest" target="_blank" rel="external">ROSTest</a></p>
+</blockquote>
+<h2 id="好的测试框架应该是（软件测试思想）"><a href="#好的测试框架应该是（软件测试思想）" class="headerlink" title="好的测试框架应该是（软件测试思想）"></a>好的测试框架应该是（软件测试思想）</h2><ul>
+<li><p>软件应该是独立的且可重复的，每个测试应该是一个独立的对象</p>
+</li>
+<li><p>应该有一套好的方法来组织测试，这种组织方法能够较好的反映程序代码的结构</p>
+</li>
+<li><p>测试应该是可迁移的且可复用的（平台中立）（支持多种编译器）</p>
+</li>
+<li><p>在测试失败时，要能够提供足够充分的测试信息</p>
+</li>
+<li><p>测试框架应该让开发者从琐碎的工作中解脱出来，让他们能够专注在测试内容上</p>
+</li>
+<li><p>测试应该是高效的</p>
+</li>
+</ul>
+<h3 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h3><ul>
+<li><p>如果你是一名开发工程师，或者你编写的程序要用到生产环境中，那么，你不可避免的需要学习和掌握一种自动化测试框架，以确保你的程序测试充分，质量上乘。</p>
+</li>
+<li><p>其实啊，测试工具是什么并不重要，重要的是测试思想，还是在大学期间上过的课，亲身做过的项目才是真货，好吧，去考个计算机三级软件测试技术？</p>
+</li>
+</ul>
+<h2 id="GTest-入门"><a href="#GTest-入门" class="headerlink" title="GTest 入门"></a>GTest 入门</h2><h3 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h3><ul>
+<li><p>第一步就是：把gtest编译成一个库，并且链接到你的测试程序中</p>
+</li>
+<li><p>你的测试项目程序要引用gtest/gtest.h，你的gtest安装在GTEST_ROOT路径下</p>
+</li>
+</ul>
+<h3 id="断言assertion"><a href="#断言assertion" class="headerlink" title="断言assertion"></a>断言assertion</h3><ul>
+<li><p>gtest 中的断言是一些宏，assertion在测试一个函数时，可以有两种方案，即ASSERT<em>*和EXPECT</em><em>。在失败发生时，ASSERT_</em>这类assertion会产生fatal failure，并且会终止当前函数；而EXPECT_*则只会产生nonfatal failure。</p>
+</li>
+<li><p>常用的宏有</p>
+</li>
+</ul>
+<p>EXPECT_EQ/NE/LT/LE/GT/GE([表达式],[表达式])</p>
+<ul>
+<li><p>对于ASSERT_EQ比较两个C字符串指针，只会检查两个指针是否指向同一块区域，要想检查两个（C风格字符串）字符串内容是否相同，要使用ASSERT_STREQ，不过比较两个C++字符串的话就用ASSERT_EQ就可以了。</p>
+</li>
+<li><p>特殊的比较宏——字符串比较宏</p>
+</li>
+</ul>
+<p>ASSERT_STRCASEEQ()，此处CASE指不区分大小写的比较</p>
+<ul>
+<li>字符串比较宏的特殊规则</li>
+</ul>
+<p>NULL和空字符串””是不相等的。</p>
+<ul>
+<li>如果你想了解更多有关字符串比较的trick方法，比如在assertion中处理子字符串、前缀、后缀、正则匹配等，请进入“高级gtest指南”。</li>
+</ul>
+<h3 id="创建一个test"><a href="#创建一个test" class="headerlink" title="创建一个test"></a>创建一个test</h3><ul>
+<li>三件事</li>
+</ul>
+<ol>
+<li><p>使用TEST()宏来定义和命名一个test函数，这个test函数不需要return任何值。</p>
+</li>
+<li><p>在这个test函数中，你可以写任何C++语句，并且使用assertion来检查。</p>
+</li>
+<li><p>这个test的结果是由assertion决定的。如果任何一个assertion失败了，或者这个test函数崩溃了，这个test则会返回fail。否则，会返回success。</p>
+</li>
+</ol>
+<ul>
+<li>语法</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">TEST(test_case_name, test_name) &#123;</span><br><span class="line"></span><br><span class="line">... test body ...</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Test Fixtures</li>
+</ul>
+<p>如果你发现你所写的多个test都在操作类似的数据，那么我推荐你使用test fixture。这个特性允许你在不同的test里复用相同的配置。</p>
+<p>机制主要是类的继承，具体请看参考教程，见文首</p>
+<p>使用Test Fixtures时的宏</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">TEST_F(test_case_name, test_name) &#123;</span><br><span class="line"></span><br><span class="line">... test body ...</span><br><span class="line"></span><br><span class="line">&#125;<span class="comment">// test_case_name 必须是定义的test fixture类的名称</span></span><br></pre></td></tr></table></figure>
+<h3 id="运行测试"><a href="#运行测试" class="headerlink" title="运行测试"></a>运行测试</h3><p>如果要触发运行，请执行RUN_ALL_TESTS()宏，如果所有的test都测试通过，它会返回0，否则会返回1。</p>
+<ul>
+<li>注意</li>
+</ul>
+<p>你bixu在你的main函数中return这个值。</p>
+<h3 id="编写测试的main函数"><a href="#编写测试的main函数" class="headerlink" title="编写测试的main函数"></a>编写测试的main函数</h3><ul>
+<li>参考如下模板</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="string">"this/package/foo.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="string">"gtest/gtest.h"</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// The fixture for testing class Foo.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> FooTest : <span class="keyword">public</span> ::testing::Test &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line"></span><br><span class="line"><span class="comment">// You can remove any or all of the following functions if its body is empty.</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">FooTest() &#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">// You can do set-up work for each test here.</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Virtual ~FooTest() &#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">// You can do clean-up work that doesn't throw exceptions here.</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// If the constructor and destructor are not enough for setting up</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// and cleaning up each test, you can define the following methods:</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">SetUp</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Code here will be called immediately after the constructor</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">TearDown</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Code here will be called immediately after each test</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// Object declared here can be used by all tests in the test case for Foo.</span></span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// Tests that the Foo::Bar() method does Abc.</span></span><br><span class="line"></span><br><span class="line">TEST_F(FooTest, MethodBarDoesAbc) &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="built_in">string</span> input_filepath = <span class="string">"this/package/testdata/myinputfile.dat"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="built_in">string</span> output_filepath = <span class="string">"this/package/testdata/myoutputfile.dat"</span>;</span><br><span class="line"></span><br><span class="line">Foo f;</span><br><span class="line"></span><br><span class="line">EXPECT_EQ(<span class="number">0</span>, f.Bar(input_filepath, output_filepath));</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// Tests that Foo does Xyz.</span></span><br><span class="line"></span><br><span class="line">TEST_F(FooTest, DoesXyz) &#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Execises the Xyz feature of Foo.</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125; <span class="comment">// namespace</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">::testing::InitGoogleTest(&amp;amp;argc, argv);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> RUN_ALL_TESTS();</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="ROSTest-学习"><a href="#ROSTest-学习" class="headerlink" title="ROSTest 学习"></a>ROSTest 学习</h2><ul>
+<li>rostest是roslaunch的扩展，允许跨越多节点进行测试！文件格式可以是.test或.launch，非常建议将测试launch文件嵌入到普通launch文件中</li>
+</ul>
+<h3 id="编写测试"><a href="#编写测试" class="headerlink" title="编写测试"></a>编写测试</h3><h4 id="前期概念"><a href="#前期概念" class="headerlink" title="前期概念"></a>前期概念</h4><ul>
+<li><p>两种层次上的测试：一种是节点层级的测试，主要测试节点与节点之间的交互是否有效，如消息订阅，服务请求等；另一种是代码层级的测试，主要测试节点内部具体执行的程序的有效性，如特定算法。</p>
+</li>
+<li><p>实际上需要编写一些测试节点来运行测试，rostest基于gtest框架</p>
+</li>
+</ul>
+<h4 id="编写"><a href="#编写" class="headerlink" title="编写"></a>编写</h4><blockquote>
+<p><a href="http://wiki.ros.org/gtest" target="_blank" rel="external">Writing C++ tests with gtest</a></p>
+</blockquote>
+<h4 id="构造描述文件"><a href="#构造描述文件" class="headerlink" title="构造描述文件"></a>构造描述文件</h4><ul>
+<li>CMakeLists</li>
+</ul>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(CATKIN_ENABLE_TESTING)</span><br><span class="line">  <span class="keyword">find_package</span>(rostest REQUIRED)</span><br><span class="line">  add_rostest_gtest(tests_mynode test/mynode.test src/test/test_mynode.cpp [more cpp files])</span><br><span class="line">  <span class="keyword">target_link_libraries</span>(tests_mynode <span class="variable">$&#123;catkin_LIBRARIES&#125;</span>)</span><br><span class="line"><span class="keyword">endif</span>()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Package.xml</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>launch file</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">launch</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">node</span> <span class="attr">pkg</span>=<span class="string">"mypkg"</span> <span class="attr">type</span>=<span class="string">"mynode"</span> <span class="attr">name</span>=<span class="string">"mynode"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">test</span> <span class="attr">test-name</span>=<span class="string">"test_mynode"</span> <span class="attr">pkg</span>=<span class="string">"mypkg"</span> <span class="attr">type</span>=<span class="string">"test_mynode"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">launch</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>launch 文件会启动节点后立即启动测试节点</p>
+</blockquote>
+<h4 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h4><h2 id="项目：测试zsDoor项目"><a href="#项目：测试zsDoor项目" class="headerlink" title="项目：测试zsDoor项目"></a>项目：测试zsDoor项目</h2>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/08/16/160816-catkin-build-system/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          【编译】catkin build system
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/08/16/160816-gdb-ros-and-roslaunch/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">【调试】gdb, ros and roslaunch</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="160816-gtest-and-rostest" data-title="【测试】gtest and rostest" data-url="https://ZhenshengLee.github.io/2016/08/16/160816-gtest-and-rostest/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"zhenshenglee"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 黎振胜
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

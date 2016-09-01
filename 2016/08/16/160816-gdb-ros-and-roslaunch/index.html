@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>【调试】gdb, ros and roslaunch | 哈骑士的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="[TOC]
+前言
+这是必须学习的技能，但是不需要精通，应该利用更高层的工具
+
+在ROS项目开发过程中应用，在使用roslaunch过程中应用gdb
+
+在CLion，VSCode使用过程中应用调试功能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【调试】gdb, ros and roslaunch">
+<meta property="og:url" content="https://ZhenshengLee.github.io/2016/08/16/160816-gdb-ros-and-roslaunch/index.html">
+<meta property="og:site_name" content="哈骑士的博客">
+<meta property="og:description" content="[TOC]
+前言
+这是必须学习的技能，但是不需要精通，应该利用更高层的工具
+
+在ROS项目开发过程中应用，在使用roslaunch过程中应用gdb
+
+在CLion，VSCode使用过程中应用调试功能">
+<meta property="og:updated_time" content="2016-08-16T09:17:23.022Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【调试】gdb, ros and roslaunch">
+<meta name="twitter:description" content="[TOC]
+前言
+这是必须学习的技能，但是不需要精通，应该利用更高层的工具
+
+在ROS项目开发过程中应用，在使用roslaunch过程中应用gdb
+
+在CLion，VSCode使用过程中应用调试功能">
+  
+    <link rel="alternative" href="/atom.xml" title="哈骑士的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://7xvunf.com1.z0.glb.clouddn.com/%E5%85%B6%E4%BB%96320X425.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">黎振胜</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">将科技固化为产品——机器人软件开发</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives/">所有文章</a></li>
+				        
+							<li><a href="/写在前面/">写在前面</a></li>
+				        
+							<li><a href="/tags/机器人软件构造/">机器人软件构造</a></li>
+				        
+							<li><a href="/tags/机器人软件设计/">机器人软件设计</a></li>
+				        
+							<li><a href="/tags/机器人系统开发/">机器人系统开发</a></li>
+				        
+							<li><a href="/tags/机械设计/">机械设计</a></li>
+				        
+							<li><a href="/tags/其他/">其他</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ZhenshengLee" title="github">github</a>
+					        
+								<a class="mail" target="_blank" href="mailto://lzs_1993@qq.com" title="mail">mail</a>
+					        
+								<a class="linkedin" target="_blank" href="https://cn.linkedin.com/in/zhenshengli" title="linkedin">linkedin</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/其他/" style="font-size: 10px;">其他</a> <a href="/tags/机器人系统开发/" style="font-size: 10px;">机器人系统开发</a> <a href="/tags/机器人软件构造/" style="font-size: 15px;">机器人软件构造</a> <a href="/tags/机器人软件设计/" style="font-size: 20px;">机器人软件设计</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">机械电子工程在读研究生，从事协作机器人软件开发，正在找工作</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">黎振胜</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://7xvunf.com1.z0.glb.clouddn.com/%E5%85%B6%E4%BB%96320X425.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">黎振胜</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">将科技固化为产品——机器人软件开发</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives/">所有文章</a></li>
+		        
+					<li><a href="/写在前面/">写在前面</a></li>
+		        
+					<li><a href="/tags/机器人软件构造/">机器人软件构造</a></li>
+		        
+					<li><a href="/tags/机器人软件设计/">机器人软件设计</a></li>
+		        
+					<li><a href="/tags/机器人系统开发/">机器人系统开发</a></li>
+		        
+					<li><a href="/tags/机械设计/">机械设计</a></li>
+		        
+					<li><a href="/tags/其他/">其他</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ZhenshengLee" title="github">github</a>
+			        
+						<a class="mail" target="_blank" href="mailto://lzs_1993@qq.com" title="mail">mail</a>
+			        
+						<a class="linkedin" target="_blank" href="https://cn.linkedin.com/in/zhenshengli" title="linkedin">linkedin</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-160816-gdb-ros-and-roslaunch" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/16/160816-gdb-ros-and-roslaunch/" class="article-date">
+  	<time datetime="2016-08-16T08:42:12.000Z" itemprop="datePublished">2016-08-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      【调试】gdb, ros and roslaunch
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器人软件构造/">机器人软件构造</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><ul>
+<li><p>这是必须学习的技能，但是不需要精通，应该利用更高层的工具</p>
+</li>
+<li><p>在ROS项目开发过程中应用，在使用roslaunch过程中应用gdb</p>
+</li>
+<li><p>在CLion，VSCode使用过程中应用调试功能</p>
+</li>
+</ul>
+<a id="more"></a>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><blockquote>
+<p>《ROS机器人程序开发》</p>
+<p>《嵌入式Linux开发基础知识》</p>
+<p><a href="http://wiki.ros.org/roslaunch" target="_blank" rel="external">roslaunch wiki</a></p>
+</blockquote>
+<h3 id="gdb学习"><a href="#gdb学习" class="headerlink" title="gdb学习"></a>gdb学习</h3><ul>
+<li><blockquote>
+<p>是一个用来调试C/C++程序的强力调试器，常用功能有：监视程序中变量的值；设置断点；单步执行</p>
+</blockquote>
+</li>
+<li><p><strong>为了使gdb正常工作，你必须使你的程序在编译时包含调试信息</strong>。<figure class="highlight plain"><figcaption><span>-g```调试信息包括你程序里的每一个变量的类型和在可执行文件里的地址映射以及源代码的行号。</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">* 你可以使用gdb调试一个可执行文件，也可以用gdb检查一个因程序异常终止而产生的core文件，或者与一个正在运行的程序相连。更多请参考```gdb -h</span><br></pre></td></tr></table></figure></p>
+</li>
+<li><p>命令支持tab补齐特性</p>
+</li>
+</ul>
+<h4 id="使用要点"><a href="#使用要点" class="headerlink" title="使用要点"></a>使用要点</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">gdb #打开调试器</span><br><span class="line">file FILE #装载指定可执行文件</span><br><span class="line">break NUM #在指定的行上设置断点</span><br><span class="line">bt #显示所有的调用栈帧，显示函数的调用顺序</span><br><span class="line">clear FILENAME:NUM #删除特定源文件行上的断点</span><br><span class="line">next #在不单步执行进入其他函数的情况下，向前执行一行源代码</span><br><span class="line">continue #继续执行</span><br><span class="line">display EXPR #每次程序停止后显示表达式的值，表达式由程序定义的变量组成</span><br><span class="line">print EXPR #显示表达式的值</span><br><span class="line">info files #显示被调试文件的详细信息</span><br><span class="line">info func #显示所有函数名称</span><br><span class="line">info local #显示当函数中的局部变量信息</span><br><span class="line">info prog #显示被调试程序的执行状态</span><br><span class="line">info var #显示所有的全局和静态变量名称</span><br><span class="line">kill #终止正在被调试的程序</span><br><span class="line">list #显示源代码段</span><br><span class="line">make #在不退出gdb的情况下运行make工具</span><br></pre></td></tr></table></figure>
+<h3 id="ROS-node-debug-with-gdb（使用gdb调试ROS节点）"><a href="#ROS-node-debug-with-gdb（使用gdb调试ROS节点）" class="headerlink" title="ROS node debug with gdb（使用gdb调试ROS节点）"></a>ROS node debug with gdb（使用gdb调试ROS节点）</h3><ul>
+<li>从调试任意C/C++可执行文件的标准方法开始</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">roscore</span><br><span class="line"></span><br><span class="line">gdb bin/example</span><br><span class="line"></span><br><span class="line">r</span><br></pre></td></tr></table></figure>
+<ul>
+<li>ros节点启动时调用gdb调试器</li>
+</ul>
+<p>需要在launch文件中添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">launch-prefix=&quot;xterm-egdb--args&quot;</span><br></pre></td></tr></table></figure>
+<p>该语句意思是：加载节点并等待运行。注意，因为是在xterm中创建gdb绘画，所以还有一个调试窗口。</p>
+<p> <code>launch-prefix</code>其实是一个前置启动工具，我们同样可以使用<code>launch-prefix=&quot;valgrind&quot;</code>来在启动节点之前启动valgrind工具检测内存泄露，并执行性能分析。<a href="http://valgrind.org" target="_blank" rel="external">valgrind.org</a></p>
+<ul>
+<li>更多请见</li>
+</ul>
+<blockquote>
+<p><a href="http://wiki.ros.org/roslaunch/Tutorials/Roslaunch%20Nodes%20in%20Valgrind%20or%20GDB" target="_blank" rel="external">How to Roslaunch Nodes in Valgrind or GDB</a></p>
+</blockquote>
+<h3 id="roslaunch-学习和调试"><a href="#roslaunch-学习和调试" class="headerlink" title="roslaunch 学习和调试"></a>roslaunch 学习和调试</h3><ul>
+<li>launch文件：功能包名传递给pkg属性，节点名传递给type属性，由于同一个节点可以运行多个实例，因此需要给每个实例一个节点名以作区分，即name属性，最好将这些属性配置输出到屏幕，这样就会在启动节点的shell窗口中输出相应调试信息，output=screen。</li>
+</ul>
+<h3 id="实例：调试ROS项目"><a href="#实例：调试ROS项目" class="headerlink" title="实例：调试ROS项目"></a>实例：调试ROS项目</h3>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/08/16/160816-gtest-and-rostest/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          【测试】gtest and rostest
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/08/16/160816-Git拉取远程分支/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">【部署】Git拉取远程分支</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="160816-gdb-ros-and-roslaunch" data-title="【调试】gdb, ros and roslaunch" data-url="https://ZhenshengLee.github.io/2016/08/16/160816-gdb-ros-and-roslaunch/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"zhenshenglee"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 黎振胜
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

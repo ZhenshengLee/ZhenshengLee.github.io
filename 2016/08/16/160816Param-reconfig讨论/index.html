@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>【ROS】Param reconfig讨论 | 哈骑士的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="[TOC]
+前言
+因为windows平台的ROS for LV 没有显式支持action，所以不能直接给move_base节点发送move_base/cancel (actionlib_msgs/GoalID)，故在ROS端添加一个Proxy来代理解决
+
+该代理的功能还包括ROSARIA和move_base的reconfigure，所以要从命令行运行重新配置命令
+
+还修正一个ROSARIA发送的p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【ROS】Param reconfig讨论">
+<meta property="og:url" content="https://ZhenshengLee.github.io/2016/08/16/160816Param-reconfig讨论/index.html">
+<meta property="og:site_name" content="哈骑士的博客">
+<meta property="og:description" content="[TOC]
+前言
+因为windows平台的ROS for LV 没有显式支持action，所以不能直接给move_base节点发送move_base/cancel (actionlib_msgs/GoalID)，故在ROS端添加一个Proxy来代理解决
+
+该代理的功能还包括ROSARIA和move_base的reconfigure，所以要从命令行运行重新配置命令
+
+还修正一个ROSARIA发送的p">
+<meta property="og:updated_time" content="2016-08-16T08:33:31.238Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【ROS】Param reconfig讨论">
+<meta name="twitter:description" content="[TOC]
+前言
+因为windows平台的ROS for LV 没有显式支持action，所以不能直接给move_base节点发送move_base/cancel (actionlib_msgs/GoalID)，故在ROS端添加一个Proxy来代理解决
+
+该代理的功能还包括ROSARIA和move_base的reconfigure，所以要从命令行运行重新配置命令
+
+还修正一个ROSARIA发送的p">
+  
+    <link rel="alternative" href="/atom.xml" title="哈骑士的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://7xvunf.com1.z0.glb.clouddn.com/%E5%85%B6%E4%BB%96320X425.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">黎振胜</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">将科技固化为产品——机器人软件开发</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives/">所有文章</a></li>
+				        
+							<li><a href="/写在前面/">写在前面</a></li>
+				        
+							<li><a href="/tags/机器人软件构造/">机器人软件构造</a></li>
+				        
+							<li><a href="/tags/机器人软件设计/">机器人软件设计</a></li>
+				        
+							<li><a href="/tags/机器人系统开发/">机器人系统开发</a></li>
+				        
+							<li><a href="/tags/机械设计/">机械设计</a></li>
+				        
+							<li><a href="/tags/其他/">其他</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ZhenshengLee" title="github">github</a>
+					        
+								<a class="mail" target="_blank" href="mailto://lzs_1993@qq.com" title="mail">mail</a>
+					        
+								<a class="linkedin" target="_blank" href="https://cn.linkedin.com/in/zhenshengli" title="linkedin">linkedin</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/其他/" style="font-size: 10px;">其他</a> <a href="/tags/机器人系统开发/" style="font-size: 10px;">机器人系统开发</a> <a href="/tags/机器人软件构造/" style="font-size: 15px;">机器人软件构造</a> <a href="/tags/机器人软件设计/" style="font-size: 20px;">机器人软件设计</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">机械电子工程在读研究生，从事协作机器人软件开发，正在找工作</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">黎振胜</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://7xvunf.com1.z0.glb.clouddn.com/%E5%85%B6%E4%BB%96320X425.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">黎振胜</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">将科技固化为产品——机器人软件开发</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives/">所有文章</a></li>
+		        
+					<li><a href="/写在前面/">写在前面</a></li>
+		        
+					<li><a href="/tags/机器人软件构造/">机器人软件构造</a></li>
+		        
+					<li><a href="/tags/机器人软件设计/">机器人软件设计</a></li>
+		        
+					<li><a href="/tags/机器人系统开发/">机器人系统开发</a></li>
+		        
+					<li><a href="/tags/机械设计/">机械设计</a></li>
+		        
+					<li><a href="/tags/其他/">其他</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ZhenshengLee" title="github">github</a>
+			        
+						<a class="mail" target="_blank" href="mailto://lzs_1993@qq.com" title="mail">mail</a>
+			        
+						<a class="linkedin" target="_blank" href="https://cn.linkedin.com/in/zhenshengli" title="linkedin">linkedin</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-160816Param-reconfig讨论" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/16/160816Param-reconfig讨论/" class="article-date">
+  	<time datetime="2016-08-16T08:32:01.000Z" itemprop="datePublished">2016-08-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      【ROS】Param reconfig讨论
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器人软件设计/">机器人软件设计</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><ul>
+<li><p>因为windows平台的ROS for LV 没有显式支持action，所以不能直接给move_base节点发送move_base/cancel (actionlib_msgs/GoalID)，故在ROS端添加一个Proxy来代理解决</p>
+</li>
+<li><p>该代理的功能还包括ROSARIA和move_base的reconfigure，所以要从命令行运行重新配置命令</p>
+</li>
+<li><p>还修正一个ROSARIA发送的pose_msg内容为相对坐标的问题，改为发送相对于zsWorld坐标系的绝对坐标（在rosaria包中完成）</p>
+</li>
+<li><p>以后还可以承担打开和关闭各个节点的任务！</p>
+</li>
+</ul>
+<a id="more"></a>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://wiki.ros.org/ROS/Tutorials/CreatingPackage" target="_blank" rel="external">ROS WIKI</a></p>
+<p><a href="http://wiki.ros.org/dynamic_reconfigure/Tutorials" target="_blank" rel="external">dynamic_reconfigure</a></p>
+<h3 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h3><ol>
+<li><p>ROSARIA坐标修正，并制作一个reconfiguration_server（在rosaria包中完成）</p>
+</li>
+<li><p>接收上级节点发送的取消service_call，转发给move_base取消action_msg</p>
+</li>
+<li><p>接收来自上级节点的move_base reconfigure_msg，运行命令行进行重新配置</p>
+</li>
+<li><p>接收来自上级节点的rosaria reconfigure_msg，运行命令行进行重新配置</p>
+</li>
+<li><p>接收来及上级节点的重新定位的msg，运行命令行重新配置tf，主要是zsWorld与odom的坐标系转换关系</p>
+</li>
+<li><p>确认ROS for LV与ROS的连接关系</p>
+</li>
+<li><p>用rosaria_client进行测试</p>
+</li>
+</ol>
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><h4 id="坐标修正"><a href="#坐标修正" class="headerlink" title="坐标修正"></a>坐标修正</h4><ul>
+<li>建立一个包</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">catkin_create_pkg zsProxy std_msgs roscpp</span><br></pre></td></tr></table></figure>
+<ul>
+<li>修改vscode 配置文件c_cpp_properties.json</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">subl ./.vscode/c_cpp_properties.json</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">            &quot;name&quot;: &quot;Linux&quot;,</span><br><span class="line"></span><br><span class="line">            &quot;includePath&quot;: [&quot;/usr/include&quot;,</span><br><span class="line"></span><br><span class="line">            &quot;/opt/ros/indigo/include&quot;,</span><br><span class="line"></span><br><span class="line">            &quot;$&#123;ROS_PACKAGE_PATH&#125;&quot;,</span><br><span class="line"></span><br><span class="line">            &quot;/opt/ros/kinetic/include&quot;]</span><br><span class="line"></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<ul>
+<li>修改 .gitignore，vscode的数据文件就不要上传了</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">.vscode/</span><br></pre></td></tr></table></figure>
+<ul>
+<li>试用完vscode之后，发现还是CLion IDE爽，配合git 使用需要做一下特殊设置，不然可能会出现无法访问远程仓库问题</li>
+</ul>
+<blockquote>
+<p><a href="https://stackoverflow.com/questions/27566999/git-with-intellij-idea-could-not-read-from-remote-repository" target="_blank" rel="external">settings–&gt;Version Control–&gt;Git ,and then, In the SSH executable dropdown, choose Native</a></p>
+</blockquote>
+<ul>
+<li><p>修改rosaria包，增加zs_pose_msg</p>
+</li>
+<li><p>接下来修改reconfiguration server及配置</p>
+</li>
+</ul>
+<h4 id="学习dynamic-config"><a href="#学习dynamic-config" class="headerlink" title="学习dynamic config"></a>学习dynamic config</h4><ul>
+<li><a href="http://wiki.ros.org/sig/NextGenerationROS/Parameters" target="_blank" rel="external">关于参数概念的详细讨论</a></li>
+</ul>
+<blockquote>
+<p><strong><em>主要有两种访问参数的方法，一种是参数服务器，生命周期随roscore；另外一种就是动态重新配置参数，可以在程序运行时进行重新配置参数</em></strong></p>
+</blockquote>
+<ul>
+<li><a href="http://wiki.ros.org/ROS/Patterns/Parameterization" target="_blank" rel="external">关于参数具体实现和模式的讨论</a></li>
+</ul>
+<blockquote>
+<p>In roslaunch files, <param> tags are for setting a single parameter and <rosparam> tags are for setting groups or more complex structures of parameters.</rosparam></p>
+</blockquote>
+<p>The value set by the <param> tag may only be a string, int, bool, or double, which may be set through the xml attribute value, or by reading in from a text file, bin file, or the output of a command line command.</p>
+<p>The <rosparam> tag enables users to define a batch of related parameters simultaneously. These can be read from a YAML string which can either be put inline in the launchfile or can be loaded from a file (the rosparam dump command generates YAML output). Unlike the <param> tag, the YAML specification allows nested structures of parameters and parameters with list values. While these data can be represented on the ROS parameter server, it is up to the various client libraries to support complex parameter access.</rosparam></p>
+<p>A good example of the <rosparam> tag use in practice is the move_base package, where there are many, many parameters to be set, it’s less cumbersome to just use the YAML format.</rosparam></p>
+<h4 id="dynamic-reconfig具体技术"><a href="#dynamic-reconfig具体技术" class="headerlink" title="dynamic reconfig具体技术"></a>dynamic reconfig具体技术</h4><ul>
+<li><p>窗口程序界面下的重新配置，实际上这是标准的重新配置界面</p>
+</li>
+<li><p>另外就是使用<a href="http://wiki.ros.org/hokuyo_node/Tutorials/UsingDynparamToChangeHokuyoLaserParameters" target="_blank" rel="external">dynparam command-line tool</a></p>
+</li>
+</ul>
+<h4 id="Service-Call-Based-Re-configuration-实践"><a href="#Service-Call-Based-Re-configuration-实践" class="headerlink" title="Service Call-Based Re-configuration 实践"></a>Service Call-Based Re-configuration 实践</h4><ul>
+<li>使用上面所述第二种方法，使用命令行执行，可以在shell中执行，不过最好在C++中执行</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">rosrun dynamic_reconfigure dynparam set /&lt;node_name&gt; &lt;param&gt; &lt;value&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">system(<span class="string">"rosrun dynamic_reconfigure dynparam set camera_synchronizer_node narrow_stereo_trig_mode 3"</span>);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="http://wiki.ros.org/dynamic_reconfigure" target="_blank" rel="external">关于dynparam更详细的用法</a></p>
+</blockquote>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/08/16/160816可视化工具-Marker/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          【ROS】标记工具-Marker
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/08/16/160816ros-actionlib/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">【ROS】actionlib</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="160816Param-reconfig讨论" data-title="【ROS】Param reconfig讨论" data-url="https://ZhenshengLee.github.io/2016/08/16/160816Param-reconfig讨论/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"zhenshenglee"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 黎振胜
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

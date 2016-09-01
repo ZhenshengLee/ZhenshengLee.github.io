@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>【编辑】vscode C++程序设计 | 哈骑士的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前言
+此处介绍使用vscode进行cpp程序设计，使用make进行构建，gdb进行调试
+
+此次项目用于到PAT刷题
+
+以后逐步地使用gTest 进行测试，valgrind 进行深度检查，log4cplus进行日志输出">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【编辑】vscode C++程序设计">
+<meta property="og:url" content="https://ZhenshengLee.github.io/2016/09/01/160901-vscodeC-程序设计/index.html">
+<meta property="og:site_name" content="哈骑士的博客">
+<meta property="og:description" content="前言
+此处介绍使用vscode进行cpp程序设计，使用make进行构建，gdb进行调试
+
+此次项目用于到PAT刷题
+
+以后逐步地使用gTest 进行测试，valgrind 进行深度检查，log4cplus进行日志输出">
+<meta property="og:updated_time" content="2016-09-01T06:47:32.637Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【编辑】vscode C++程序设计">
+<meta name="twitter:description" content="前言
+此处介绍使用vscode进行cpp程序设计，使用make进行构建，gdb进行调试
+
+此次项目用于到PAT刷题
+
+以后逐步地使用gTest 进行测试，valgrind 进行深度检查，log4cplus进行日志输出">
+  
+    <link rel="alternative" href="/atom.xml" title="哈骑士的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://7xvunf.com1.z0.glb.clouddn.com/%E5%85%B6%E4%BB%96320X425.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">黎振胜</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">将科技固化为产品——机器人软件开发</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives/">所有文章</a></li>
+				        
+							<li><a href="/写在前面/">写在前面</a></li>
+				        
+							<li><a href="/tags/机器人软件构造/">机器人软件构造</a></li>
+				        
+							<li><a href="/tags/机器人软件设计/">机器人软件设计</a></li>
+				        
+							<li><a href="/tags/机器人系统开发/">机器人系统开发</a></li>
+				        
+							<li><a href="/tags/机械设计/">机械设计</a></li>
+				        
+							<li><a href="/tags/其他/">其他</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ZhenshengLee" title="github">github</a>
+					        
+								<a class="mail" target="_blank" href="mailto://lzs_1993@qq.com" title="mail">mail</a>
+					        
+								<a class="linkedin" target="_blank" href="https://cn.linkedin.com/in/zhenshengli" title="linkedin">linkedin</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/其他/" style="font-size: 10px;">其他</a> <a href="/tags/机器人系统开发/" style="font-size: 10px;">机器人系统开发</a> <a href="/tags/机器人软件构造/" style="font-size: 15px;">机器人软件构造</a> <a href="/tags/机器人软件设计/" style="font-size: 20px;">机器人软件设计</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">机械电子工程在读研究生，从事协作机器人软件开发，正在找工作</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">黎振胜</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://7xvunf.com1.z0.glb.clouddn.com/%E5%85%B6%E4%BB%96320X425.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">黎振胜</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">将科技固化为产品——机器人软件开发</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives/">所有文章</a></li>
+		        
+					<li><a href="/写在前面/">写在前面</a></li>
+		        
+					<li><a href="/tags/机器人软件构造/">机器人软件构造</a></li>
+		        
+					<li><a href="/tags/机器人软件设计/">机器人软件设计</a></li>
+		        
+					<li><a href="/tags/机器人系统开发/">机器人系统开发</a></li>
+		        
+					<li><a href="/tags/机械设计/">机械设计</a></li>
+		        
+					<li><a href="/tags/其他/">其他</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ZhenshengLee" title="github">github</a>
+			        
+						<a class="mail" target="_blank" href="mailto://lzs_1993@qq.com" title="mail">mail</a>
+			        
+						<a class="linkedin" target="_blank" href="https://cn.linkedin.com/in/zhenshengli" title="linkedin">linkedin</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-160901-vscodeC-程序设计" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/09/01/160901-vscodeC-程序设计/" class="article-date">
+  	<time datetime="2016-09-01T06:43:28.000Z" itemprop="datePublished">2016-09-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      【编辑】vscode C++程序设计
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器人系统开发/">机器人系统开发</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
+<li><p>此处介绍使用vscode进行cpp程序设计，使用make进行构建，gdb进行调试</p>
+</li>
+<li><p>此次项目用于到PAT刷题</p>
+</li>
+<li><p>以后逐步地使用gTest 进行测试，valgrind 进行深度检查，log4cplus进行日志输出</p>
+</li>
+</ul>
+<a id="more"></a>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p>[TOC]</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
+<p><a href="https://stackoverflow.com/questions/30269449/how-do-i-set-up-vscode-to-compile-c-code" target="_blank" rel="external">how-do-i-set-up-vscode-to-compile-c-code</a></p>
+<p><a href="https://code.visualstudio.com/docs/languages/cpp" target="_blank" rel="external">vscode c++ programming</a></p>
+<p><a href="https://code.visualstudio.com/docs/editor/tasks" target="_blank" rel="external">vscode external tasks</a></p>
+<p><a href="https://stackoverflow.com/questions/20096606/gdb-doesnt-find-sources" target="_blank" rel="external">gdb does’t find sources</a></p>
+</blockquote>
+<h2 id="学习记录"><a href="#学习记录" class="headerlink" title="学习记录"></a>学习记录</h2><h3 id="安装c-c-插件"><a href="#安装c-c-插件" class="headerlink" title="安装c/c++插件"></a>安装c/c++插件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Ctrl+Shift+P</span><br><span class="line"></span><br><span class="line">ext install cpp</span><br></pre></td></tr></table></figure>
+<h3 id="文件准备"><a href="#文件准备" class="headerlink" title="文件准备"></a>文件准备</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">cd pat-basic</span><br><span class="line"></span><br><span class="line">mkdir bin</span><br><span class="line"></span><br><span class="line">mkdir include</span><br><span class="line"></span><br><span class="line">mkdir src</span><br><span class="line"></span><br><span class="line">touch Makefile</span><br><span class="line"></span><br><span class="line">cd ./src</span><br><span class="line"></span><br><span class="line">touch hello_world.cpp</span><br><span class="line"></span><br><span class="line">touch 1035.cpp</span><br></pre></td></tr></table></figure>
+<h4 id="编写Makefile"><a href="#编写Makefile" class="headerlink" title="编写Makefile"></a>编写Makefile</h4><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">PROJECT := zs_pat_basic</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># define files and directories</span></span><br><span class="line"></span><br><span class="line">CXX_SRCS := <span class="variable">$(shell find src/ -name "*.cpp")</span></span><br><span class="line"></span><br><span class="line">HEADER_FILES := <span class="variable">$(shell find include/ -name "*.h")</span></span><br><span class="line"></span><br><span class="line">SRC_DIR := ./src</span><br><span class="line"></span><br><span class="line">INCLUDE_DIR := ./include</span><br><span class="line"></span><br><span class="line">BUILD_DIR := ./bin</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># define debug options</span></span><br><span class="line"></span><br><span class="line">DEBUG_OPTIONS := -g</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># define build targets</span></span><br><span class="line"></span><br><span class="line">.PHONY : all</span><br><span class="line"></span><br><span class="line">all: $(BUILD_DIR)/hello_world \</span><br><span class="line"></span><br><span class="line">		<span class="variable">$(BUILD_DIR)</span>/1035 \</span><br><span class="line"></span><br><span class="line">		 <span class="variable">$(BUILD_DIR)</span>/1050 \</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">$(BUILD_DIR)/% : $(SRC_DIR)/%.cpp</span><br><span class="line"></span><br><span class="line">	<span class="variable">$(CXX)</span> -o $@ <span class="variable">$(DEBUG_OPTIONS)</span> -I<span class="variable">$(INCLUDE_DIR)</span> $&lt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">.PHONY : clean </span><br><span class="line"></span><br><span class="line">clean : </span><br><span class="line"></span><br><span class="line">	rm -rf <span class="variable">$(BUILD_DIR)</span>/*</span><br></pre></td></tr></table></figure>
+<h3 id="编写c-配置文件c-cpp-properties-json"><a href="#编写c-配置文件c-cpp-properties-json" class="headerlink" title="编写c++配置文件c_cpp_properties.json"></a>编写c++配置文件c_cpp_properties.json</h3><ul>
+<li><p>vscode自身配置文件全部在./.vscode/目录下，在vscode资源浏览器中可以看到</p>
+</li>
+<li><p>注意，刚刚对cpp文件进行编辑后，#include <iostream> 这句话是有红色下划线警示的，提示找不到文件，这时使用鼠标悬浮功能，点击“红色灯泡”，vscode会自动在配置文件夹中新建c_cpp_properties.json文件，文件内容如下</iostream></p>
+</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    <span class="attr">"configurations"</span>: [</span><br><span class="line"></span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"Mac"</span>,</span><br><span class="line"></span><br><span class="line">            <span class="attr">"includePath"</span>: [<span class="string">"/usr/include"</span>],</span><br><span class="line"></span><br><span class="line">            <span class="attr">"browse"</span> : &#123;</span><br><span class="line"></span><br><span class="line">                <span class="attr">"limitSymbolsToIncludedHeaders"</span> : <span class="literal">true</span>,</span><br><span class="line"></span><br><span class="line">                <span class="attr">"databaseFilename"</span> : <span class="string">""</span></span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"Linux"</span>,</span><br><span class="line"></span><br><span class="line">            <span class="attr">"includePath"</span>: [<span class="string">"/usr/include"</span>],</span><br><span class="line"></span><br><span class="line">            <span class="attr">"browse"</span> : &#123;</span><br><span class="line"></span><br><span class="line">                <span class="attr">"limitSymbolsToIncludedHeaders"</span> : <span class="literal">true</span>,</span><br><span class="line"></span><br><span class="line">                <span class="attr">"databaseFilename"</span> : <span class="string">""</span></span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"Win32"</span>,</span><br><span class="line"></span><br><span class="line">            <span class="attr">"includePath"</span>: [<span class="string">"c:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/include"</span>],</span><br><span class="line"></span><br><span class="line">            <span class="attr">"browse"</span> : &#123;</span><br><span class="line"></span><br><span class="line">                <span class="attr">"limitSymbolsToIncludedHeaders"</span> : <span class="literal">true</span>,</span><br><span class="line"></span><br><span class="line">                <span class="attr">"databaseFilename"</span> : <span class="string">""</span></span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    ],</span><br><span class="line"></span><br><span class="line">    <span class="attr">"clang_format"</span> : &#123;</span><br><span class="line"></span><br><span class="line">        <span class="attr">"style"</span> : <span class="string">"file"</span>,</span><br><span class="line"></span><br><span class="line">        <span class="attr">"fallback-style"</span> : <span class="string">"LLVM"</span>,</span><br><span class="line"></span><br><span class="line">        <span class="attr">"sort-includes"</span> : <span class="literal">false</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="配置make任务"><a href="#配置make任务" class="headerlink" title="配置make任务"></a>配置make任务</h3><ul>
+<li><p>vscode没有内置make功能，需要借助Task功能进行配置</p>
+</li>
+<li><p>Ctrl+shift+P 进入命令模式，键入tasks: Configure Task Runner，此时vscode自动生成task.json文件，编写内容如下</p>
+</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">	// See https://go.microsoft.com/fwlink/?LinkId=733558</span><br><span class="line"></span><br><span class="line">	// for the documentation about the tasks.json format</span><br><span class="line"></span><br><span class="line">	"version": "0.1.0",</span><br><span class="line"></span><br><span class="line">    "command": "make",</span><br><span class="line"></span><br><span class="line">    "isShellCommand": true,</span><br><span class="line"></span><br><span class="line">    "tasks": [</span><br><span class="line"></span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">            "taskName": "Makefile",</span><br><span class="line"></span><br><span class="line">            // Make this the default build command.</span><br><span class="line"></span><br><span class="line">            "isBuildCommand": true,</span><br><span class="line"></span><br><span class="line">            // Show the output window only if unrecognized errors occur.</span><br><span class="line"></span><br><span class="line">            "showOutput": "always",</span><br><span class="line"></span><br><span class="line">            // No args</span><br><span class="line"></span><br><span class="line">            "args": ["all"],</span><br><span class="line"></span><br><span class="line">            // Use the standard less compilation problem matcher.</span><br><span class="line"></span><br><span class="line">            // zs: The problem matcher is for gcc task, not for make.</span><br><span class="line"></span><br><span class="line">            "problemMatcher": &#123;</span><br><span class="line"></span><br><span class="line">                "owner": "cpp",</span><br><span class="line"></span><br><span class="line">                "fileLocation": ["relative", "$&#123;workspaceRoot&#125;"],</span><br><span class="line"></span><br><span class="line">                "pattern": &#123;</span><br><span class="line"></span><br><span class="line">                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",</span><br><span class="line"></span><br><span class="line">                    "file": 1,</span><br><span class="line"></span><br><span class="line">                    "line": 2,</span><br><span class="line"></span><br><span class="line">                    "column": 3,</span><br><span class="line"></span><br><span class="line">                    "severity": 4,</span><br><span class="line"></span><br><span class="line">                    "message": 5</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="编写调试配置文件launch-json"><a href="#编写调试配置文件launch-json" class="headerlink" title="编写调试配置文件launch.json"></a>编写调试配置文件launch.json</h3><ul>
+<li><p>同样，vscode也需要自己定义调试相关选项</p>
+</li>
+<li><p>点击左侧工具栏”Debug“，点击”齿轮“按钮，此时vscode自动生成launch.json文件，编写内容如下</p>
+</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">	<span class="attr">"version"</span>: <span class="string">"0.2.0"</span>,</span><br><span class="line"></span><br><span class="line">	<span class="attr">"configurations"</span>: [</span><br><span class="line"></span><br><span class="line">		&#123;</span><br><span class="line"></span><br><span class="line">			<span class="attr">"name"</span>: <span class="string">"C++ Launch"</span>,</span><br><span class="line"></span><br><span class="line">			<span class="attr">"type"</span>: <span class="string">"cppdbg"</span>,</span><br><span class="line"></span><br><span class="line">			<span class="attr">"request"</span>: <span class="string">"launch"</span>,</span><br><span class="line"></span><br><span class="line">			<span class="attr">"targetArchitecture"</span>: <span class="string">"x64"</span>,</span><br><span class="line"></span><br><span class="line">			<span class="attr">"program"</span>: <span class="string">"$&#123;workspaceRoot&#125;/bin/hello_world"</span>,</span><br><span class="line"></span><br><span class="line">			<span class="attr">"args"</span>: [],</span><br><span class="line"></span><br><span class="line">			<span class="attr">"stopAtEntry"</span>: <span class="literal">false</span>,</span><br><span class="line"></span><br><span class="line">			<span class="attr">"cwd"</span>: <span class="string">"$&#123;workspaceRoot&#125;"</span>,</span><br><span class="line"></span><br><span class="line">			<span class="attr">"environment"</span>: [],</span><br><span class="line"></span><br><span class="line">			<span class="attr">"externalConsole"</span>: <span class="literal">true</span>,</span><br><span class="line"></span><br><span class="line">			<span class="attr">"linux"</span>: &#123;</span><br><span class="line"></span><br><span class="line">				<span class="attr">"MIMode"</span>: <span class="string">"gdb"</span></span><br><span class="line"></span><br><span class="line">			&#125;,</span><br><span class="line"></span><br><span class="line">			<span class="attr">"osx"</span>: &#123;</span><br><span class="line"></span><br><span class="line">				<span class="attr">"MIMode"</span>: <span class="string">"lldb"</span></span><br><span class="line"></span><br><span class="line">			&#125;,</span><br><span class="line"></span><br><span class="line">			<span class="attr">"windows"</span>: &#123;</span><br><span class="line"></span><br><span class="line">				<span class="attr">"MIMode"</span>: <span class="string">"gdb"</span></span><br><span class="line"></span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">		&#125;,</span><br><span class="line"></span><br><span class="line">		&#123;</span><br><span class="line"></span><br><span class="line">			<span class="attr">"name"</span>: <span class="string">"C++ Attach"</span>,</span><br><span class="line"></span><br><span class="line">			<span class="attr">"type"</span>: <span class="string">"cppdbg"</span>,</span><br><span class="line"></span><br><span class="line">			<span class="attr">"request"</span>: <span class="string">"launch"</span>,</span><br><span class="line"></span><br><span class="line">			<span class="attr">"targetArchitecture"</span>: <span class="string">"x64"</span>,</span><br><span class="line"></span><br><span class="line">			<span class="attr">"program"</span>: <span class="string">"$&#123;workspaceRoot&#125;/bin/hello_world"</span>,</span><br><span class="line"></span><br><span class="line">			<span class="attr">"args"</span>: [],</span><br><span class="line"></span><br><span class="line">			<span class="attr">"stopAtEntry"</span>: <span class="literal">false</span>,</span><br><span class="line"></span><br><span class="line">			<span class="attr">"cwd"</span>: <span class="string">"$&#123;workspaceRoot&#125;"</span>,</span><br><span class="line"></span><br><span class="line">			<span class="attr">"environment"</span>: [],</span><br><span class="line"></span><br><span class="line">			<span class="attr">"processId"</span>: <span class="string">"$&#123;command.pickProcess&#125;"</span>,</span><br><span class="line"></span><br><span class="line">			<span class="attr">"externalConsole"</span>: <span class="literal">false</span>,</span><br><span class="line"></span><br><span class="line">			<span class="attr">"linux"</span>: &#123;</span><br><span class="line"></span><br><span class="line">				<span class="attr">"MIMode"</span>: <span class="string">"gdb"</span></span><br><span class="line"></span><br><span class="line">			&#125;,</span><br><span class="line"></span><br><span class="line">			<span class="attr">"osx"</span>: &#123;</span><br><span class="line"></span><br><span class="line">				<span class="attr">"MIMode"</span>: <span class="string">"lldb"</span></span><br><span class="line"></span><br><span class="line">			&#125;,</span><br><span class="line"></span><br><span class="line">			<span class="attr">"windows"</span>: &#123;</span><br><span class="line"></span><br><span class="line">				<span class="attr">"MIMode"</span>: <span class="string">"gdb"</span></span><br><span class="line"></span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	]</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="使用流程"><a href="#使用流程" class="headerlink" title="使用流程"></a>使用流程</h3><ul>
+<li><p>编写hello_world.cpp文件</p>
+</li>
+<li><p>设置断点</p>
+</li>
+<li><p>Ctrl+shift+B进行make</p>
+</li>
+<li><p>点击左侧工具栏”调试“按钮进入调试工具区，点击绿色开始运行按钮，即可开始调试</p>
+</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/08/16/160816-vi-command/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">【编辑】vi command</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="160901-vscodeC-程序设计" data-title="【编辑】vscode C++程序设计" data-url="https://ZhenshengLee.github.io/2016/09/01/160901-vscodeC-程序设计/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"zhenshenglee"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 黎振胜
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
