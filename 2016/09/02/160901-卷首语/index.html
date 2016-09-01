@@ -4,36 +4,24 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>【调试】gdb, ros and roslaunch | 哈骑士的博客</title>
+  <title>卷首语 | 哈骑士的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="[TOC]
-前言
-这是必须学习的技能，但是不需要精通，应该利用更高层的工具
-
-在ROS项目开发过程中应用，在使用roslaunch过程中应用gdb
-
-在CLion，VSCode使用过程中应用调试功能">
+  <meta name="description" content="亲爱的朋友：
+你好！
+欢迎访问我的技术博客！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【调试】gdb, ros and roslaunch">
-<meta property="og:url" content="https://ZhenshengLee.github.io/2016/08/16/160816-gdb-ros-and-roslaunch/index.html">
+<meta property="og:title" content="卷首语">
+<meta property="og:url" content="https://ZhenshengLee.github.io/2016/09/02/160901-卷首语/index.html">
 <meta property="og:site_name" content="哈骑士的博客">
-<meta property="og:description" content="[TOC]
-前言
-这是必须学习的技能，但是不需要精通，应该利用更高层的工具
-
-在ROS项目开发过程中应用，在使用roslaunch过程中应用gdb
-
-在CLion，VSCode使用过程中应用调试功能">
-<meta property="og:updated_time" content="2016-08-16T09:17:23.022Z">
+<meta property="og:description" content="亲爱的朋友：
+你好！
+欢迎访问我的技术博客！">
+<meta property="og:updated_time" content="2016-09-01T16:37:11.282Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【调试】gdb, ros and roslaunch">
-<meta name="twitter:description" content="[TOC]
-前言
-这是必须学习的技能，但是不需要精通，应该利用更高层的工具
-
-在ROS项目开发过程中应用，在使用roslaunch过程中应用gdb
-
-在CLion，VSCode使用过程中应用调试功能">
+<meta name="twitter:title" content="卷首语">
+<meta name="twitter:description" content="亲爱的朋友：
+你好！
+欢迎访问我的技术博客！">
   
     <link rel="alternative" href="/atom.xml" title="哈骑士的博客" type="application/atom+xml">
   
@@ -214,11 +202,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-160816-gdb-ros-and-roslaunch" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-160901-卷首语" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/08/16/160816-gdb-ros-and-roslaunch/" class="article-date">
-  	<time datetime="2016-08-16T08:42:12.000Z" itemprop="datePublished">2016-08-16</time>
+      <a href="/2016/09/02/160901-卷首语/" class="article-date">
+  	<time datetime="2016-09-01T16:29:20.000Z" itemprop="datePublished">2016-09-02</time>
 </a>
     </div>
   
@@ -231,7 +219,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      【调试】gdb, ros and roslaunch
+      卷首语
     </h1>
   
 
@@ -240,7 +228,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器人软件构造/">机器人软件构造</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/写在前面/">写在前面</a></li></ul>
 	</div>
 
         
@@ -251,53 +239,31 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>[TOC]</p>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><ul>
-<li><p>这是必须学习的技能，但是不需要精通，应该利用更高层的工具</p>
-</li>
-<li><p>在ROS项目开发过程中应用，在使用roslaunch过程中应用gdb</p>
-</li>
-<li><p>在CLion，VSCode使用过程中应用调试功能</p>
-</li>
-</ul>
+        <p>亲爱的朋友：</p>
+<p>你好！</p>
+<p>欢迎访问我的技术博客！</p>
 <a id="more"></a>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><blockquote>
-<p>《ROS机器人程序开发》</p>
-<p>《嵌入式Linux开发基础知识》</p>
-<p><a href="http://wiki.ros.org/roslaunch" target="_blank" rel="external">roslaunch wiki</a></p>
-</blockquote>
-<h3 id="gdb学习"><a href="#gdb学习" class="headerlink" title="gdb学习"></a>gdb学习</h3><ul>
-<li><blockquote>
-<p>是一个用来调试C/C++程序的强力调试器，常用功能有：监视程序中变量的值；设置断点；单步执行</p>
-</blockquote>
+<p>本博客于2016年8月开始载文，主要目的是为企业招聘主管展现本人的学习轨迹与职业能力。本博客所载文章全部是我研究生期间在实验室学习生活做的笔记，原本是存储在ONENOTE和WizNote软件上，以时间为线索记录的“流水账”，现突发奇想，本着对技术的热爱，建立一个自己的博客。这样做一方面可以全面梳理自己所学知识和业务能力，提升自己对技术的理解和写作能力；另一方面，也能够为企业HR考察自己提供一些便利。然而在学习工作之余做梳理工作本是一件漫长的过程，本博客将首先将笔记本内容上传，再逐渐地（在相当长的时间）将笔记整理为一篇一篇博文，如果博客内容影响到你的知识获取，本人表示歉意。</p>
+<p>本人的笔记内容具有以下特点：</p>
+<ol>
+<li><p>以时间为线索记流水账，学到哪儿记到哪儿。笔记嘛，就是这样，一个窗口工作，鼠标一移，另一个窗口记笔记，还经常会将网页内容发送至笔记中；</p>
 </li>
-<li><p><strong>为了使gdb正常工作，你必须使你的程序在编译时包含调试信息</strong>。<figure class="highlight plain"><figcaption><span>-g```调试信息包括你程序里的每一个变量的类型和在可执行文件里的地址映射以及源代码的行号。</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">* 你可以使用gdb调试一个可执行文件，也可以用gdb检查一个因程序异常终止而产生的core文件，或者与一个正在运行的程序相连。更多请参考```gdb -h</span><br></pre></td></tr></table></figure></p>
+<li><p>包含很多简单，甚至“不足挂齿”的基础知识。一方面本人还是学生，在整个行业中实为一位无名之辈，另一方面，因为自己本科学的不是计算机专业，所以有很多外围知识到现在依然并未深刻理解，本人也一直在努力学习计算机本科的几门专业基础课；</p>
 </li>
-<li><p>命令支持tab补齐特性</p>
+<li><p>主要的“干货”是自己的工作思路和对技术的理解。这儿并没有非常详细的操作步骤，一般会给你一个网址，也不会整段整段地翻译帮助文档，而是会直接贴英文原版内容。在我的笔记当中，有很多自己的所思所想，可能很杂乱无章，但我认为很有用，因为这样的思维才是解决问题的基础。</p>
 </li>
-</ul>
-<h4 id="使用要点"><a href="#使用要点" class="headerlink" title="使用要点"></a>使用要点</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">gdb #打开调试器</span><br><span class="line">file FILE #装载指定可执行文件</span><br><span class="line">break NUM #在指定的行上设置断点</span><br><span class="line">bt #显示所有的调用栈帧，显示函数的调用顺序</span><br><span class="line">clear FILENAME:NUM #删除特定源文件行上的断点</span><br><span class="line">next #在不单步执行进入其他函数的情况下，向前执行一行源代码</span><br><span class="line">continue #继续执行</span><br><span class="line">display EXPR #每次程序停止后显示表达式的值，表达式由程序定义的变量组成</span><br><span class="line">print EXPR #显示表达式的值</span><br><span class="line">info files #显示被调试文件的详细信息</span><br><span class="line">info func #显示所有函数名称</span><br><span class="line">info local #显示当函数中的局部变量信息</span><br><span class="line">info prog #显示被调试程序的执行状态</span><br><span class="line">info var #显示所有的全局和静态变量名称</span><br><span class="line">kill #终止正在被调试的程序</span><br><span class="line">list #显示源代码段</span><br><span class="line">make #在不退出gdb的情况下运行make工具</span><br></pre></td></tr></table></figure>
-<h3 id="ROS-node-debug-with-gdb（使用gdb调试ROS节点）"><a href="#ROS-node-debug-with-gdb（使用gdb调试ROS节点）" class="headerlink" title="ROS node debug with gdb（使用gdb调试ROS节点）"></a>ROS node debug with gdb（使用gdb调试ROS节点）</h3><ul>
-<li>从调试任意C/C++可执行文件的标准方法开始</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">roscore</span><br><span class="line"></span><br><span class="line">gdb bin/example</span><br><span class="line"></span><br><span class="line">r</span><br></pre></td></tr></table></figure>
-<ul>
-<li>ros节点启动时调用gdb调试器</li>
-</ul>
-<p>需要在launch文件中添加</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">launch-prefix=&quot;xterm-egdb--args&quot;</span><br></pre></td></tr></table></figure>
-<p>该语句意思是：加载节点并等待运行。注意，因为是在xterm中创建gdb绘画，所以还有一个调试窗口。</p>
-<p> <code>launch-prefix</code>其实是一个前置启动工具，我们同样可以使用<code>launch-prefix=&quot;valgrind&quot;</code>来在启动节点之前启动valgrind工具检测内存泄露，并执行性能分析。<a href="http://valgrind.org" target="_blank" rel="external">valgrind.org</a></p>
-<ul>
-<li>更多请见</li>
-</ul>
-<blockquote>
-<p><a href="http://wiki.ros.org/roslaunch/Tutorials/Roslaunch%20Nodes%20in%20Valgrind%20or%20GDB" target="_blank" rel="external">How to Roslaunch Nodes in Valgrind or GDB</a></p>
-</blockquote>
-<h3 id="roslaunch-学习和调试"><a href="#roslaunch-学习和调试" class="headerlink" title="roslaunch 学习和调试"></a>roslaunch 学习和调试</h3><ul>
-<li>launch文件：功能包名传递给pkg属性，节点名传递给type属性，由于同一个节点可以运行多个实例，因此需要给每个实例一个节点名以作区分，即name属性，最好将这些属性配置输出到屏幕，这样就会在启动节点的shell窗口中输出相应调试信息，output=screen。</li>
-</ul>
-<h3 id="实例：调试ROS项目"><a href="#实例：调试ROS项目" class="headerlink" title="实例：调试ROS项目"></a>实例：调试ROS项目</h3>
+</ol>
+<p>本博客还会转载一些生活上的小品文，都是我认为应该多读多想的，欢迎读者能够留下评论，分享自己的见解。</p>
+<p>简单介绍一下自己：本科机械设计制造及自动化，方向为机械设计，毕业课题工作为机构设计，运动仿真及有限元分析；研究生专业为机械电子工程，方向为智能机器人，毕业课题工作为机器人协作控制系统软件开发。</p>
+<p>相关栏目正在建设中，敬请期待！</p>
+<p>最后，希望我的博客能够帮助到你：）</p>
+<p>再次感谢！</p>
+<p>预祝商祺</p>
+<p>附：博客写作方式及版权声明</p>
+<p>如前所说，本博客所有文章均来自个人笔记本，会经常引用别人的网页（文章），但会全部给出出处，如果侵犯了他人权利，但请在博客评论指出，本人会删除。</p>
+<p>博客文章全部用Markdown编辑器编辑好发布，由于第一次接触，如有不便，敬请谅解。</p>
+<p>本博客欢迎转载。</p>
+
       
     </div>
     
@@ -306,18 +272,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/08/16/160816-gtest-and-rostest/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          【测试】gtest and rostest
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/08/16/160816-Git拉取远程分支/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">【部署】Git拉取远程分支</div>
+    <a href="/2016/09/01/160901-vscodeC-程序设计/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">【编辑】vscode C++程序设计</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -352,7 +309,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="160816-gdb-ros-and-roslaunch" data-title="【调试】gdb, ros and roslaunch" data-url="https://ZhenshengLee.github.io/2016/08/16/160816-gdb-ros-and-roslaunch/"></div>
+	<div class="ds-thread" data-thread-key="160901-卷首语" data-title="卷首语" data-url="https://ZhenshengLee.github.io/2016/09/02/160901-卷首语/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
