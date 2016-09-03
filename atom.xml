@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ZhenshengLee.github.io/"/>
-  <updated>2016-09-02T09:23:47.276Z</updated>
+  <updated>2016-09-03T08:35:36.828Z</updated>
   <id>https://ZhenshengLee.github.io/</id>
   
   <author>
@@ -14,6 +14,162 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【组件】ompl-open motion planning library1-基础理论</title>
+    <link href="https://ZhenshengLee.github.io/2016/09/03/160903-ompl1/"/>
+    <id>https://ZhenshengLee.github.io/2016/09/03/160903-ompl1/</id>
+    <published>2016-09-03T07:49:33.000Z</published>
+    <updated>2016-09-03T08:35:36.828Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;open motion plan library，一个开源的运动规划库，主要以sample-based planning算法为主&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;包括两个核心组件，OMPL，算法库，和OMPL.app，前端用户界面&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h2&gt;&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://ompl.kavrakilab.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ompl home page&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://ompl.kavrakilab.org/group__demos.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;demos&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://ompl.kavrakilab.org/tutorials.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;tutorials&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://ompl.kavrakilab.org/gallery.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;作品展示&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://ompl.kavrakilab.org/buildSystem.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;intergrated with your build system&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://planning.cs.uiuc.edu/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Planning algorithms.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get install libompl-dev ompl-demos&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;运行demo&quot;&gt;&lt;a href=&quot;#运行demo&quot; class=&quot;headerlink&quot; title=&quot;运行demo&quot;&gt;&lt;/a&gt;运行demo&lt;/h3&gt;&lt;figure class=&quot;highlight cmake&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;cmake_minimum_required&lt;/span&gt;(VERSION &lt;span class=&quot;number&quot;&gt;2.8&lt;/span&gt;.&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;project&lt;/span&gt;(ompl_beginner)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;SET&lt;/span&gt;(CMAKE_CXX_FLAGS &lt;span class=&quot;string&quot;&gt;&quot;-std=c++11&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;set&lt;/span&gt;(CMAKE_MODULE_PATH &lt;span class=&quot;variable&quot;&gt;$&amp;#123;PROJECT_SOURCE_DIR&amp;#125;&lt;/span&gt;/cmake)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# find packages&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;find_package&lt;/span&gt;(OMPL)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# include dirs&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;include_directories&lt;/span&gt;(&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;variable&quot;&gt;$&amp;#123;OMPL_INCLUDE_DIRS&amp;#125;&lt;/span&gt; )&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;add_executable&lt;/span&gt;(RigidBodyPlanning src/RigidBodyPlanning.cpp)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;target_link_libraries&lt;/span&gt;(RigidBodyPlanning &lt;span class=&quot;variable&quot;&gt;$&amp;#123;OMPL_LIBRARIES&amp;#125;&lt;/span&gt; )&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;基础知识&quot;&gt;&lt;a href=&quot;#基础知识&quot; class=&quot;headerlink&quot; title=&quot;基础知识&quot;&gt;&lt;/a&gt;基础知识&lt;/h2&gt;&lt;h3 id=&quot;绪论&quot;&gt;&lt;a href=&quot;#绪论&quot; class=&quot;headerlink&quot; title=&quot;绪论&quot;&gt;&lt;/a&gt;绪论&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;ompl包括sample-based 运动规划器，以及构建新规划器的工具集合，用户还可以使用前段工具ompl.app。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;熟练使用后，用户能够使用这个框架开发自己的规划算法功能，如sate sampling, collision, nearest neighbor searching.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Sampling-based-Motion-Planning&quot;&gt;&lt;a href=&quot;#Sampling-based-Motion-Planning&quot; class=&quot;headerlink&quot; title=&quot;Sampling-based Motion Planning&quot;&gt;&lt;/a&gt;Sampling-based Motion Planning&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;机器人运动规划的目的在于：“从起点位姿到终点位姿，并且满足所有外部和内部约束”，当机器人拥有较多的自由度时，解算将变得很困难。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;以经典的运动规划问题移动钢琴为例，在这个问题中，钢琴有六个自由度（x, y, z, roll, pitch, yaw），为了解算这个问题，我们必须计算出一个包含钢琴六个参数的数据集合，该数据集合被时间参数化，并且各个参数对于时间的改变应该是连续的。（从一个配置空间（starting configuration）移动到另一个配置空间（goal configuration），同时要满足避障的内，外部约束条件），这个问题已经被证明是一个&lt;a href=&quot;https://en.wikipedia.org/wiki/PSPACE-complete&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;PSPACE-hard&lt;/a&gt;  问题，解算非常困难。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;规划理论的历史进程&quot;&gt;&lt;a href=&quot;#规划理论的历史进程&quot; class=&quot;headerlink&quot; title=&quot;规划理论的历史进程&quot;&gt;&lt;/a&gt;规划理论的历史进程&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;精确的和近似的地图单元分解（graph-search）（代表：A*算法）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在某些例子中，可以将机器人的工作空间根据有无障碍分解成离散的栅格，这些分解可以建模为一个图(roadmap or graph)。根据这个图，问题变成：将一个点（机器人抽象而来）从一个栅格（包含起点）移动到另外一个栅格（包含终点）。这种规划的问题在于，当机器人拥有非线性动力学特性时（机器人不知道如何从一个栅格移动到另一个栅格，比如汽车，先锋机器人由于可以原地旋转，则不存在这个问题），路径规划是失败的。而且，更多的时候，状态空间是多维的，尤其是机器人运动内部有约束时，比如汽车（汽车有很多弯就拐不过去）。再次，状态空间分解空间复杂度非常大。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;基于控制的方法（控制的典型特征是反馈环节feedback loop）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;基于控制的方法尝试对系统进行建模，使用控制理论让系统沿着具体轨迹移动。这种方法在连续空间工作，并且拥有反馈环。基于控制的方法的优点是非常快速，可以在线规划。缺点是在复杂环境下不能够很好地计算期望的可行解。（关节空间规划，笛卡尔空间规划，直线插补，圆弧插补，样条曲线插补）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;人工势场法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;典型的人工势场法在工作空间的每个点计算一个函数，计算出的值作为这一点的斥力（或吸引力）。将机器人抽象为一个点，在势场图中沿梯度下降方向到目标点。优点是，可以考虑机器人上的多个点的动作，而且实时性好。缺点是，容易在梯度下降过程中陷入局部极小值。而且，理论上人工势场函数可以在任意维数的状态配置空间构造，这样就和解决原始问题一样了（Ideally the field would be constructed in the state space of the system, but this is equivalent to solving the original problem）。有一些简化方法使用了导航函数，保证人工势场拥有全局最小值。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;随机/概率规划方法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这种方法被证明非常有用。在人工势场中添加布朗运动可以有效跳出局部极小区域。&lt;/p&gt;
+&lt;p&gt;另外，基于采样的规划方法，使用了随机化，采样和概率的方法，在高自由度系统或复杂动力学场景中非常有效。ompl即是这样的一种库，而且部署在ROS和moveIt!中。&lt;/p&gt;
+&lt;h3 id=&quot;基于采样的运动规划&quot;&gt;&lt;a href=&quot;#基于采样的运动规划&quot; class=&quot;headerlink&quot; title=&quot;基于采样的运动规划&quot;&gt;&lt;/a&gt;基于采样的运动规划&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;基于采样的规划通过在机器人的状态空间中采样，来快速和有效的回应规划请求，特别是在复杂的约束和系统下尤其好用。传统方法往往空间和时间复杂度都非常大，在高维空间中往往没有什么用处。基于采样的方法在配置空间中搜索可行的状态点，并且继续通过采样连接这些状态点。这样可以产生足够灵活的可行解，并且是概率完全的，概率完全意味着，如果解存在，那么随着采样次数逐渐增大，可行解一定可以找到。不过，基于采样的方法无法确认一个问题不存在解。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;一些定义&quot;&gt;&lt;a href=&quot;#一些定义&quot; class=&quot;headerlink&quot; title=&quot;一些定义&quot;&gt;&lt;/a&gt;一些定义&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;工作空间：机器人操作的物理空间，工作空间的边界被认为是障碍&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;状态空间：机器人的参数空间。参数空间包括所有的机器人在工作空间中的状态配置，状态空间中的一个点就是一个状态，注意状态空间可能是多维的&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;自由状态空间：状态空间的一个子集，在这个子集中的每个状态都是无障碍的&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;路径：状态空间中的连续状态点。如果路径中的每个点都是无障碍的，那么这个路径也是无障碍的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;所以，基于采样的规划方法的目标是：在状态空间中找到一个无障碍的路径。接下来介绍两种主要的基于采样的规划器。&lt;/p&gt;
+&lt;h4 id=&quot;概率地图（PRM）&quot;&gt;&lt;a href=&quot;#概率地图（PRM）&quot; class=&quot;headerlink&quot; title=&quot;概率地图（PRM）&quot;&gt;&lt;/a&gt;概率地图（PRM）&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;PRM是第一个基于采样的规划器，这种方法使用在状态空间中随机采样的方法构建roadmap，这种roadmap很像城市街区地图。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;均匀采样，并连接起来，构造成roadmap，存储在图数据结构中。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;需要注意的是：状态空间从来都不是显式定义的，所以必须要有障碍检测模块，每一次采样都要进行check，只有经过检查的才能够保留下来&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;有很多不同的采样的方法，改进采样策略往往很有用&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;一旦采样达到一定的数量，就开始构造边，标准RPM会对每一个采样点，搜索周围K临近点（在之前的采样点中找），使用局部规划器找到最短无障碍路径，局部规划器直接在这些采样点间进行插值（如直线差补），然后在这条直线中以一定的分辨率进行障碍检测，如果没有障碍点，那么这个边就作为合格边加入到roadmap中。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;一旦roadmap构造完全，那么规划就成为连接起点和目标点的roadmap。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;然后对这个roadmap进行图搜索，执行最短路径搜索&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;基于树的地图（RRT，快速随机树搜索）&quot;&gt;&lt;a href=&quot;#基于树的地图（RRT，快速随机树搜索）&quot; class=&quot;headerlink&quot; title=&quot;基于树的地图（RRT，快速随机树搜索）&quot;&gt;&lt;/a&gt;基于树的地图（RRT，快速随机树搜索）&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;现有的很多基于采样的规划器在自由状态空间中构造了树型结构，这种树形结构与上节讲的PRM很像，PRM的图带有环，这里的是树而已。由于基于树的规划器太多（RRT，EST，SBL，KPIECE），这里就不详细讲某一个，而是讲一讲大致的框架。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;将机器人的起点当做一个树根，随机采样的点作为这个树的一个节点，树采用一种启发式扩张方法，这种启发式搜索条件往往就命名了这个方法，如果一个节点与树之间有无障碍路径，则将这个节点并入到树中。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;尽管采样过程可能永远也不会采样到达机器人的目标状态，规划器往往都会设置有偏（bias）的扩张搜索，一旦将目标状态点并如到树中，路径规划就结束了。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;PRM和RRT的不同&quot;&gt;&lt;a href=&quot;#PRM和RRT的不同&quot; class=&quot;headerlink&quot; title=&quot;PRM和RRT的不同&quot;&gt;&lt;/a&gt;PRM和RRT的不同&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;PRM需要构造覆盖全部状态空间的一个图，然后再连接起点和终点，而RRT不需要，只是逐渐的扩张树，直到终点。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;所以，RRT特别适合于一次请求的规划，因为它构造的树并不包含其他目标点的信息，就算要求其到另外一个点，它也要重新进行树的扩张和生长。而PRM只需要构造一次即可。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Controls are usually directed commands, and require a specific pre-condition in order for&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;a particular control to be valid. Tree-based methods, on the other hand, excel at planning with&lt;/p&gt;
+&lt;p&gt;complex dynamics because of the directed, acyclic nature of the underlying data structure. Control&lt;/p&gt;
+&lt;p&gt;information can be encoded for each edge of the tree, with the vertices of the tree satisfying the&lt;/p&gt;
+&lt;p&gt;prerequisites for the valid controls.（没看懂）&lt;/p&gt;
+&lt;h4 id=&quot;总结&quot;&gt;&lt;a href=&quot;#总结&quot; class=&quot;headerlink&quot; title=&quot;总结&quot;&gt;&lt;/a&gt;总结&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;基于采样的规划方法所需内存更少&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;因为其不需要对状态空间进行显式表示&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;树和图等的数据结构保障了查找的效率和质量&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;基于采样的规划的基本组成&quot;&gt;&lt;a href=&quot;#基于采样的规划的基本组成&quot; class=&quot;headerlink&quot; title=&quot;基于采样的规划的基本组成&quot;&gt;&lt;/a&gt;基于采样的规划的基本组成&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;基于采样的规划特别适合在高维空间和复杂动力学环境下的路径规划，有很多中不同的规划器及其附件，但是核心是：在一次采样中，发生了什么？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;障碍检测&quot;&gt;&lt;a href=&quot;#障碍检测&quot; class=&quot;headerlink&quot; title=&quot;障碍检测&quot;&gt;&lt;/a&gt;障碍检测&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;障碍检测非常有用。局部规划器在寻找无障碍路径时会用到（见PRM），在采样过程中也会用到。在复杂的高维系统中，显式表示状态空间会很难，但是规划器去不用去可以构造它，因为障碍检测执行了这一功能，如果没有障碍，则这个状态配置是合法的。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;（这里“障碍”应该是广义的，不仅应该是物理障碍，还应该包括机器人在现有动力学约束下无法到达的状态区域）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;最临近搜索&quot;&gt;&lt;a href=&quot;#最临近搜索&quot; class=&quot;headerlink&quot; title=&quot;最临近搜索&quot;&gt;&lt;/a&gt;最临近搜索&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;前面已经提到，规划算法需要找出离当前状态最近的一个状态，寻找无障碍路径。当需要判断机器人的两个状态的距离时就要用到这个方法。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;但是，在高维空间中，欧式距离已经不能很好地计算。K-d树数据结构提供了一种方法。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;OMPL&quot;&gt;&lt;a href=&quot;#OMPL&quot; class=&quot;headerlink&quot; title=&quot;OMPL&quot;&gt;&lt;/a&gt;OMPL&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;OMPL核心算法库将这些都实现了！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;下期预告&quot;&gt;&lt;a href=&quot;#下期预告&quot; class=&quot;headerlink&quot; title=&quot;下期预告&quot;&gt;&lt;/a&gt;下期预告&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;使用ompl.app&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;open motion plan library，一个开源的运动规划库，主要以sample-based planning算法为主&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;包括两个核心组件，OMPL，算法库，和OMPL.app，前端用户界面&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="机器人软件设计" scheme="https://ZhenshengLee.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>【ROS实战】机器人抓取仿真1-安装与构造</title>

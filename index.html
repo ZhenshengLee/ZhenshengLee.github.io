@@ -197,6 +197,71 @@
 
       <div class="body-wrap">
   
+    <article id="post-160903-ompl1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/09/03/160903-ompl1/" class="article-date">
+  	<time datetime="2016-09-03T07:49:33.000Z" itemprop="datePublished">2016-09-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/03/160903-ompl1/">【组件】ompl-open motion planning library1-基础理论</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
+<li><p>open motion plan library，一个开源的运动规划库，主要以sample-based planning算法为主</p>
+</li>
+<li><p>包括两个核心组件，OMPL，算法库，和OMPL.app，前端用户界面</p>
+</li>
+</ul>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器人软件设计/">机器人软件设计</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/09/03/160903-ompl1/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-160902-机器人抓取仿真1" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -769,76 +834,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/08/16/160816可视化工具-Marker/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-160816Param-reconfig讨论" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/08/16/160816Param-reconfig讨论/" class="article-date">
-  	<time datetime="2016-08-16T08:32:01.000Z" itemprop="datePublished">2016-08-16</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/16/160816Param-reconfig讨论/">【ROS】Param reconfig讨论</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>[TOC]</p>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><ul>
-<li><p>因为windows平台的ROS for LV 没有显式支持action，所以不能直接给move_base节点发送move_base/cancel (actionlib_msgs/GoalID)，故在ROS端添加一个Proxy来代理解决</p>
-</li>
-<li><p>该代理的功能还包括ROSARIA和move_base的reconfigure，所以要从命令行运行重新配置命令</p>
-</li>
-<li><p>还修正一个ROSARIA发送的pose_msg内容为相对坐标的问题，改为发送相对于zsWorld坐标系的绝对坐标（在rosaria包中完成）</p>
-</li>
-<li><p>以后还可以承担打开和关闭各个节点的任务！</p>
-</li>
-</ul>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器人软件设计/">机器人软件设计</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/08/16/160816Param-reconfig讨论/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
