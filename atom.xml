@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ZhenshengLee.github.io/"/>
-  <updated>2016-09-30T01:23:31.562Z</updated>
+  <updated>2016-10-02T03:37:16.835Z</updated>
   <id>https://ZhenshengLee.github.io/</id>
   
   <author>
@@ -14,6 +14,207 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【库】Cpp常用库集合</title>
+    <link href="https://ZhenshengLee.github.io/2016/10/02/161002-Cpp%E5%B8%B8%E7%94%A8%E5%BA%93%E9%9B%86%E5%90%88/"/>
+    <id>https://ZhenshengLee.github.io/2016/10/02/161002-Cpp常用库集合/</id>
+    <published>2016-10-02T03:35:06.000Z</published>
+    <updated>2016-10-02T03:37:16.835Z</updated>
+    
+    <content type="html">&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;没事儿到网上知乎了一下，有时间就积累，学习吧&lt;/li&gt;
+&lt;/ul&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;清单&quot;&gt;&lt;a href=&quot;#清单&quot; class=&quot;headerlink&quot; title=&quot;清单&quot;&gt;&lt;/a&gt;清单&lt;/h2&gt;&lt;h3 id=&quot;标准库&quot;&gt;&lt;a href=&quot;#标准库&quot; class=&quot;headerlink&quot; title=&quot;标准库&quot;&gt;&lt;/a&gt;标准库&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;C/C++ 标准库&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;必须掌握&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;STL/Boost&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;必须掌握&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;POSIX C规范&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;必须掌握&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;界面&quot;&gt;&lt;a href=&quot;#界面&quot; class=&quot;headerlink&quot; title=&quot;界面&quot;&gt;&lt;/a&gt;界面&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Qt&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;界面库&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;数据库&quot;&gt;&lt;a href=&quot;#数据库&quot; class=&quot;headerlink&quot; title=&quot;数据库&quot;&gt;&lt;/a&gt;数据库&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;SQLite&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一个完全嵌入式的，功能齐全的关系数据库，只有几百K，完全可以包含在项目中&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;MongoDB&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;OTL&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;知乎网友推荐&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;异步-网络&quot;&gt;&lt;a href=&quot;#异步-网络&quot; class=&quot;headerlink&quot; title=&quot;异步/网络&quot;&gt;&lt;/a&gt;异步/网络&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;boost.asio&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ZeroMQ&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;知乎推荐&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;muduo&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;并发多线程&quot;&gt;&lt;a href=&quot;#并发多线程&quot; class=&quot;headerlink&quot; title=&quot;并发多线程&quot;&gt;&lt;/a&gt;并发多线程&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;OpenCL&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;OpenMP&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;数学&quot;&gt;&lt;a href=&quot;#数学&quot; class=&quot;headerlink&quot; title=&quot;数学&quot;&gt;&lt;/a&gt;数学&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Gurobi&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;优化问题解算&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;GNU Scientific Library&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;最优化，排序，线性代数，稀疏矩阵&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;MKL&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;来自Intel&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;NLopt&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;有约束类问题用这个最优化包不错&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;FFTW&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;用一维或多维计算DFT的库&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;动力学仿真&quot;&gt;&lt;a href=&quot;#动力学仿真&quot; class=&quot;headerlink&quot; title=&quot;动力学仿真&quot;&gt;&lt;/a&gt;动力学仿真&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Box2D&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2d游戏物理引擎&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Bullet&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;3d的游戏物理引擎&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ODE&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;开源，高性能，刚体动力学仿真&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Simbody&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;模拟关节生物力学，如人体骨骼&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;机器人&quot;&gt;&lt;a href=&quot;#机器人&quot; class=&quot;headerlink&quot; title=&quot;机器人&quot;&gt;&lt;/a&gt;机器人&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;MOOS-lvp&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;提供机器人平台的自主权，主攻海洋车辆&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://www.mrpt.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MRPT&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Moblie Robot Programming Toolkit，五脏俱全，但跟ROS比不得&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://www.mrpt.org/tutorials/supported_hardware_and_sensors/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;对NI设备提供直接支持&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://www.roboticslibrary.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Robotics Library&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;机器人动力学，运动规划和控制，跟&lt;a href=&quot;http://www.orocos.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Orocos&lt;/a&gt;的不同是这个库自带前端&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://www.roboticslibrary.org/tutorials/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;重要特点是官方支持在Windows中构建！&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://www.robwork.dk/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;RobWorkProject&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一个大学出的算法集合，主要目标是学生，貌似适合学习源代码！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;机器学习&quot;&gt;&lt;a href=&quot;#机器学习&quot; class=&quot;headerlink&quot; title=&quot;机器学习&quot;&gt;&lt;/a&gt;机器学习&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Caffe&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Shark&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Dlib&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;计算机图形&quot;&gt;&lt;a href=&quot;#计算机图形&quot; class=&quot;headerlink&quot; title=&quot;计算机图形&quot;&gt;&lt;/a&gt;计算机图形&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;HDK&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;3D库&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;日志库&quot;&gt;&lt;a href=&quot;#日志库&quot; class=&quot;headerlink&quot; title=&quot;日志库&quot;&gt;&lt;/a&gt;日志库&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;log4cpp&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;easylogging++&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;知乎推荐&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;glog&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Google出品&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;其他&quot;&gt;&lt;a href=&quot;#其他&quot; class=&quot;headerlink&quot; title=&quot;其他&quot;&gt;&lt;/a&gt;其他&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;protobuf&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;序列化工具&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Folly&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Facebook开发和使用的库&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;没事儿到网上知乎了一下，有时间就积累，学习吧&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="机器人软件设计" scheme="https://ZhenshengLee.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>草稿：机器人协作平台软件建模，设计与实现</title>
