@@ -20,7 +20,7 @@
 重要经验：重新构建一定要make clean
 
 [TOC]">
-<meta property="og:updated_time" content="2016-10-02T11:39:06.799Z">
+<meta property="og:updated_time" content="2016-10-03T08:01:15.971Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【深度学习】Caffe-opencl-1构建">
 <meta name="twitter:description" content="前言
@@ -256,12 +256,17 @@
 </blockquote>
 <h2 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h2><h3 id="安装私有显卡驱动程序"><a href="#安装私有显卡驱动程序" class="headerlink" title="安装私有显卡驱动程序"></a>安装私有显卡驱动程序</h3><ul>
 <li>到官网即可</li>
+<li>记住clinfo查看情况，如果没有查看到AMD APP，则按下步骤解决<ul>
+<li>sudo apt-get install fglrx fglrx-core fglrx-amdcccle fglrx-dev fglrx-pxpress</li>
+</ul>
+</li>
 </ul>
 <h3 id="安装显卡APPSDK"><a href="#安装显卡APPSDK" class="headerlink" title="安装显卡APPSDK"></a>安装显卡APPSDK</h3><ul>
 <li>到官网即可</li>
 </ul>
 <h3 id="安装CUDA"><a href="#安装CUDA" class="headerlink" title="安装CUDA"></a>安装CUDA</h3><ul>
 <li>sudo apt-get install nvidia-cuda-toolkit</li>
+<li>不要安装！</li>
 </ul>
 <h3 id="安装boost"><a href="#安装boost" class="headerlink" title="安装boost"></a>安装boost</h3><ul>
 <li>sudo apt-get install libboost-all-dev</li>
