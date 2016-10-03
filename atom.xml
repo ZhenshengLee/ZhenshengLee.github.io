@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ZhenshengLee.github.io/"/>
-  <updated>2016-10-03T08:02:33.197Z</updated>
+  <updated>2016-10-03T08:08:45.399Z</updated>
   <id>https://ZhenshengLee.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://ZhenshengLee.github.io/2016/10/02/161002-Caffe-opencl-1%E6%9E%84%E5%BB%BA/"/>
     <id>https://ZhenshengLee.github.io/2016/10/02/161002-Caffe-opencl-1构建/</id>
     <published>2016-10-02T11:34:41.000Z</published>
-    <updated>2016-10-03T08:02:33.197Z</updated>
+    <updated>2016-10-03T08:08:45.399Z</updated>
     
     <content type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;自己脑残，当年买了个A卡，有点兴趣，构建了一下Caffe-opencl&lt;/li&gt;
@@ -177,10 +177,7 @@
 &lt;ul&gt;
 &lt;li&gt;大功告成，开始使用&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;下期预告&quot;&gt;&lt;a href=&quot;#下期预告&quot; class=&quot;headerlink&quot; title=&quot;下期预告&quot;&gt;&lt;/a&gt;下期预告&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;运行caffe实例&lt;/li&gt;
-&lt;/ul&gt;
-</content>
+&lt;h2 id=&quot;mnist实例&quot;&gt;&lt;a href=&quot;#mnist实例&quot; class=&quot;headerlink&quot; title=&quot;mnist实例&quot;&gt;&lt;/a&gt;mnist实例&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;cd ./caffe-opencl&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;data/mnist/get_mnist.sh&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;examples/mnist/create_mnist.sh&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;examples/mnist/train_lenet.sh&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
     
     <summary type="html">
     
