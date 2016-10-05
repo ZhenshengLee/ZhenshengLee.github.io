@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ZhenshengLee.github.io/"/>
-  <updated>2016-10-03T08:08:45.399Z</updated>
+  <updated>2016-10-05T04:21:33.720Z</updated>
   <id>https://ZhenshengLee.github.io/</id>
   
   <author>
@@ -14,6 +14,200 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【组件】ompl-open motion planning library2-omplapp</title>
+    <link href="https://ZhenshengLee.github.io/2016/10/05/161005-ompl2-%E4%BD%BF%E7%94%A8omplapp/"/>
+    <id>https://ZhenshengLee.github.io/2016/10/05/161005-ompl2-使用omplapp/</id>
+    <published>2016-10-05T04:18:45.000Z</published>
+    <updated>2016-10-05T04:21:33.720Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;使用ompl前端工具&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://bitbucket.org/ompl/ompl/issues/232/omplapp-cmake-issue&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CMake issue installing omplapp&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://bitbucket.org/ompl/ompl/issues/8/no-module-named-_util&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;no moudule name _util&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://ompl.kavrakilab.org/installPyPlusPlus.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;installing of Py++&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://bitbucket.org/ompl/ompl/issues/267/ompl-installation-fails-at-updte_bindings&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Python binding failed&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;学习记录&quot;&gt;&lt;a href=&quot;#学习记录&quot; class=&quot;headerlink&quot; title=&quot;学习记录&quot;&gt;&lt;/a&gt;学习记录&lt;/h2&gt;&lt;h3 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;castxml，若没有安装的话&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;wget -O - https://midas3.kitware.com/midas/download/item/318227/castxml-linux.tar.gz | tar zxf - -C $HOME&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export PATH=$HOME/castxml/bin:$PATH&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;pygccxml，若没有安装的话&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo pip install pygccxml https://bitbucket.org/ompl/pyplusplus/get/1.6.tar.gz&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;py++，如果没有安装的话&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get install python-py++&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;或者（最好都装吧，我搞怕了）&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;/usr/bin/wget --no-check-certificate -O - https://bitbucket.org/ompl/pyplusplus/downloads/pyplusplus-r1247.tgz | tar xzf -&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cd ../pyplusplus&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/usr/bin/python setup.py build&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo /usr/bin/python setup.py install&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;参考网页，下好依赖项，代码不赘述，主要注意几点：&lt;ul&gt;
+&lt;li&gt;记得将ompl文件夹（就是核心库文件夹，需要另外下载）放置到omplapp/&lt;/li&gt;
+&lt;li&gt;cmake 找不到libccd，是因为找到了ros中的旧版本文件，此时需要对环境变量进行一下设置，以便让pkg_config先查询/usr/local/lib&lt;br&gt;&lt;strong&gt;&lt;em&gt;哎，linux下的包配置真是满满的恶意！&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;cd ./build/Release&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cmake -DCMAKE_BUILD_TYPE=Release ../..&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;make update_bindings  -j4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# 注意，如果内存不够大，请不要用-j4，不然会出现未知错误！&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;make -j4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo make install&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# 请耐心等待&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;make 通不过&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;运行实例&quot;&gt;&lt;a href=&quot;#运行实例&quot; class=&quot;headerlink&quot; title=&quot;运行实例&quot;&gt;&lt;/a&gt;运行实例&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;启动前端界面&lt;ul&gt;
+&lt;li&gt;./ompl_app.py&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;使用ompl前端工具&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;[TOC]&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="机器人软件设计" scheme="https://ZhenshengLee.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【设计】CMake专题-finding libraries</title>
+    <link href="https://ZhenshengLee.github.io/2016/10/05/161005-CMakeFind%E6%A8%A1%E5%9D%97/"/>
+    <id>https://ZhenshengLee.github.io/2016/10/05/161005-CMakeFind模块/</id>
+    <published>2016-10-05T04:15:02.000Z</published>
+    <updated>2016-10-05T04:25:55.404Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;cmake 过程中总是出现找不到模块，所以学习一下，最好要会写FindXXX.cmake&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://cmake.org/Wiki/CMake:How_To_Find_Libraries&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;cmake wiki: how to find libraries&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://cmake.org/Wiki/CMake/Tutorials/How_to_create_a_ProjectConfig.cmake_file&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;How_to_create_a_ProjectConfig.cmake_file&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://cmake.org/cmake/help/v2.8.8/cmake.html#command:find_package&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;cmake documentation: home page&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/rpavlik/cmake-modules/blob/master/module-docs/Example-FindMyPackage.cmake&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Find package example&lt;/a&gt;&lt;br&gt;Martin K, Hoffman B. Mastering CMake[M]. Kitware, 2015.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;学习记录&quot;&gt;&lt;a href=&quot;#学习记录&quot; class=&quot;headerlink&quot; title=&quot;学习记录&quot;&gt;&lt;/a&gt;学习记录&lt;/h2&gt;&lt;h3 id=&quot;基础知识&quot;&gt;&lt;a href=&quot;#基础知识&quot; class=&quot;headerlink&quot; title=&quot;基础知识&quot;&gt;&lt;/a&gt;基础知识&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;使用VERBOSE=1来检查各种构建选项。&lt;/li&gt;
+&lt;li&gt;在/build/Release/…/CMakeFiles/${cmake_target}.dir/中，有四个文件，用作CMake对依赖项的分析：&lt;ul&gt;
+&lt;li&gt;depend.make：存储依赖项信息&lt;/li&gt;
+&lt;li&gt;flag.make：存储编译选项，如果该文件改变，将重新编译&lt;/li&gt;
+&lt;li&gt;build.make：依赖项如何构建，如果该文件改变，CMake将重新计算依赖&lt;/li&gt;
+&lt;li&gt;DependInfo.cmake：当前项目中有哪些文件和哪些语言&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;add_library(foo STATIC foo1.c foo2.c)&lt;ul&gt;
+&lt;li&gt;注意第一个参数是目标名，第二个参数是目标的修饰词，如果没有这个修饰词，那么将检查环境变量BUILD_SHARED_LIBS，如果没有定义这个环境变量，则按默认，生成静态链接库&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;target_link_libraries(foo bar)&lt;ul&gt;
+&lt;li&gt;bar可为：库名字，库的完整路径名和之前用add_library()指令生成的库名&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;环境变量有局部特性：意味着子函数，子路径，子CMake指令中的变量名字不会影响上一个环境&lt;/li&gt;
+&lt;li&gt;函数举例&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight cmake&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(foo)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;message&lt;/span&gt;(&lt;span class=&quot;variable&quot;&gt;$&amp;#123;test&amp;#125;&lt;/span&gt;) &lt;span class=&quot;comment&quot;&gt;# test is 1 here&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;set&lt;/span&gt;(test &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; PARENT_SCOPE)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;message&lt;/span&gt;(&lt;span class=&quot;variable&quot;&gt;$&amp;#123;test&amp;#125;&lt;/span&gt;) &lt;span class=&quot;comment&quot;&gt;# test is still 1 in this scope&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;endfunction&lt;/span&gt;()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;set&lt;/span&gt;(test &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;foo()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;message&lt;/span&gt;(&lt;span class=&quot;variable&quot;&gt;$&amp;#123;test&amp;#125;&lt;/span&gt;) &lt;span class=&quot;comment&quot;&gt;# test will now be 2 here&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;循环举例&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight cmake&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;set&lt;/span&gt; (items_to_buy apple orange pear beer)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;foreach&lt;/span&gt; (item &lt;span class=&quot;variable&quot;&gt;$&amp;#123;items_to_buy&amp;#125;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;message&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;Don&#39;t forget to buy one $&amp;#123;item&amp;#125;&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;endforeach&lt;/span&gt;()&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;CMake Cache&lt;ul&gt;
+&lt;li&gt;作用：缓存，下一次可以直接用；人机界面使用这个信息&lt;/li&gt;
+&lt;li&gt;注意：一旦Cache中有了信息，则只能通过人机界面来修改？&lt;/li&gt;
+&lt;li&gt;用法：option(USE_JPEG “DO you want to use jepg library?”)，这句话会创建一个变量名存入Cache。&lt;/li&gt;
+&lt;li&gt;直接使用CACHE option&lt;/li&gt;
+&lt;li&gt;set(USE_JPEG ON CACHE BOOL “include jpeg support?”)&lt;/li&gt;
+&lt;li&gt;ON：变量值；CACHE：选项；BOOL：变量类型；”include jepg …”：文档字符串&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight cmake&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;find_library&lt;/span&gt;(TIFF_LIBRARY&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                NAMES tiff tiff2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                PATHS /usr/local/lib /usr/lib&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                )&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;find_path&lt;/span&gt;(TIFF_INCLUDES tiff.h&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                /usr/local/&lt;span class=&quot;keyword&quot;&gt;include&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                /usr/&lt;span class=&quot;keyword&quot;&gt;include&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                )&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;include_directories&lt;/span&gt;(&lt;span class=&quot;variable&quot;&gt;$&amp;#123;TIFF_INCLUDES&amp;#125;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;add_executable&lt;/span&gt;(mytiff mytiff.c)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;target_link_libraries&lt;/span&gt;(myprogram &lt;span class=&quot;variable&quot;&gt;$&amp;#123;TIFF_LIBRARY&amp;#125;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;find_library&lt;ul&gt;
+&lt;li&gt;当不同的系统，相同的库文件被安装在不同路径下时，就需要使用这个命令&lt;/li&gt;
+&lt;li&gt;只需要库的base name，即不需要libtiff，libtiff2，或者tiff.so，tiff.so.2&lt;/li&gt;
+&lt;li&gt;find命令，会去${PATH}里面找文件&lt;/li&gt;
+&lt;li&gt;命令会默认创建CACHE&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;find_path&lt;ul&gt;
+&lt;li&gt;当不同的系统，相同的头文件被安装在不同路径下时，就需要使用这个命令&lt;/li&gt;
+&lt;li&gt;其他和find_library差不多&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;find_package&lt;ul&gt;
+&lt;li&gt;./Modules/里面有默认的FindXX.cmake，运行这个命令就相当于运行这个.cmake文件，如果找到模块，则赋予多个环境变量值&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;find-package详解&quot;&gt;&lt;a href=&quot;#find-package详解&quot; class=&quot;headerlink&quot; title=&quot;find_package详解&quot;&gt;&lt;/a&gt;find_package详解&lt;/h3&gt;&lt;h4 id=&quot;使用外部库&quot;&gt;&lt;a href=&quot;#使用外部库&quot; class=&quot;headerlink&quot; title=&quot;使用外部库&quot;&gt;&lt;/a&gt;使用外部库&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;CMake原生支持许多module的寻找，通过cmake –help-modul-list，可以查看，相关原生.cmake文件存放在/usr/share/cmake/Modules/&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;如果在网上找到了FindXXX-cmake文件&quot;&gt;&lt;a href=&quot;#如果在网上找到了FindXXX-cmake文件&quot; class=&quot;headerlink&quot; title=&quot;如果在网上找到了FindXXX.cmake文件&quot;&gt;&lt;/a&gt;如果在网上找到了FindXXX.cmake文件&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;第一步，检查这个包是否是必须的，如果不是必须，将REQUIRED关键字去掉即可&lt;/li&gt;
+&lt;li&gt;如果该包必须，则将此文件放入你的当前项目的./cmake/modules/中，然后在根目录的CMakeLists文件中，添加&lt;figure class=&quot;highlight cmake&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;set&lt;/span&gt;(CMAKE_MODULE_PATH &lt;span class=&quot;variable&quot;&gt;$&amp;#123;CMAKE_MODULE_PATH&amp;#125;&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;$&amp;#123;CMAKE_SOURCE_DIR&amp;#125;/cmake/Modules/&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;带有组件的库&quot;&gt;&lt;a href=&quot;#带有组件的库&quot; class=&quot;headerlink&quot; title=&quot;带有组件的库&quot;&gt;&lt;/a&gt;带有组件的库&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;注意，以下句子都是等同的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight cmake&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;find_package&lt;/span&gt;(Qt COMPONENTS QtOpenGL QtXml REQUIRED)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;find_package&lt;/span&gt;(Qt COMPONENTS QtOpenGL QtXml REQUIRED)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;find_package&lt;/span&gt;(Qt REQUIRED COMPONENTS QtOpenGL QtXml)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;find_package&lt;/span&gt;(Qt REQUIRED QtOpenGL QtXml)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;会产生&lt;package&gt;_&lt;component&gt;_FOUND&lt;/component&gt;&lt;/package&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;find-package工作机制&quot;&gt;&lt;a href=&quot;#find-package工作机制&quot; class=&quot;headerlink&quot; title=&quot;find_package工作机制&quot;&gt;&lt;/a&gt;find_package工作机制&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;寻找Findxxx.cmake文件，首先到${CMAKE_MODULE_PATH}中找，然后在自己的/modules/中找。&lt;/li&gt;
+&lt;li&gt;如果没有找到，则寻找&lt;name&gt;Config.cmake or &lt;lower-case-name&gt;-config.cmake，这些是一些库在安装时候自动生成的，不过一般不会被生成。&lt;/lower-case-name&gt;&lt;/name&gt;&lt;/li&gt;
+&lt;li&gt;找到之后，生成以下变量&lt;ul&gt;
+&lt;li&gt;&lt;name&gt;_FOUND&lt;/name&gt;&lt;/li&gt;
+&lt;li&gt;&lt;name&gt;_INCLUDE_DIRS or &lt;name&gt;_INCLUDES&lt;/name&gt;&lt;/name&gt;&lt;/li&gt;
+&lt;li&gt;&lt;name&gt;_LIBRARIES or &lt;name&gt;_LIBRARIES or &lt;name&gt;_LIBS&lt;/name&gt;&lt;/name&gt;&lt;/name&gt;&lt;/li&gt;
+&lt;li&gt;&lt;name&gt;_DEFINITIONS&lt;/name&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;pkg-config&quot;&gt;&lt;a href=&quot;#pkg-config&quot; class=&quot;headerlink&quot; title=&quot;pkg-config&quot;&gt;&lt;/a&gt;pkg-config&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;当某一个库没有内建cmake支持时，无法生成Findxxx.cmake文件进行搜索，可以借助这个工具进行寻找。&lt;/li&gt;
+&lt;li&gt;不过请注意：这个工具生成的结果不可靠&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;自己写findxxx-cmake&quot;&gt;&lt;a href=&quot;#自己写findxxx-cmake&quot; class=&quot;headerlink&quot; title=&quot;自己写findxxx.cmake&quot;&gt;&lt;/a&gt;自己写findxxx.cmake&lt;/h3&gt;&lt;h4 id=&quot;传统方法&quot;&gt;&lt;a href=&quot;#传统方法&quot; class=&quot;headerlink&quot; title=&quot;传统方法&quot;&gt;&lt;/a&gt;传统方法&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;注意，该文件名需要符合特定的规则&lt;/li&gt;
+&lt;li&gt;使用find_package命令来找到这个包的依赖项。&lt;/li&gt;
+&lt;li&gt;使用pkd-config来检测包含文件/库文件的目录&lt;/li&gt;
+&lt;li&gt;使用find_path和find_library来确定库文件和头文件&lt;ul&gt;
+&lt;li&gt;pkg-config的生成结果可以作为候选搜索目录&lt;/li&gt;
+&lt;li&gt;添加一些一定会存在的目录&lt;/li&gt;
+&lt;li&gt;命令执行后会生成变量&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Set &lt;name&gt;_INCLUDE_DIRS to &lt;name&gt;_INCLUDE_DIR &lt;dependency1&gt;_INCLUDE_DIRS …&lt;/dependency1&gt;&lt;/name&gt;&lt;/name&gt;&lt;/li&gt;
+&lt;li&gt;Set &lt;name&gt;_LIBRARIES to &lt;name&gt;_LIBRARY &lt;dependency1&gt;_LIBRARIES …&lt;/dependency1&gt;&lt;/name&gt;&lt;/name&gt;&lt;/li&gt;
+&lt;li&gt;Call the find_package_handle_standard_args() macro to set the &lt;name&gt;_FOUND variable and print a success or failure message.&lt;/name&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight cmake&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# - Try to find LibXml2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Once done this will define&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#  LIBXML2_FOUND - System has LibXml2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#  LIBXML2_INCLUDE_DIRS - The LibXml2 include directories&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#  LIBXML2_LIBRARIES - The libraries needed to use LibXml2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#  LIBXML2_DEFINITIONS - Compiler switches required for using LibXml2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;find_package&lt;/span&gt;(PkgConfig)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;pkg_check_modules(PC_LIBXML QUIET libxml-&lt;span class=&quot;number&quot;&gt;2.0&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;set&lt;/span&gt;(LIBXML2_DEFINITIONS &lt;span class=&quot;variable&quot;&gt;$&amp;#123;PC_LIBXML_CFLAGS_OTHER&amp;#125;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;find_path&lt;/span&gt;(LIBXML2_INCLUDE_DIR libxml/xpath.h&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          HINTS &lt;span class=&quot;variable&quot;&gt;$&amp;#123;PC_LIBXML_INCLUDEDIR&amp;#125;&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;$&amp;#123;PC_LIBXML_INCLUDE_DIRS&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          PATH_SUFFIXES libxml2 )&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;find_library&lt;/span&gt;(LIBXML2_LIBRARY NAMES xml2 libxml2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;             HINTS &lt;span class=&quot;variable&quot;&gt;$&amp;#123;PC_LIBXML_LIBDIR&amp;#125;&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;$&amp;#123;PC_LIBXML_LIBRARY_DIRS&amp;#125;&lt;/span&gt; )&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;include&lt;/span&gt;(FindPackageHandleStandardArgs)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# handle the QUIETLY and REQUIRED arguments and set LIBXML2_FOUND to TRUE&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# if all listed variables are TRUE&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;find_package_handle_standard_args(LibXml2  DEFAULT_MSG&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                                  LIBXML2_LIBRARY LIBXML2_INCLUDE_DIR)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;mark_as_advanced&lt;/span&gt;(LIBXML2_INCLUDE_DIR LIBXML2_LIBRARY )&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;set&lt;/span&gt;(LIBXML2_LIBRARIES &lt;span class=&quot;variable&quot;&gt;$&amp;#123;LIBXML2_LIBRARY&amp;#125;&lt;/span&gt; )&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;set&lt;/span&gt;(LIBXML2_INCLUDE_DIRS &lt;span class=&quot;variable&quot;&gt;$&amp;#123;LIBXML2_INCLUDE_DIR&amp;#125;&lt;/span&gt; )&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;借助LibFindMacros宏&quot;&gt;&lt;a href=&quot;#借助LibFindMacros宏&quot; class=&quot;headerlink&quot; title=&quot;借助LibFindMacros宏&quot;&gt;&lt;/a&gt;借助LibFindMacros宏&lt;/h4&gt;&lt;figure class=&quot;highlight cmake&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# - Try to find ImageMagick++&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Once done, this will define&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#  Magick++_FOUND - system has Magick++&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#  Magick++_INCLUDE_DIRS - the Magick++ include directories&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#  Magick++_LIBRARIES - link these to use Magick++&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;include&lt;/span&gt;(LibFindMacros)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Dependencies&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;libfind_package(Magick++ Magick)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Use pkg-config to get hints about paths&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;libfind_pkg_check_modules(Magick++_PKGCONF ImageMagick++)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Include dir&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;find_path&lt;/span&gt;(Magick++_INCLUDE_DIR&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  NAMES Magick++.h&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  PATHS &lt;span class=&quot;variable&quot;&gt;$&amp;#123;Magick++_PKGCONF_INCLUDE_DIRS&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Finally the library itself&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;find_library&lt;/span&gt;(Magick++_LIBRARY&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  NAMES Magick++&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  PATHS &lt;span class=&quot;variable&quot;&gt;$&amp;#123;Magick++_PKGCONF_LIBRARY_DIRS&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Set the include dir variables and the libraries and let libfind_process do the rest.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# &lt;span class=&quot;doctag&quot;&gt;NOTE:&lt;/span&gt; Singular variables for this library, plural for libraries this this lib depends on.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;set&lt;/span&gt;(Magick++_PROCESS_INCLUDES Magick++_INCLUDE_DIR Magick_INCLUDE_DIRS)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;set&lt;/span&gt;(Magick++_PROCESS_LIBS Magick++_LIBRARY Magick_LIBRARIES)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;libfind_process(Magick++)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;cmake 过程中总是出现找不到模块，所以学习一下，最好要会写FindXXX.cmake&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;[TOC]&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="机器人软件构造" scheme="https://ZhenshengLee.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%BD%AF%E4%BB%B6%E6%9E%84%E9%80%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>【深度学习】Caffe-opencl-1构建</title>
@@ -2265,382 +2459,6 @@
     
     
       <category term="机器人软件设计" scheme="https://ZhenshengLee.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【ROS】rosbag-数据记录工具</title>
-    <link href="https://ZhenshengLee.github.io/2016/08/16/160816ROS-Bag%E4%BB%8B%E7%BB%8D/"/>
-    <id>https://ZhenshengLee.github.io/2016/08/16/160816ROS-Bag介绍/</id>
-    <published>2016-08-16T05:26:34.000Z</published>
-    <updated>2016-08-16T05:39:40.000Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;因实验，需要将机器人坐标记录下来，在matlab上做对比实验&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;需要学习：rosbag的基本使用，bag文件的处理，matlab上ROS工具箱使用&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;[TOC]&lt;/p&gt;
-&lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;http://wiki.ros.org/cn/rosbag/Tutorials/Recording%20and%20playing%20back%20data&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;使用示例&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://wiki.ros.org/rosbag?distro=kinetic&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;rosbag-wiki&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://wiki.ros.org/Bags/Format/2.0&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Bag file format&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://cn.mathworks.com/help/robotics/examples/work-with-rosbag-logfiles.html?requestedDomain=www.mathworks.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MATLAB working with bag file&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://wiki.ros.org/Bags&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Bag file&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://wiki.ros.org/rqt_bag&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;rqt_bag&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://wiki.ros.org/rosbag/migration&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;rosgab/migration&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://nimbus.unl.edu/2014/11/using-rosbag_pandas-to-analyze-rosbag-files/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Python 分析rosbag files&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://answers.ros.org/question/9102/how-to-extract-data-from-bag/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;How to extract data from bag file&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;记录&quot;&gt;&lt;a href=&quot;#记录&quot; class=&quot;headerlink&quot; title=&quot;记录&quot;&gt;&lt;/a&gt;记录&lt;/h2&gt;&lt;h3 id=&quot;rosbag基本使用&quot;&gt;&lt;a href=&quot;#rosbag基本使用&quot; class=&quot;headerlink&quot; title=&quot;rosbag基本使用&quot;&gt;&lt;/a&gt;rosbag基本使用&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;bag实际上是将一个node的行为录制下来，然后可以重新播放&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;使用命令行能够：录制，从包重新发布，获取包的概括信息，检查包的消息类型，使用Python表达式过滤包中信息，压缩解压缩包，重新索引包&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;如果录制高带宽的东西，例如图像信息，建议在本地录制和存放文件&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;bag文件默认名字为日期，可以添加前缀&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;基本命令包括&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;record：制定主题来录制&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;rosbag record rosout tf cmd_vel&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;rosbag record -a #所有&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;rosbag record --duration=30 /chatter #持续30s,5m,2h&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;rosbag record --split --size=1024 /chatter #空间达到1024M后分文件存储&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;rosbag record --split --duration=30 /chatter #持续时间到30s后分文件存储&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;rosbag record -o session1 /chatter #为文件名字做前缀&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;rosbag record -O session2_090210.bag /chatter #为文件命名&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;rosbag record --node=/joy_teleop #录制该节点左右消息&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;rosbag record -l 1000 /chatter  # 录制该主题1000个消息限制&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;info&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;play&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;注意：如果两个包被播放，它们将作为一个包对待。比如你录制一个包，在一个小时之后再录制一个包，然后同时播放，这个时候你会经历1个小时的空白。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;rosbag play recorede1.bag&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;rosbag play --clock recorded1.bag #发布时钟时间&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;rosbag play --clock --hz=200 recorded1.bag #时钟频率默认100&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;rosbag play -r 10 recorded1.bag # 发布速度翻倍&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;rosbag play -d 5 recorded1.bag #每一次advertise后等待5秒&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;rosbag play -u 240 recorded1.bag #只播放240s&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;rosbag play -l recorded1.bag # 循环播放&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;ul&gt;
-&lt;li&gt;check&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;rosbag check old.bag&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;rosbag check -g diagnostics.bmr diag.bag #生成一个移植规则文件migration rule file&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;ul&gt;
-&lt;li&gt;fix&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;rosbag fix old.bag repaired.bag myrules.bmr #使用规则文件恢复包文件内容&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;ul&gt;
-&lt;li&gt;filter&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;filter &amp;lt;in-bag&amp;gt; &amp;lt;out-bag&amp;gt; &amp;lt;expression&amp;gt; # 详情请访问网页，可以使用topic, m, t, 等要素，分别是主题，消息，时间&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;rosbag filter input.bag output.bag &amp;quot;t.to_sec() &amp;lt;= 1284703931.86&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;compress&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;decompress&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;reindex&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;修复包的命令&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;rqt-bag&quot;&gt;&lt;a href=&quot;#rqt-bag&quot; class=&quot;headerlink&quot; title=&quot;rqt_bag&quot;&gt;&lt;/a&gt;rqt_bag&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;提供全方位的图形化界面，具有录制，播放，显示，保存，加载文件，暂停等功能&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;数据修改&quot;&gt;&lt;a href=&quot;#数据修改&quot; class=&quot;headerlink&quot; title=&quot;数据修改&quot;&gt;&lt;/a&gt;数据修改&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;请参考migration网页&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;数据导出到matlab分析&quot;&gt;&lt;a href=&quot;#数据导出到matlab分析&quot; class=&quot;headerlink&quot; title=&quot;数据导出到matlab分析&quot;&gt;&lt;/a&gt;数据导出到matlab分析&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;先导出为CSV文件，逗号分隔值文件格式&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;rostopic echo -b log_file.bag /topic_name&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;rostopic echo -p /topic_name #使用matlab友好格式进行显示&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;ul&gt;
-&lt;li&gt;再存为文件&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;rostopic echo -b file.bag -p /topic &amp;gt; data.txt&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;因实验，需要将机器人坐标记录下来，在matlab上做对比实验&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;需要学习：rosbag的基本使用，bag文件的处理，matlab上ROS工具箱使用&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-    
-      <category term="机器人软件设计" scheme="https://ZhenshengLee.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【Ubuntu】常用系统维护</title>
-    <link href="https://ZhenshengLee.github.io/2016/08/14/160716%E5%B8%B8%E7%94%A8%E7%B3%BB%E7%BB%9F%E7%BB%B4%E6%8A%A4/"/>
-    <id>https://ZhenshengLee.github.io/2016/08/14/160716常用系统维护/</id>
-    <published>2016-08-14T04:01:38.673Z</published>
-    <updated>2016-08-14T04:01:38.673Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;纯粹笔记，以防忘记&lt;/li&gt;
-&lt;/ul&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h2 id=&quot;记录&quot;&gt;&lt;a href=&quot;#记录&quot; class=&quot;headerlink&quot; title=&quot;记录&quot;&gt;&lt;/a&gt;记录&lt;/h2&gt;&lt;h3 id=&quot;在live-cd-下为某磁盘安装grub&quot;&gt;&lt;a href=&quot;#在live-cd-下为某磁盘安装grub&quot; class=&quot;headerlink&quot; title=&quot;在live cd 下为某磁盘安装grub&quot;&gt;&lt;/a&gt;在live cd 下为某磁盘安装grub&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;从live cd 进入ubuntu&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo su&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;fdisk -l &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;mount /dev/sdc1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;这是某磁盘ubuntu 启动分区&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;grub-install --root-directory=/mnt /dev/sdc&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
-&lt;p&gt;重启电脑进入该磁盘，会报错，但可以正常进入ubuntu，然后在该系统中更新即可！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo update-grub&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;挂载&quot;&gt;&lt;a href=&quot;#挂载&quot; class=&quot;headerlink&quot; title=&quot;挂载&quot;&gt;&lt;/a&gt;挂载&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo mount -o loop -t hfsplus imagefile.img /mnt&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;更改主显示器&quot;&gt;&lt;a href=&quot;#更改主显示器&quot; class=&quot;headerlink&quot; title=&quot;更改主显示器&quot;&gt;&lt;/a&gt;更改主显示器&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;xrandr&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
-&lt;p&gt;查看显示器详细信息&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;xrandr --output DFP5 --auto --primary&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;查看设备&quot;&gt;&lt;a href=&quot;#查看设备&quot; class=&quot;headerlink&quot; title=&quot;查看设备&quot;&gt;&lt;/a&gt;查看设备&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ls /dev/ | grep video&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;grub-图形化编辑&quot;&gt;&lt;a href=&quot;#grub-图形化编辑&quot; class=&quot;headerlink&quot; title=&quot;grub 图形化编辑&quot;&gt;&lt;/a&gt;grub 图形化编辑&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo add-apt-repository ppa:danielrichter2007/grub-customizer&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get update&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get install grub-customizer&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;查找-package&quot;&gt;&lt;a href=&quot;#查找-package&quot; class=&quot;headerlink&quot; title=&quot;查找 package&quot;&gt;&lt;/a&gt;查找 package&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;dpkg -l | grep xmind&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;查询链接库依赖项&quot;&gt;&lt;a href=&quot;#查询链接库依赖项&quot; class=&quot;headerlink&quot; title=&quot;查询链接库依赖项&quot;&gt;&lt;/a&gt;查询链接库依赖项&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;.../platforms$ ldd libqxcb.so&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;删除文件夹&quot;&gt;&lt;a href=&quot;#删除文件夹&quot; class=&quot;headerlink&quot; title=&quot;删除文件夹&quot;&gt;&lt;/a&gt;删除文件夹&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo rm -rf ./Robai/&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;查找包&quot;&gt;&lt;a href=&quot;#查找包&quot; class=&quot;headerlink&quot; title=&quot;查找包&quot;&gt;&lt;/a&gt;查找包&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;apt-cache search pcl&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;卸载包&quot;&gt;&lt;a href=&quot;#卸载包&quot; class=&quot;headerlink&quot; title=&quot;卸载包&quot;&gt;&lt;/a&gt;卸载包&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo dpkg -r pcl&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;卸载软件&quot;&gt;&lt;a href=&quot;#卸载软件&quot; class=&quot;headerlink&quot; title=&quot;卸载软件&quot;&gt;&lt;/a&gt;卸载软件&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get remove ros-indigo-moveit-full&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;grub&quot;&gt;&lt;a href=&quot;#grub&quot; class=&quot;headerlink&quot; title=&quot;grub&quot;&gt;&lt;/a&gt;grub&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo cp /etc/default/grub /etc/default/grub.bak&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo gedit /etc/default/grub&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
-&lt;p&gt;GRUB_DEFAULT=&lt;br&gt;GRUB_TIMEOUT=5&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo update-grub&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;修改hosts文件&quot;&gt;&lt;a href=&quot;#修改hosts文件&quot; class=&quot;headerlink&quot; title=&quot;修改hosts文件&quot;&gt;&lt;/a&gt;修改hosts文件&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo gedit /etc/hosts&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo rcnscd restart&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get install nscd&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo /etc/init.d/nscd restart&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
-&lt;p&gt;127.0.1.1    zsUbuntu&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;Choose-server&quot;&gt;&lt;a href=&quot;#Choose-server&quot; class=&quot;headerlink&quot; title=&quot;Choose server&quot;&gt;&lt;/a&gt;Choose server&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Choose the ubuntu server sjtu.edu.cn&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;su-命令失败&quot;&gt;&lt;a href=&quot;#su-命令失败&quot; class=&quot;headerlink&quot; title=&quot;su 命令失败&quot;&gt;&lt;/a&gt;su 命令失败&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;试试sudo su进入root模式&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;环境变量&quot;&gt;&lt;a href=&quot;#环境变量&quot; class=&quot;headerlink&quot; title=&quot;环境变量&quot;&gt;&lt;/a&gt;环境变量&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;env&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
-&lt;p&gt;查看环境变量&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;set&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
-&lt;p&gt;查看所有变量（环境变量+自定义变量）&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;echo $&amp;#123;PATH&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;PATH=&amp;quot;$PATH&amp;quot;:&amp;apos;/home/zs/VSCode-linux-x64&amp;apos;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
-&lt;p&gt;添加路径至PATH环境变量&lt;br&gt;路径可以不加单引号&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;echo $$&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
-&lt;p&gt;当前线程的PID号码&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;echo $?&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
-&lt;p&gt;上个命令的回传码（没错为0）&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;export&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
-&lt;p&gt;自定义变量转成环境变量，子进程仅会继承父进程的的环境变量，而不会继承自定义变量&lt;br&gt;declare反过来&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;export PYTHONPATH=~/Documents/zsProjects/zsNao/zsROSNaoqi/pynaoqi-python2.7-2.1.4.13-linux64:$PYTHONPATH&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
-&lt;p&gt;添加环境变量&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;echo &amp;apos;export PYTHONPATH=~/Documents/zsProjects/zsNao/zsROSNaoqi/pynaoqi-python2.7-2.1.4.13-linux64:$PYTHONPATH&amp;apos; &amp;gt;&amp;gt; ~/.bashrc&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
-&lt;p&gt;永久添加环境变量&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;更新&quot;&gt;&lt;a href=&quot;#更新&quot; class=&quot;headerlink&quot; title=&quot;更新&quot;&gt;&lt;/a&gt;更新&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get update&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get dist-upgrade&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get autoremove&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get autoclean&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo aptitude install name&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;更改计算机名&quot;&gt;&lt;a href=&quot;#更改计算机名&quot; class=&quot;headerlink&quot; title=&quot;更改计算机名&quot;&gt;&lt;/a&gt;更改计算机名&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo gedit /etc/hostname&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo gedit /etc/hosts&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
-&lt;p&gt;两个地方的名字需一致&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;网络远程登陆工具&quot;&gt;&lt;a href=&quot;#网络远程登陆工具&quot; class=&quot;headerlink&quot; title=&quot;网络远程登陆工具&quot;&gt;&lt;/a&gt;网络远程登陆工具&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;ssh&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;查看网速&quot;&gt;&lt;a href=&quot;#查看网速&quot; class=&quot;headerlink&quot; title=&quot;查看网速&quot;&gt;&lt;/a&gt;查看网速&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;nload&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;启动器上应用程序图标为灰色问号？&quot;&gt;&lt;a href=&quot;#启动器上应用程序图标为灰色问号？&quot; class=&quot;headerlink&quot; title=&quot;启动器上应用程序图标为灰色问号？&quot;&gt;&lt;/a&gt;启动器上应用程序图标为灰色问号？&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;cd ～/.local/share/applications/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;gedit $&amp;#123;某一个桌面快捷方式文件&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$&amp;#123;ICON&amp;#125;变量进行设置&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;处理包冲突问题技巧&quot;&gt;&lt;a href=&quot;#处理包冲突问题技巧&quot; class=&quot;headerlink&quot; title=&quot;处理包冲突问题技巧&quot;&gt;&lt;/a&gt;处理包冲突问题技巧&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;aptitude&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h4 id=&quot;Getting-Help&quot;&gt;&lt;a href=&quot;#Getting-Help&quot; class=&quot;headerlink&quot; title=&quot;Getting Help:&quot;&gt;&lt;/a&gt;Getting Help:&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;When asking for help on Askubuntu or any other help forum, you should include the output of the following commands in your question:&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get install package-name&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Output of actual error.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;cat /etc/apt/sources.list&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This will show your sources.list&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;cat /etc/apt/sources.list.d/*&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This will show the list of PPAs (If any).&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;Umet-dependencies——软件安装包冲突时的解决思路&quot;&gt;&lt;a href=&quot;#Umet-dependencies——软件安装包冲突时的解决思路&quot; class=&quot;headerlink&quot; title=&quot;Umet dependencies——软件安装包冲突时的解决思路&quot;&gt;&lt;/a&gt;Umet dependencies——软件安装包冲突时的解决思路&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;备份APT源数据文件&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;APT is a package management system for Debian and other Linux distributions based on it, such as Ubuntu. For the most part, APT is easy to use for installing, removing, and updating packages. In rare instances, often when you are mixing in third-party dependencies, there is a chance that apt-get may end up giving you an error telling you that a package installation could not be completed.&lt;br&gt;It is always a good idea to back up configuration files like /etc/apt/sources.list, so you can revert the changes if needed.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;版本号不一致，有一个版本已经安装，但是你要安装另一个版本&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;If the error shows something like this:&lt;br&gt;&lt;some-package&gt;: Depends: &lt;other-package&gt; (= version) but this-version is to be installed&lt;br&gt;Then make sure that the restricted and universe repositories are enabled. Hit Alt+F2, type software-properties-gtk and hit Enter.&lt;br&gt;Under Ubuntu Software tab, enable all the repositories.&lt;/other-package&gt;&lt;/some-package&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get clean&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get autoclean&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
-&lt;p&gt;One possible cause of unmet dependencies could be corrupted package database, and/or some packages weren’t installed properly. To fix this problem, hit Alt+Ctrl+T to open terminal and try to run one of the following commands:&lt;br&gt;apt-get clean clears out the local repository of retrieved package files (the .deb files). It removes everything but the lock file from /var/cache/apt/archives/ and /var/cache/apt/archives/partial/. apt-get autoclean clears out the local repository of retrieved package files, but unlike apt-get clean, it only removes package files that can no longer be downloaded, and are largely useless.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;autoclean基本没什么用，clean有用一些&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get -f install&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
-&lt;p&gt;One of the most basic fixes to resolve dependencies problems is to run:&lt;br&gt;The -f here stands for “fix broken”. Apt will attempt to correct broken dependencies. If you manually installed a package that had unmet dependencies, apt-get will install those dependencies, if possible, otherwise it may simply remove the package that you installed in order to resolve the problem.&lt;br&gt;Then run:&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo dpkg --configure -a&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Then run this again:&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get -f install&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
-&lt;p&gt;If the output is:&lt;br&gt;0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.&lt;br&gt;That means it failed.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get -u dist-upgrade&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Next solution is to run:&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get -o Debug::pkgProblemResolver=yes dist-upgrade&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
-&lt;p&gt;If it shows any held packages, it is best to eliminate them. Packages are held because of dependency conflicts that apt cannot resolve. Try this command to find and repair the conflicts:&lt;br&gt;If it cannot fix the conflicts, it will exit with:&lt;br&gt;0 upgraded, 0 newly installed, 0 to remove and 6 not upgraded.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get remove --dry-run package-name&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Delete the held packages one by one, running dist-upgrade each time, until there are no more held packages. Then reinstall any needed packages. Be sure to use the –dry-runoption, so that you are fully informed of consequences:&lt;br&gt;Since removing the package you are trying to install may not be ideal, you might also try finding a repository that has the packages you need to satisfy the dependencies.&lt;/p&gt;
-&lt;p&gt;使用命令计算处有错误的包集，尝试删除之，注意所有删除的细节，免得造成不好后果。&lt;br&gt;Finally, if all else fails, you can attempt to satisfy the dependencies yourself, either by finding and installing the necessary packages, or by installing them from source and then creating “deb” packages for them.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;如果所有的都失败了，没办法了，手动找吧。删除或者安装&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;关于PPAs-Personal-Package-Archive&quot;&gt;&lt;a href=&quot;#关于PPAs-Personal-Package-Archive&quot; class=&quot;headerlink&quot; title=&quot;关于PPAs(Personal Package Archive)&quot;&gt;&lt;/a&gt;关于PPAs(Personal Package Archive)&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;PPAs (Personal Package Archive) are repositories hosted on Launchpad. You can use PPAs to install or upgrade packages that are not available in the official Ubuntu repositories.&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;One of the most common causes of unmet dependencies are PPAs, specially when used to upgrade the existing package in Ubuntu repositories. To solve the problem you have three options, disable, purge (revert back to original package in Ubuntu repositories) or remove PPA.&lt;/p&gt;
-&lt;h4 id=&quot;Disable&quot;&gt;&lt;a href=&quot;#Disable&quot; class=&quot;headerlink&quot; title=&quot;Disable:&quot;&gt;&lt;/a&gt;Disable:&lt;/h4&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Disabling a PPA means no more updates for the packages installed from that PPA. To disable a PPA: Open Software Center &amp;gt; Edit &amp;gt; Software Sources Or,&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;Hit Alt+F2 and run software-properties-gtk.&lt;br&gt;Click on Other Software tab, you’ll see that each PPA have two lines here, one for the compiled packages and one for the source, Uncheck both lines to disable a PPA. Here you can also add and remove PPAs.&lt;h4 id=&quot;Purge&quot;&gt;&lt;a href=&quot;#Purge&quot; class=&quot;headerlink&quot; title=&quot;Purge:&quot;&gt;&lt;/a&gt;Purge:&lt;/h4&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Purging a PPA means, downgrading the packages in the selected PPA to the version in the official Ubuntu repositories and disabling that PPA. PPA Purge does exactly that. To install PPA Purge run the following command:&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get install ppa-purge&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;But, Considering the question apt is broken so the above command will fail. So use this command&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mkdir ppa-purge &amp;amp;&amp;amp; cd ppa-purge &amp;amp;&amp;amp; wget http://mirror.pnl.gov/ubuntu/pool/universe/p/ppa-purge/ppa-purge_0.2.8+bzr56_all.deb &amp;amp;&amp;amp; wget http://mirror.pnl.gov/ubuntu//pool/main/a/aptitude/aptitude_0.6.6-1ubuntu1_i386.deb &amp;amp;&amp;amp; sudo dpkg -i ./*.deb&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;To use PPA Purge:&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo ppa-purge ppa:someppa/ppa&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;If ‘ppa-purge’ command fails for some reason, you can’t run ‘ppa-purge’ again unless you re-enable the PPA (To enable the PPA follow the same steps as disabling a PPA and Check the both lines of a particular PPA to enable it).&lt;br&gt;Note: PPA Purge doesn’t remove PPAs (may be in future), So you’ll have to manually remove the PPA.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&quot;Remove&quot;&gt;&lt;a href=&quot;#Remove&quot; class=&quot;headerlink&quot; title=&quot;Remove:&quot;&gt;&lt;/a&gt;Remove:&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;If the package installed from a PPA doesn’t exist in official Ubuntu repositories then using PPA Purge is not recommended, because there’s nothing to be downgraded and PPA Purge wouldn’t delete it either. To remove a PPA and installed packages run the following commands: (Ignore the first command if you don’t want to remove the installed packages)&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get autoremove --purge package-name&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo add-apt-repository --remove ppa:someppa/ppa&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get autoclean&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Alternatively you can use Y PPA Manager to disable/remove/purge PPA’s (Details at the end of answer).&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&quot;Preventive-Measures&quot;&gt;&lt;a href=&quot;#Preventive-Measures&quot; class=&quot;headerlink&quot; title=&quot;Preventive Measures:&quot;&gt;&lt;/a&gt;Preventive Measures:&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;So how can we avoid this from happening in the first place?&lt;blockquote&gt;
-&lt;p&gt;Keep Ubuntu Up to date. Ubuntu automatically notifies when updates are available, you can also check for available updates by clicking on Session Indicator in Unity panel:&lt;br&gt;Or, Hit Alt+Ctrl+T to open terminal and run following commands:&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get update &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get upgrade&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Update: Synchronizes your list of available packages with the servers in source repositories. Upgrade: Downloads &amp;amp; installs any newer versions of your installed packages.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;常更新！&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;If you decide to add other repositories to sources.list, make sure that the repository is meant to work (and known to work) with Ubuntu. Repositories that are not designed to work with your version of Ubuntu can introduce inconsistencies in your system and might force you to re-install. Also, make sure that you really need to add external repositories as the software package(s) you are looking for may already have been introduced into the official repositories! &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;添加源时应谨慎，一定要添加么？这个软件适合当前Ubuntu版本么？这个外部源是否已经存在于官方源中了呢？&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Remove duplicate PPAs. Y PPA Manager (installation guide at the end of answer) can easily scan and remove duplicate PPAs.&lt;br&gt;Hit Alt+F2 and run y-ppa-manager to open Y PPA Manager.Once open, double click or hit Enter on Advanced.In resulting window select Scan and remove duplicate PPAs and click OK.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;双硬盘同引导双系统&quot;&gt;&lt;a href=&quot;#双硬盘同引导双系统&quot; class=&quot;headerlink&quot; title=&quot;双硬盘同引导双系统&quot;&gt;&lt;/a&gt;双硬盘同引导双系统&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;先认真把《鸟叔》看懂！&lt;/li&gt;
-&lt;li&gt;基本条件，SSD（sd0）装windows，同时HDD（sd1）作为数据盘；计划把Ubuntu安装在HDD的一个分区中，分/swap，/boot，/，/home 四个分区；但是第一次安装，建议就在HDD中的F盘，主分区中安装吧，F盘是HDD的一个分区&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;重新分区的问题&quot;&gt;&lt;a href=&quot;#重新分区的问题&quot; class=&quot;headerlink&quot; title=&quot;重新分区的问题&quot;&gt;&lt;/a&gt;重新分区的问题&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;恢复分区怎么处理？（恢复分区是主分区，而且有三个，删除哪些？要弄懂）&lt;/li&gt;
-&lt;li&gt;安装Ubuntu要不要分多个区？（不打算分swap）&lt;ul&gt;
-&lt;li&gt;/ 和/home最好分别mount到ssd和hard drive上！&lt;/li&gt;
-&lt;li&gt;打算这样：SSD上/分18G；HDD上F盘100G分出两个分区用来装/usr和/home&lt;/li&gt;
-&lt;li&gt;考虑到/var也很费内存，则考虑在SSD上只安装/boot，F盘分两个装/和/home&lt;blockquote&gt;
-&lt;p&gt;这样重装系统时候只需格式化/boot和/分区，继续挂载/home分区&lt;br&gt;现在这样，在SSD上的512M地方放/boot，在F盘的扩展分区分两个区，bootloader安装在SSD上&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;装系统实践&quot;&gt;&lt;a href=&quot;#装系统实践&quot; class=&quot;headerlink&quot; title=&quot;装系统实践&quot;&gt;&lt;/a&gt;装系统实践&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;备份文件；制作安装U盘；删除卷；检查BIOS；&lt;/li&gt;
-&lt;li&gt;实测：当前windows还是在HDD的启动扇区进去的，不知道为什么，所以现在的方式是在F盘中分/和/home，bootloader安装在HDD中，注意如果有选择HDD的哪一个分区的话，马上取消，查答案。（结果是，既可以选在硬盘的第一个扇区，也可以选择硬盘的某一个分区的扇区）&lt;/li&gt;
-&lt;li&gt;关于device for boot loader installation&lt;ul&gt;
-&lt;li&gt;这个bootloader 其实是grub，即选择grub的安装位置&lt;/li&gt;
-&lt;li&gt;device for boot loader installation的选择（grub的安装位置），如果选择整个硬盘，则开机启动时win会被ubuntu管理启动（用grub引导 windows），这样卸载ubuntu后，win也会将启动丢失，引起系统进不去的问题（当然可以修复）；如果device for boot loader installation选择ubuntu的/boot所在的分区后，下次启动会默认进入win，这时只要在win下用freebcd添加个ubuntu的引导就行了。&lt;/li&gt;
-&lt;li&gt;装完系统后请关闭windows的快速启动，不然关机后再次启动直接进Linux无法挂载windows磁盘，因为windows并未真正关闭&lt;/li&gt;
-&lt;li&gt;当然，如果不关闭快速启动，可以每次开机默认进入windows，然后想使用Linux时按重新启动即可。&lt;/li&gt;
-&lt;li&gt;设置Grub，配置文件，设置默认启动项和等待秒数&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;缺少库文件&quot;&gt;&lt;a href=&quot;#缺少库文件&quot; class=&quot;headerlink&quot; title=&quot;缺少库文件&quot;&gt;&lt;/a&gt;缺少库文件&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;原因一般有两个, 一个是操作系统里确实没有包含该共享库(lib&lt;em&gt;.so.&lt;/em&gt;文件)或者共享库版本不对, 遇到这种情况那就去网上下载并安装上即可. &lt;/li&gt;
-&lt;li&gt;另外一个原因就是已经安装了该共享库, 但执行需要调用该共享库的程序的时候, 程序按照默认共享库路径找不到该共享库文件. &lt;/li&gt;
-&lt;li&gt;共享库路径设置问题, 如下:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol&gt;
-&lt;li&gt;如果共享库文件安装到了/lib或/usr/lib目录下, 那么需执行一下ldconfig命令&lt;br&gt;ldconfig命令的用途, 主要是在默认搜寻目录(/lib和/usr/lib)以及动态库配置文件/etc/ld.so.conf内所列的目录下, 搜索出可共享的动态链接库(格式如lib&lt;em&gt;.so&lt;/em&gt;), 进而创建出动态装入程序(ld.so)所需的连接和缓存文件. 缓存文件默认为/etc/ld.so.cache, 此文件保存已排好序的动态链接库名字列表. &lt;/li&gt;
-&lt;li&gt;如果共享库文件安装到了/usr/local/lib(很多开源的共享库都会安装到该目录下)或其它”非/lib或/usr/lib”目录下, 那么在执行ldconfig命令前, 还要把新共享库目录加入到共享库配置文件/etc/ld.so.conf中, 如下:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# cat /etc/ld.so.conf&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;include ld.so.conf.d/*.conf&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# echo &amp;quot;/usr/local/lib&amp;quot; &amp;gt;&amp;gt; /etc/ld.so.conf&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# ldconfig&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;ol&gt;
-&lt;li&gt;如果共享库文件安装到了其它”非/lib或/usr/lib” 目录下,  但是又不想在/etc/ld.so.conf中加路径(或者是没有权限加路径). 那可以export一个全局变量LD_LIBRARY_PATH, 然后运行程序的时候就会去这个目录中找共享库. &lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;LD_LIBRARY_PATH的意思是告诉loader在哪些目录中可以找到共享库. 可以设置多个搜索目录, 这些目录之间用冒号分隔开. 比如安装了一个mysql到/usr/local/mysql目录下, 其中有一大堆库文件在/usr/local/mysql/lib下面, 则可以在.bashrc或.bash_profile或shell里加入以下语句即可:&lt;br&gt;&lt;code&gt;export LD_LIBRARY_PATH=/usr/local/mysql/lib:$LD_LIBRARY_PATH&lt;/code&gt;&lt;blockquote&gt;
-&lt;p&gt;一般来讲这只是一种临时的解决方案, 在没有权限或临时需要的时候使用.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;纯粹笔记，以防忘记&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-    
-      <category term="其他" scheme="https://ZhenshengLee.github.io/tags/%E5%85%B6%E4%BB%96/"/>
     
   </entry>
   

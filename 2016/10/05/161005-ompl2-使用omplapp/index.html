@@ -4,17 +4,27 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>哈骑士的博客</title>
+  <title>【组件】ompl-open motion planning library2-omplapp | 哈骑士的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="点滴记录，学习成长">
-<meta property="og:type" content="website">
-<meta property="og:title" content="哈骑士的博客">
-<meta property="og:url" content="https://ZhenshengLee.github.io/page/3/index.html">
+  <meta name="description" content="前言
+使用ompl前端工具
+
+[TOC]">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【组件】ompl-open motion planning library2-omplapp">
+<meta property="og:url" content="https://ZhenshengLee.github.io/2016/10/05/161005-ompl2-使用omplapp/index.html">
 <meta property="og:site_name" content="哈骑士的博客">
-<meta property="og:description" content="点滴记录，学习成长">
+<meta property="og:description" content="前言
+使用ompl前端工具
+
+[TOC]">
+<meta property="og:updated_time" content="2016-10-05T04:21:33.720Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="哈骑士的博客">
-<meta name="twitter:description" content="点滴记录，学习成长">
+<meta name="twitter:title" content="【组件】ompl-open motion planning library2-omplapp">
+<meta name="twitter:description" content="前言
+使用ompl前端工具
+
+[TOC]">
   
     <link rel="alternative" href="/atom.xml" title="哈骑士的博客" type="application/atom+xml">
   
@@ -195,13 +205,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
-  
-    <article id="post-160816ROS-Bag介绍" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-161005-ompl2-使用omplapp" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/08/16/160816ROS-Bag介绍/" class="article-date">
-  	<time datetime="2016-08-16T05:26:34.000Z" itemprop="datePublished">2016-08-16</time>
+      <a href="/2016/10/05/161005-ompl2-使用omplapp/" class="article-date">
+  	<time datetime="2016-10-05T04:18:45.000Z" itemprop="datePublished">2016-10-05</time>
 </a>
     </div>
   
@@ -213,184 +221,133 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/16/160816ROS-Bag介绍/">【ROS】rosbag-数据记录工具</a>
+    <h1 class="article-title" itemprop="name">
+      【组件】ompl-open motion planning library2-omplapp
     </h1>
   
 
       </header>
       
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
-<li><p>因实验，需要将机器人坐标记录下来，在matlab上做对比实验</p>
-</li>
-<li><p>需要学习：rosbag的基本使用，bag文件的处理，matlab上ROS工具箱使用</p>
-</li>
-</ul>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器人软件设计/">机器人软件设计</a></li></ul>
 	</div>
 
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/08/16/160816ROS-Bag介绍/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-160716常用系统维护" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/08/14/160716常用系统维护/" class="article-date">
-  	<time datetime="2016-08-14T04:01:38.673Z" itemprop="datePublished">2016-08-14</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/14/160716常用系统维护/">【Ubuntu】常用系统维护</a>
-    </h1>
-  
 
-      </header>
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
-<li>纯粹笔记，以防忘记</li>
+<li>使用ompl前端工具</li>
 </ul>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他/">其他</a></li></ul>
-	</div>
+<p>[TOC]</p>
+<a id="more"></a>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
+<p><a href="https://bitbucket.org/ompl/ompl/issues/232/omplapp-cmake-issue" target="_blank" rel="external">CMake issue installing omplapp</a><br><a href="https://bitbucket.org/ompl/ompl/issues/8/no-module-named-_util" target="_blank" rel="external">no moudule name _util</a><br><a href="http://ompl.kavrakilab.org/installPyPlusPlus.html" target="_blank" rel="external">installing of Py++</a><br><a href="https://bitbucket.org/ompl/ompl/issues/267/ompl-installation-fails-at-updte_bindings" target="_blank" rel="external">Python binding failed</a></p>
+</blockquote>
+<h2 id="学习记录"><a href="#学习记录" class="headerlink" title="学习记录"></a>学习记录</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ul>
+<li>castxml，若没有安装的话</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget -O - https://midas3.kitware.com/midas/download/item/318227/castxml-linux.tar.gz | tar zxf - -C $HOME</span><br><span class="line">export PATH=$HOME/castxml/bin:$PATH</span><br></pre></td></tr></table></figure>
+<ul>
+<li>pygccxml，若没有安装的话</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip install pygccxml https://bitbucket.org/ompl/pyplusplus/get/1.6.tar.gz</span><br></pre></td></tr></table></figure>
+<ul>
+<li>py++，如果没有安装的话</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install python-py++</span><br></pre></td></tr></table></figure>
+<p>或者（最好都装吧，我搞怕了）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/wget --no-check-certificate -O - https://bitbucket.org/ompl/pyplusplus/downloads/pyplusplus-r1247.tgz | tar xzf -</span><br><span class="line">cd ../pyplusplus</span><br><span class="line">/usr/bin/python setup.py build</span><br><span class="line">sudo /usr/bin/python setup.py install</span><br></pre></td></tr></table></figure>
+<ul>
+<li>参考网页，下好依赖项，代码不赘述，主要注意几点：<ul>
+<li>记得将ompl文件夹（就是核心库文件夹，需要另外下载）放置到omplapp/</li>
+<li>cmake 找不到libccd，是因为找到了ros中的旧版本文件，此时需要对环境变量进行一下设置，以便让pkg_config先查询/usr/local/lib<br><strong><em>哎，linux下的包配置真是满满的恶意！</em></strong></li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd ./build/Release</span><br><span class="line">cmake -DCMAKE_BUILD_TYPE=Release ../..</span><br><span class="line">make update_bindings  -j4</span><br><span class="line"># 注意，如果内存不够大，请不要用-j4，不然会出现未知错误！</span><br><span class="line">make -j4</span><br><span class="line">sudo make install</span><br><span class="line"># 请耐心等待</span><br></pre></td></tr></table></figure>
+<ul>
+<li>make 通不过</li>
+</ul>
+<h3 id="运行实例"><a href="#运行实例" class="headerlink" title="运行实例"></a>运行实例</h3><ul>
+<li>启动前端界面<ul>
+<li>./ompl_app.py</li>
+</ul>
+</li>
+</ul>
 
       
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/08/14/160716常用系统维护/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
     </div>
     
   </div>
   
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/10/05/161005-CMakeFind模块/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">【设计】CMake专题-finding libraries</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
 </article>
 
 
-
-
-
-
-
-
-
-  
-    <article id="post-160619开开心心建网站" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/07/16/160619开开心心建网站/" class="article-date">
-  	<time datetime="2016-07-16T14:19:54.733Z" itemprop="datePublished">2016-07-16</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/16/160619开开心心建网站/">【建站】开开心心建网站</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
-<li>本来准备在CSDN上建个博客，后来为了能够更加自动化，还是在GitHub Pages 上弄一个</li>
-</ul>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他/">其他</a></li></ul>
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/07/16/160619开开心心建网站/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
 
 
 
 
 
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="161005-ompl2-使用omplapp" data-title="【组件】ompl-open motion planning library2-omplapp" data-url="https://ZhenshengLee.github.io/2016/10/05/161005-ompl2-使用omplapp/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"zhenshenglee"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
 
 
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
-    </nav>
-  
+
 </div>
       <footer id="footer">
   <div class="outer">
@@ -414,8 +371,8 @@
 		fancybox: true,
 		mathjax: true,
 		animate: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
