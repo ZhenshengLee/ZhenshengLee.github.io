@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ZhenshengLee.github.io/"/>
-  <updated>2016-10-05T04:21:33.720Z</updated>
+  <updated>2016-11-07T12:31:49.092Z</updated>
   <id>https://ZhenshengLee.github.io/</id>
   
   <author>
@@ -14,6 +14,53 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>161107-thunderbird配置</title>
+    <link href="https://ZhenshengLee.github.io/2016/11/07/161107-thunderbird%E9%85%8D%E7%BD%AE/"/>
+    <id>https://ZhenshengLee.github.io/2016/11/07/161107-thunderbird配置/</id>
+    <published>2016-11-07T12:26:57.000Z</published>
+    <updated>2016-11-07T12:31:49.092Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;邮箱软件增强&quot;&gt;&lt;a href=&quot;#邮箱软件增强&quot; class=&quot;headerlink&quot; title=&quot;邮箱软件增强&quot;&gt;&lt;/a&gt;邮箱软件增强&lt;/h1&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;属于日常维护系列&lt;/li&gt;
+&lt;/ul&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://libukai.me/post/_public/2014-03-01-thunderbird-preferences&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;奔歌版配置教程&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.linnhe2.free-online.co.uk/thunderbird/chrome.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Thunderbird chrome 配置文件&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://support.mozilla.org/en-US/kb/using-lightning-google-calendar&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;using lighting with google calander&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;边栏字体&quot;&gt;&lt;a href=&quot;#边栏字体&quot; class=&quot;headerlink&quot; title=&quot;边栏字体&quot;&gt;&lt;/a&gt;边栏字体&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;使用tweak更换字体之后不需要调整字体大小也能在高分屏上正常观看了&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;插件&quot;&gt;&lt;a href=&quot;#插件&quot; class=&quot;headerlink&quot; title=&quot;插件&quot;&gt;&lt;/a&gt;插件&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Adblock Plus&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Lightning and Provider for google calander&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Manually sort folders!&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Thunderbird conversations&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;新建谷歌日历&quot;&gt;&lt;a href=&quot;#新建谷歌日历&quot; class=&quot;headerlink&quot; title=&quot;新建谷歌日历&quot;&gt;&lt;/a&gt;新建谷歌日历&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;New-Calander-on the network&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;邮箱软件增强&quot;&gt;&lt;a href=&quot;#邮箱软件增强&quot; class=&quot;headerlink&quot; title=&quot;邮箱软件增强&quot;&gt;&lt;/a&gt;邮箱软件增强&lt;/h1&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;属于日常维护系列&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="其他" scheme="https://ZhenshengLee.github.io/tags/%E5%85%B6%E4%BB%96/"/>
+    
+  </entry>
   
   <entry>
     <title>【组件】ompl-open motion planning library2-omplapp</title>
@@ -2372,87 +2419,6 @@
       &lt;p&gt;[TOC]&lt;/p&gt;
 &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;记录有具有价值的ROS模块并附简单介绍&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-    
-      <category term="机器人软件设计" scheme="https://ZhenshengLee.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【ROS】roscommon详解</title>
-    <link href="https://ZhenshengLee.github.io/2016/08/16/160816-roscommon%E8%AF%A6%E8%A7%A3/"/>
-    <id>https://ZhenshengLee.github.io/2016/08/16/160816-roscommon详解/</id>
-    <published>2016-08-16T08:16:08.000Z</published>
-    <updated>2016-08-16T08:26:33.210Z</updated>
-    
-    <content type="html">&lt;p&gt;[TOC]&lt;/p&gt;
-&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;ROS，其实从本质上讲就是一个消息通信中间件，其最基础的功能就是在ros_common这个包中实现的，如消息，服务，控制台，roslaunch等等，在这里重点学习几个平时没有用到，但也非常重要的模块&lt;/li&gt;
-&lt;/ul&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://wiki.ros.org/ros_comm?distro=kinetic&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Wiki Page&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;记录&quot;&gt;&lt;a href=&quot;#记录&quot; class=&quot;headerlink&quot; title=&quot;记录&quot;&gt;&lt;/a&gt;记录&lt;/h2&gt;&lt;h3 id=&quot;message-filters&quot;&gt;&lt;a href=&quot;#message-filters&quot; class=&quot;headerlink&quot; title=&quot;message_filters&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://wiki.ros.org/message_filters&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;message_filters&lt;/a&gt;&lt;/h3&gt;&lt;h4 id=&quot;基本概念&quot;&gt;&lt;a href=&quot;#基本概念&quot; class=&quot;headerlink&quot; title=&quot;基本概念&quot;&gt;&lt;/a&gt;基本概念&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;集中处理多个消息来源的模块，或者说是进行消息同步的模块&lt;ul&gt;
-&lt;li&gt;一个例子是time synchronizer，其将多个输入消息进行“过滤”（例如消息a，b），只输出消息a的timestamp下的b消息，即对消息b中的“无用”消息进行了“过滤”&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&quot;基本代码&quot;&gt;&lt;a href=&quot;#基本代码&quot; class=&quot;headerlink&quot; title=&quot;基本代码&quot;&gt;&lt;/a&gt;基本代码&lt;/h4&gt;&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 构造&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;FooFilter foo;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;BarFilter &lt;span class=&quot;title&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(foo)&lt;/span&gt;&lt;/span&gt;;&lt;span class=&quot;comment&quot;&gt;//Bar的输入连接着foo的输出&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;bar.connectInput(foo);&lt;span class=&quot;comment&quot;&gt;//等价&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;bar.registerCallback(myCallback);&lt;span class=&quot;comment&quot;&gt;//myCallback是一个可调用对象&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h4 id=&quot;Time-Synchronizer&quot;&gt;&lt;a href=&quot;#Time-Synchronizer&quot; class=&quot;headerlink&quot; title=&quot;Time Synchronizer&quot;&gt;&lt;/a&gt;Time Synchronizer&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;The TimeSynchronizer filter synchronizes incoming channels by the timestamps contained in their headers, and outputs them in the form of a single callback that takes the same number of channels. The C++ implementation can synchronize up to 9 channels.&lt;ul&gt;
-&lt;li&gt;使用一个回调函数同时处理多个消息，可以按照时间戳将不符合要求的消息丢弃，最多支持9通道，因为c++模板参数最多支持9个&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;message_filters/subscriber.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;message_filters/time_synchronizer.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;sensor_msgs/Image.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;sensor_msgs/CameraInfo.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;namespace&lt;/span&gt; sensor_msgs;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;namespace&lt;/span&gt; message_filters;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; ImageConstPtr&amp;amp; image, &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; CameraInfoConstPtr&amp;amp; cam_info)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;// Solve all of perception here...&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; argc, &lt;span class=&quot;keyword&quot;&gt;char&lt;/span&gt;** argv)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  ros::init(argc, argv, &lt;span class=&quot;string&quot;&gt;&quot;vision_node&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  ros::NodeHandle nh;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  message_filters::Subscriber&amp;lt;Image&amp;gt; image_sub(nh, &lt;span class=&quot;string&quot;&gt;&quot;image&quot;&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  message_filters::Subscriber&amp;lt;CameraInfo&amp;gt; info_sub(nh, &lt;span class=&quot;string&quot;&gt;&quot;camera_info&quot;&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  TimeSynchronizer&amp;lt;Image, CameraInfo&amp;gt; sync(image_sub, info_sub, &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  sync.registerCallback(boost::bind(&amp;amp;callback, _1, _2));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  ros::spin();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;ul&gt;
-&lt;li&gt;时间同步器现在还支持时间相近的时间戳的消息聚合处理，见后面的Policy-Based Synchronizer&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&quot;Time-Sequencer&quot;&gt;&lt;a href=&quot;#Time-Sequencer&quot; class=&quot;headerlink&quot; title=&quot;Time Sequencer&quot;&gt;&lt;/a&gt;Time Sequencer&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;The TimeSequencer filter guarantees that messages will be called in temporal order according to their header’s timestamp. The TimeSequencer is constructed with a specific delay which specifies how long to queue up messages before passing them through. A callback for a message is never invoked until the messages’ time stamp is out of date by at least delay. However, for all messages which are out of date by at least the delay, their callback are invoked and guaranteed to be in temporal order. If a message arrives from a time prior to a message which has already had its callback invoked, it is thrown away.&lt;ul&gt;
-&lt;li&gt;简单讲，使得消息的回调函数调用能够按照固定时间间隔和按先后顺序执行，如果出现顺序混乱，则将此消息丢弃&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&quot;Cache&quot;&gt;&lt;a href=&quot;#Cache&quot; class=&quot;headerlink&quot; title=&quot;Cache&quot;&gt;&lt;/a&gt;Cache&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;可以存储时间上最近的N个消息&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&quot;Policy-Based-Synchronizer&quot;&gt;&lt;a href=&quot;#Policy-Based-Synchronizer&quot; class=&quot;headerlink&quot; title=&quot;Policy-Based Synchronizer&quot;&gt;&lt;/a&gt;Policy-Based Synchronizer&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;基于某种策略的消息同步&lt;ul&gt;
-&lt;li&gt;有两种同步：ExactTime和ApproximateTime&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&quot;Chain&quot;&gt;&lt;a href=&quot;#Chain&quot; class=&quot;headerlink&quot; title=&quot;Chain&quot;&gt;&lt;/a&gt;Chain&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;可以将Filter连成一个链&lt;ul&gt;
-&lt;li&gt;输出与下一个输入相连&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;ros-bag&quot;&gt;&lt;a href=&quot;#ros-bag&quot; class=&quot;headerlink&quot; title=&quot;ros_bag&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://wiki.ros.org/rosbag?distro=kinetic&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ros_bag&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;记录和重新播放消息数据的工具包，生成一个*.bag文件，此文件可以用Matlab进行解析，也可以在ROS系统中进行重新播放。&lt;ul&gt;
-&lt;li&gt;详细情况见我的另外一篇播客&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;ros-graph&quot;&gt;&lt;a href=&quot;#ros-graph&quot; class=&quot;headerlink&quot; title=&quot;ros_graph&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://wiki.ros.org/rosgraph?distro=kinetic&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ros_graph&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;进行画图的命令行工具包，在终端显示数据等&lt;/li&gt;
-&lt;li&gt;使用python命令更好，包括：rostopic, rosnode, rosservice, rosparam&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;XmlRpc&quot;&gt;&lt;a href=&quot;#XmlRpc&quot; class=&quot;headerlink&quot; title=&quot;XmlRpc++&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://xmlrpcpp.sourceforge.net/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;XmlRpc++&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;是XML-RPC机制的C++实现，XmlRpc是远程过程调用的一种方式，不过更加简单一些，其使用XML作为数据交换格式，使用HTTP协议进行通信。&lt;/li&gt;
-&lt;li&gt;所有IO都是非阻塞式的，所以网络状态不佳也不会拖慢服务端&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;[TOC]&lt;/p&gt;
-&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;ROS，其实从本质上讲就是一个消息通信中间件，其最基础的功能就是在ros_common这个包中实现的，如消息，服务，控制台，roslaunch等等，在这里重点学习几个平时没有用到，但也非常重要的模块&lt;/li&gt;
 &lt;/ul&gt;
     
     </summary>
