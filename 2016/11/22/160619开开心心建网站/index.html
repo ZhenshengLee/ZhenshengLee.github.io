@@ -6,30 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://ZhenshengLee.github.io">
-  <title>【部署】Git拉取远程分支 | 哈骑士的博客</title>
+  <title>【建站】开开心心建网站 | 哈骑士的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="[TOC]
-前言
-自己是git新手，在本地没有分支的时候不知道怎么拉取（从别的电脑push的）远程分支，完全没办法，只好删除整个文件夹重新clone，后来到网上好好学了学，总算知道了。
-
-这里重点介绍一下本地没有该分支，需要到远程拉取该分支的方法">
+  <meta name="description" content="前言
+本来准备在CSDN上建个博客，后来为了能够更加自动化，还是在GitHub Pages 上弄一个">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【部署】Git拉取远程分支">
-<meta property="og:url" content="https://ZhenshengLee.github.io/2016/08/16/160816-Git拉取远程分支/index.html">
+<meta property="og:title" content="【建站】开开心心建网站">
+<meta property="og:url" content="https://ZhenshengLee.github.io/2016/11/22/160619开开心心建网站/index.html">
 <meta property="og:site_name" content="哈骑士的博客">
-<meta property="og:description" content="[TOC]
-前言
-自己是git新手，在本地没有分支的时候不知道怎么拉取（从别的电脑push的）远程分支，完全没办法，只好删除整个文件夹重新clone，后来到网上好好学了学，总算知道了。
-
-这里重点介绍一下本地没有该分支，需要到远程拉取该分支的方法">
-<meta property="og:updated_time" content="2016-08-16T09:17:12.000Z">
+<meta property="og:description" content="前言
+本来准备在CSDN上建个博客，后来为了能够更加自动化，还是在GitHub Pages 上弄一个">
+<meta property="og:updated_time" content="2016-07-16T03:52:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【部署】Git拉取远程分支">
-<meta name="twitter:description" content="[TOC]
-前言
-自己是git新手，在本地没有分支的时候不知道怎么拉取（从别的电脑push的）远程分支，完全没办法，只好删除整个文件夹重新clone，后来到网上好好学了学，总算知道了。
-
-这里重点介绍一下本地没有该分支，需要到远程拉取该分支的方法">
+<meta name="twitter:title" content="【建站】开开心心建网站">
+<meta name="twitter:description" content="前言
+本来准备在CSDN上建个博客，后来为了能够更加自动化，还是在GitHub Pages 上弄一个">
   
     <link rel="alternative" href="/atom.xml" title="哈骑士的博客" type="application/atom+xml">
   
@@ -199,67 +190,90 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-160816-Git拉取远程分支" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-160619开开心心建网站" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      【部署】Git拉取远程分支
+      【建站】开开心心建网站
     </h1>
   
 
         
-        <a href="/2016/08/16/160816-Git拉取远程分支/" class="archive-article-date">
-  	<time datetime="2016-08-16T08:38:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-16</time>
+        <a href="/2016/11/22/160619开开心心建网站/" class="archive-article-date">
+  	<time datetime="2016-11-22T08:46:24.888Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-22</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>[TOC]</p>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><ul>
-<li><p>自己是git新手，在本地没有分支的时候不知道怎么拉取（从别的电脑push的）远程分支，完全没办法，只好删除整个文件夹重新clone，后来到网上好好学了学，总算知道了。</p>
-</li>
-<li><p>这里重点介绍一下本地没有该分支，需要到远程拉取该分支的方法</p>
-</li>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
+<li>本来准备在CSDN上建个博客，后来为了能够更加自动化，还是在GitHub Pages 上弄一个</li>
 </ul>
 <a id="more"></a>
-<h3 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h3><p><a href="http://blog.csdn.net/xqs83/article/details/7382074" target="_blank" rel="external">xqs83</a></p>
-<h3 id="错误做法"><a href="#错误做法" class="headerlink" title="错误做法"></a>错误做法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">git branch link-rosforlv</span><br><span class="line"></span><br><span class="line">git checkout link-rosforlv</span><br><span class="line"></span><br><span class="line">git pull origin link-rosforlv</span><br></pre></td></tr></table></figure>
+<p>[TOC]</p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh</span><br><span class="line"></span><br><span class="line">nvm install node</span><br><span class="line"></span><br><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 <ul>
-<li><blockquote>
-<p>因为，这样建立的branch是以master为基础建立的，再pull下来的话，会和master的内容进行合并，有可能会发生冲突</p>
-</blockquote>
-</li>
+<li>建立github.io项目</li>
 </ul>
-<h3 id="正确用法"><a href="#正确用法" class="headerlink" title="正确用法"></a>正确用法</h3><ul>
-<li>用</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -a</span><br></pre></td></tr></table></figure>
-<p>查看包括远程分支在内的所有分支：</p>
-<ul>
-<li>使用</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">checkout</span><br></pre></td></tr></table></figure>
-<p>命令来把远程分支取到本地，并自动建立tracking</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">git checkout -b link-rosforlv origin/link-rosforlv</span><br></pre></td></tr></table></figure>
-<ul>
-<li>或者使用-t参数，它默认会在本地建立一个和远程分支名字一样的分支</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">git checkout -t origin/link-rosforlv</span><br></pre></td></tr></table></figure>
-<ul>
-<li>也可以使用fetch来做：</li>
-</ul>
-<p>git fetch origin link-rosforlv:link-rosforlv</p>
+<h3 id="本地建站"><a href="#本地建站" class="headerlink" title="本地建站"></a>本地建站</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">mkdir zsBlog</span><br><span class="line"></span><br><span class="line">cd ./zsBlog/</span><br><span class="line"></span><br><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+<h3 id="第一个页面"><a href="#第一个页面" class="headerlink" title="第一个页面"></a>第一个页面</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p><strong>不过通过fetch命令来建立的本地分支不是一个track branch，而且成功后不会自动切换到该分支上</strong></p>
+<p>Hexo is running at <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>. Press Ctrl+C to stop.</p>
 </blockquote>
-<h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><ul>
-<li>学完之后才发现有这么多种方法可以做到这些，瞬觉自己才疏学浅，惭愧惭愧。</li>
+<ul>
+<li>进入浏览器访问页面即可</li>
 </ul>
+<h3 id="创建一个页面并预览"><a href="#创建一个页面并预览" class="headerlink" title="创建一个页面并预览"></a>创建一个页面并预览</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;Zhensheng的第一个博客&quot;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Created: ~/zsBlog/source/_posts/Zhensheng的第一个博客.md</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd source/_posts</span><br><span class="line">code ./Zhensheng的第一个博客</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<ul>
+<li>浏览器访问预览</li>
+</ul>
+<h3 id="设置一个主题"><a href="#设置一个主题" class="headerlink" title="设置一个主题"></a>设置一个主题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd ~/zsBlog</span><br><span class="line">git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</span><br><span class="line">code ./_config.yml</span><br></pre></td></tr></table></figure>
+<ul>
+<li>更改这一行</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> yilia</span><br></pre></td></tr></table></figure>
+<h3 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cd themes/yilia</span><br><span class="line">code ./_config.yml</span><br><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">repo: git@github.com:ZhenshengLee/ZhenshengLee.github.io.git</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
+<ul>
+<li>更新并部署</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<h3 id="deploy-没反应"><a href="#deploy-没反应" class="headerlink" title="deploy 没反应"></a>deploy 没反应</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<h2 id="Hexo配置"><a href="#Hexo配置" class="headerlink" title="Hexo配置"></a>Hexo配置</h2><h3 id="首页显示摘要"><a href="#首页显示摘要" class="headerlink" title="首页显示摘要"></a>首页显示摘要</h3><ul>
+<li>如果你需要主页显示文章全部内容，只显示摘要的话，就在文章中加一行 &lt;!–more—&gt; 在这个标记之前的就是摘要</li>
+</ul>
+<h3 id="关于位置显示”Uber”"><a href="#关于位置显示”Uber”" class="headerlink" title="关于位置显示”Über”"></a>关于位置显示”Über”</h3><ul>
+<li>使用CLion替换所有文件中的此单词，替换为About</li>
+</ul>
+<h3 id="多说评论"><a href="#多说评论" class="headerlink" title="多说评论"></a>多说评论</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">subl themes/yilia/layout/_partial/post/duoshuo.ejs</span><br><span class="line"></span><br><span class="line">var duoshuoQuery = &#123;short_name:&quot;zhenshenglee&quot;&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="注册google-analytics"><a href="#注册google-analytics" class="headerlink" title="注册google_analytics"></a>注册google_analytics</h3><h3 id="添加RSS"><a href="#添加RSS" class="headerlink" title="添加RSS"></a>添加RSS</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">npm install hexo-generator-feed --save</span><br></pre></td></tr></table></figure>
+<h3 id="添加sitemap"><a href="#添加sitemap" class="headerlink" title="添加sitemap"></a>添加sitemap</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span><br><span class="line">hexo clean</span><br><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+<ul>
+<li>最后的配置文件</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Hexo Configuration</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/configuration.html</span></span><br><span class="line"><span class="comment">## Source: https://github.com/hexojs/hexo/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> 哈骑士的博客</span><br><span class="line"><span class="attr">subtitle:</span> 将科技固化为产品——机器人软件开发</span><br><span class="line"><span class="attr">description:</span> 点滴记录，学习成长</span><br><span class="line"><span class="attr">author:</span> 黎振胜</span><br><span class="line"><span class="attr">language:</span> zh-Hans</span><br><span class="line"><span class="attr">timezone:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span></span><br><span class="line"><span class="attr">url:</span> https://ZhenshengLee.github.io</span><br><span class="line"><span class="attr">root:</span> /</span><br><span class="line"><span class="attr">permalink:</span> :year/:month/:day/:title/</span><br><span class="line"><span class="attr">permalink_defaults:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Directory</span></span><br><span class="line"><span class="attr">source_dir:</span> source</span><br><span class="line"><span class="attr">public_dir:</span> public</span><br><span class="line"><span class="attr">tag_dir:</span> tags</span><br><span class="line"><span class="attr">archive_dir:</span> archives</span><br><span class="line"><span class="attr">category_dir:</span> categories</span><br><span class="line"><span class="attr">code_dir:</span> downloads/code</span><br><span class="line"><span class="attr">i18n_dir:</span> :lang</span><br><span class="line"><span class="attr">skip_render:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Writing</span></span><br><span class="line"><span class="attr">new_post_name:</span> :title.md <span class="comment"># File name of new posts</span></span><br><span class="line"><span class="attr">default_layout:</span> post</span><br><span class="line"><span class="attr">titlecase:</span> <span class="literal">false</span> <span class="comment"># Transform title into titlecase</span></span><br><span class="line"><span class="attr">external_link:</span> <span class="literal">true</span> <span class="comment"># Open external links in new tab</span></span><br><span class="line"><span class="attr">filename_case:</span> <span class="number">0</span></span><br><span class="line"><span class="attr">render_drafts:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">relative_link:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">future:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">highlight:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  line_number:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  auto_detect:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  tab_replace:</span></span><br><span class="line"><span class="attr">  style:</span> <span class="string">'github'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Category &amp; Tag</span></span><br><span class="line"><span class="attr">default_category:</span> uncategorized</span><br><span class="line"><span class="attr">category_map:</span></span><br><span class="line"><span class="attr">tag_map:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Date / Time format</span></span><br><span class="line"><span class="comment">## Hexo uses Moment.js to parse and display date</span></span><br><span class="line"><span class="comment">## You can customize the date format as defined in</span></span><br><span class="line"><span class="comment">## http://momentjs.com/docs/#/displaying/format/</span></span><br><span class="line"><span class="attr">date_format:</span> YYYY-MM-DD</span><br><span class="line"><span class="attr">time_format:</span> HH:mm:ss</span><br><span class="line"></span><br><span class="line"><span class="comment"># Pagination</span></span><br><span class="line"><span class="comment">## Set per_page to 0 to disable pagination</span></span><br><span class="line"><span class="attr">per_page:</span> <span class="number">10</span></span><br><span class="line"><span class="attr">pagination_dir:</span> page</span><br><span class="line"></span><br><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="comment"># theme: landscape</span></span><br><span class="line"><span class="attr">theme:</span> yilia</span><br><span class="line"></span><br><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> git</span><br><span class="line"><span class="attr">  repo:</span> git@github.com:ZhenshengLee/ZhenshengLee.github.io.git</span><br><span class="line"><span class="attr">  branch:</span> master</span><br><span class="line"></span><br><span class="line"><span class="comment"># RSS订阅</span></span><br><span class="line"><span class="attr">plugin:</span></span><br><span class="line"><span class="bullet">    -</span> hexo-generator-feed</span><br><span class="line"><span class="comment">#Feed Atom</span></span><br><span class="line"><span class="attr">feed:</span></span><br><span class="line"><span class="attr">type:</span> atom</span><br><span class="line"><span class="attr">path:</span> atom.xml</span><br><span class="line"><span class="attr">limit:</span> <span class="number">20</span></span><br></pre></td></tr></table></figure>
+<h2 id="Yilia主题配置"><a href="#Yilia主题配置" class="headerlink" title="Yilia主题配置"></a>Yilia主题配置</h2><ul>
+<li>最后的配置文件</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Header</span></span><br><span class="line"></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line"></span><br><span class="line">  主页: /</span><br><span class="line"></span><br><span class="line">  所有文章: /archives/</span><br><span class="line"></span><br><span class="line">  写在前面: /front_page/</span><br><span class="line"></span><br><span class="line">  机器人软件构造: /tags/software_build/</span><br><span class="line"></span><br><span class="line">  机器人软件设计: /tags/software_design/</span><br><span class="line"></span><br><span class="line">  机器人系统开发: /tags/system_dev/</span><br><span class="line"></span><br><span class="line">  机械设计: /tags/machine_design/</span><br><span class="line"></span><br><span class="line">  <span class="comment"># 机器视觉: /tags/机器视觉/</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># 深度学习: /tags/深度学习/</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># 其他: /tags/others/</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># 关于: /about/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># SubNav</span></span><br><span class="line"></span><br><span class="line"><span class="attr">subnav:</span></span><br><span class="line"></span><br><span class="line"><span class="attr">  github:</span> <span class="string">"https://github.com/ZhenshengLee"</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">#weibo: "#"</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">#rss: "/atom.xml"</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">#zhihu: "#"</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">#douban: "#"</span></span><br><span class="line"></span><br><span class="line"><span class="attr">  mail:</span> <span class="string">"mailto://lzs_1993@qq.com"</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">#facebook: "#"</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">#google: "#"</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">#twitter: "#"</span></span><br><span class="line"></span><br><span class="line"><span class="attr">  linkedin:</span> <span class="string">"https://cn.linkedin.com/in/zhenshengli"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attr">rss:</span> /atom.xml</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Content</span></span><br><span class="line"></span><br><span class="line"><span class="attr">excerpt_link:</span> 阅读全文</span><br><span class="line"></span><br><span class="line"><span class="attr">fancybox:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="attr">mathjax:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否开启动画效果</span></span><br><span class="line"></span><br><span class="line"><span class="attr">animate:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否在新窗口打开链接</span></span><br><span class="line"></span><br><span class="line"><span class="attr">open_in_new:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Miscellaneous</span></span><br><span class="line"></span><br><span class="line"><span class="attr">google_analytics:</span> <span class="string">''</span></span><br><span class="line"></span><br><span class="line"><span class="attr">favicon:</span> /favicon.png</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#你的头像url</span></span><br><span class="line"></span><br><span class="line"><span class="attr">avatar:</span> <span class="string">"http://7xvunf.com1.z0.glb.clouddn.com/%E5%85%B6%E4%BB%96320X425.jpg"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#是否开启分享</span></span><br><span class="line"></span><br><span class="line"><span class="attr">share_jia:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="attr">share_addthis:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key</span></span><br><span class="line"></span><br><span class="line"><span class="attr">duoshuo:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="attr">duoshuo_shortname:</span> zhenshenglee</span><br><span class="line"></span><br><span class="line"><span class="comment">#若使用disqus，请在博客config文件中填写disqus_shortname，并关闭多说评论</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#是否开启云标签</span></span><br><span class="line"></span><br><span class="line"><span class="attr">tagcloud:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#是否开启友情链接</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#不开启——</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#friends: false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#开启——</span></span><br><span class="line"></span><br><span class="line"><span class="attr">friends:</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># 奥巴马的博客: http://localhost:4000/</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># 卡卡的美丽传说: http://localhost:4000/</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># 本泽马的博客: http://localhost:4000/</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># 吉格斯的博客: http://localhost:4000/</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># 习大大大不同: http://localhost:4000/</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># 托蒂的博客: http://localhost:4000/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#是否开启“关于我”。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#不开启——</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#aboutme: false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#开启——</span></span><br><span class="line"></span><br><span class="line"><span class="attr">aboutme:</span> 机械电子工程在读研究生，从事协作机器人软件开发，正在找工作</span><br></pre></td></tr></table></figure>
+<h2 id="其他设置"><a href="#其他设置" class="headerlink" title="其他设置"></a>其他设置</h2><h3 id="vscode"><a href="#vscode" class="headerlink" title="vscode"></a>vscode</h3><ul>
+<li>.npmignore中添加<code>.vscode</code></li>
+</ul>
+<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><blockquote>
+<p><a href="http://yanceywang.com/2015/07/30/Ubuntu+Hexo+GithubPages%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" target="_blank" rel="external">YanceyWang</a></p>
+<p><a href="http://blog.csdn.net/poem_of_sunshine/article/details/29369785" target="_blank" rel="external">一个更全的包括hexo配置的介绍</a></p>
+<p><a href="https://chinafishnews.github.io/2016/02/21/Hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE/" target="_blank" rel="external">yilia主题设置</a></p>
+<p><a href="http://blog.xiaobaidonghui.cn/2015/07/28/%E9%87%8D%E6%96%B0%E9%85%8D%E7%BD%AE%E4%BA%86%E4%B8%8B%E5%A4%9A%E8%AF%B4/" target="_blank" rel="external">配置多说</a></p>
+<p><a href="http://www.voidking.com/2015/05/31/deve-hexo-theme-optimize/" target="_blank" rel="external">主题优化</a></p>
+<p><a href="http://www.axialis.com/iconworkshop/" target="_blank" rel="external">图标制作</a></p>
+</blockquote>
 
       
 
@@ -294,7 +308,7 @@
 		<ul class="article-tag-list">
 			 
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">机器人软件构造</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">其他</a>
         </li>
       
 		</ul>
@@ -350,7 +364,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://ZhenshengLee.github.io/2016/08/16/160816-Git拉取远程分支/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://ZhenshengLee.github.io/2016/11/22/160619开开心心建网站/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -364,18 +378,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2016/08/16/160816-gdb-ros-and-roslaunch/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/11/22/160716常用系统维护/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          【调试】gdb, ros and roslaunch
+          【Ubuntu】常用系统维护
         
       </div>
     </a>
   
   
-    <a href="/2016/08/16/160816可视化工具-Marker/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">【ROS】标记工具-Marker</div>
+    <a href="/2016/11/07/161107-thunderbird配置/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">161107-thunderbird配置</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -389,7 +403,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="160816-Git拉取远程分支" data-title="【部署】Git拉取远程分支" data-url="https://ZhenshengLee.github.io/2016/08/16/160816-Git拉取远程分支/"></div>
+	<div class="ds-thread" data-thread-key="160619开开心心建网站" data-title="【建站】开开心心建网站" data-url="https://ZhenshengLee.github.io/2016/11/22/160619开开心心建网站/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
