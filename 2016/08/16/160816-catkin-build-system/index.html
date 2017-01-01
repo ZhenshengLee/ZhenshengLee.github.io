@@ -214,19 +214,19 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>[TOC]</p>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><ul>
-<li>是基于CMake，使用一系列CMake 宏制作而成的ROS构造系统</li>
+<h3 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h3><ul>
+<li>&#x662F;&#x57FA;&#x4E8E;CMake&#xFF0C;&#x4F7F;&#x7528;&#x4E00;&#x7CFB;&#x5217;CMake &#x5B8F;&#x5236;&#x4F5C;&#x800C;&#x6210;&#x7684;ROS&#x6784;&#x9020;&#x7CFB;&#x7EDF;</li>
 </ul>
 <a id="more"></a>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><blockquote>
+<h3 id="&#x53C2;&#x8003;"><a href="#&#x53C2;&#x8003;" class="headerlink" title="&#x53C2;&#x8003;"></a>&#x53C2;&#x8003;</h3><blockquote>
 <p><a href="http://docs.ros.org/api/catkin/html/" target="_blank" rel="external">Catkin Documentation</a></p>
 <p><a href="http://wiki.ros.org/catkin" target="_blank" rel="external">ROS Wiki</a></p>
 </blockquote>
-<p>**推荐一本书：《深入理解软件构建系统》</p>
-<h3 id="CMakeLists"><a href="#CMakeLists" class="headerlink" title="CMakeLists"></a><a href="http://wiki.ros.org/catkin/CMakeLists.txt" target="_blank" rel="external">CMakeLists</a></h3><h4 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h4><ul>
-<li>此文件是CMake 构造系统的输入文件，构造描述文件记录了代码如何构建以及如何安装，catkin 构建系统基于CMakeLists，但是也添加了额外的不多的约束</li>
+<p>**&#x63A8;&#x8350;&#x4E00;&#x672C;&#x4E66;&#xFF1A;&#x300A;&#x6DF1;&#x5165;&#x7406;&#x89E3;&#x8F6F;&#x4EF6;&#x6784;&#x5EFA;&#x7CFB;&#x7EDF;&#x300B;</p>
+<h3 id="cmakelists"><a href="#CMakeLists" class="headerlink" title="CMakeLists"></a><a href="http://wiki.ros.org/catkin/CMakeLists.txt" target="_blank" rel="external">CMakeLists</a></h3><h4 id="&#x7EFC;&#x8FF0;"><a href="#&#x7EFC;&#x8FF0;" class="headerlink" title="&#x7EFC;&#x8FF0;"></a>&#x7EFC;&#x8FF0;</h4><ul>
+<li>&#x6B64;&#x6587;&#x4EF6;&#x662F;CMake &#x6784;&#x9020;&#x7CFB;&#x7EDF;&#x7684;&#x8F93;&#x5165;&#x6587;&#x4EF6;&#xFF0C;&#x6784;&#x9020;&#x63CF;&#x8FF0;&#x6587;&#x4EF6;&#x8BB0;&#x5F55;&#x4E86;&#x4EE3;&#x7801;&#x5982;&#x4F55;&#x6784;&#x5EFA;&#x4EE5;&#x53CA;&#x5982;&#x4F55;&#x5B89;&#x88C5;&#xFF0C;catkin &#x6784;&#x5EFA;&#x7CFB;&#x7EDF;&#x57FA;&#x4E8E;CMakeLists&#xFF0C;&#x4F46;&#x662F;&#x4E5F;&#x6DFB;&#x52A0;&#x4E86;&#x989D;&#x5916;&#x7684;&#x4E0D;&#x591A;&#x7684;&#x7EA6;&#x675F;</li>
 </ul>
-<h4 id="总体结构（严格按照顺序）"><a href="#总体结构（严格按照顺序）" class="headerlink" title="总体结构（严格按照顺序）"></a>总体结构（严格按照顺序）</h4><ol>
+<h4 id="&#x603B;&#x4F53;&#x7ED3;&#x6784;&#x4E25;&#x683C;&#x6309;&#x7167;&#x987A;&#x5E8F;"><a href="#&#x603B;&#x4F53;&#x7ED3;&#x6784;&#xFF08;&#x4E25;&#x683C;&#x6309;&#x7167;&#x987A;&#x5E8F;&#xFF09;" class="headerlink" title="&#x603B;&#x4F53;&#x7ED3;&#x6784;&#xFF08;&#x4E25;&#x683C;&#x6309;&#x7167;&#x987A;&#x5E8F;&#xFF09;"></a>&#x603B;&#x4F53;&#x7ED3;&#x6784;&#xFF08;&#x4E25;&#x683C;&#x6309;&#x7167;&#x987A;&#x5E8F;&#xFF09;</h4><ol>
 <li><p>Required CMake Version (cmake_minimum_required)</p>
 </li>
 <li><p>Package Name (project())</p>
@@ -246,16 +246,16 @@
 <li><p>Install rules (install())</p>
 </li>
 </ol>
-<h4 id="find-package-思想"><a href="#find-package-思想" class="headerlink" title="find_package()思想"></a>find_package()思想</h4><ul>
-<li>CMake中的find模块的作用在于自动寻找已经存在的软件组件，这里的组件概念对应于ROS中的包的概念。如</li>
+<h4 id="find_package&#x601D;&#x60F3;"><a href="#find-package-&#x601D;&#x60F3;" class="headerlink" title="find_package()&#x601D;&#x60F3;"></a>find_package()&#x601D;&#x60F3;</h4><ul>
+<li>CMake&#x4E2D;&#x7684;find&#x6A21;&#x5757;&#x7684;&#x4F5C;&#x7528;&#x5728;&#x4E8E;&#x81EA;&#x52A8;&#x5BFB;&#x627E;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x7684;&#x8F6F;&#x4EF6;&#x7EC4;&#x4EF6;&#xFF0C;&#x8FD9;&#x91CC;&#x7684;&#x7EC4;&#x4EF6;&#x6982;&#x5FF5;&#x5BF9;&#x5E94;&#x4E8E;ROS&#x4E2D;&#x7684;&#x5305;&#x7684;&#x6982;&#x5FF5;&#x3002;&#x5982;</li>
 </ul>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">find_package</span>(catkin REQUIRED COMPONENTS nodelet)</span><br></pre></td></tr></table></figure>
-<p><strong>意思是，寻找catkin库中的nodelet组件*</strong>，<strong>在这个语句中不能添加运行时依赖*</strong></p>
+<p><strong>&#x610F;&#x601D;&#x662F;&#xFF0C;&#x5BFB;&#x627E;catkin&#x5E93;&#x4E2D;&#x7684;nodelet&#x7EC4;&#x4EF6;*</strong>&#xFF0C;<strong>&#x5728;&#x8FD9;&#x4E2A;&#x8BED;&#x53E5;&#x4E2D;&#x4E0D;&#x80FD;&#x6DFB;&#x52A0;&#x8FD0;&#x884C;&#x65F6;&#x4F9D;&#x8D56;*</strong></p>
 <ul>
-<li>问题来了，为什么Catkin是一个大库，ROS包是一个组件呢？其实官方文档说了，你可以可以这么写</li>
+<li>&#x95EE;&#x9898;&#x6765;&#x4E86;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;Catkin&#x662F;&#x4E00;&#x4E2A;&#x5927;&#x5E93;&#xFF0C;ROS&#x5305;&#x662F;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x5462;&#xFF1F;&#x5176;&#x5B9E;&#x5B98;&#x65B9;&#x6587;&#x6863;&#x8BF4;&#x4E86;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x53EF;&#x4EE5;&#x8FD9;&#x4E48;&#x5199;</li>
 </ul>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">find_package</span>(catkin REQUIRED);<span class="keyword">find_package</span>(nodelet REQUIRED)</span><br></pre></td></tr></table></figure>
-<p>，因为使用catkin编译，必须包含catkin包，然后你再包含nodelet包，但是这样也太不方便了。所以原因就是要方便，当然也不是方便这么一点点，还有关于环境变量。</p>
+<p>&#xFF0C;&#x56E0;&#x4E3A;&#x4F7F;&#x7528;catkin&#x7F16;&#x8BD1;&#xFF0C;&#x5FC5;&#x987B;&#x5305;&#x542B;catkin&#x5305;&#xFF0C;&#x7136;&#x540E;&#x4F60;&#x518D;&#x5305;&#x542B;nodelet&#x5305;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x6837;&#x4E5F;&#x592A;&#x4E0D;&#x65B9;&#x4FBF;&#x4E86;&#x3002;&#x6240;&#x4EE5;&#x539F;&#x56E0;&#x5C31;&#x662F;&#x8981;&#x65B9;&#x4FBF;&#xFF0C;&#x5F53;&#x7136;&#x4E5F;&#x4E0D;&#x662F;&#x65B9;&#x4FBF;&#x8FD9;&#x4E48;&#x4E00;&#x70B9;&#x70B9;&#xFF0C;&#x8FD8;&#x6709;&#x5173;&#x4E8E;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x3002;</p>
 <blockquote>
 <ul>
 <li><p>Catkin packages are not really components of catkin. Rather the components feature of CMake was utilized in the design of catkin to save you significant typing time.</p>
@@ -265,10 +265,10 @@
 </ul>
 </blockquote>
 <ul>
-<li>注意：boost不是catkin组件哦</li>
+<li>&#x6CE8;&#x610F;&#xFF1A;boost&#x4E0D;&#x662F;catkin&#x7EC4;&#x4EF6;&#x54E6;</li>
 </ul>
-<h4 id="catkin-package-思想"><a href="#catkin-package-思想" class="headerlink" title="catkin_package()思想"></a>catkin_package()思想</h4><ul>
-<li><p>是一个CMake 宏，用来明确catkin构建系统信息，这些信息用来生成pkg-config和CMake文件</p>
+<h4 id="catkin_package&#x601D;&#x60F3;"><a href="#catkin-package-&#x601D;&#x60F3;" class="headerlink" title="catkin_package()&#x601D;&#x60F3;"></a>catkin_package()&#x601D;&#x60F3;</h4><ul>
+<li><p>&#x662F;&#x4E00;&#x4E2A;CMake &#x5B8F;&#xFF0C;&#x7528;&#x6765;&#x660E;&#x786E;catkin&#x6784;&#x5EFA;&#x7CFB;&#x7EDF;&#x4FE1;&#x606F;&#xFF0C;&#x8FD9;&#x4E9B;&#x4FE1;&#x606F;&#x7528;&#x6765;&#x751F;&#x6210;pkg-config&#x548C;CMake&#x6587;&#x4EF6;</p>
 </li>
 <li><blockquote>
 <p><strong>This function must be called before declaring any targets with add_library() or add_executable()</strong>. The function has 5 optional arguments:</p>
@@ -276,21 +276,21 @@
 </li>
 </ul>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">INCLUDE_DIRS - The exported <span class="keyword">include</span> paths (i.e. cflags) for the package</span><br><span class="line"></span><br><span class="line">LIBRARIES - The exported libraries from the <span class="keyword">project</span></span><br><span class="line"></span><br><span class="line">CATKIN_DEPENDS - Other catkin projects that this <span class="keyword">project</span> depends <span class="keyword">on</span></span><br><span class="line"></span><br><span class="line">DEPENDS - Non-catkin CMake projects that this <span class="keyword">project</span> depends <span class="keyword">on</span></span><br><span class="line"></span><br><span class="line">CFG_EXTRAS - Additional configuration options</span><br></pre></td></tr></table></figure>
-<h4 id="关于标的的构建选项"><a href="#关于标的的构建选项" class="headerlink" title="关于标的的构建选项"></a>关于标的的构建选项</h4><ul>
-<li>自定义输出目录。</li>
+<h4 id="&#x5173;&#x4E8E;&#x6807;&#x7684;&#x7684;&#x6784;&#x5EFA;&#x9009;&#x9879;"><a href="#&#x5173;&#x4E8E;&#x6807;&#x7684;&#x7684;&#x6784;&#x5EFA;&#x9009;&#x9879;" class="headerlink" title="&#x5173;&#x4E8E;&#x6807;&#x7684;&#x7684;&#x6784;&#x5EFA;&#x9009;&#x9879;"></a>&#x5173;&#x4E8E;&#x6807;&#x7684;&#x7684;&#x6784;&#x5EFA;&#x9009;&#x9879;</h4><ul>
+<li>&#x81EA;&#x5B9A;&#x4E49;&#x8F93;&#x51FA;&#x76EE;&#x5F55;&#x3002;</li>
 </ul>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">set_target_properties</span>(python_module_library  PROPERTIES LIBRARY_OUTPUT_DIRECTORY <span class="variable">$&#123;CATKIN_DEVEL_PREFIX&#125;</span>/<span class="variable">$&#123;CATKIN_PACKAGE_PYTHON_DESTINATION&#125;</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">set_target_properties</span>(python_module_library  PROPERTIES LIBRARY_OUTPUT_DIRECTORY <span class="variable">${CATKIN_DEVEL_PREFIX}</span>/<span class="variable">${CATKIN_PACKAGE_PYTHON_DESTINATION}</span>)</span><br></pre></td></tr></table></figure>
 <ul>
-<li>包含目录和库，创建可执行文件和库文件</li>
+<li>&#x5305;&#x542B;&#x76EE;&#x5F55;&#x548C;&#x5E93;&#xFF0C;&#x521B;&#x5EFA;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x548C;&#x5E93;&#x6587;&#x4EF6;</li>
 </ul>
-<p><strong><em>完全是CMake知识</em></strong></p>
-<h4 id="消息，服务和动作"><a href="#消息，服务和动作" class="headerlink" title="消息，服务和动作"></a>消息，服务和动作</h4><ul>
-<li>一句话，先add_service_files()，再generate_messgaes()，可谓是一键创造消息服务动作</li>
+<p><strong><em>&#x5B8C;&#x5168;&#x662F;CMake&#x77E5;&#x8BC6;</em></strong></p>
+<h4 id="&#x6D88;&#x606F;&#x670D;&#x52A1;&#x548C;&#x52A8;&#x4F5C;"><a href="#&#x6D88;&#x606F;&#xFF0C;&#x670D;&#x52A1;&#x548C;&#x52A8;&#x4F5C;" class="headerlink" title="&#x6D88;&#x606F;&#xFF0C;&#x670D;&#x52A1;&#x548C;&#x52A8;&#x4F5C;"></a>&#x6D88;&#x606F;&#xFF0C;&#x670D;&#x52A1;&#x548C;&#x52A8;&#x4F5C;</h4><ul>
+<li>&#x4E00;&#x53E5;&#x8BDD;&#xFF0C;&#x5148;add_service_files()&#xFF0C;&#x518D;generate_messgaes()&#xFF0C;&#x53EF;&#x8C13;&#x662F;&#x4E00;&#x952E;&#x521B;&#x9020;&#x6D88;&#x606F;&#x670D;&#x52A1;&#x52A8;&#x4F5C;</li>
 </ul>
 <blockquote>
 <p>Messages (.msg), services (.srv), and actions (.action) files in ROS require a special preprocessor build step before being built and used by ROS packages. The point of these macros is to generate programming language-specific files so that one can utilize messages, services, and actions in their programming language of choice. The build system will generate bindings using all available generators (e.g. gencpp, genpy, genlisp, etc).</p>
 </blockquote>
-<h5 id="一系列注意事项（懒得翻译了）"><a href="#一系列注意事项（懒得翻译了）" class="headerlink" title="一系列注意事项（懒得翻译了）"></a>一系列注意事项（懒得翻译了）</h5><blockquote>
+<h5 id="&#x4E00;&#x7CFB;&#x5217;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#x61D2;&#x5F97;&#x7FFB;&#x8BD1;&#x4E86;"><a href="#&#x4E00;&#x7CFB;&#x5217;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#xFF08;&#x61D2;&#x5F97;&#x7FFB;&#x8BD1;&#x4E86;&#xFF09;" class="headerlink" title="&#x4E00;&#x7CFB;&#x5217;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#xFF08;&#x61D2;&#x5F97;&#x7FFB;&#x8BD1;&#x4E86;&#xFF09;"></a>&#x4E00;&#x7CFB;&#x5217;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#xFF08;&#x61D2;&#x5F97;&#x7FFB;&#x8BD1;&#x4E86;&#xFF09;</h5><blockquote>
 <ul>
 <li><p>These macros must come BEFORE the catkin_package() macro in order for generation to work correctly.</p>
 </li>
@@ -304,50 +304,50 @@
 </li>
 </ul>
 </blockquote>
-<h4 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h4><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">catkin_add_gtest(myUnitTest test/utest.cpp)</span><br></pre></td></tr></table></figure>
-<h4 id="安装（略）"><a href="#安装（略）" class="headerlink" title="安装（略）"></a>安装（略）</h4><h3 id="Package-xml"><a href="#Package-xml" class="headerlink" title="Package.xml"></a><a href="http://wiki.ros.org/catkin/package.xml" target="_blank" rel="external">Package.xml</a></h3><h4 id="使用XML语言设置依赖（略）"><a href="#使用XML语言设置依赖（略）" class="headerlink" title="使用XML语言设置依赖（略）"></a>使用XML语言设置依赖（略）</h4><ul>
-<li><p>实际上就是使用标记语言说明本包的基本情况</p>
+<h4 id="&#x5355;&#x5143;&#x6D4B;&#x8BD5;"><a href="#&#x5355;&#x5143;&#x6D4B;&#x8BD5;" class="headerlink" title="&#x5355;&#x5143;&#x6D4B;&#x8BD5;"></a>&#x5355;&#x5143;&#x6D4B;&#x8BD5;</h4><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">catkin_add_gtest(myUnitTest test/utest.cpp)</span><br></pre></td></tr></table></figure>
+<h4 id="&#x5B89;&#x88C5;&#x7565;"><a href="#&#x5B89;&#x88C5;&#xFF08;&#x7565;&#xFF09;" class="headerlink" title="&#x5B89;&#x88C5;&#xFF08;&#x7565;&#xFF09;"></a>&#x5B89;&#x88C5;&#xFF08;&#x7565;&#xFF09;</h4><h3 id="packagexml"><a href="#Package-xml" class="headerlink" title="Package.xml"></a><a href="http://wiki.ros.org/catkin/package.xml" target="_blank" rel="external">Package.xml</a></h3><h4 id="&#x4F7F;&#x7528;xml&#x8BED;&#x8A00;&#x8BBE;&#x7F6E;&#x4F9D;&#x8D56;&#x7565;"><a href="#&#x4F7F;&#x7528;XML&#x8BED;&#x8A00;&#x8BBE;&#x7F6E;&#x4F9D;&#x8D56;&#xFF08;&#x7565;&#xFF09;" class="headerlink" title="&#x4F7F;&#x7528;XML&#x8BED;&#x8A00;&#x8BBE;&#x7F6E;&#x4F9D;&#x8D56;&#xFF08;&#x7565;&#xFF09;"></a>&#x4F7F;&#x7528;XML&#x8BED;&#x8A00;&#x8BBE;&#x7F6E;&#x4F9D;&#x8D56;&#xFF08;&#x7565;&#xFF09;</h4><ul>
+<li><p>&#x5B9E;&#x9645;&#x4E0A;&#x5C31;&#x662F;&#x4F7F;&#x7528;&#x6807;&#x8BB0;&#x8BED;&#x8A00;&#x8BF4;&#x660E;&#x672C;&#x5305;&#x7684;&#x57FA;&#x672C;&#x60C5;&#x51B5;</p>
 </li>
-<li><p>设置本包为Metapackages</p>
+<li><p>&#x8BBE;&#x7F6E;&#x672C;&#x5305;&#x4E3A;Metapackages</p>
 </li>
 </ul>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">export</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">metapackage</span> /&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">export</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">2.8</span>.<span class="number">3</span>)</span><br><span class="line"><span class="keyword">project</span>(&lt;PACKAGE_NAME&gt;)</span><br><span class="line"><span class="keyword">find_package</span>(catkin REQUIRED)</span><br><span class="line">catkin_metapackage()</span><br></pre></td></tr></table></figure>
-<h3 id="专题：消息，服务，重配置的构造描述文件"><a href="#专题：消息，服务，重配置的构造描述文件" class="headerlink" title="专题：消息，服务，重配置的构造描述文件"></a>专题：消息，服务，重配置的构造描述文件</h3><ul>
-<li>只有一个包或节点是消息，服务，动作的提供者时，在构造描述文件中才需要添加相应的描述语句，如果是接受者，那么不需要提供。</li>
+<h3 id="&#x4E13;&#x9898;&#x6D88;&#x606F;&#x670D;&#x52A1;&#x91CD;&#x914D;&#x7F6E;&#x7684;&#x6784;&#x9020;&#x63CF;&#x8FF0;&#x6587;&#x4EF6;"><a href="#&#x4E13;&#x9898;&#xFF1A;&#x6D88;&#x606F;&#xFF0C;&#x670D;&#x52A1;&#xFF0C;&#x91CD;&#x914D;&#x7F6E;&#x7684;&#x6784;&#x9020;&#x63CF;&#x8FF0;&#x6587;&#x4EF6;" class="headerlink" title="&#x4E13;&#x9898;&#xFF1A;&#x6D88;&#x606F;&#xFF0C;&#x670D;&#x52A1;&#xFF0C;&#x91CD;&#x914D;&#x7F6E;&#x7684;&#x6784;&#x9020;&#x63CF;&#x8FF0;&#x6587;&#x4EF6;"></a>&#x4E13;&#x9898;&#xFF1A;&#x6D88;&#x606F;&#xFF0C;&#x670D;&#x52A1;&#xFF0C;&#x91CD;&#x914D;&#x7F6E;&#x7684;&#x6784;&#x9020;&#x63CF;&#x8FF0;&#x6587;&#x4EF6;</h3><ul>
+<li>&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x5305;&#x6216;&#x8282;&#x70B9;&#x662F;&#x6D88;&#x606F;&#xFF0C;&#x670D;&#x52A1;&#xFF0C;&#x52A8;&#x4F5C;&#x7684;&#x63D0;&#x4F9B;&#x8005;&#x65F6;&#xFF0C;&#x5728;&#x6784;&#x9020;&#x63CF;&#x8FF0;&#x6587;&#x4EF6;&#x4E2D;&#x624D;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x76F8;&#x5E94;&#x7684;&#x63CF;&#x8FF0;&#x8BED;&#x53E5;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x63A5;&#x53D7;&#x8005;&#xFF0C;&#x90A3;&#x4E48;&#x4E0D;&#x9700;&#x8981;&#x63D0;&#x4F9B;&#x3002;</li>
 </ul>
 <blockquote>
-<p>请比较rosaria和rosaria_client构造描述文件的区别</p>
+<p>&#x8BF7;&#x6BD4;&#x8F83;rosaria&#x548C;rosaria_client&#x6784;&#x9020;&#x63CF;&#x8FF0;&#x6587;&#x4EF6;&#x7684;&#x533A;&#x522B;</p>
 </blockquote>
 <ul>
-<li><p>当需要使用到新的消息和服务类型时，才需要再构造描述文件中添加add语句</p>
+<li><p>&#x5F53;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x5230;&#x65B0;&#x7684;&#x6D88;&#x606F;&#x548C;&#x670D;&#x52A1;&#x7C7B;&#x578B;&#x65F6;&#xFF0C;&#x624D;&#x9700;&#x8981;&#x518D;&#x6784;&#x9020;&#x63CF;&#x8FF0;&#x6587;&#x4EF6;&#x4E2D;&#x6DFB;&#x52A0;add&#x8BED;&#x53E5;</p>
 </li>
-<li><p>通过包含其他含有std_msgs的包，如rosaria，也可以间接包含std_msgs</p>
+<li><p>&#x901A;&#x8FC7;&#x5305;&#x542B;&#x5176;&#x4ED6;&#x542B;&#x6709;std_msgs&#x7684;&#x5305;&#xFF0C;&#x5982;rosaria&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x95F4;&#x63A5;&#x5305;&#x542B;std_msgs</p>
 </li>
-<li><p>嘛的，官方例程建立消息和服务都还要</p>
+<li><p>&#x561B;&#x7684;&#xFF0C;&#x5B98;&#x65B9;&#x4F8B;&#x7A0B;&#x5EFA;&#x7ACB;&#x6D88;&#x606F;&#x548C;&#x670D;&#x52A1;&#x90FD;&#x8FD8;&#x8981;</p>
 </li>
 </ul>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_dependencies</span>()</span><br></pre></td></tr></table></figure>
-<p>但是rosaria中没有这么多废话</p>
+<p>&#x4F46;&#x662F;rosaria&#x4E2D;&#x6CA1;&#x6709;&#x8FD9;&#x4E48;&#x591A;&#x5E9F;&#x8BDD;</p>
 <ul>
-<li>消息和服务的构造描述文件</li>
+<li>&#x6D88;&#x606F;&#x548C;&#x670D;&#x52A1;&#x7684;&#x6784;&#x9020;&#x63CF;&#x8FF0;&#x6587;&#x4EF6;</li>
 </ul>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">find_package</span>(catkin REQUIRED COMPONENTS   roscpp   rospy   std_msgs   message_generation)</span><br><span class="line"></span><br><span class="line">catkin_package(  ...  CATKIN_DEPENDS message_runtime ...  ...)</span><br><span class="line"></span><br><span class="line">generate_messages(</span><br><span class="line"></span><br><span class="line"><span class="comment">#   DEPENDENCIES</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#   std_msgs</span></span><br><span class="line"></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">build_depend</span>&gt;</span>message_generation<span class="tag">&lt;/<span class="name">build_depend</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">run_depend</span>&gt;</span>message_runtime<span class="tag">&lt;/<span class="name">run_depend</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li>为什么有</li>
+<li>&#x4E3A;&#x4EC0;&#x4E48;&#x6709;</li>
 </ul>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add_msgs()</span><br></pre></td></tr></table></figure>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add_srvs()</span><br></pre></td></tr></table></figure>
-<p>而只有</p>
+<p>&#x800C;&#x53EA;&#x6709;</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">generate_messages()</span><br></pre></td></tr></table></figure>
-<p>没有</p>
+<p>&#x6CA1;&#x6709;</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">generate_srvs()</span><br></pre></td></tr></table></figure>
-<p>等？因为服务和参数重配置本质上都是基于msg消息机制，多说一句，消息机制是建立在XMLRPC远程过程调用机制上的，进而建立在TCP/IP网络协议上</p>
+<p>&#x7B49;&#xFF1F;&#x56E0;&#x4E3A;&#x670D;&#x52A1;&#x548C;&#x53C2;&#x6570;&#x91CD;&#x914D;&#x7F6E;&#x672C;&#x8D28;&#x4E0A;&#x90FD;&#x662F;&#x57FA;&#x4E8E;msg&#x6D88;&#x606F;&#x673A;&#x5236;&#xFF0C;&#x591A;&#x8BF4;&#x4E00;&#x53E5;&#xFF0C;&#x6D88;&#x606F;&#x673A;&#x5236;&#x662F;&#x5EFA;&#x7ACB;&#x5728;XMLRPC&#x8FDC;&#x7A0B;&#x8FC7;&#x7A0B;&#x8C03;&#x7528;&#x673A;&#x5236;&#x4E0A;&#x7684;&#xFF0C;&#x8FDB;&#x800C;&#x5EFA;&#x7ACB;&#x5728;TCP/IP&#x7F51;&#x7EDC;&#x534F;&#x8BAE;&#x4E0A;</p>
 <blockquote>
-<p>《UNIX网络编程：进程间通信》<br><a href="http://wiki.ros.org/dynamic_reconfigure/Tutorials/SettingUpDynamicReconfigureForANode" target="_blank" rel="external">重配置的构造描述文件</a></p>
+<p>&#x300A;UNIX&#x7F51;&#x7EDC;&#x7F16;&#x7A0B;&#xFF1A;&#x8FDB;&#x7A0B;&#x95F4;&#x901A;&#x4FE1;&#x300B;<br><a href="http://wiki.ros.org/dynamic_reconfigure/Tutorials/SettingUpDynamicReconfigureForANode" target="_blank" rel="external">&#x91CD;&#x914D;&#x7F6E;&#x7684;&#x6784;&#x9020;&#x63CF;&#x8FF0;&#x6587;&#x4EF6;</a></p>
 </blockquote>
-<h3 id="实例：解决zsDoor模块缺失问题"><a href="#实例：解决zsDoor模块缺失问题" class="headerlink" title="实例：解决zsDoor模块缺失问题"></a>实例：解决zsDoor模块缺失问题</h3><h4 id="查看stereo-wall-detection的CMakeLists-txt"><a href="#查看stereo-wall-detection的CMakeLists-txt" class="headerlink" title="查看stereo_wall_detection的CMakeLists.txt"></a>查看stereo_wall_detection的CMakeLists.txt</h4>
+<h3 id="&#x5B9E;&#x4F8B;&#x89E3;&#x51B3;zsdoor&#x6A21;&#x5757;&#x7F3A;&#x5931;&#x95EE;&#x9898;"><a href="#&#x5B9E;&#x4F8B;&#xFF1A;&#x89E3;&#x51B3;zsDoor&#x6A21;&#x5757;&#x7F3A;&#x5931;&#x95EE;&#x9898;" class="headerlink" title="&#x5B9E;&#x4F8B;&#xFF1A;&#x89E3;&#x51B3;zsDoor&#x6A21;&#x5757;&#x7F3A;&#x5931;&#x95EE;&#x9898;"></a>&#x5B9E;&#x4F8B;&#xFF1A;&#x89E3;&#x51B3;zsDoor&#x6A21;&#x5757;&#x7F3A;&#x5931;&#x95EE;&#x9898;</h3><h4 id="&#x67E5;&#x770B;stereo_wall_detection&#x7684;cmakeliststxt"><a href="#&#x67E5;&#x770B;stereo-wall-detection&#x7684;CMakeLists-txt" class="headerlink" title="&#x67E5;&#x770B;stereo_wall_detection&#x7684;CMakeLists.txt"></a>&#x67E5;&#x770B;stereo_wall_detection&#x7684;CMakeLists.txt</h4>
       
 
       
@@ -616,19 +616,19 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">机器人软件构造</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">其他</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">机器人系统开发</a>
+                <a href="javascript:void(0)" class="color3">机器人软件构造</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">机器人软件设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">机器人系统开发</a>
               </li>
              
               <li class="article-tag-list-item">

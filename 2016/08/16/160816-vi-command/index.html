@@ -230,135 +230,135 @@
       
         <p>[TOC]</p>
 <blockquote>
-<p>《嵌入式Linux开发基础知识》</p>
+<p>&#x300A;&#x5D4C;&#x5165;&#x5F0F;Linux&#x5F00;&#x53D1;&#x57FA;&#x7840;&#x77E5;&#x8BC6;&#x300B;</p>
 </blockquote>
-<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><ul>
-<li><p>远程访问需要用到shell内置文本编辑器，必须要学的基础技能</p>
+<h4 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h4><ul>
+<li><p>&#x8FDC;&#x7A0B;&#x8BBF;&#x95EE;&#x9700;&#x8981;&#x7528;&#x5230;shell&#x5185;&#x7F6E;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x5668;&#xFF0C;&#x5FC5;&#x987B;&#x8981;&#x5B66;&#x7684;&#x57FA;&#x7840;&#x6280;&#x80FD;</p>
 </li>
-<li><p>以HELLOWORLD程序为例子进行最基本的程序编辑，编译，调试练习！</p>
+<li><p>&#x4EE5;HELLOWORLD&#x7A0B;&#x5E8F;&#x4E3A;&#x4F8B;&#x5B50;&#x8FDB;&#x884C;&#x6700;&#x57FA;&#x672C;&#x7684;&#x7A0B;&#x5E8F;&#x7F16;&#x8F91;&#xFF0C;&#x7F16;&#x8BD1;&#xFF0C;&#x8C03;&#x8BD5;&#x7EC3;&#x4E60;&#xFF01;</p>
 </li>
 </ul>
 <a id="more"></a>
-<h4 id="VI学习"><a href="#VI学习" class="headerlink" title="VI学习"></a>VI学习</h4><ul>
-<li><p>有三种状态：编辑方式，插入方式和命令方式，当你进入vi时，会首先进入命令方式（同时也是编辑方式），按下i进入插入方式，按下ESC回到命令状态（也是编辑方式）</p>
+<h4 id="vi&#x5B66;&#x4E60;"><a href="#VI&#x5B66;&#x4E60;" class="headerlink" title="VI&#x5B66;&#x4E60;"></a>VI&#x5B66;&#x4E60;</h4><ul>
+<li><p>&#x6709;&#x4E09;&#x79CD;&#x72B6;&#x6001;&#xFF1A;&#x7F16;&#x8F91;&#x65B9;&#x5F0F;&#xFF0C;&#x63D2;&#x5165;&#x65B9;&#x5F0F;&#x548C;&#x547D;&#x4EE4;&#x65B9;&#x5F0F;&#xFF0C;&#x5F53;&#x4F60;&#x8FDB;&#x5165;vi&#x65F6;&#xFF0C;&#x4F1A;&#x9996;&#x5148;&#x8FDB;&#x5165;&#x547D;&#x4EE4;&#x65B9;&#x5F0F;&#xFF08;&#x540C;&#x65F6;&#x4E5F;&#x662F;&#x7F16;&#x8F91;&#x65B9;&#x5F0F;&#xFF09;&#xFF0C;&#x6309;&#x4E0B;i&#x8FDB;&#x5165;&#x63D2;&#x5165;&#x65B9;&#x5F0F;&#xFF0C;&#x6309;&#x4E0B;ESC&#x56DE;&#x5230;&#x547D;&#x4EE4;&#x72B6;&#x6001;&#xFF08;&#x4E5F;&#x662F;&#x7F16;&#x8F91;&#x65B9;&#x5F0F;&#xFF09;</p>
 </li>
 <li><blockquote>
-<p>在插入方式下，不能打入指令，必需先按〈Esc〉键，返回命令方式。假若户不知身处何态，也可以按〈Esc〉键，不管处於何态，都会返回命令方式。在修改文件时，如何存档及退出指定文件都非常重要。在 vi 内，行使存档或退出的指令时，要先按冒号（: ） ，改变为命令方式，用户就可以看见在荧幕左下方，出现冒号（: ） ，显示 vi 已经改为指令态，可以进行存档或退出等工作。</p>
+<p>&#x5728;&#x63D2;&#x5165;&#x65B9;&#x5F0F;&#x4E0B;&#xFF0C;&#x4E0D;&#x80FD;&#x6253;&#x5165;&#x6307;&#x4EE4;&#xFF0C;&#x5FC5;&#x9700;&#x5148;&#x6309;&#x3008;Esc&#x3009;&#x952E;&#xFF0C;&#x8FD4;&#x56DE;&#x547D;&#x4EE4;&#x65B9;&#x5F0F;&#x3002;&#x5047;&#x82E5;&#x6237;&#x4E0D;&#x77E5;&#x8EAB;&#x5904;&#x4F55;&#x6001;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x6309;&#x3008;Esc&#x3009;&#x952E;&#xFF0C;&#x4E0D;&#x7BA1;&#x5904;&#x65BC;&#x4F55;&#x6001;&#xFF0C;&#x90FD;&#x4F1A;&#x8FD4;&#x56DE;&#x547D;&#x4EE4;&#x65B9;&#x5F0F;&#x3002;&#x5728;&#x4FEE;&#x6539;&#x6587;&#x4EF6;&#x65F6;&#xFF0C;&#x5982;&#x4F55;&#x5B58;&#x6863;&#x53CA;&#x9000;&#x51FA;&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x90FD;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x3002;&#x5728; vi &#x5185;&#xFF0C;&#x884C;&#x4F7F;&#x5B58;&#x6863;&#x6216;&#x9000;&#x51FA;&#x7684;&#x6307;&#x4EE4;&#x65F6;&#xFF0C;&#x8981;&#x5148;&#x6309;&#x5192;&#x53F7;&#xFF08;: &#xFF09; &#xFF0C;&#x6539;&#x53D8;&#x4E3A;&#x547D;&#x4EE4;&#x65B9;&#x5F0F;&#xFF0C;&#x7528;&#x6237;&#x5C31;&#x53EF;&#x4EE5;&#x770B;&#x89C1;&#x5728;&#x8367;&#x5E55;&#x5DE6;&#x4E0B;&#x65B9;&#xFF0C;&#x51FA;&#x73B0;&#x5192;&#x53F7;&#xFF08;: &#xFF09; &#xFF0C;&#x663E;&#x793A; vi &#x5DF2;&#x7ECF;&#x6539;&#x4E3A;&#x6307;&#x4EE4;&#x6001;&#xFF0C;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x5B58;&#x6863;&#x6216;&#x9000;&#x51FA;&#x7B49;&#x5DE5;&#x4F5C;&#x3002;</p>
 </blockquote>
 </li>
 </ul>
-<h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><h5 id="命令模式（ESC进入）"><a href="#命令模式（ESC进入）" class="headerlink" title="命令模式（ESC进入）"></a>命令模式（ESC进入）</h5><h6 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h6><ul>
-<li>放弃存档退出</li>
+<h4 id="&#x5E38;&#x7528;&#x547D;&#x4EE4;"><a href="#&#x5E38;&#x7528;&#x547D;&#x4EE4;" class="headerlink" title="&#x5E38;&#x7528;&#x547D;&#x4EE4;"></a>&#x5E38;&#x7528;&#x547D;&#x4EE4;</h4><h5 id="&#x547D;&#x4EE4;&#x6A21;&#x5F0F;esc&#x8FDB;&#x5165;"><a href="#&#x547D;&#x4EE4;&#x6A21;&#x5F0F;&#xFF08;ESC&#x8FDB;&#x5165;&#xFF09;" class="headerlink" title="&#x547D;&#x4EE4;&#x6A21;&#x5F0F;&#xFF08;ESC&#x8FDB;&#x5165;&#xFF09;"></a>&#x547D;&#x4EE4;&#x6A21;&#x5F0F;&#xFF08;ESC&#x8FDB;&#x5165;&#xFF09;</h5><h6 id="&#x67E5;&#x770B;"><a href="#&#x67E5;&#x770B;" class="headerlink" title="&#x67E5;&#x770B;"></a>&#x67E5;&#x770B;</h6><ul>
+<li>&#x653E;&#x5F03;&#x5B58;&#x6863;&#x9000;&#x51FA;</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:q!</span><br></pre></td></tr></table></figure>
 <ul>
-<li>只读文件强行存档</li>
+<li>&#x53EA;&#x8BFB;&#x6587;&#x4EF6;&#x5F3A;&#x884C;&#x5B58;&#x6863;</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:w!</span><br></pre></td></tr></table></figure>
 <ul>
-<li>存档并退出</li>
+<li>&#x5B58;&#x6863;&#x5E76;&#x9000;&#x51FA;</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:x</span><br></pre></td></tr></table></figure>
 <ul>
-<li>跳转到n行</li>
+<li>&#x8DF3;&#x8F6C;&#x5230;n&#x884C;</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">nG</span><br></pre></td></tr></table></figure>
 <ul>
-<li>显示当前行列数</li>
+<li>&#x663E;&#x793A;&#x5F53;&#x524D;&#x884C;&#x5217;&#x6570;</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ctrl+G</span><br></pre></td></tr></table></figure>
 <ul>
-<li>左上下右</li>
+<li>&#x5DE6;&#x4E0A;&#x4E0B;&#x53F3;</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">h</span><br><span class="line">j</span><br><span class="line">k</span><br><span class="line">l</span><br></pre></td></tr></table></figure>
-<h6 id="进入编辑模式"><a href="#进入编辑模式" class="headerlink" title="进入编辑模式"></a>进入编辑模式</h6><ul>
-<li>光标前，后，所处位置插入字符</li>
+<h6 id="&#x8FDB;&#x5165;&#x7F16;&#x8F91;&#x6A21;&#x5F0F;"><a href="#&#x8FDB;&#x5165;&#x7F16;&#x8F91;&#x6A21;&#x5F0F;" class="headerlink" title="&#x8FDB;&#x5165;&#x7F16;&#x8F91;&#x6A21;&#x5F0F;"></a>&#x8FDB;&#x5165;&#x7F16;&#x8F91;&#x6A21;&#x5F0F;</h6><ul>
+<li>&#x5149;&#x6807;&#x524D;&#xFF0C;&#x540E;&#xFF0C;&#x6240;&#x5904;&#x4F4D;&#x7F6E;&#x63D2;&#x5165;&#x5B57;&#x7B26;</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">i a r</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>i=insert; a=append; r=replace;</p>
 </blockquote>
 <ul>
-<li>一行开始处插入</li>
+<li>&#x4E00;&#x884C;&#x5F00;&#x59CB;&#x5904;&#x63D2;&#x5165;</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">I</span><br></pre></td></tr></table></figure>
 <ul>
-<li>行尾处插入</li>
+<li>&#x884C;&#x5C3E;&#x5904;&#x63D2;&#x5165;</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A</span><br></pre></td></tr></table></figure>
 <ul>
-<li>光标下新开一行</li>
+<li>&#x5149;&#x6807;&#x4E0B;&#x65B0;&#x5F00;&#x4E00;&#x884C;</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">o</span><br></pre></td></tr></table></figure>
 <ul>
-<li>光标上方新开一行</li>
+<li>&#x5149;&#x6807;&#x4E0A;&#x65B9;&#x65B0;&#x5F00;&#x4E00;&#x884C;</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">O</span><br></pre></td></tr></table></figure>
-<h5 id="编辑模式"><a href="#编辑模式" class="headerlink" title="编辑模式"></a>编辑模式</h5><ul>
-<li>清除整行开始填充</li>
+<h5 id="&#x7F16;&#x8F91;&#x6A21;&#x5F0F;"><a href="#&#x7F16;&#x8F91;&#x6A21;&#x5F0F;" class="headerlink" title="&#x7F16;&#x8F91;&#x6A21;&#x5F0F;"></a>&#x7F16;&#x8F91;&#x6A21;&#x5F0F;</h5><ul>
+<li>&#x6E05;&#x9664;&#x6574;&#x884C;&#x5F00;&#x59CB;&#x586B;&#x5145;</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cc</span><br></pre></td></tr></table></figure>
 <ul>
-<li>删除当前字符</li>
+<li>&#x5220;&#x9664;&#x5F53;&#x524D;&#x5B57;&#x7B26;</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x</span><br></pre></td></tr></table></figure>
 <ul>
-<li>删除光标后n个字符</li>
+<li>&#x5220;&#x9664;&#x5149;&#x6807;&#x540E;n&#x4E2A;&#x5B57;&#x7B26;</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nx</span><br></pre></td></tr></table></figure>
 <ul>
-<li>删除光标前n个字符</li>
+<li>&#x5220;&#x9664;&#x5149;&#x6807;&#x524D;n&#x4E2A;&#x5B57;&#x7B26;</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nX</span><br></pre></td></tr></table></figure>
 <ul>
-<li>删除光标后n个单词</li>
+<li>&#x5220;&#x9664;&#x5149;&#x6807;&#x540E;n&#x4E2A;&#x5355;&#x8BCD;</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ndw</span><br></pre></td></tr></table></figure>
 <ul>
-<li>删除整行</li>
+<li>&#x5220;&#x9664;&#x6574;&#x884C;</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dd</span><br></pre></td></tr></table></figure>
 <ul>
-<li>删除光标到行末</li>
+<li>&#x5220;&#x9664;&#x5149;&#x6807;&#x5230;&#x884C;&#x672B;</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D</span><br></pre></td></tr></table></figure>
 <ul>
-<li>回退</li>
+<li>&#x56DE;&#x9000;</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">u</span><br></pre></td></tr></table></figure>
-<h5 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h5><ul>
-<li>往后搜索str直到文件开头</li>
+<h5 id="&#x641C;&#x7D22;"><a href="#&#x641C;&#x7D22;" class="headerlink" title="&#x641C;&#x7D22;"></a>&#x641C;&#x7D22;</h5><ul>
+<li>&#x5F80;&#x540E;&#x641C;&#x7D22;str&#x76F4;&#x5230;&#x6587;&#x4EF6;&#x5F00;&#x5934;</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?str &lt;return&gt;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>重复检索</li>
+<li>&#x91CD;&#x590D;&#x68C0;&#x7D22;</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">n</span><br><span class="line">N</span><br></pre></td></tr></table></figure>
-<h5 id="复制与粘贴"><a href="#复制与粘贴" class="headerlink" title="复制与粘贴"></a>复制与粘贴</h5><ul>
-<li>打开两个文件</li>
+<h5 id="&#x590D;&#x5236;&#x4E0E;&#x7C98;&#x8D34;"><a href="#&#x590D;&#x5236;&#x4E0E;&#x7C98;&#x8D34;" class="headerlink" title="&#x590D;&#x5236;&#x4E0E;&#x7C98;&#x8D34;"></a>&#x590D;&#x5236;&#x4E0E;&#x7C98;&#x8D34;</h5><ul>
+<li>&#x6253;&#x5F00;&#x4E24;&#x4E2A;&#x6587;&#x4EF6;</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi file1 file2</span><br></pre></td></tr></table></figure>
 <ul>
-<li>拷贝所在行</li>
+<li>&#x62F7;&#x8D1D;&#x6240;&#x5728;&#x884C;</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yy</span><br></pre></td></tr></table></figure>
 <ul>
-<li>切换到下一个文件</li>
+<li>&#x5207;&#x6362;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:n</span><br></pre></td></tr></table></figure>
 <ul>
-<li>当前光标处粘贴</li>
+<li>&#x5F53;&#x524D;&#x5149;&#x6807;&#x5904;&#x7C98;&#x8D34;</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p</span><br></pre></td></tr></table></figure>
 <ul>
-<li>切换回文件</li>
+<li>&#x5207;&#x6362;&#x56DE;&#x6587;&#x4EF6;</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:n</span><br></pre></td></tr></table></figure>
-<h5 id="另存为"><a href="#另存为" class="headerlink" title="另存为"></a>另存为</h5><ul>
-<li>行数之间另存为文件</li>
+<h5 id="&#x53E6;&#x5B58;&#x4E3A;"><a href="#&#x53E6;&#x5B58;&#x4E3A;" class="headerlink" title="&#x53E6;&#x5B58;&#x4E3A;"></a>&#x53E6;&#x5B58;&#x4E3A;</h5><ul>
+<li>&#x884C;&#x6570;&#x4E4B;&#x95F4;&#x53E6;&#x5B58;&#x4E3A;&#x6587;&#x4EF6;</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:20,59w /tmp/1</span><br></pre></td></tr></table></figure>
-<h5 id="转到shell执行"><a href="#转到shell执行" class="headerlink" title="转到shell执行"></a>转到shell执行</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:!s</span><br></pre></td></tr></table></figure>
+<h5 id="&#x8F6C;&#x5230;shell&#x6267;&#x884C;"><a href="#&#x8F6C;&#x5230;shell&#x6267;&#x884C;" class="headerlink" title="&#x8F6C;&#x5230;shell&#x6267;&#x884C;"></a>&#x8F6C;&#x5230;shell&#x6267;&#x884C;</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:!s</span><br></pre></td></tr></table></figure>
       
 
       
@@ -627,19 +627,19 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">机器人软件构造</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">其他</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">机器人系统开发</a>
+                <a href="javascript:void(0)" class="color3">机器人软件构造</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">机器人软件设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">机器人系统开发</a>
               </li>
              
               <li class="article-tag-list-item">

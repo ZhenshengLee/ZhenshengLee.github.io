@@ -222,16 +222,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><ul>
-<li><p>基础技能，很重要</p>
+        <h3 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h3><ul>
+<li><p>&#x57FA;&#x7840;&#x6280;&#x80FD;&#xFF0C;&#x5F88;&#x91CD;&#x8981;</p>
 </li>
-<li><p>接上一篇日志</p>
+<li><p>&#x63A5;&#x4E0A;&#x4E00;&#x7BC7;&#x65E5;&#x5FD7;</p>
 </li>
-<li><p>准备看完后，找一个时间给ROS for LabVIEW 加上Action功能，当前项目中利用ROS中一个Proxy节点，将服务请求转换为动作请求</p>
+<li><p>&#x51C6;&#x5907;&#x770B;&#x5B8C;&#x540E;&#xFF0C;&#x627E;&#x4E00;&#x4E2A;&#x65F6;&#x95F4;&#x7ED9;ROS for LabVIEW &#x52A0;&#x4E0A;Action&#x529F;&#x80FD;&#xFF0C;&#x5F53;&#x524D;&#x9879;&#x76EE;&#x4E2D;&#x5229;&#x7528;ROS&#x4E2D;&#x4E00;&#x4E2A;Proxy&#x8282;&#x70B9;&#xFF0C;&#x5C06;&#x670D;&#x52A1;&#x8BF7;&#x6C42;&#x8F6C;&#x6362;&#x4E3A;&#x52A8;&#x4F5C;&#x8BF7;&#x6C42;</p>
 </li>
 </ul>
 <a id="more"></a>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><blockquote>
+<h3 id="&#x53C2;&#x8003;"><a href="#&#x53C2;&#x8003;" class="headerlink" title="&#x53C2;&#x8003;"></a>&#x53C2;&#x8003;</h3><blockquote>
 <p><a href="http://wiki.ros.org/actionlib" target="_blank" rel="external">Actionlib</a></p>
 </blockquote>
 <p><a href="http://wiki.ros.org/actionlib/DetailedDescription" target="_blank" rel="external">Detailed_description</a></p>
@@ -239,23 +239,23 @@
 <p><a href="http://wiki.ros.org/actionlib/Tutorials" target="_blank" rel="external">Tutorials</a></p>
 </blockquote>
 <p><a href="http://docs.ros.org/api/actionlib/html/classactionlib_1_1SimpleActionClient.html#a47b97ba81c538372b6f128ed8b285fbc" target="_blank" rel="external">SimpleActionClientAPI</a></p>
-<p><a href="http://emonkey.iteye.com/blog/1611038" target="_blank" rel="external">sstream double 字符串转换</a></p>
+<p><a href="http://emonkey.iteye.com/blog/1611038" target="_blank" rel="external">sstream double &#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6362;</a></p>
 <p><a href="http://docs.ros.org/jade/api/tf/html/c++/namespacetf.html#a33e93f413622e296d0a2a93b252bbb4b" target="_blank" rel="external">tf API</a></p>
-<h3 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h3><ul>
-<li>只有一个包或节点是消息，服务，动作的提供者时，在构造描述文件中才需要添加相应的描述语句，如果是接受者，那么不需要提供。</li>
+<h3 id="&#x63D0;&#x793A;"><a href="#&#x63D0;&#x793A;" class="headerlink" title="&#x63D0;&#x793A;"></a>&#x63D0;&#x793A;</h3><ul>
+<li>&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x5305;&#x6216;&#x8282;&#x70B9;&#x662F;&#x6D88;&#x606F;&#xFF0C;&#x670D;&#x52A1;&#xFF0C;&#x52A8;&#x4F5C;&#x7684;&#x63D0;&#x4F9B;&#x8005;&#x65F6;&#xFF0C;&#x5728;&#x6784;&#x9020;&#x63CF;&#x8FF0;&#x6587;&#x4EF6;&#x4E2D;&#x624D;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x76F8;&#x5E94;&#x7684;&#x63CF;&#x8FF0;&#x8BED;&#x53E5;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x63A5;&#x53D7;&#x8005;&#xFF0C;&#x90A3;&#x4E48;&#x4E0D;&#x9700;&#x8981;&#x63D0;&#x4F9B;&#x3002;</li>
 </ul>
 <blockquote>
-<p>请比较rosaria和rosaria_client构造描述文件的区别</p>
+<p>&#x8BF7;&#x6BD4;&#x8F83;rosaria&#x548C;rosaria_client&#x6784;&#x9020;&#x63CF;&#x8FF0;&#x6587;&#x4EF6;&#x7684;&#x533A;&#x522B;</p>
 </blockquote>
-<h3 id="步骤记录"><a href="#步骤记录" class="headerlink" title="步骤记录"></a>步骤记录</h3><h4 id="学习actionlib基础知识"><a href="#学习actionlib基础知识" class="headerlink" title="学习actionlib基础知识"></a>学习actionlib基础知识</h4><h5 id="定义：用来为预先发布的任务执行提供接口"><a href="#定义：用来为预先发布的任务执行提供接口" class="headerlink" title="定义：用来为预先发布的任务执行提供接口"></a>定义：用来为预先发布的任务执行提供接口</h5><blockquote>
+<h3 id="&#x6B65;&#x9AA4;&#x8BB0;&#x5F55;"><a href="#&#x6B65;&#x9AA4;&#x8BB0;&#x5F55;" class="headerlink" title="&#x6B65;&#x9AA4;&#x8BB0;&#x5F55;"></a>&#x6B65;&#x9AA4;&#x8BB0;&#x5F55;</h3><h4 id="&#x5B66;&#x4E60;actionlib&#x57FA;&#x7840;&#x77E5;&#x8BC6;"><a href="#&#x5B66;&#x4E60;actionlib&#x57FA;&#x7840;&#x77E5;&#x8BC6;" class="headerlink" title="&#x5B66;&#x4E60;actionlib&#x57FA;&#x7840;&#x77E5;&#x8BC6;"></a>&#x5B66;&#x4E60;actionlib&#x57FA;&#x7840;&#x77E5;&#x8BC6;</h4><h5 id="&#x5B9A;&#x4E49;&#x7528;&#x6765;&#x4E3A;&#x9884;&#x5148;&#x53D1;&#x5E03;&#x7684;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x63D0;&#x4F9B;&#x63A5;&#x53E3;"><a href="#&#x5B9A;&#x4E49;&#xFF1A;&#x7528;&#x6765;&#x4E3A;&#x9884;&#x5148;&#x53D1;&#x5E03;&#x7684;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x63D0;&#x4F9B;&#x63A5;&#x53E3;" class="headerlink" title="&#x5B9A;&#x4E49;&#xFF1A;&#x7528;&#x6765;&#x4E3A;&#x9884;&#x5148;&#x53D1;&#x5E03;&#x7684;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x63D0;&#x4F9B;&#x63A5;&#x53E3;"></a>&#x5B9A;&#x4E49;&#xFF1A;&#x7528;&#x6765;&#x4E3A;&#x9884;&#x5148;&#x53D1;&#x5E03;&#x7684;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x63D0;&#x4F9B;&#x63A5;&#x53E3;</h5><blockquote>
 <p>The actionlib stack provides a standardized interface for interfacing with preemptable tasks.</p>
 </blockquote>
-<h5 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h5><p>在ROS中，已经有一种机制，让程序可以向一个节点发送任务请求并收到一次回应，这个机制叫做服务（service），但是在其他很多情况下，如果一个任务需要很长时间完成，用户想要周期性地收到服务器的反馈，这样的机制已经实现，叫做动作，action。</p>
+<h5 id="&#x7EFC;&#x8FF0;"><a href="#&#x7EFC;&#x8FF0;" class="headerlink" title="&#x7EFC;&#x8FF0;"></a>&#x7EFC;&#x8FF0;</h5><p>&#x5728;ROS&#x4E2D;&#xFF0C;&#x5DF2;&#x7ECF;&#x6709;&#x4E00;&#x79CD;&#x673A;&#x5236;&#xFF0C;&#x8BA9;&#x7A0B;&#x5E8F;&#x53EF;&#x4EE5;&#x5411;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x53D1;&#x9001;&#x4EFB;&#x52A1;&#x8BF7;&#x6C42;&#x5E76;&#x6536;&#x5230;&#x4E00;&#x6B21;&#x56DE;&#x5E94;&#xFF0C;&#x8FD9;&#x4E2A;&#x673A;&#x5236;&#x53EB;&#x505A;&#x670D;&#x52A1;&#xFF08;service&#xFF09;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x5176;&#x4ED6;&#x5F88;&#x591A;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x9700;&#x8981;&#x5F88;&#x957F;&#x65F6;&#x95F4;&#x5B8C;&#x6210;&#xFF0C;&#x7528;&#x6237;&#x60F3;&#x8981;&#x5468;&#x671F;&#x6027;&#x5730;&#x6536;&#x5230;&#x670D;&#x52A1;&#x5668;&#x7684;&#x53CD;&#x9988;&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x673A;&#x5236;&#x5DF2;&#x7ECF;&#x5B9E;&#x73B0;&#xFF0C;&#x53EB;&#x505A;&#x52A8;&#x4F5C;&#xFF0C;action&#x3002;</p>
 <blockquote>
 <p>The actionlib package provides tools to create servers that execute long-running goals that can be preempted. It also provides a client interface in order to send requests to the server.</p>
 </blockquote>
-<h5 id="客户端-服务器模型（ROS-Action-Protocol）"><a href="#客户端-服务器模型（ROS-Action-Protocol）" class="headerlink" title="客户端-服务器模型（ROS Action Protocol）"></a>客户端-服务器模型（ROS Action Protocol）</h5><p><strong>协议建立在ros message机制上</strong>。</p>
-<h5 id="action的具体消息定义（Action-Specification）"><a href="#action的具体消息定义（Action-Specification）" class="headerlink" title="action的具体消息定义（Action Specification）"></a>action的具体消息定义（Action Specification）</h5><ul>
+<h5 id="&#x5BA2;&#x6237;&#x7AEF;-&#x670D;&#x52A1;&#x5668;&#x6A21;&#x578B;ros-action-protocol"><a href="#&#x5BA2;&#x6237;&#x7AEF;-&#x670D;&#x52A1;&#x5668;&#x6A21;&#x578B;&#xFF08;ROS-Action-Protocol&#xFF09;" class="headerlink" title="&#x5BA2;&#x6237;&#x7AEF;-&#x670D;&#x52A1;&#x5668;&#x6A21;&#x578B;&#xFF08;ROS Action Protocol&#xFF09;"></a>&#x5BA2;&#x6237;&#x7AEF;-&#x670D;&#x52A1;&#x5668;&#x6A21;&#x578B;&#xFF08;ROS Action Protocol&#xFF09;</h5><p><strong>&#x534F;&#x8BAE;&#x5EFA;&#x7ACB;&#x5728;ros message&#x673A;&#x5236;&#x4E0A;</strong>&#x3002;</p>
+<h5 id="action&#x7684;&#x5177;&#x4F53;&#x6D88;&#x606F;&#x5B9A;&#x4E49;action-specification"><a href="#action&#x7684;&#x5177;&#x4F53;&#x6D88;&#x606F;&#x5B9A;&#x4E49;&#xFF08;Action-Specification&#xFF09;" class="headerlink" title="action&#x7684;&#x5177;&#x4F53;&#x6D88;&#x606F;&#x5B9A;&#x4E49;&#xFF08;Action Specification&#xFF09;"></a>action&#x7684;&#x5177;&#x4F53;&#x6D88;&#x606F;&#x5B9A;&#x4E49;&#xFF08;Action Specification&#xFF09;</h5><ul>
 <li><p>Goal</p>
 </li>
 <li><p>Feedback</p>
@@ -265,9 +265,9 @@
 <li><p>.action file</p>
 </li>
 </ul>
-<p>各种消息的具体定义都在这个文件中*.action</p>
-<h5 id="构造描述文件"><a href="#构造描述文件" class="headerlink" title="构造描述文件"></a>构造描述文件</h5><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">find_package</span>(catkin REQUIRED genmsg actionlib_msgs actionlib)</span><br><span class="line">add_action_files(DIRECTORY action FILES DoDishes.action)</span><br><span class="line">generate_messages(DEPENDENCIES actionlib_msgs)</span><br></pre></td></tr></table></figure>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">depend</span> <span class="attr">package</span>=<span class="string">"actionlib"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">depend</span> <span class="attr">package</span>=<span class="string">"actionlib_msgs"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<p>&#x5404;&#x79CD;&#x6D88;&#x606F;&#x7684;&#x5177;&#x4F53;&#x5B9A;&#x4E49;&#x90FD;&#x5728;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;*.action</p>
+<h5 id="&#x6784;&#x9020;&#x63CF;&#x8FF0;&#x6587;&#x4EF6;"><a href="#&#x6784;&#x9020;&#x63CF;&#x8FF0;&#x6587;&#x4EF6;" class="headerlink" title="&#x6784;&#x9020;&#x63CF;&#x8FF0;&#x6587;&#x4EF6;"></a>&#x6784;&#x9020;&#x63CF;&#x8FF0;&#x6587;&#x4EF6;</h5><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">find_package</span>(catkin REQUIRED genmsg actionlib_msgs actionlib)</span><br><span class="line">add_action_files(DIRECTORY action FILES DoDishes.action)</span><br><span class="line">generate_messages(DEPENDENCIES actionlib_msgs)</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">depend</span> <span class="attr">package</span>=<span class="string">&quot;actionlib&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">depend</span> <span class="attr">package</span>=<span class="string">&quot;actionlib_msgs&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
       
 
       
@@ -536,19 +536,19 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">机器人软件构造</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">其他</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">机器人系统开发</a>
+                <a href="javascript:void(0)" class="color3">机器人软件构造</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">机器人软件设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">机器人系统开发</a>
               </li>
              
               <li class="article-tag-list-item">

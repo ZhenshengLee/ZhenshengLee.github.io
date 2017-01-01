@@ -219,82 +219,82 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
-<li>自己脑残，当年买了个A卡，有点兴趣，构建了一下Caffe-opencl</li>
-<li>重要经验：重新构建一定要make clean</li>
+        <h2 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h2><ul>
+<li>&#x81EA;&#x5DF1;&#x8111;&#x6B8B;&#xFF0C;&#x5F53;&#x5E74;&#x4E70;&#x4E86;&#x4E2A;A&#x5361;&#xFF0C;&#x6709;&#x70B9;&#x5174;&#x8DA3;&#xFF0C;&#x6784;&#x5EFA;&#x4E86;&#x4E00;&#x4E0B;Caffe-opencl</li>
+<li>&#x91CD;&#x8981;&#x7ECF;&#x9A8C;&#xFF1A;&#x91CD;&#x65B0;&#x6784;&#x5EFA;&#x4E00;&#x5B9A;&#x8981;make clean</li>
 </ul>
 <p>[TOC]</p>
 <a id="more"></a>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
+<h2 id="&#x53C2;&#x8003;"><a href="#&#x53C2;&#x8003;" class="headerlink" title="&#x53C2;&#x8003;"></a>&#x53C2;&#x8003;</h2><blockquote>
 <p><a href="https://github.com/BVLC/caffe/issues/4167" target="_blank" rel="external">Problem with greentea</a><br><a href="https://github.com/BVLC/caffe/tree/opencl" target="_blank" rel="external">Github-caffe-opencl</a><br><a href="https://github.com/BVLC/caffe/issues/4157" target="_blank" rel="external">TestSharedWeightsUpdate Test Failed</a></p>
 </blockquote>
-<h2 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h2><h3 id="安装私有显卡驱动程序"><a href="#安装私有显卡驱动程序" class="headerlink" title="安装私有显卡驱动程序"></a>安装私有显卡驱动程序</h3><ul>
-<li>到官网即可</li>
+<h2 id="&#x8BB0;&#x5F55;"><a href="#&#x8BB0;&#x5F55;" class="headerlink" title="&#x8BB0;&#x5F55;"></a>&#x8BB0;&#x5F55;</h2><h3 id="&#x5B89;&#x88C5;&#x79C1;&#x6709;&#x663E;&#x5361;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;"><a href="#&#x5B89;&#x88C5;&#x79C1;&#x6709;&#x663E;&#x5361;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;" class="headerlink" title="&#x5B89;&#x88C5;&#x79C1;&#x6709;&#x663E;&#x5361;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;"></a>&#x5B89;&#x88C5;&#x79C1;&#x6709;&#x663E;&#x5361;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;</h3><ul>
+<li>&#x5230;&#x5B98;&#x7F51;&#x5373;&#x53EF;</li>
 </ul>
-<h3 id="安装显卡APPSDK"><a href="#安装显卡APPSDK" class="headerlink" title="安装显卡APPSDK"></a>安装显卡APPSDK</h3><ul>
-<li>到官网即可</li>
-<li>记住clinfo查看情况，如果没有查看到AMD APP，则按下步骤解决<ul>
+<h3 id="&#x5B89;&#x88C5;&#x663E;&#x5361;appsdk"><a href="#&#x5B89;&#x88C5;&#x663E;&#x5361;APPSDK" class="headerlink" title="&#x5B89;&#x88C5;&#x663E;&#x5361;APPSDK"></a>&#x5B89;&#x88C5;&#x663E;&#x5361;APPSDK</h3><ul>
+<li>&#x5230;&#x5B98;&#x7F51;&#x5373;&#x53EF;</li>
+<li>&#x8BB0;&#x4F4F;clinfo&#x67E5;&#x770B;&#x60C5;&#x51B5;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x67E5;&#x770B;&#x5230;AMD APP&#xFF0C;&#x5219;&#x6309;&#x4E0B;&#x6B65;&#x9AA4;&#x89E3;&#x51B3;<ul>
 <li>sudo apt-get install fglrx fglrx-core fglrx-amdcccle fglrx-dev fglrx-pxpress</li>
 </ul>
 </li>
 </ul>
-<h3 id="安装CUDA"><a href="#安装CUDA" class="headerlink" title="安装CUDA"></a>安装CUDA</h3><ul>
+<h3 id="&#x5B89;&#x88C5;cuda"><a href="#&#x5B89;&#x88C5;CUDA" class="headerlink" title="&#x5B89;&#x88C5;CUDA"></a>&#x5B89;&#x88C5;CUDA</h3><ul>
 <li>sudo apt-get install nvidia-cuda-toolkit</li>
-<li>不要安装！</li>
+<li>&#x4E0D;&#x8981;&#x5B89;&#x88C5;&#xFF01;</li>
 </ul>
-<h3 id="安装boost"><a href="#安装boost" class="headerlink" title="安装boost"></a>安装boost</h3><ul>
+<h3 id="&#x5B89;&#x88C5;boost"><a href="#&#x5B89;&#x88C5;boost" class="headerlink" title="&#x5B89;&#x88C5;boost"></a>&#x5B89;&#x88C5;boost</h3><ul>
 <li>sudo apt-get install libboost-all-dev</li>
 </ul>
-<h3 id="安装googletest"><a href="#安装googletest" class="headerlink" title="安装googletest"></a>安装googletest</h3><ul>
+<h3 id="&#x5B89;&#x88C5;googletest"><a href="#&#x5B89;&#x88C5;googletest" class="headerlink" title="&#x5B89;&#x88C5;googletest"></a>&#x5B89;&#x88C5;googletest</h3><ul>
 <li>sudo apt-get install libgtest-dev</li>
 </ul>
-<h3 id="使用ACML数学库-AMD-Concurrent-Mathmatical-Library"><a href="#使用ACML数学库-AMD-Concurrent-Mathmatical-Library" class="headerlink" title="使用ACML数学库(AMD Concurrent Mathmatical Library)"></a>使用ACML数学库(AMD Concurrent Mathmatical Library)</h3><h4 id="先安装gfortran"><a href="#先安装gfortran" class="headerlink" title="先安装gfortran"></a>先安装gfortran</h4><ul>
+<h3 id="&#x4F7F;&#x7528;acml&#x6570;&#x5B66;&#x5E93;amd-concurrent-mathmatical-library"><a href="#&#x4F7F;&#x7528;ACML&#x6570;&#x5B66;&#x5E93;-AMD-Concurrent-Mathmatical-Library" class="headerlink" title="&#x4F7F;&#x7528;ACML&#x6570;&#x5B66;&#x5E93;(AMD Concurrent Mathmatical Library)"></a>&#x4F7F;&#x7528;ACML&#x6570;&#x5B66;&#x5E93;(AMD Concurrent Mathmatical Library)</h3><h4 id="&#x5148;&#x5B89;&#x88C5;gfortran"><a href="#&#x5148;&#x5B89;&#x88C5;gfortran" class="headerlink" title="&#x5148;&#x5B89;&#x88C5;gfortran"></a>&#x5148;&#x5B89;&#x88C5;gfortran</h4><ul>
 <li>sudo apt-get install gfortran</li>
-<li>查看自己CPU支持哪些指令集，本机支持SSE2，AVX，只要支持AVX或者FMA4就可以使用这个库加速以提高性能，不然就不行<ul>
+<li>&#x67E5;&#x770B;&#x81EA;&#x5DF1;CPU&#x652F;&#x6301;&#x54EA;&#x4E9B;&#x6307;&#x4EE4;&#x96C6;&#xFF0C;&#x672C;&#x673A;&#x652F;&#x6301;SSE2&#xFF0C;AVX&#xFF0C;&#x53EA;&#x8981;&#x652F;&#x6301;AVX&#x6216;&#x8005;FMA4&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x5E93;&#x52A0;&#x901F;&#x4EE5;&#x63D0;&#x9AD8;&#x6027;&#x80FD;&#xFF0C;&#x4E0D;&#x7136;&#x5C31;&#x4E0D;&#x884C;<ul>
 <li>cat /proc/cpuinfo | grep flags</li>
 </ul>
 </li>
 </ul>
-<h4 id="安装ACML"><a href="#安装ACML" class="headerlink" title="安装ACML"></a>安装ACML</h4><ul>
+<h4 id="&#x5B89;&#x88C5;acml"><a href="#&#x5B89;&#x88C5;ACML" class="headerlink" title="&#x5B89;&#x88C5;ACML"></a>&#x5B89;&#x88C5;ACML</h4><ul>
 <li>sudo mv ./acml6.1.0 /opt</li>
-<li>编译时一般使用动态链接库，要使用动态链接库，需设置环境变量LD_LIBRARY_PATH<ul>
+<li>&#x7F16;&#x8BD1;&#x65F6;&#x4E00;&#x822C;&#x4F7F;&#x7528;&#x52A8;&#x6001;&#x94FE;&#x63A5;&#x5E93;&#xFF0C;&#x8981;&#x4F7F;&#x7528;&#x52A8;&#x6001;&#x94FE;&#x63A5;&#x5E93;&#xFF0C;&#x9700;&#x8BBE;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;LD_LIBRARY_PATH<ul>
 <li>If you have an SMP machine and want to take best advantage of it, link against the</li>
 </ul>
 </li>
 </ul>
 <p>gfortran OpenMP version of ACML like this:</p>
 <ul>
-<li>由于本机不是多处理器机器，所以使用gfortran64<ul>
-<li>到底是不是呢？多核处理器应该也是多处理器才对啊～加到变量里面再说吧！</li>
+<li>&#x7531;&#x4E8E;&#x672C;&#x673A;&#x4E0D;&#x662F;&#x591A;&#x5904;&#x7406;&#x5668;&#x673A;&#x5668;&#xFF0C;&#x6240;&#x4EE5;&#x4F7F;&#x7528;gfortran64<ul>
+<li>&#x5230;&#x5E95;&#x662F;&#x4E0D;&#x662F;&#x5462;&#xFF1F;&#x591A;&#x6838;&#x5904;&#x7406;&#x5668;&#x5E94;&#x8BE5;&#x4E5F;&#x662F;&#x591A;&#x5904;&#x7406;&#x5668;&#x624D;&#x5BF9;&#x554A;&#xFF5E;&#x52A0;&#x5230;&#x53D8;&#x91CF;&#x91CC;&#x9762;&#x518D;&#x8BF4;&#x5427;&#xFF01;</li>
 </ul>
 </li>
 </ul>
 <ul>
-<li>echo ‘export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/acml6.1.0/gfortran64/lib’ &gt;&gt; ~/.bashrc</li>
-<li>echo ‘export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/acml6.1.0/gfortran64_mp/lib’ &gt;&gt; ~/.bashrc</li>
+<li>echo &#x2018;export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/acml6.1.0/gfortran64/lib&#x2019; &gt;&gt; ~/.bashrc</li>
+<li>echo &#x2018;export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/acml6.1.0/gfortran64_mp/lib&#x2019; &gt;&gt; ~/.bashrc</li>
 <li><p>source ~/.bashrc</p>
 <ul>
-<li>环境变量立即生效</li>
+<li>&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x7ACB;&#x5373;&#x751F;&#x6548;</li>
 </ul>
 </li>
-<li><p>示例程序在/opt/acml6.1.0/gfrotran64/examples</p>
+<li><p>&#x793A;&#x4F8B;&#x7A0B;&#x5E8F;&#x5728;/opt/acml6.1.0/gfrotran64/examples</p>
 <ul>
-<li>使用GNUMakefile进行编译</li>
-<li>使用计时程序画图表示</li>
+<li>&#x4F7F;&#x7528;GNUMakefile&#x8FDB;&#x884C;&#x7F16;&#x8BD1;</li>
+<li>&#x4F7F;&#x7528;&#x8BA1;&#x65F6;&#x7A0B;&#x5E8F;&#x753B;&#x56FE;&#x8868;&#x793A;</li>
 <li><p>sudo apt-get install gnuplot</p>
 </li>
-<li><p>编译时使用多线程</p>
+<li><p>&#x7F16;&#x8BD1;&#x65F6;&#x4F7F;&#x7528;&#x591A;&#x7EBF;&#x7A0B;</p>
 </li>
 <li><p>% make OMP_NUM_THREADS=2</p>
 </li>
-<li><p>编译时画时间图</p>
+<li><p>&#x7F16;&#x8BD1;&#x65F6;&#x753B;&#x65F6;&#x95F4;&#x56FE;</p>
 </li>
 <li>% make plots</li>
 <li>You may need to edit the GNUmakefile to point at the correct location of your installed copy of the ACML, or to change compilers and flags.</li>
 </ul>
 </li>
 </ul>
-<h3 id="安装cIBLAS-a-software-library-containing-BLAS-functions-written-in-OpenCL"><a href="#安装cIBLAS-a-software-library-containing-BLAS-functions-written-in-OpenCL" class="headerlink" title="安装cIBLAS(a software library containing BLAS functions written in OpenCL)"></a>安装cIBLAS(a software library containing BLAS functions written in OpenCL)</h3><ul>
+<h3 id="&#x5B89;&#x88C5;ciblasa-software-library-containing-blas-functions-written-in-opencl"><a href="#&#x5B89;&#x88C5;cIBLAS-a-software-library-containing-BLAS-functions-written-in-OpenCL" class="headerlink" title="&#x5B89;&#x88C5;cIBLAS(a software library containing BLAS functions written in OpenCL)"></a>&#x5B89;&#x88C5;cIBLAS(a software library containing BLAS functions written in OpenCL)</h3><ul>
 <li>git clone</li>
 <li>cd src &amp; mkdir build &amp; cd build</li>
 <li>cmake ..</li>
@@ -304,77 +304,77 @@
 <li>make[2]: <em>*</em> [staging/test-correctness] Error 1</li>
 <li>make[1]: <em>*</em> [tests/CMakeFiles/test-correctness.dir/all] Error 2</li>
 <li>make: <em>*</em> [all] Error 2</li>
-<li>这是个BUG，去下载dev版本的clBLAS吧</li>
-<li>还没解决。。。看帖子</li>
-<li>检查gcc（4.8.4），CMake（2.8.12.2），Make（3.8.1）版本</li>
+<li>&#x8FD9;&#x662F;&#x4E2A;BUG&#xFF0C;&#x53BB;&#x4E0B;&#x8F7D;dev&#x7248;&#x672C;&#x7684;clBLAS&#x5427;</li>
+<li>&#x8FD8;&#x6CA1;&#x89E3;&#x51B3;&#x3002;&#x3002;&#x3002;&#x770B;&#x5E16;&#x5B50;</li>
+<li>&#x68C0;&#x67E5;gcc&#xFF08;4.8.4&#xFF09;&#xFF0C;CMake&#xFF08;2.8.12.2&#xFF09;&#xFF0C;Make&#xFF08;3.8.1&#xFF09;&#x7248;&#x672C;</li>
 </ul>
 </li>
-<li><p>检查各个依赖项的配置是否正确</p>
+<li><p>&#x68C0;&#x67E5;&#x5404;&#x4E2A;&#x4F9D;&#x8D56;&#x9879;&#x7684;&#x914D;&#x7F6E;&#x662F;&#x5426;&#x6B63;&#x786E;</p>
 <ul>
-<li>OPENCL配置<ul>
-<li>无误</li>
+<li>OPENCL&#x914D;&#x7F6E;<ul>
+<li>&#x65E0;&#x8BEF;</li>
 </ul>
 </li>
 <li>boost</li>
-<li><p>没有设置环境变量</p>
+<li><p>&#x6CA1;&#x6709;&#x8BBE;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;</p>
 <ul>
 <li>export BOOST_ROOT=/usr/lib/x86_64-linux-gnu</li>
 </ul>
 </li>
 <li><p>gTest</p>
 </li>
-<li>已经安装好了</li>
-<li>不仅要装clACML，也要装ACML</li>
-<li><p>早就装好了</p>
+<li>&#x5DF2;&#x7ECF;&#x5B89;&#x88C5;&#x597D;&#x4E86;</li>
+<li>&#x4E0D;&#x4EC5;&#x8981;&#x88C5;clACML&#xFF0C;&#x4E5F;&#x8981;&#x88C5;ACML</li>
+<li><p>&#x65E9;&#x5C31;&#x88C5;&#x597D;&#x4E86;</p>
 </li>
 <li><p>clBLAS</p>
 </li>
 <li><p>install cmake-gui</p>
 </li>
-<li><p>检查cmake 输出</p>
+<li><p>&#x68C0;&#x67E5;cmake &#x8F93;&#x51FA;</p>
 </li>
 <li>sudo apt-get install liblapack-dev</li>
 </ul>
 </li>
-<li><p>成功！！！</p>
+<li><p>&#x6210;&#x529F;&#xFF01;&#xFF01;&#xFF01;</p>
 </li>
-<li>安装在/usr/local/lib64<ul>
+<li>&#x5B89;&#x88C5;&#x5728;/usr/local/lib64<ul>
 <li>export CLBALS_ROOT=/usr/local/lib64</li>
 <li>/usr/local/include</li>
 </ul>
 </li>
 </ul>
-<h3 id="安装Caffe-opencl"><a href="#安装Caffe-opencl" class="headerlink" title="安装Caffe-opencl"></a>安装Caffe-opencl</h3><ul>
+<h3 id="&#x5B89;&#x88C5;caffe-opencl"><a href="#&#x5B89;&#x88C5;Caffe-opencl" class="headerlink" title="&#x5B89;&#x88C5;Caffe-opencl"></a>&#x5B89;&#x88C5;Caffe-opencl</h3><ul>
 <li>sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler</li>
-<li>sudo apt-get install –no-install-recommends libboost-all-dev</li>
+<li>sudo apt-get install &#x2013;no-install-recommends libboost-all-dev</li>
 <li>sudo apt-get install libatlas-base-dev</li>
 <li>sudo apt-get install the python-dev</li>
 <li>sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev</li>
 <li>compile opencl-caffe<ul>
-<li>修改Makefile.config</li>
+<li>&#x4FEE;&#x6539;Makefile.config</li>
 </ul>
 </li>
 </ul>
-<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Override BLAS, use clBLAS insead of ViennaclBLAS.</span></span><br><span class="line">USE_CLBLAS := 1</span><br><span class="line"><span class="comment"># Custom clBLAS lib and include directories.</span></span><br><span class="line">CLBLAS_INCLUDE := /usr/local/include</span><br><span class="line">CLBLAS_LIB     := /usr/local/lib64</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="comment"># CUDA directory contains bin/ and lib/ directories that we need.</span></span><br><span class="line"><span class="comment"># CUDA_DIR := /usr/local/cuda</span></span><br><span class="line"><span class="comment"># On Ubuntu 14.04, if cuda tools are installed via</span></span><br><span class="line"><span class="comment"># "sudo apt-get install nvidia-cuda-toolkit" then use this instead:</span></span><br><span class="line">CUDA_DIR := /usr</span><br></pre></td></tr></table></figure>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Override BLAS, use clBLAS insead of ViennaclBLAS.</span></span><br><span class="line">USE_CLBLAS := 1</span><br><span class="line"><span class="comment"># Custom clBLAS lib and include directories.</span></span><br><span class="line">CLBLAS_INCLUDE := /usr/local/include</span><br><span class="line">CLBLAS_LIB     := /usr/local/lib64</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="comment"># CUDA directory contains bin/ and lib/ directories that we need.</span></span><br><span class="line"><span class="comment"># CUDA_DIR := /usr/local/cuda</span></span><br><span class="line"><span class="comment"># On Ubuntu 14.04, if cuda tools are installed via</span></span><br><span class="line"><span class="comment"># &quot;sudo apt-get install nvidia-cuda-toolkit&quot; then use this instead:</span></span><br><span class="line">CUDA_DIR := /usr</span><br></pre></td></tr></table></figure>
 <ul>
 <li>make</li>
 <li>make runtest<ul>
-<li>出错，发现还是GREENTEA的问题，决定重新安装Vienna库（/usr/local/include/）</li>
-<li>记住，重新构建一定要make clean</li>
+<li>&#x51FA;&#x9519;&#xFF0C;&#x53D1;&#x73B0;&#x8FD8;&#x662F;GREENTEA&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x51B3;&#x5B9A;&#x91CD;&#x65B0;&#x5B89;&#x88C5;Vienna&#x5E93;&#xFF08;/usr/local/include/&#xFF09;</li>
+<li>&#x8BB0;&#x4F4F;&#xFF0C;&#x91CD;&#x65B0;&#x6784;&#x5EFA;&#x4E00;&#x5B9A;&#x8981;make clean</li>
 </ul>
 </li>
-<li>还有一个测试错误</li>
+<li>&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x6D4B;&#x8BD5;&#x9519;&#x8BEF;</li>
 </ul>
 <blockquote>
-<p>That’s ok, it’s not actually a fail, the epsilon-distance between “is” and “should” is just a bit bigger than the test setting appreciates.</p>
+<p>That&#x2019;s ok, it&#x2019;s not actually a fail, the epsilon-distance between &#x201C;is&#x201D; and &#x201C;should&#x201D; is just a bit bigger than the test setting appreciates.</p>
 </blockquote>
 <ul>
-<li>这只是计算误差而已，没有问题！</li>
+<li>&#x8FD9;&#x53EA;&#x662F;&#x8BA1;&#x7B97;&#x8BEF;&#x5DEE;&#x800C;&#x5DF2;&#xFF0C;&#x6CA1;&#x6709;&#x95EE;&#x9898;&#xFF01;</li>
 </ul>
 <ul>
-<li>大功告成，开始使用</li>
+<li>&#x5927;&#x529F;&#x544A;&#x6210;&#xFF0C;&#x5F00;&#x59CB;&#x4F7F;&#x7528;</li>
 </ul>
-<h2 id="mnist实例"><a href="#mnist实例" class="headerlink" title="mnist实例"></a>mnist实例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd ./caffe-opencl</span><br><span class="line">data/mnist/get_mnist.sh</span><br><span class="line">examples/mnist/create_mnist.sh</span><br><span class="line">examples/mnist/train_lenet.sh</span><br></pre></td></tr></table></figure>
+<h2 id="mnist&#x5B9E;&#x4F8B;"><a href="#mnist&#x5B9E;&#x4F8B;" class="headerlink" title="mnist&#x5B9E;&#x4F8B;"></a>mnist&#x5B9E;&#x4F8B;</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd ./caffe-opencl</span><br><span class="line">data/mnist/get_mnist.sh</span><br><span class="line">examples/mnist/create_mnist.sh</span><br><span class="line">examples/mnist/train_lenet.sh</span><br></pre></td></tr></table></figure>
       
 
       
@@ -643,19 +643,19 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">机器人软件构造</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">其他</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">机器人系统开发</a>
+                <a href="javascript:void(0)" class="color3">机器人软件构造</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">机器人软件设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">机器人系统开发</a>
               </li>
              
               <li class="article-tag-list-item">

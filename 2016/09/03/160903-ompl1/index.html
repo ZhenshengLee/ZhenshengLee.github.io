@@ -216,96 +216,96 @@ open motion plan library，一个开源的运动规划库，主要以sample-base
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
-<li><p>open motion plan library，一个开源的运动规划库，主要以sample-based planning算法为主</p>
+        <h2 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h2><ul>
+<li><p>open motion plan library&#xFF0C;&#x4E00;&#x4E2A;&#x5F00;&#x6E90;&#x7684;&#x8FD0;&#x52A8;&#x89C4;&#x5212;&#x5E93;&#xFF0C;&#x4E3B;&#x8981;&#x4EE5;sample-based planning&#x7B97;&#x6CD5;&#x4E3A;&#x4E3B;</p>
 </li>
-<li><p>包括两个核心组件，OMPL，算法库，和OMPL.app，前端用户界面</p>
+<li><p>&#x5305;&#x62EC;&#x4E24;&#x4E2A;&#x6838;&#x5FC3;&#x7EC4;&#x4EF6;&#xFF0C;OMPL&#xFF0C;&#x7B97;&#x6CD5;&#x5E93;&#xFF0C;&#x548C;OMPL.app&#xFF0C;&#x524D;&#x7AEF;&#x7528;&#x6237;&#x754C;&#x9762;</p>
 </li>
 </ul>
 <a id="more"></a>
-<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p>[TOC]</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
+<h2 id="&#x76EE;&#x5F55;"><a href="#&#x76EE;&#x5F55;" class="headerlink" title="&#x76EE;&#x5F55;"></a>&#x76EE;&#x5F55;</h2><p>[TOC]</p>
+<h2 id="&#x53C2;&#x8003;"><a href="#&#x53C2;&#x8003;" class="headerlink" title="&#x53C2;&#x8003;"></a>&#x53C2;&#x8003;</h2><blockquote>
 <p><a href="http://ompl.kavrakilab.org/" target="_blank" rel="external">ompl home page</a></p>
 <p><a href="http://ompl.kavrakilab.org/group__demos.html" target="_blank" rel="external">demos</a></p>
 <p><a href="http://ompl.kavrakilab.org/tutorials.html" target="_blank" rel="external">tutorials</a></p>
-<p><a href="http://ompl.kavrakilab.org/gallery.html" target="_blank" rel="external">作品展示</a></p>
+<p><a href="http://ompl.kavrakilab.org/gallery.html" target="_blank" rel="external">&#x4F5C;&#x54C1;&#x5C55;&#x793A;</a></p>
 <p><a href="http://ompl.kavrakilab.org/buildSystem.html" target="_blank" rel="external">intergrated with your build system</a><br><a href="http://planning.cs.uiuc.edu/" target="_blank" rel="external">Planning algorithms.pdf</a></p>
 </blockquote>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">sudo apt-get install libompl-dev ompl-demos</span><br></pre></td></tr></table></figure>
-<h3 id="运行demo"><a href="#运行demo" class="headerlink" title="运行demo"></a>运行demo</h3><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">2.8</span>.<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">project</span>(ompl_beginner)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">SET</span>(CMAKE_CXX_FLAGS <span class="string">"-std=c++11"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span>(CMAKE_MODULE_PATH <span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/cmake)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># find packages</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">find_package</span>(OMPL)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># include dirs</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">include_directories</span>(</span><br><span class="line"></span><br><span class="line">        <span class="variable">$&#123;OMPL_INCLUDE_DIRS&#125;</span> )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">add_executable</span>(RigidBodyPlanning src/RigidBodyPlanning.cpp)</span><br><span class="line"></span><br><span class="line"><span class="keyword">target_link_libraries</span>(RigidBodyPlanning <span class="variable">$&#123;OMPL_LIBRARIES&#125;</span> )</span><br></pre></td></tr></table></figure>
-<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><h3 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h3><ul>
-<li><p>ompl包括sample-based 运动规划器，以及构建新规划器的工具集合，用户还可以使用前段工具ompl.app。</p>
+<h2 id="&#x5B89;&#x88C5;"><a href="#&#x5B89;&#x88C5;" class="headerlink" title="&#x5B89;&#x88C5;"></a>&#x5B89;&#x88C5;</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">sudo apt-get install libompl-dev ompl-demos</span><br></pre></td></tr></table></figure>
+<h3 id="&#x8FD0;&#x884C;demo"><a href="#&#x8FD0;&#x884C;demo" class="headerlink" title="&#x8FD0;&#x884C;demo"></a>&#x8FD0;&#x884C;demo</h3><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">2.8</span>.<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">project</span>(ompl_beginner)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">SET</span>(CMAKE_CXX_FLAGS <span class="string">&quot;-std=c++11&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span>(CMAKE_MODULE_PATH <span class="variable">${PROJECT_SOURCE_DIR}</span>/cmake)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># find packages</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">find_package</span>(OMPL)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># include dirs</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">include_directories</span>(</span><br><span class="line"></span><br><span class="line">        <span class="variable">${OMPL_INCLUDE_DIRS}</span> )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">add_executable</span>(RigidBodyPlanning src/RigidBodyPlanning.cpp)</span><br><span class="line"></span><br><span class="line"><span class="keyword">target_link_libraries</span>(RigidBodyPlanning <span class="variable">${OMPL_LIBRARIES}</span> )</span><br></pre></td></tr></table></figure>
+<h2 id="&#x57FA;&#x7840;&#x77E5;&#x8BC6;"><a href="#&#x57FA;&#x7840;&#x77E5;&#x8BC6;" class="headerlink" title="&#x57FA;&#x7840;&#x77E5;&#x8BC6;"></a>&#x57FA;&#x7840;&#x77E5;&#x8BC6;</h2><h3 id="&#x7EEA;&#x8BBA;"><a href="#&#x7EEA;&#x8BBA;" class="headerlink" title="&#x7EEA;&#x8BBA;"></a>&#x7EEA;&#x8BBA;</h3><ul>
+<li><p>ompl&#x5305;&#x62EC;sample-based &#x8FD0;&#x52A8;&#x89C4;&#x5212;&#x5668;&#xFF0C;&#x4EE5;&#x53CA;&#x6784;&#x5EFA;&#x65B0;&#x89C4;&#x5212;&#x5668;&#x7684;&#x5DE5;&#x5177;&#x96C6;&#x5408;&#xFF0C;&#x7528;&#x6237;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x524D;&#x6BB5;&#x5DE5;&#x5177;ompl.app&#x3002;</p>
 </li>
-<li><p>熟练使用后，用户能够使用这个框架开发自己的规划算法功能，如sate sampling, collision, nearest neighbor searching.</p>
-</li>
-</ul>
-<h3 id="Sampling-based-Motion-Planning"><a href="#Sampling-based-Motion-Planning" class="headerlink" title="Sampling-based Motion Planning"></a>Sampling-based Motion Planning</h3><ul>
-<li><p>机器人运动规划的目的在于：“从起点位姿到终点位姿，并且满足所有外部和内部约束”，当机器人拥有较多的自由度时，解算将变得很困难。</p>
-</li>
-<li><p>以经典的运动规划问题移动钢琴为例，在这个问题中，钢琴有六个自由度（x, y, z, roll, pitch, yaw），为了解算这个问题，我们必须计算出一个包含钢琴六个参数的数据集合，该数据集合被时间参数化，并且各个参数对于时间的改变应该是连续的。（从一个配置空间（starting configuration）移动到另一个配置空间（goal configuration），同时要满足避障的内，外部约束条件），这个问题已经被证明是一个<a href="https://en.wikipedia.org/wiki/PSPACE-complete" target="_blank" rel="external">PSPACE-hard</a>  问题，解算非常困难。</p>
+<li><p>&#x719F;&#x7EC3;&#x4F7F;&#x7528;&#x540E;&#xFF0C;&#x7528;&#x6237;&#x80FD;&#x591F;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x6846;&#x67B6;&#x5F00;&#x53D1;&#x81EA;&#x5DF1;&#x7684;&#x89C4;&#x5212;&#x7B97;&#x6CD5;&#x529F;&#x80FD;&#xFF0C;&#x5982;sate sampling, collision, nearest neighbor searching.</p>
 </li>
 </ul>
-<h3 id="规划理论的历史进程"><a href="#规划理论的历史进程" class="headerlink" title="规划理论的历史进程"></a>规划理论的历史进程</h3><ul>
-<li>精确的和近似的地图单元分解（graph-search）（代表：A*算法）</li>
+<h3 id="sampling-based-motion-planning"><a href="#Sampling-based-Motion-Planning" class="headerlink" title="Sampling-based Motion Planning"></a>Sampling-based Motion Planning</h3><ul>
+<li><p>&#x673A;&#x5668;&#x4EBA;&#x8FD0;&#x52A8;&#x89C4;&#x5212;&#x7684;&#x76EE;&#x7684;&#x5728;&#x4E8E;&#xFF1A;&#x201C;&#x4ECE;&#x8D77;&#x70B9;&#x4F4D;&#x59FF;&#x5230;&#x7EC8;&#x70B9;&#x4F4D;&#x59FF;&#xFF0C;&#x5E76;&#x4E14;&#x6EE1;&#x8DB3;&#x6240;&#x6709;&#x5916;&#x90E8;&#x548C;&#x5185;&#x90E8;&#x7EA6;&#x675F;&#x201D;&#xFF0C;&#x5F53;&#x673A;&#x5668;&#x4EBA;&#x62E5;&#x6709;&#x8F83;&#x591A;&#x7684;&#x81EA;&#x7531;&#x5EA6;&#x65F6;&#xFF0C;&#x89E3;&#x7B97;&#x5C06;&#x53D8;&#x5F97;&#x5F88;&#x56F0;&#x96BE;&#x3002;</p>
+</li>
+<li><p>&#x4EE5;&#x7ECF;&#x5178;&#x7684;&#x8FD0;&#x52A8;&#x89C4;&#x5212;&#x95EE;&#x9898;&#x79FB;&#x52A8;&#x94A2;&#x7434;&#x4E3A;&#x4F8B;&#xFF0C;&#x5728;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x4E2D;&#xFF0C;&#x94A2;&#x7434;&#x6709;&#x516D;&#x4E2A;&#x81EA;&#x7531;&#x5EA6;&#xFF08;x, y, z, roll, pitch, yaw&#xFF09;&#xFF0C;&#x4E3A;&#x4E86;&#x89E3;&#x7B97;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x6211;&#x4EEC;&#x5FC5;&#x987B;&#x8BA1;&#x7B97;&#x51FA;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x94A2;&#x7434;&#x516D;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x6570;&#x636E;&#x96C6;&#x5408;&#xFF0C;&#x8BE5;&#x6570;&#x636E;&#x96C6;&#x5408;&#x88AB;&#x65F6;&#x95F4;&#x53C2;&#x6570;&#x5316;&#xFF0C;&#x5E76;&#x4E14;&#x5404;&#x4E2A;&#x53C2;&#x6570;&#x5BF9;&#x4E8E;&#x65F6;&#x95F4;&#x7684;&#x6539;&#x53D8;&#x5E94;&#x8BE5;&#x662F;&#x8FDE;&#x7EED;&#x7684;&#x3002;&#xFF08;&#x4ECE;&#x4E00;&#x4E2A;&#x914D;&#x7F6E;&#x7A7A;&#x95F4;&#xFF08;starting configuration&#xFF09;&#x79FB;&#x52A8;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x914D;&#x7F6E;&#x7A7A;&#x95F4;&#xFF08;goal configuration&#xFF09;&#xFF0C;&#x540C;&#x65F6;&#x8981;&#x6EE1;&#x8DB3;&#x907F;&#x969C;&#x7684;&#x5185;&#xFF0C;&#x5916;&#x90E8;&#x7EA6;&#x675F;&#x6761;&#x4EF6;&#xFF09;&#xFF0C;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x5DF2;&#x7ECF;&#x88AB;&#x8BC1;&#x660E;&#x662F;&#x4E00;&#x4E2A;<a href="https://en.wikipedia.org/wiki/PSPACE-complete" target="_blank" rel="external">PSPACE-hard</a>  &#x95EE;&#x9898;&#xFF0C;&#x89E3;&#x7B97;&#x975E;&#x5E38;&#x56F0;&#x96BE;&#x3002;</p>
+</li>
 </ul>
-<p>在某些例子中，可以将机器人的工作空间根据有无障碍分解成离散的栅格，这些分解可以建模为一个图(roadmap or graph)。根据这个图，问题变成：将一个点（机器人抽象而来）从一个栅格（包含起点）移动到另外一个栅格（包含终点）。这种规划的问题在于，当机器人拥有非线性动力学特性时（机器人不知道如何从一个栅格移动到另一个栅格，比如汽车，先锋机器人由于可以原地旋转，则不存在这个问题），路径规划是失败的。而且，更多的时候，状态空间是多维的，尤其是机器人运动内部有约束时，比如汽车（汽车有很多弯就拐不过去）。再次，状态空间分解空间复杂度非常大。</p>
+<h3 id="&#x89C4;&#x5212;&#x7406;&#x8BBA;&#x7684;&#x5386;&#x53F2;&#x8FDB;&#x7A0B;"><a href="#&#x89C4;&#x5212;&#x7406;&#x8BBA;&#x7684;&#x5386;&#x53F2;&#x8FDB;&#x7A0B;" class="headerlink" title="&#x89C4;&#x5212;&#x7406;&#x8BBA;&#x7684;&#x5386;&#x53F2;&#x8FDB;&#x7A0B;"></a>&#x89C4;&#x5212;&#x7406;&#x8BBA;&#x7684;&#x5386;&#x53F2;&#x8FDB;&#x7A0B;</h3><ul>
+<li>&#x7CBE;&#x786E;&#x7684;&#x548C;&#x8FD1;&#x4F3C;&#x7684;&#x5730;&#x56FE;&#x5355;&#x5143;&#x5206;&#x89E3;&#xFF08;graph-search&#xFF09;&#xFF08;&#x4EE3;&#x8868;&#xFF1A;A*&#x7B97;&#x6CD5;&#xFF09;</li>
+</ul>
+<p>&#x5728;&#x67D0;&#x4E9B;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x673A;&#x5668;&#x4EBA;&#x7684;&#x5DE5;&#x4F5C;&#x7A7A;&#x95F4;&#x6839;&#x636E;&#x6709;&#x65E0;&#x969C;&#x788D;&#x5206;&#x89E3;&#x6210;&#x79BB;&#x6563;&#x7684;&#x6805;&#x683C;&#xFF0C;&#x8FD9;&#x4E9B;&#x5206;&#x89E3;&#x53EF;&#x4EE5;&#x5EFA;&#x6A21;&#x4E3A;&#x4E00;&#x4E2A;&#x56FE;(roadmap or graph)&#x3002;&#x6839;&#x636E;&#x8FD9;&#x4E2A;&#x56FE;&#xFF0C;&#x95EE;&#x9898;&#x53D8;&#x6210;&#xFF1A;&#x5C06;&#x4E00;&#x4E2A;&#x70B9;&#xFF08;&#x673A;&#x5668;&#x4EBA;&#x62BD;&#x8C61;&#x800C;&#x6765;&#xFF09;&#x4ECE;&#x4E00;&#x4E2A;&#x6805;&#x683C;&#xFF08;&#x5305;&#x542B;&#x8D77;&#x70B9;&#xFF09;&#x79FB;&#x52A8;&#x5230;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x6805;&#x683C;&#xFF08;&#x5305;&#x542B;&#x7EC8;&#x70B9;&#xFF09;&#x3002;&#x8FD9;&#x79CD;&#x89C4;&#x5212;&#x7684;&#x95EE;&#x9898;&#x5728;&#x4E8E;&#xFF0C;&#x5F53;&#x673A;&#x5668;&#x4EBA;&#x62E5;&#x6709;&#x975E;&#x7EBF;&#x6027;&#x52A8;&#x529B;&#x5B66;&#x7279;&#x6027;&#x65F6;&#xFF08;&#x673A;&#x5668;&#x4EBA;&#x4E0D;&#x77E5;&#x9053;&#x5982;&#x4F55;&#x4ECE;&#x4E00;&#x4E2A;&#x6805;&#x683C;&#x79FB;&#x52A8;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x6805;&#x683C;&#xFF0C;&#x6BD4;&#x5982;&#x6C7D;&#x8F66;&#xFF0C;&#x5148;&#x950B;&#x673A;&#x5668;&#x4EBA;&#x7531;&#x4E8E;&#x53EF;&#x4EE5;&#x539F;&#x5730;&#x65CB;&#x8F6C;&#xFF0C;&#x5219;&#x4E0D;&#x5B58;&#x5728;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF09;&#xFF0C;&#x8DEF;&#x5F84;&#x89C4;&#x5212;&#x662F;&#x5931;&#x8D25;&#x7684;&#x3002;&#x800C;&#x4E14;&#xFF0C;&#x66F4;&#x591A;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x72B6;&#x6001;&#x7A7A;&#x95F4;&#x662F;&#x591A;&#x7EF4;&#x7684;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x673A;&#x5668;&#x4EBA;&#x8FD0;&#x52A8;&#x5185;&#x90E8;&#x6709;&#x7EA6;&#x675F;&#x65F6;&#xFF0C;&#x6BD4;&#x5982;&#x6C7D;&#x8F66;&#xFF08;&#x6C7D;&#x8F66;&#x6709;&#x5F88;&#x591A;&#x5F2F;&#x5C31;&#x62D0;&#x4E0D;&#x8FC7;&#x53BB;&#xFF09;&#x3002;&#x518D;&#x6B21;&#xFF0C;&#x72B6;&#x6001;&#x7A7A;&#x95F4;&#x5206;&#x89E3;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x975E;&#x5E38;&#x5927;&#x3002;</p>
 <ul>
-<li>基于控制的方法（控制的典型特征是反馈环节feedback loop）</li>
+<li>&#x57FA;&#x4E8E;&#x63A7;&#x5236;&#x7684;&#x65B9;&#x6CD5;&#xFF08;&#x63A7;&#x5236;&#x7684;&#x5178;&#x578B;&#x7279;&#x5F81;&#x662F;&#x53CD;&#x9988;&#x73AF;&#x8282;feedback loop&#xFF09;</li>
 </ul>
-<p>基于控制的方法尝试对系统进行建模，使用控制理论让系统沿着具体轨迹移动。这种方法在连续空间工作，并且拥有反馈环。基于控制的方法的优点是非常快速，可以在线规划。缺点是在复杂环境下不能够很好地计算期望的可行解。（关节空间规划，笛卡尔空间规划，直线插补，圆弧插补，样条曲线插补）</p>
+<p>&#x57FA;&#x4E8E;&#x63A7;&#x5236;&#x7684;&#x65B9;&#x6CD5;&#x5C1D;&#x8BD5;&#x5BF9;&#x7CFB;&#x7EDF;&#x8FDB;&#x884C;&#x5EFA;&#x6A21;&#xFF0C;&#x4F7F;&#x7528;&#x63A7;&#x5236;&#x7406;&#x8BBA;&#x8BA9;&#x7CFB;&#x7EDF;&#x6CBF;&#x7740;&#x5177;&#x4F53;&#x8F68;&#x8FF9;&#x79FB;&#x52A8;&#x3002;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x5728;&#x8FDE;&#x7EED;&#x7A7A;&#x95F4;&#x5DE5;&#x4F5C;&#xFF0C;&#x5E76;&#x4E14;&#x62E5;&#x6709;&#x53CD;&#x9988;&#x73AF;&#x3002;&#x57FA;&#x4E8E;&#x63A7;&#x5236;&#x7684;&#x65B9;&#x6CD5;&#x7684;&#x4F18;&#x70B9;&#x662F;&#x975E;&#x5E38;&#x5FEB;&#x901F;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x7EBF;&#x89C4;&#x5212;&#x3002;&#x7F3A;&#x70B9;&#x662F;&#x5728;&#x590D;&#x6742;&#x73AF;&#x5883;&#x4E0B;&#x4E0D;&#x80FD;&#x591F;&#x5F88;&#x597D;&#x5730;&#x8BA1;&#x7B97;&#x671F;&#x671B;&#x7684;&#x53EF;&#x884C;&#x89E3;&#x3002;&#xFF08;&#x5173;&#x8282;&#x7A7A;&#x95F4;&#x89C4;&#x5212;&#xFF0C;&#x7B1B;&#x5361;&#x5C14;&#x7A7A;&#x95F4;&#x89C4;&#x5212;&#xFF0C;&#x76F4;&#x7EBF;&#x63D2;&#x8865;&#xFF0C;&#x5706;&#x5F27;&#x63D2;&#x8865;&#xFF0C;&#x6837;&#x6761;&#x66F2;&#x7EBF;&#x63D2;&#x8865;&#xFF09;</p>
 <ul>
-<li>人工势场法</li>
+<li>&#x4EBA;&#x5DE5;&#x52BF;&#x573A;&#x6CD5;</li>
 </ul>
-<p>典型的人工势场法在工作空间的每个点计算一个函数，计算出的值作为这一点的斥力（或吸引力）。将机器人抽象为一个点，在势场图中沿梯度下降方向到目标点。优点是，可以考虑机器人上的多个点的动作，而且实时性好。缺点是，容易在梯度下降过程中陷入局部极小值。而且，理论上人工势场函数可以在任意维数的状态配置空间构造，这样就和解决原始问题一样了（Ideally the field would be constructed in the state space of the system, but this is equivalent to solving the original problem）。有一些简化方法使用了导航函数，保证人工势场拥有全局最小值。</p>
+<p>&#x5178;&#x578B;&#x7684;&#x4EBA;&#x5DE5;&#x52BF;&#x573A;&#x6CD5;&#x5728;&#x5DE5;&#x4F5C;&#x7A7A;&#x95F4;&#x7684;&#x6BCF;&#x4E2A;&#x70B9;&#x8BA1;&#x7B97;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x8BA1;&#x7B97;&#x51FA;&#x7684;&#x503C;&#x4F5C;&#x4E3A;&#x8FD9;&#x4E00;&#x70B9;&#x7684;&#x65A5;&#x529B;&#xFF08;&#x6216;&#x5438;&#x5F15;&#x529B;&#xFF09;&#x3002;&#x5C06;&#x673A;&#x5668;&#x4EBA;&#x62BD;&#x8C61;&#x4E3A;&#x4E00;&#x4E2A;&#x70B9;&#xFF0C;&#x5728;&#x52BF;&#x573A;&#x56FE;&#x4E2D;&#x6CBF;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x65B9;&#x5411;&#x5230;&#x76EE;&#x6807;&#x70B9;&#x3002;&#x4F18;&#x70B9;&#x662F;&#xFF0C;&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x673A;&#x5668;&#x4EBA;&#x4E0A;&#x7684;&#x591A;&#x4E2A;&#x70B9;&#x7684;&#x52A8;&#x4F5C;&#xFF0C;&#x800C;&#x4E14;&#x5B9E;&#x65F6;&#x6027;&#x597D;&#x3002;&#x7F3A;&#x70B9;&#x662F;&#xFF0C;&#x5BB9;&#x6613;&#x5728;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x8FC7;&#x7A0B;&#x4E2D;&#x9677;&#x5165;&#x5C40;&#x90E8;&#x6781;&#x5C0F;&#x503C;&#x3002;&#x800C;&#x4E14;&#xFF0C;&#x7406;&#x8BBA;&#x4E0A;&#x4EBA;&#x5DE5;&#x52BF;&#x573A;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x5728;&#x4EFB;&#x610F;&#x7EF4;&#x6570;&#x7684;&#x72B6;&#x6001;&#x914D;&#x7F6E;&#x7A7A;&#x95F4;&#x6784;&#x9020;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x548C;&#x89E3;&#x51B3;&#x539F;&#x59CB;&#x95EE;&#x9898;&#x4E00;&#x6837;&#x4E86;&#xFF08;Ideally the field would be constructed in the state space of the system, but this is equivalent to solving the original problem&#xFF09;&#x3002;&#x6709;&#x4E00;&#x4E9B;&#x7B80;&#x5316;&#x65B9;&#x6CD5;&#x4F7F;&#x7528;&#x4E86;&#x5BFC;&#x822A;&#x51FD;&#x6570;&#xFF0C;&#x4FDD;&#x8BC1;&#x4EBA;&#x5DE5;&#x52BF;&#x573A;&#x62E5;&#x6709;&#x5168;&#x5C40;&#x6700;&#x5C0F;&#x503C;&#x3002;</p>
 <ul>
-<li>随机/概率规划方法</li>
+<li>&#x968F;&#x673A;/&#x6982;&#x7387;&#x89C4;&#x5212;&#x65B9;&#x6CD5;</li>
 </ul>
-<p>这种方法被证明非常有用。在人工势场中添加布朗运动可以有效跳出局部极小区域。</p>
-<p>另外，基于采样的规划方法，使用了随机化，采样和概率的方法，在高自由度系统或复杂动力学场景中非常有效。ompl即是这样的一种库，而且部署在ROS和moveIt!中。</p>
-<h3 id="基于采样的运动规划"><a href="#基于采样的运动规划" class="headerlink" title="基于采样的运动规划"></a>基于采样的运动规划</h3><ul>
-<li>基于采样的规划通过在机器人的状态空间中采样，来快速和有效的回应规划请求，特别是在复杂的约束和系统下尤其好用。传统方法往往空间和时间复杂度都非常大，在高维空间中往往没有什么用处。基于采样的方法在配置空间中搜索可行的状态点，并且继续通过采样连接这些状态点。这样可以产生足够灵活的可行解，并且是概率完全的，概率完全意味着，如果解存在，那么随着采样次数逐渐增大，可行解一定可以找到。不过，基于采样的方法无法确认一个问题不存在解。</li>
+<p>&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x88AB;&#x8BC1;&#x660E;&#x975E;&#x5E38;&#x6709;&#x7528;&#x3002;&#x5728;&#x4EBA;&#x5DE5;&#x52BF;&#x573A;&#x4E2D;&#x6DFB;&#x52A0;&#x5E03;&#x6717;&#x8FD0;&#x52A8;&#x53EF;&#x4EE5;&#x6709;&#x6548;&#x8DF3;&#x51FA;&#x5C40;&#x90E8;&#x6781;&#x5C0F;&#x533A;&#x57DF;&#x3002;</p>
+<p>&#x53E6;&#x5916;&#xFF0C;&#x57FA;&#x4E8E;&#x91C7;&#x6837;&#x7684;&#x89C4;&#x5212;&#x65B9;&#x6CD5;&#xFF0C;&#x4F7F;&#x7528;&#x4E86;&#x968F;&#x673A;&#x5316;&#xFF0C;&#x91C7;&#x6837;&#x548C;&#x6982;&#x7387;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5728;&#x9AD8;&#x81EA;&#x7531;&#x5EA6;&#x7CFB;&#x7EDF;&#x6216;&#x590D;&#x6742;&#x52A8;&#x529B;&#x5B66;&#x573A;&#x666F;&#x4E2D;&#x975E;&#x5E38;&#x6709;&#x6548;&#x3002;ompl&#x5373;&#x662F;&#x8FD9;&#x6837;&#x7684;&#x4E00;&#x79CD;&#x5E93;&#xFF0C;&#x800C;&#x4E14;&#x90E8;&#x7F72;&#x5728;ROS&#x548C;moveIt!&#x4E2D;&#x3002;</p>
+<h3 id="&#x57FA;&#x4E8E;&#x91C7;&#x6837;&#x7684;&#x8FD0;&#x52A8;&#x89C4;&#x5212;"><a href="#&#x57FA;&#x4E8E;&#x91C7;&#x6837;&#x7684;&#x8FD0;&#x52A8;&#x89C4;&#x5212;" class="headerlink" title="&#x57FA;&#x4E8E;&#x91C7;&#x6837;&#x7684;&#x8FD0;&#x52A8;&#x89C4;&#x5212;"></a>&#x57FA;&#x4E8E;&#x91C7;&#x6837;&#x7684;&#x8FD0;&#x52A8;&#x89C4;&#x5212;</h3><ul>
+<li>&#x57FA;&#x4E8E;&#x91C7;&#x6837;&#x7684;&#x89C4;&#x5212;&#x901A;&#x8FC7;&#x5728;&#x673A;&#x5668;&#x4EBA;&#x7684;&#x72B6;&#x6001;&#x7A7A;&#x95F4;&#x4E2D;&#x91C7;&#x6837;&#xFF0C;&#x6765;&#x5FEB;&#x901F;&#x548C;&#x6709;&#x6548;&#x7684;&#x56DE;&#x5E94;&#x89C4;&#x5212;&#x8BF7;&#x6C42;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x5728;&#x590D;&#x6742;&#x7684;&#x7EA6;&#x675F;&#x548C;&#x7CFB;&#x7EDF;&#x4E0B;&#x5C24;&#x5176;&#x597D;&#x7528;&#x3002;&#x4F20;&#x7EDF;&#x65B9;&#x6CD5;&#x5F80;&#x5F80;&#x7A7A;&#x95F4;&#x548C;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x90FD;&#x975E;&#x5E38;&#x5927;&#xFF0C;&#x5728;&#x9AD8;&#x7EF4;&#x7A7A;&#x95F4;&#x4E2D;&#x5F80;&#x5F80;&#x6CA1;&#x6709;&#x4EC0;&#x4E48;&#x7528;&#x5904;&#x3002;&#x57FA;&#x4E8E;&#x91C7;&#x6837;&#x7684;&#x65B9;&#x6CD5;&#x5728;&#x914D;&#x7F6E;&#x7A7A;&#x95F4;&#x4E2D;&#x641C;&#x7D22;&#x53EF;&#x884C;&#x7684;&#x72B6;&#x6001;&#x70B9;&#xFF0C;&#x5E76;&#x4E14;&#x7EE7;&#x7EED;&#x901A;&#x8FC7;&#x91C7;&#x6837;&#x8FDE;&#x63A5;&#x8FD9;&#x4E9B;&#x72B6;&#x6001;&#x70B9;&#x3002;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x4EA7;&#x751F;&#x8DB3;&#x591F;&#x7075;&#x6D3B;&#x7684;&#x53EF;&#x884C;&#x89E3;&#xFF0C;&#x5E76;&#x4E14;&#x662F;&#x6982;&#x7387;&#x5B8C;&#x5168;&#x7684;&#xFF0C;&#x6982;&#x7387;&#x5B8C;&#x5168;&#x610F;&#x5473;&#x7740;&#xFF0C;&#x5982;&#x679C;&#x89E3;&#x5B58;&#x5728;&#xFF0C;&#x90A3;&#x4E48;&#x968F;&#x7740;&#x91C7;&#x6837;&#x6B21;&#x6570;&#x9010;&#x6E10;&#x589E;&#x5927;&#xFF0C;&#x53EF;&#x884C;&#x89E3;&#x4E00;&#x5B9A;&#x53EF;&#x4EE5;&#x627E;&#x5230;&#x3002;&#x4E0D;&#x8FC7;&#xFF0C;&#x57FA;&#x4E8E;&#x91C7;&#x6837;&#x7684;&#x65B9;&#x6CD5;&#x65E0;&#x6CD5;&#x786E;&#x8BA4;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#x4E0D;&#x5B58;&#x5728;&#x89E3;&#x3002;</li>
 </ul>
-<h4 id="一些定义"><a href="#一些定义" class="headerlink" title="一些定义"></a>一些定义</h4><ul>
-<li><p>工作空间：机器人操作的物理空间，工作空间的边界被认为是障碍</p>
+<h4 id="&#x4E00;&#x4E9B;&#x5B9A;&#x4E49;"><a href="#&#x4E00;&#x4E9B;&#x5B9A;&#x4E49;" class="headerlink" title="&#x4E00;&#x4E9B;&#x5B9A;&#x4E49;"></a>&#x4E00;&#x4E9B;&#x5B9A;&#x4E49;</h4><ul>
+<li><p>&#x5DE5;&#x4F5C;&#x7A7A;&#x95F4;&#xFF1A;&#x673A;&#x5668;&#x4EBA;&#x64CD;&#x4F5C;&#x7684;&#x7269;&#x7406;&#x7A7A;&#x95F4;&#xFF0C;&#x5DE5;&#x4F5C;&#x7A7A;&#x95F4;&#x7684;&#x8FB9;&#x754C;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x969C;&#x788D;</p>
 </li>
-<li><p>状态空间：机器人的参数空间。参数空间包括所有的机器人在工作空间中的状态配置，状态空间中的一个点就是一个状态，注意状态空间可能是多维的</p>
+<li><p>&#x72B6;&#x6001;&#x7A7A;&#x95F4;&#xFF1A;&#x673A;&#x5668;&#x4EBA;&#x7684;&#x53C2;&#x6570;&#x7A7A;&#x95F4;&#x3002;&#x53C2;&#x6570;&#x7A7A;&#x95F4;&#x5305;&#x62EC;&#x6240;&#x6709;&#x7684;&#x673A;&#x5668;&#x4EBA;&#x5728;&#x5DE5;&#x4F5C;&#x7A7A;&#x95F4;&#x4E2D;&#x7684;&#x72B6;&#x6001;&#x914D;&#x7F6E;&#xFF0C;&#x72B6;&#x6001;&#x7A7A;&#x95F4;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x70B9;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#xFF0C;&#x6CE8;&#x610F;&#x72B6;&#x6001;&#x7A7A;&#x95F4;&#x53EF;&#x80FD;&#x662F;&#x591A;&#x7EF4;&#x7684;</p>
 </li>
-<li><p>自由状态空间：状态空间的一个子集，在这个子集中的每个状态都是无障碍的</p>
+<li><p>&#x81EA;&#x7531;&#x72B6;&#x6001;&#x7A7A;&#x95F4;&#xFF1A;&#x72B6;&#x6001;&#x7A7A;&#x95F4;&#x7684;&#x4E00;&#x4E2A;&#x5B50;&#x96C6;&#xFF0C;&#x5728;&#x8FD9;&#x4E2A;&#x5B50;&#x96C6;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x72B6;&#x6001;&#x90FD;&#x662F;&#x65E0;&#x969C;&#x788D;&#x7684;</p>
 </li>
-<li><p>路径：状态空间中的连续状态点。如果路径中的每个点都是无障碍的，那么这个路径也是无障碍的。</p>
+<li><p>&#x8DEF;&#x5F84;&#xFF1A;&#x72B6;&#x6001;&#x7A7A;&#x95F4;&#x4E2D;&#x7684;&#x8FDE;&#x7EED;&#x72B6;&#x6001;&#x70B9;&#x3002;&#x5982;&#x679C;&#x8DEF;&#x5F84;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x70B9;&#x90FD;&#x662F;&#x65E0;&#x969C;&#x788D;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x8DEF;&#x5F84;&#x4E5F;&#x662F;&#x65E0;&#x969C;&#x788D;&#x7684;&#x3002;</p>
 </li>
 </ul>
-<p>所以，基于采样的规划方法的目标是：在状态空间中找到一个无障碍的路径。接下来介绍两种主要的基于采样的规划器。</p>
-<h4 id="概率地图（PRM）"><a href="#概率地图（PRM）" class="headerlink" title="概率地图（PRM）"></a>概率地图（PRM）</h4><ul>
-<li><p>PRM是第一个基于采样的规划器，这种方法使用在状态空间中随机采样的方法构建roadmap，这种roadmap很像城市街区地图。</p>
+<p>&#x6240;&#x4EE5;&#xFF0C;&#x57FA;&#x4E8E;&#x91C7;&#x6837;&#x7684;&#x89C4;&#x5212;&#x65B9;&#x6CD5;&#x7684;&#x76EE;&#x6807;&#x662F;&#xFF1A;&#x5728;&#x72B6;&#x6001;&#x7A7A;&#x95F4;&#x4E2D;&#x627E;&#x5230;&#x4E00;&#x4E2A;&#x65E0;&#x969C;&#x788D;&#x7684;&#x8DEF;&#x5F84;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#x4ECB;&#x7ECD;&#x4E24;&#x79CD;&#x4E3B;&#x8981;&#x7684;&#x57FA;&#x4E8E;&#x91C7;&#x6837;&#x7684;&#x89C4;&#x5212;&#x5668;&#x3002;</p>
+<h4 id="&#x6982;&#x7387;&#x5730;&#x56FE;prm"><a href="#&#x6982;&#x7387;&#x5730;&#x56FE;&#xFF08;PRM&#xFF09;" class="headerlink" title="&#x6982;&#x7387;&#x5730;&#x56FE;&#xFF08;PRM&#xFF09;"></a>&#x6982;&#x7387;&#x5730;&#x56FE;&#xFF08;PRM&#xFF09;</h4><ul>
+<li><p>PRM&#x662F;&#x7B2C;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E;&#x91C7;&#x6837;&#x7684;&#x89C4;&#x5212;&#x5668;&#xFF0C;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x4F7F;&#x7528;&#x5728;&#x72B6;&#x6001;&#x7A7A;&#x95F4;&#x4E2D;&#x968F;&#x673A;&#x91C7;&#x6837;&#x7684;&#x65B9;&#x6CD5;&#x6784;&#x5EFA;roadmap&#xFF0C;&#x8FD9;&#x79CD;roadmap&#x5F88;&#x50CF;&#x57CE;&#x5E02;&#x8857;&#x533A;&#x5730;&#x56FE;&#x3002;</p>
 </li>
-<li><p>均匀采样，并连接起来，构造成roadmap，存储在图数据结构中。</p>
+<li><p>&#x5747;&#x5300;&#x91C7;&#x6837;&#xFF0C;&#x5E76;&#x8FDE;&#x63A5;&#x8D77;&#x6765;&#xFF0C;&#x6784;&#x9020;&#x6210;roadmap&#xFF0C;&#x5B58;&#x50A8;&#x5728;&#x56FE;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E2D;&#x3002;</p>
 <ul>
-<li><p>需要注意的是：状态空间从来都不是显式定义的，所以必须要有障碍检测模块，每一次采样都要进行check，只有经过检查的才能够保留下来</p>
+<li><p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF1A;&#x72B6;&#x6001;&#x7A7A;&#x95F4;&#x4ECE;&#x6765;&#x90FD;&#x4E0D;&#x662F;&#x663E;&#x5F0F;&#x5B9A;&#x4E49;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x5FC5;&#x987B;&#x8981;&#x6709;&#x969C;&#x788D;&#x68C0;&#x6D4B;&#x6A21;&#x5757;&#xFF0C;&#x6BCF;&#x4E00;&#x6B21;&#x91C7;&#x6837;&#x90FD;&#x8981;&#x8FDB;&#x884C;check&#xFF0C;&#x53EA;&#x6709;&#x7ECF;&#x8FC7;&#x68C0;&#x67E5;&#x7684;&#x624D;&#x80FD;&#x591F;&#x4FDD;&#x7559;&#x4E0B;&#x6765;</p>
 </li>
-<li><p>有很多不同的采样的方法，改进采样策略往往很有用</p>
-</li>
-</ul>
-</li>
-<li><p>一旦采样达到一定的数量，就开始构造边，标准RPM会对每一个采样点，搜索周围K临近点（在之前的采样点中找），使用局部规划器找到最短无障碍路径，局部规划器直接在这些采样点间进行插值（如直线差补），然后在这条直线中以一定的分辨率进行障碍检测，如果没有障碍点，那么这个边就作为合格边加入到roadmap中。</p>
-</li>
-<li><p>一旦roadmap构造完全，那么规划就成为连接起点和目标点的roadmap。</p>
-</li>
-<li><p>然后对这个roadmap进行图搜索，执行最短路径搜索</p>
+<li><p>&#x6709;&#x5F88;&#x591A;&#x4E0D;&#x540C;&#x7684;&#x91C7;&#x6837;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x6539;&#x8FDB;&#x91C7;&#x6837;&#x7B56;&#x7565;&#x5F80;&#x5F80;&#x5F88;&#x6709;&#x7528;</p>
 </li>
 </ul>
-<h4 id="基于树的地图（RRT，快速随机树搜索）"><a href="#基于树的地图（RRT，快速随机树搜索）" class="headerlink" title="基于树的地图（RRT，快速随机树搜索）"></a>基于树的地图（RRT，快速随机树搜索）</h4><ul>
-<li><p>现有的很多基于采样的规划器在自由状态空间中构造了树型结构，这种树形结构与上节讲的PRM很像，PRM的图带有环，这里的是树而已。由于基于树的规划器太多（RRT，EST，SBL，KPIECE），这里就不详细讲某一个，而是讲一讲大致的框架。</p>
 </li>
-<li><p>将机器人的起点当做一个树根，随机采样的点作为这个树的一个节点，树采用一种启发式扩张方法，这种启发式搜索条件往往就命名了这个方法，如果一个节点与树之间有无障碍路径，则将这个节点并入到树中。</p>
+<li><p>&#x4E00;&#x65E6;&#x91C7;&#x6837;&#x8FBE;&#x5230;&#x4E00;&#x5B9A;&#x7684;&#x6570;&#x91CF;&#xFF0C;&#x5C31;&#x5F00;&#x59CB;&#x6784;&#x9020;&#x8FB9;&#xFF0C;&#x6807;&#x51C6;RPM&#x4F1A;&#x5BF9;&#x6BCF;&#x4E00;&#x4E2A;&#x91C7;&#x6837;&#x70B9;&#xFF0C;&#x641C;&#x7D22;&#x5468;&#x56F4;K&#x4E34;&#x8FD1;&#x70B9;&#xFF08;&#x5728;&#x4E4B;&#x524D;&#x7684;&#x91C7;&#x6837;&#x70B9;&#x4E2D;&#x627E;&#xFF09;&#xFF0C;&#x4F7F;&#x7528;&#x5C40;&#x90E8;&#x89C4;&#x5212;&#x5668;&#x627E;&#x5230;&#x6700;&#x77ED;&#x65E0;&#x969C;&#x788D;&#x8DEF;&#x5F84;&#xFF0C;&#x5C40;&#x90E8;&#x89C4;&#x5212;&#x5668;&#x76F4;&#x63A5;&#x5728;&#x8FD9;&#x4E9B;&#x91C7;&#x6837;&#x70B9;&#x95F4;&#x8FDB;&#x884C;&#x63D2;&#x503C;&#xFF08;&#x5982;&#x76F4;&#x7EBF;&#x5DEE;&#x8865;&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x8FD9;&#x6761;&#x76F4;&#x7EBF;&#x4E2D;&#x4EE5;&#x4E00;&#x5B9A;&#x7684;&#x5206;&#x8FA8;&#x7387;&#x8FDB;&#x884C;&#x969C;&#x788D;&#x68C0;&#x6D4B;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x969C;&#x788D;&#x70B9;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x8FB9;&#x5C31;&#x4F5C;&#x4E3A;&#x5408;&#x683C;&#x8FB9;&#x52A0;&#x5165;&#x5230;roadmap&#x4E2D;&#x3002;</p>
 </li>
-<li><p>尽管采样过程可能永远也不会采样到达机器人的目标状态，规划器往往都会设置有偏（bias）的扩张搜索，一旦将目标状态点并如到树中，路径规划就结束了。</p>
+<li><p>&#x4E00;&#x65E6;roadmap&#x6784;&#x9020;&#x5B8C;&#x5168;&#xFF0C;&#x90A3;&#x4E48;&#x89C4;&#x5212;&#x5C31;&#x6210;&#x4E3A;&#x8FDE;&#x63A5;&#x8D77;&#x70B9;&#x548C;&#x76EE;&#x6807;&#x70B9;&#x7684;roadmap&#x3002;</p>
+</li>
+<li><p>&#x7136;&#x540E;&#x5BF9;&#x8FD9;&#x4E2A;roadmap&#x8FDB;&#x884C;&#x56FE;&#x641C;&#x7D22;&#xFF0C;&#x6267;&#x884C;&#x6700;&#x77ED;&#x8DEF;&#x5F84;&#x641C;&#x7D22;</p>
 </li>
 </ul>
-<h4 id="PRM和RRT的不同"><a href="#PRM和RRT的不同" class="headerlink" title="PRM和RRT的不同"></a>PRM和RRT的不同</h4><ul>
-<li><p>PRM需要构造覆盖全部状态空间的一个图，然后再连接起点和终点，而RRT不需要，只是逐渐的扩张树，直到终点。</p>
+<h4 id="&#x57FA;&#x4E8E;&#x6811;&#x7684;&#x5730;&#x56FE;rrt&#x5FEB;&#x901F;&#x968F;&#x673A;&#x6811;&#x641C;&#x7D22;"><a href="#&#x57FA;&#x4E8E;&#x6811;&#x7684;&#x5730;&#x56FE;&#xFF08;RRT&#xFF0C;&#x5FEB;&#x901F;&#x968F;&#x673A;&#x6811;&#x641C;&#x7D22;&#xFF09;" class="headerlink" title="&#x57FA;&#x4E8E;&#x6811;&#x7684;&#x5730;&#x56FE;&#xFF08;RRT&#xFF0C;&#x5FEB;&#x901F;&#x968F;&#x673A;&#x6811;&#x641C;&#x7D22;&#xFF09;"></a>&#x57FA;&#x4E8E;&#x6811;&#x7684;&#x5730;&#x56FE;&#xFF08;RRT&#xFF0C;&#x5FEB;&#x901F;&#x968F;&#x673A;&#x6811;&#x641C;&#x7D22;&#xFF09;</h4><ul>
+<li><p>&#x73B0;&#x6709;&#x7684;&#x5F88;&#x591A;&#x57FA;&#x4E8E;&#x91C7;&#x6837;&#x7684;&#x89C4;&#x5212;&#x5668;&#x5728;&#x81EA;&#x7531;&#x72B6;&#x6001;&#x7A7A;&#x95F4;&#x4E2D;&#x6784;&#x9020;&#x4E86;&#x6811;&#x578B;&#x7ED3;&#x6784;&#xFF0C;&#x8FD9;&#x79CD;&#x6811;&#x5F62;&#x7ED3;&#x6784;&#x4E0E;&#x4E0A;&#x8282;&#x8BB2;&#x7684;PRM&#x5F88;&#x50CF;&#xFF0C;PRM&#x7684;&#x56FE;&#x5E26;&#x6709;&#x73AF;&#xFF0C;&#x8FD9;&#x91CC;&#x7684;&#x662F;&#x6811;&#x800C;&#x5DF2;&#x3002;&#x7531;&#x4E8E;&#x57FA;&#x4E8E;&#x6811;&#x7684;&#x89C4;&#x5212;&#x5668;&#x592A;&#x591A;&#xFF08;RRT&#xFF0C;EST&#xFF0C;SBL&#xFF0C;KPIECE&#xFF09;&#xFF0C;&#x8FD9;&#x91CC;&#x5C31;&#x4E0D;&#x8BE6;&#x7EC6;&#x8BB2;&#x67D0;&#x4E00;&#x4E2A;&#xFF0C;&#x800C;&#x662F;&#x8BB2;&#x4E00;&#x8BB2;&#x5927;&#x81F4;&#x7684;&#x6846;&#x67B6;&#x3002;</p>
 </li>
-<li><p>所以，RRT特别适合于一次请求的规划，因为它构造的树并不包含其他目标点的信息，就算要求其到另外一个点，它也要重新进行树的扩张和生长。而PRM只需要构造一次即可。</p>
+<li><p>&#x5C06;&#x673A;&#x5668;&#x4EBA;&#x7684;&#x8D77;&#x70B9;&#x5F53;&#x505A;&#x4E00;&#x4E2A;&#x6811;&#x6839;&#xFF0C;&#x968F;&#x673A;&#x91C7;&#x6837;&#x7684;&#x70B9;&#x4F5C;&#x4E3A;&#x8FD9;&#x4E2A;&#x6811;&#x7684;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#xFF0C;&#x6811;&#x91C7;&#x7528;&#x4E00;&#x79CD;&#x542F;&#x53D1;&#x5F0F;&#x6269;&#x5F20;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x79CD;&#x542F;&#x53D1;&#x5F0F;&#x641C;&#x7D22;&#x6761;&#x4EF6;&#x5F80;&#x5F80;&#x5C31;&#x547D;&#x540D;&#x4E86;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x4E0E;&#x6811;&#x4E4B;&#x95F4;&#x6709;&#x65E0;&#x969C;&#x788D;&#x8DEF;&#x5F84;&#xFF0C;&#x5219;&#x5C06;&#x8FD9;&#x4E2A;&#x8282;&#x70B9;&#x5E76;&#x5165;&#x5230;&#x6811;&#x4E2D;&#x3002;</p>
+</li>
+<li><p>&#x5C3D;&#x7BA1;&#x91C7;&#x6837;&#x8FC7;&#x7A0B;&#x53EF;&#x80FD;&#x6C38;&#x8FDC;&#x4E5F;&#x4E0D;&#x4F1A;&#x91C7;&#x6837;&#x5230;&#x8FBE;&#x673A;&#x5668;&#x4EBA;&#x7684;&#x76EE;&#x6807;&#x72B6;&#x6001;&#xFF0C;&#x89C4;&#x5212;&#x5668;&#x5F80;&#x5F80;&#x90FD;&#x4F1A;&#x8BBE;&#x7F6E;&#x6709;&#x504F;&#xFF08;bias&#xFF09;&#x7684;&#x6269;&#x5F20;&#x641C;&#x7D22;&#xFF0C;&#x4E00;&#x65E6;&#x5C06;&#x76EE;&#x6807;&#x72B6;&#x6001;&#x70B9;&#x5E76;&#x5982;&#x5230;&#x6811;&#x4E2D;&#xFF0C;&#x8DEF;&#x5F84;&#x89C4;&#x5212;&#x5C31;&#x7ED3;&#x675F;&#x4E86;&#x3002;</p>
+</li>
+</ul>
+<h4 id="prm&#x548C;rrt&#x7684;&#x4E0D;&#x540C;"><a href="#PRM&#x548C;RRT&#x7684;&#x4E0D;&#x540C;" class="headerlink" title="PRM&#x548C;RRT&#x7684;&#x4E0D;&#x540C;"></a>PRM&#x548C;RRT&#x7684;&#x4E0D;&#x540C;</h4><ul>
+<li><p>PRM&#x9700;&#x8981;&#x6784;&#x9020;&#x8986;&#x76D6;&#x5168;&#x90E8;&#x72B6;&#x6001;&#x7A7A;&#x95F4;&#x7684;&#x4E00;&#x4E2A;&#x56FE;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x8FDE;&#x63A5;&#x8D77;&#x70B9;&#x548C;&#x7EC8;&#x70B9;&#xFF0C;&#x800C;RRT&#x4E0D;&#x9700;&#x8981;&#xFF0C;&#x53EA;&#x662F;&#x9010;&#x6E10;&#x7684;&#x6269;&#x5F20;&#x6811;&#xFF0C;&#x76F4;&#x5230;&#x7EC8;&#x70B9;&#x3002;</p>
+</li>
+<li><p>&#x6240;&#x4EE5;&#xFF0C;RRT&#x7279;&#x522B;&#x9002;&#x5408;&#x4E8E;&#x4E00;&#x6B21;&#x8BF7;&#x6C42;&#x7684;&#x89C4;&#x5212;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x6784;&#x9020;&#x7684;&#x6811;&#x5E76;&#x4E0D;&#x5305;&#x542B;&#x5176;&#x4ED6;&#x76EE;&#x6807;&#x70B9;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x5C31;&#x7B97;&#x8981;&#x6C42;&#x5176;&#x5230;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x70B9;&#xFF0C;&#x5B83;&#x4E5F;&#x8981;&#x91CD;&#x65B0;&#x8FDB;&#x884C;&#x6811;&#x7684;&#x6269;&#x5F20;&#x548C;&#x751F;&#x957F;&#x3002;&#x800C;PRM&#x53EA;&#x9700;&#x8981;&#x6784;&#x9020;&#x4E00;&#x6B21;&#x5373;&#x53EF;&#x3002;</p>
 </li>
 <li><p>Controls are usually directed commands, and require a specific pre-condition in order for</p>
 </li>
@@ -313,39 +313,39 @@ open motion plan library，一个开源的运动规划库，主要以sample-base
 <p>a particular control to be valid. Tree-based methods, on the other hand, excel at planning with</p>
 <p>complex dynamics because of the directed, acyclic nature of the underlying data structure. Control</p>
 <p>information can be encoded for each edge of the tree, with the vertices of the tree satisfying the</p>
-<p>prerequisites for the valid controls.（没看懂）</p>
-<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ul>
-<li><p>基于采样的规划方法所需内存更少</p>
+<p>prerequisites for the valid controls.&#xFF08;&#x6CA1;&#x770B;&#x61C2;&#xFF09;</p>
+<h4 id="&#x603B;&#x7ED3;"><a href="#&#x603B;&#x7ED3;" class="headerlink" title="&#x603B;&#x7ED3;"></a>&#x603B;&#x7ED3;</h4><ul>
+<li><p>&#x57FA;&#x4E8E;&#x91C7;&#x6837;&#x7684;&#x89C4;&#x5212;&#x65B9;&#x6CD5;&#x6240;&#x9700;&#x5185;&#x5B58;&#x66F4;&#x5C11;</p>
 <ul>
-<li><p>因为其不需要对状态空间进行显式表示</p>
+<li><p>&#x56E0;&#x4E3A;&#x5176;&#x4E0D;&#x9700;&#x8981;&#x5BF9;&#x72B6;&#x6001;&#x7A7A;&#x95F4;&#x8FDB;&#x884C;&#x663E;&#x5F0F;&#x8868;&#x793A;</p>
 </li>
-<li><p>树和图等的数据结构保障了查找的效率和质量</p>
-</li>
-</ul>
+<li><p>&#x6811;&#x548C;&#x56FE;&#x7B49;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4FDD;&#x969C;&#x4E86;&#x67E5;&#x627E;&#x7684;&#x6548;&#x7387;&#x548C;&#x8D28;&#x91CF;</p>
 </li>
 </ul>
-<h3 id="基于采样的规划的基本组成"><a href="#基于采样的规划的基本组成" class="headerlink" title="基于采样的规划的基本组成"></a>基于采样的规划的基本组成</h3><ul>
-<li>基于采样的规划特别适合在高维空间和复杂动力学环境下的路径规划，有很多中不同的规划器及其附件，但是核心是：在一次采样中，发生了什么？</li>
+</li>
 </ul>
-<h4 id="障碍检测"><a href="#障碍检测" class="headerlink" title="障碍检测"></a>障碍检测</h4><ul>
-<li><p>障碍检测非常有用。局部规划器在寻找无障碍路径时会用到（见PRM），在采样过程中也会用到。在复杂的高维系统中，显式表示状态空间会很难，但是规划器去不用去可以构造它，因为障碍检测执行了这一功能，如果没有障碍，则这个状态配置是合法的。</p>
+<h3 id="&#x57FA;&#x4E8E;&#x91C7;&#x6837;&#x7684;&#x89C4;&#x5212;&#x7684;&#x57FA;&#x672C;&#x7EC4;&#x6210;"><a href="#&#x57FA;&#x4E8E;&#x91C7;&#x6837;&#x7684;&#x89C4;&#x5212;&#x7684;&#x57FA;&#x672C;&#x7EC4;&#x6210;" class="headerlink" title="&#x57FA;&#x4E8E;&#x91C7;&#x6837;&#x7684;&#x89C4;&#x5212;&#x7684;&#x57FA;&#x672C;&#x7EC4;&#x6210;"></a>&#x57FA;&#x4E8E;&#x91C7;&#x6837;&#x7684;&#x89C4;&#x5212;&#x7684;&#x57FA;&#x672C;&#x7EC4;&#x6210;</h3><ul>
+<li>&#x57FA;&#x4E8E;&#x91C7;&#x6837;&#x7684;&#x89C4;&#x5212;&#x7279;&#x522B;&#x9002;&#x5408;&#x5728;&#x9AD8;&#x7EF4;&#x7A7A;&#x95F4;&#x548C;&#x590D;&#x6742;&#x52A8;&#x529B;&#x5B66;&#x73AF;&#x5883;&#x4E0B;&#x7684;&#x8DEF;&#x5F84;&#x89C4;&#x5212;&#xFF0C;&#x6709;&#x5F88;&#x591A;&#x4E2D;&#x4E0D;&#x540C;&#x7684;&#x89C4;&#x5212;&#x5668;&#x53CA;&#x5176;&#x9644;&#x4EF6;&#xFF0C;&#x4F46;&#x662F;&#x6838;&#x5FC3;&#x662F;&#xFF1A;&#x5728;&#x4E00;&#x6B21;&#x91C7;&#x6837;&#x4E2D;&#xFF0C;&#x53D1;&#x751F;&#x4E86;&#x4EC0;&#x4E48;&#xFF1F;</li>
+</ul>
+<h4 id="&#x969C;&#x788D;&#x68C0;&#x6D4B;"><a href="#&#x969C;&#x788D;&#x68C0;&#x6D4B;" class="headerlink" title="&#x969C;&#x788D;&#x68C0;&#x6D4B;"></a>&#x969C;&#x788D;&#x68C0;&#x6D4B;</h4><ul>
+<li><p>&#x969C;&#x788D;&#x68C0;&#x6D4B;&#x975E;&#x5E38;&#x6709;&#x7528;&#x3002;&#x5C40;&#x90E8;&#x89C4;&#x5212;&#x5668;&#x5728;&#x5BFB;&#x627E;&#x65E0;&#x969C;&#x788D;&#x8DEF;&#x5F84;&#x65F6;&#x4F1A;&#x7528;&#x5230;&#xFF08;&#x89C1;PRM&#xFF09;&#xFF0C;&#x5728;&#x91C7;&#x6837;&#x8FC7;&#x7A0B;&#x4E2D;&#x4E5F;&#x4F1A;&#x7528;&#x5230;&#x3002;&#x5728;&#x590D;&#x6742;&#x7684;&#x9AD8;&#x7EF4;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x663E;&#x5F0F;&#x8868;&#x793A;&#x72B6;&#x6001;&#x7A7A;&#x95F4;&#x4F1A;&#x5F88;&#x96BE;&#xFF0C;&#x4F46;&#x662F;&#x89C4;&#x5212;&#x5668;&#x53BB;&#x4E0D;&#x7528;&#x53BB;&#x53EF;&#x4EE5;&#x6784;&#x9020;&#x5B83;&#xFF0C;&#x56E0;&#x4E3A;&#x969C;&#x788D;&#x68C0;&#x6D4B;&#x6267;&#x884C;&#x4E86;&#x8FD9;&#x4E00;&#x529F;&#x80FD;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x969C;&#x788D;&#xFF0C;&#x5219;&#x8FD9;&#x4E2A;&#x72B6;&#x6001;&#x914D;&#x7F6E;&#x662F;&#x5408;&#x6CD5;&#x7684;&#x3002;</p>
 <ul>
-<li>（这里“障碍”应该是广义的，不仅应该是物理障碍，还应该包括机器人在现有动力学约束下无法到达的状态区域）</li>
+<li>&#xFF08;&#x8FD9;&#x91CC;&#x201C;&#x969C;&#x788D;&#x201D;&#x5E94;&#x8BE5;&#x662F;&#x5E7F;&#x4E49;&#x7684;&#xFF0C;&#x4E0D;&#x4EC5;&#x5E94;&#x8BE5;&#x662F;&#x7269;&#x7406;&#x969C;&#x788D;&#xFF0C;&#x8FD8;&#x5E94;&#x8BE5;&#x5305;&#x62EC;&#x673A;&#x5668;&#x4EBA;&#x5728;&#x73B0;&#x6709;&#x52A8;&#x529B;&#x5B66;&#x7EA6;&#x675F;&#x4E0B;&#x65E0;&#x6CD5;&#x5230;&#x8FBE;&#x7684;&#x72B6;&#x6001;&#x533A;&#x57DF;&#xFF09;</li>
 </ul>
 </li>
 </ul>
-<h4 id="最临近搜索"><a href="#最临近搜索" class="headerlink" title="最临近搜索"></a>最临近搜索</h4><ul>
-<li><p>前面已经提到，规划算法需要找出离当前状态最近的一个状态，寻找无障碍路径。当需要判断机器人的两个状态的距离时就要用到这个方法。</p>
+<h4 id="&#x6700;&#x4E34;&#x8FD1;&#x641C;&#x7D22;"><a href="#&#x6700;&#x4E34;&#x8FD1;&#x641C;&#x7D22;" class="headerlink" title="&#x6700;&#x4E34;&#x8FD1;&#x641C;&#x7D22;"></a>&#x6700;&#x4E34;&#x8FD1;&#x641C;&#x7D22;</h4><ul>
+<li><p>&#x524D;&#x9762;&#x5DF2;&#x7ECF;&#x63D0;&#x5230;&#xFF0C;&#x89C4;&#x5212;&#x7B97;&#x6CD5;&#x9700;&#x8981;&#x627E;&#x51FA;&#x79BB;&#x5F53;&#x524D;&#x72B6;&#x6001;&#x6700;&#x8FD1;&#x7684;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#xFF0C;&#x5BFB;&#x627E;&#x65E0;&#x969C;&#x788D;&#x8DEF;&#x5F84;&#x3002;&#x5F53;&#x9700;&#x8981;&#x5224;&#x65AD;&#x673A;&#x5668;&#x4EBA;&#x7684;&#x4E24;&#x4E2A;&#x72B6;&#x6001;&#x7684;&#x8DDD;&#x79BB;&#x65F6;&#x5C31;&#x8981;&#x7528;&#x5230;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x3002;</p>
 <ul>
-<li>但是，在高维空间中，欧式距离已经不能很好地计算。K-d树数据结构提供了一种方法。</li>
+<li>&#x4F46;&#x662F;&#xFF0C;&#x5728;&#x9AD8;&#x7EF4;&#x7A7A;&#x95F4;&#x4E2D;&#xFF0C;&#x6B27;&#x5F0F;&#x8DDD;&#x79BB;&#x5DF2;&#x7ECF;&#x4E0D;&#x80FD;&#x5F88;&#x597D;&#x5730;&#x8BA1;&#x7B97;&#x3002;K-d&#x6811;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x3002;</li>
 </ul>
 </li>
 </ul>
-<h4 id="OMPL"><a href="#OMPL" class="headerlink" title="OMPL"></a>OMPL</h4><ul>
-<li>OMPL核心算法库将这些都实现了！</li>
+<h4 id="ompl"><a href="#OMPL" class="headerlink" title="OMPL"></a>OMPL</h4><ul>
+<li>OMPL&#x6838;&#x5FC3;&#x7B97;&#x6CD5;&#x5E93;&#x5C06;&#x8FD9;&#x4E9B;&#x90FD;&#x5B9E;&#x73B0;&#x4E86;&#xFF01;</li>
 </ul>
-<h2 id="下期预告"><a href="#下期预告" class="headerlink" title="下期预告"></a>下期预告</h2><ul>
-<li>使用ompl.app</li>
+<h2 id="&#x4E0B;&#x671F;&#x9884;&#x544A;"><a href="#&#x4E0B;&#x671F;&#x9884;&#x544A;" class="headerlink" title="&#x4E0B;&#x671F;&#x9884;&#x544A;"></a>&#x4E0B;&#x671F;&#x9884;&#x544A;</h2><ul>
+<li>&#x4F7F;&#x7528;ompl.app</li>
 </ul>
 
       
@@ -616,19 +616,19 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">机器人软件构造</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">其他</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">机器人系统开发</a>
+                <a href="javascript:void(0)" class="color3">机器人软件构造</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">机器人软件设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">机器人系统开发</a>
               </li>
              
               <li class="article-tag-list-item">

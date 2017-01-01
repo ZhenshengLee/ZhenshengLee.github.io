@@ -214,62 +214,62 @@ ROS，其实从本质上讲就是一个消息通信中间件，其最基础的�
     <div class="article-entry" itemprop="articleBody">
       
         <p>[TOC]</p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
-<li>ROS，其实从本质上讲就是一个消息通信中间件，其最基础的功能就是在ros_common这个包中实现的，如消息，服务，控制台，roslaunch等等，在这里重点学习几个平时没有用到，但也非常重要的模块</li>
+<h2 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h2><ul>
+<li>ROS&#xFF0C;&#x5176;&#x5B9E;&#x4ECE;&#x672C;&#x8D28;&#x4E0A;&#x8BB2;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x6D88;&#x606F;&#x901A;&#x4FE1;&#x4E2D;&#x95F4;&#x4EF6;&#xFF0C;&#x5176;&#x6700;&#x57FA;&#x7840;&#x7684;&#x529F;&#x80FD;&#x5C31;&#x662F;&#x5728;ros_common&#x8FD9;&#x4E2A;&#x5305;&#x4E2D;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x5982;&#x6D88;&#x606F;&#xFF0C;&#x670D;&#x52A1;&#xFF0C;&#x63A7;&#x5236;&#x53F0;&#xFF0C;roslaunch&#x7B49;&#x7B49;&#xFF0C;&#x5728;&#x8FD9;&#x91CC;&#x91CD;&#x70B9;&#x5B66;&#x4E60;&#x51E0;&#x4E2A;&#x5E73;&#x65F6;&#x6CA1;&#x6709;&#x7528;&#x5230;&#xFF0C;&#x4F46;&#x4E5F;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x7684;&#x6A21;&#x5757;</li>
 </ul>
 <a id="more"></a>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://wiki.ros.org/ros_comm?distro=kinetic" target="_blank" rel="external">Wiki Page</a></p>
-<h2 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h2><h3 id="message-filters"><a href="#message-filters" class="headerlink" title="message_filters"></a><a href="http://wiki.ros.org/message_filters" target="_blank" rel="external">message_filters</a></h3><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><ul>
-<li>集中处理多个消息来源的模块，或者说是进行消息同步的模块<ul>
-<li>一个例子是time synchronizer，其将多个输入消息进行“过滤”（例如消息a，b），只输出消息a的timestamp下的b消息，即对消息b中的“无用”消息进行了“过滤”</li>
+<h2 id="&#x53C2;&#x8003;"><a href="#&#x53C2;&#x8003;" class="headerlink" title="&#x53C2;&#x8003;"></a>&#x53C2;&#x8003;</h2><p><a href="http://wiki.ros.org/ros_comm?distro=kinetic" target="_blank" rel="external">Wiki Page</a></p>
+<h2 id="&#x8BB0;&#x5F55;"><a href="#&#x8BB0;&#x5F55;" class="headerlink" title="&#x8BB0;&#x5F55;"></a>&#x8BB0;&#x5F55;</h2><h3 id="message_filters"><a href="#message-filters" class="headerlink" title="message_filters"></a><a href="http://wiki.ros.org/message_filters" target="_blank" rel="external">message_filters</a></h3><h4 id="&#x57FA;&#x672C;&#x6982;&#x5FF5;"><a href="#&#x57FA;&#x672C;&#x6982;&#x5FF5;" class="headerlink" title="&#x57FA;&#x672C;&#x6982;&#x5FF5;"></a>&#x57FA;&#x672C;&#x6982;&#x5FF5;</h4><ul>
+<li>&#x96C6;&#x4E2D;&#x5904;&#x7406;&#x591A;&#x4E2A;&#x6D88;&#x606F;&#x6765;&#x6E90;&#x7684;&#x6A21;&#x5757;&#xFF0C;&#x6216;&#x8005;&#x8BF4;&#x662F;&#x8FDB;&#x884C;&#x6D88;&#x606F;&#x540C;&#x6B65;&#x7684;&#x6A21;&#x5757;<ul>
+<li>&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x662F;time synchronizer&#xFF0C;&#x5176;&#x5C06;&#x591A;&#x4E2A;&#x8F93;&#x5165;&#x6D88;&#x606F;&#x8FDB;&#x884C;&#x201C;&#x8FC7;&#x6EE4;&#x201D;&#xFF08;&#x4F8B;&#x5982;&#x6D88;&#x606F;a&#xFF0C;b&#xFF09;&#xFF0C;&#x53EA;&#x8F93;&#x51FA;&#x6D88;&#x606F;a&#x7684;timestamp&#x4E0B;&#x7684;b&#x6D88;&#x606F;&#xFF0C;&#x5373;&#x5BF9;&#x6D88;&#x606F;b&#x4E2D;&#x7684;&#x201C;&#x65E0;&#x7528;&#x201D;&#x6D88;&#x606F;&#x8FDB;&#x884C;&#x4E86;&#x201C;&#x8FC7;&#x6EE4;&#x201D;</li>
 </ul>
 </li>
 </ul>
-<h4 id="基本代码"><a href="#基本代码" class="headerlink" title="基本代码"></a>基本代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 构造</span></span><br><span class="line">FooFilter foo;</span><br><span class="line"><span class="function">BarFilter <span class="title">bar</span><span class="params">(foo)</span></span>;<span class="comment">//Bar的输入连接着foo的输出</span></span><br><span class="line">bar.connectInput(foo);<span class="comment">//等价</span></span><br><span class="line">bar.registerCallback(myCallback);<span class="comment">//myCallback是一个可调用对象</span></span><br></pre></td></tr></table></figure>
-<h4 id="Time-Synchronizer"><a href="#Time-Synchronizer" class="headerlink" title="Time Synchronizer"></a>Time Synchronizer</h4><ul>
+<h4 id="&#x57FA;&#x672C;&#x4EE3;&#x7801;"><a href="#&#x57FA;&#x672C;&#x4EE3;&#x7801;" class="headerlink" title="&#x57FA;&#x672C;&#x4EE3;&#x7801;"></a>&#x57FA;&#x672C;&#x4EE3;&#x7801;</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// &#x6784;&#x9020;</span></span><br><span class="line">FooFilter foo;</span><br><span class="line"><span class="function">BarFilter <span class="title">bar</span><span class="params">(foo)</span></span>;<span class="comment">//Bar&#x7684;&#x8F93;&#x5165;&#x8FDE;&#x63A5;&#x7740;foo&#x7684;&#x8F93;&#x51FA;</span></span><br><span class="line">bar.connectInput(foo);<span class="comment">//&#x7B49;&#x4EF7;</span></span><br><span class="line">bar.registerCallback(myCallback);<span class="comment">//myCallback&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x8C03;&#x7528;&#x5BF9;&#x8C61;</span></span><br></pre></td></tr></table></figure>
+<h4 id="time-synchronizer"><a href="#Time-Synchronizer" class="headerlink" title="Time Synchronizer"></a>Time Synchronizer</h4><ul>
 <li>The TimeSynchronizer filter synchronizes incoming channels by the timestamps contained in their headers, and outputs them in the form of a single callback that takes the same number of channels. The C++ implementation can synchronize up to 9 channels.<ul>
-<li>使用一个回调函数同时处理多个消息，可以按照时间戳将不符合要求的消息丢弃，最多支持9通道，因为c++模板参数最多支持9个</li>
+<li>&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x540C;&#x65F6;&#x5904;&#x7406;&#x591A;&#x4E2A;&#x6D88;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x65F6;&#x95F4;&#x6233;&#x5C06;&#x4E0D;&#x7B26;&#x5408;&#x8981;&#x6C42;&#x7684;&#x6D88;&#x606F;&#x4E22;&#x5F03;&#xFF0C;&#x6700;&#x591A;&#x652F;&#x6301;9&#x901A;&#x9053;&#xFF0C;&#x56E0;&#x4E3A;c++&#x6A21;&#x677F;&#x53C2;&#x6570;&#x6700;&#x591A;&#x652F;&#x6301;9&#x4E2A;</li>
 </ul>
 </li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;message_filters/subscriber.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;message_filters/time_synchronizer.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sensor_msgs/Image.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sensor_msgs/CameraInfo.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> sensor_msgs;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> message_filters;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">callback</span><span class="params">(<span class="keyword">const</span> ImageConstPtr&amp; image, <span class="keyword">const</span> CameraInfoConstPtr&amp; cam_info)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">  <span class="comment">// Solve all of perception here...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>** argv)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">  ros::init(argc, argv, <span class="string">"vision_node"</span>);</span><br><span class="line"></span><br><span class="line">  ros::NodeHandle nh;</span><br><span class="line"></span><br><span class="line">  message_filters::Subscriber&lt;Image&gt; image_sub(nh, <span class="string">"image"</span>, <span class="number">1</span>);</span><br><span class="line">  message_filters::Subscriber&lt;CameraInfo&gt; info_sub(nh, <span class="string">"camera_info"</span>, <span class="number">1</span>);</span><br><span class="line">  TimeSynchronizer&lt;Image, CameraInfo&gt; sync(image_sub, info_sub, <span class="number">10</span>);</span><br><span class="line">  sync.registerCallback(boost::bind(&amp;callback, _1, _2));</span><br><span class="line"></span><br><span class="line">  ros::spin();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;message_filters/subscriber.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;message_filters/time_synchronizer.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sensor_msgs/Image.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sensor_msgs/CameraInfo.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> sensor_msgs;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> message_filters;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">callback</span><span class="params">(<span class="keyword">const</span> ImageConstPtr&amp; image, <span class="keyword">const</span> CameraInfoConstPtr&amp; cam_info)</span></span><br><span class="line"></span>{</span><br><span class="line">  <span class="comment">// Solve all of perception here...</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>** argv)</span></span><br><span class="line"></span>{</span><br><span class="line">  ros::init(argc, argv, <span class="string">&quot;vision_node&quot;</span>);</span><br><span class="line"></span><br><span class="line">  ros::NodeHandle nh;</span><br><span class="line"></span><br><span class="line">  message_filters::Subscriber&lt;Image&gt; image_sub(nh, <span class="string">&quot;image&quot;</span>, <span class="number">1</span>);</span><br><span class="line">  message_filters::Subscriber&lt;CameraInfo&gt; info_sub(nh, <span class="string">&quot;camera_info&quot;</span>, <span class="number">1</span>);</span><br><span class="line">  TimeSynchronizer&lt;Image, CameraInfo&gt; sync(image_sub, info_sub, <span class="number">10</span>);</span><br><span class="line">  sync.registerCallback(boost::bind(&amp;callback, _1, _2));</span><br><span class="line"></span><br><span class="line">  ros::spin();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 <ul>
-<li>时间同步器现在还支持时间相近的时间戳的消息聚合处理，见后面的Policy-Based Synchronizer</li>
+<li>&#x65F6;&#x95F4;&#x540C;&#x6B65;&#x5668;&#x73B0;&#x5728;&#x8FD8;&#x652F;&#x6301;&#x65F6;&#x95F4;&#x76F8;&#x8FD1;&#x7684;&#x65F6;&#x95F4;&#x6233;&#x7684;&#x6D88;&#x606F;&#x805A;&#x5408;&#x5904;&#x7406;&#xFF0C;&#x89C1;&#x540E;&#x9762;&#x7684;Policy-Based Synchronizer</li>
 </ul>
-<h4 id="Time-Sequencer"><a href="#Time-Sequencer" class="headerlink" title="Time Sequencer"></a>Time Sequencer</h4><ul>
-<li>The TimeSequencer filter guarantees that messages will be called in temporal order according to their header’s timestamp. The TimeSequencer is constructed with a specific delay which specifies how long to queue up messages before passing them through. A callback for a message is never invoked until the messages’ time stamp is out of date by at least delay. However, for all messages which are out of date by at least the delay, their callback are invoked and guaranteed to be in temporal order. If a message arrives from a time prior to a message which has already had its callback invoked, it is thrown away.<ul>
-<li>简单讲，使得消息的回调函数调用能够按照固定时间间隔和按先后顺序执行，如果出现顺序混乱，则将此消息丢弃</li>
-</ul>
-</li>
-</ul>
-<h4 id="Cache"><a href="#Cache" class="headerlink" title="Cache"></a>Cache</h4><ul>
-<li>可以存储时间上最近的N个消息</li>
-</ul>
-<h4 id="Policy-Based-Synchronizer"><a href="#Policy-Based-Synchronizer" class="headerlink" title="Policy-Based Synchronizer"></a>Policy-Based Synchronizer</h4><ul>
-<li>基于某种策略的消息同步<ul>
-<li>有两种同步：ExactTime和ApproximateTime</li>
+<h4 id="time-sequencer"><a href="#Time-Sequencer" class="headerlink" title="Time Sequencer"></a>Time Sequencer</h4><ul>
+<li>The TimeSequencer filter guarantees that messages will be called in temporal order according to their header&#x2019;s timestamp. The TimeSequencer is constructed with a specific delay which specifies how long to queue up messages before passing them through. A callback for a message is never invoked until the messages&#x2019; time stamp is out of date by at least delay. However, for all messages which are out of date by at least the delay, their callback are invoked and guaranteed to be in temporal order. If a message arrives from a time prior to a message which has already had its callback invoked, it is thrown away.<ul>
+<li>&#x7B80;&#x5355;&#x8BB2;&#xFF0C;&#x4F7F;&#x5F97;&#x6D88;&#x606F;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x80FD;&#x591F;&#x6309;&#x7167;&#x56FA;&#x5B9A;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#x548C;&#x6309;&#x5148;&#x540E;&#x987A;&#x5E8F;&#x6267;&#x884C;&#xFF0C;&#x5982;&#x679C;&#x51FA;&#x73B0;&#x987A;&#x5E8F;&#x6DF7;&#x4E71;&#xFF0C;&#x5219;&#x5C06;&#x6B64;&#x6D88;&#x606F;&#x4E22;&#x5F03;</li>
 </ul>
 </li>
 </ul>
-<h4 id="Chain"><a href="#Chain" class="headerlink" title="Chain"></a>Chain</h4><ul>
-<li>可以将Filter连成一个链<ul>
-<li>输出与下一个输入相连</li>
+<h4 id="cache"><a href="#Cache" class="headerlink" title="Cache"></a>Cache</h4><ul>
+<li>&#x53EF;&#x4EE5;&#x5B58;&#x50A8;&#x65F6;&#x95F4;&#x4E0A;&#x6700;&#x8FD1;&#x7684;N&#x4E2A;&#x6D88;&#x606F;</li>
+</ul>
+<h4 id="policy-based-synchronizer"><a href="#Policy-Based-Synchronizer" class="headerlink" title="Policy-Based Synchronizer"></a>Policy-Based Synchronizer</h4><ul>
+<li>&#x57FA;&#x4E8E;&#x67D0;&#x79CD;&#x7B56;&#x7565;&#x7684;&#x6D88;&#x606F;&#x540C;&#x6B65;<ul>
+<li>&#x6709;&#x4E24;&#x79CD;&#x540C;&#x6B65;&#xFF1A;ExactTime&#x548C;ApproximateTime</li>
 </ul>
 </li>
 </ul>
-<h3 id="ros-bag"><a href="#ros-bag" class="headerlink" title="ros_bag"></a><a href="http://wiki.ros.org/rosbag?distro=kinetic" target="_blank" rel="external">ros_bag</a></h3><ul>
-<li>记录和重新播放消息数据的工具包，生成一个*.bag文件，此文件可以用Matlab进行解析，也可以在ROS系统中进行重新播放。<ul>
-<li>详细情况见我的另外一篇播客</li>
+<h4 id="chain"><a href="#Chain" class="headerlink" title="Chain"></a>Chain</h4><ul>
+<li>&#x53EF;&#x4EE5;&#x5C06;Filter&#x8FDE;&#x6210;&#x4E00;&#x4E2A;&#x94FE;<ul>
+<li>&#x8F93;&#x51FA;&#x4E0E;&#x4E0B;&#x4E00;&#x4E2A;&#x8F93;&#x5165;&#x76F8;&#x8FDE;</li>
 </ul>
 </li>
 </ul>
-<h3 id="ros-graph"><a href="#ros-graph" class="headerlink" title="ros_graph"></a><a href="http://wiki.ros.org/rosgraph?distro=kinetic" target="_blank" rel="external">ros_graph</a></h3><ul>
-<li>进行画图的命令行工具包，在终端显示数据等</li>
-<li>使用python命令更好，包括：rostopic, rosnode, rosservice, rosparam</li>
+<h3 id="ros_bag"><a href="#ros-bag" class="headerlink" title="ros_bag"></a><a href="http://wiki.ros.org/rosbag?distro=kinetic" target="_blank" rel="external">ros_bag</a></h3><ul>
+<li>&#x8BB0;&#x5F55;&#x548C;&#x91CD;&#x65B0;&#x64AD;&#x653E;&#x6D88;&#x606F;&#x6570;&#x636E;&#x7684;&#x5DE5;&#x5177;&#x5305;&#xFF0C;&#x751F;&#x6210;&#x4E00;&#x4E2A;*.bag&#x6587;&#x4EF6;&#xFF0C;&#x6B64;&#x6587;&#x4EF6;&#x53EF;&#x4EE5;&#x7528;Matlab&#x8FDB;&#x884C;&#x89E3;&#x6790;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;ROS&#x7CFB;&#x7EDF;&#x4E2D;&#x8FDB;&#x884C;&#x91CD;&#x65B0;&#x64AD;&#x653E;&#x3002;<ul>
+<li>&#x8BE6;&#x7EC6;&#x60C5;&#x51B5;&#x89C1;&#x6211;&#x7684;&#x53E6;&#x5916;&#x4E00;&#x7BC7;&#x64AD;&#x5BA2;</li>
 </ul>
-<h3 id="XmlRpc"><a href="#XmlRpc" class="headerlink" title="XmlRpc++"></a><a href="http://xmlrpcpp.sourceforge.net/" target="_blank" rel="external">XmlRpc++</a></h3><ul>
-<li>是XML-RPC机制的C++实现，XmlRpc是远程过程调用的一种方式，不过更加简单一些，其使用XML作为数据交换格式，使用HTTP协议进行通信。</li>
-<li>所有IO都是非阻塞式的，所以网络状态不佳也不会拖慢服务端</li>
+</li>
+</ul>
+<h3 id="ros_graph"><a href="#ros-graph" class="headerlink" title="ros_graph"></a><a href="http://wiki.ros.org/rosgraph?distro=kinetic" target="_blank" rel="external">ros_graph</a></h3><ul>
+<li>&#x8FDB;&#x884C;&#x753B;&#x56FE;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#x5305;&#xFF0C;&#x5728;&#x7EC8;&#x7AEF;&#x663E;&#x793A;&#x6570;&#x636E;&#x7B49;</li>
+<li>&#x4F7F;&#x7528;python&#x547D;&#x4EE4;&#x66F4;&#x597D;&#xFF0C;&#x5305;&#x62EC;&#xFF1A;rostopic, rosnode, rosservice, rosparam</li>
+</ul>
+<h3 id="xmlrpc"><a href="#XmlRpc" class="headerlink" title="XmlRpc++"></a><a href="http://xmlrpcpp.sourceforge.net/" target="_blank" rel="external">XmlRpc++</a></h3><ul>
+<li>&#x662F;XML-RPC&#x673A;&#x5236;&#x7684;C++&#x5B9E;&#x73B0;&#xFF0C;XmlRpc&#x662F;&#x8FDC;&#x7A0B;&#x8FC7;&#x7A0B;&#x8C03;&#x7528;&#x7684;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x4E0D;&#x8FC7;&#x66F4;&#x52A0;&#x7B80;&#x5355;&#x4E00;&#x4E9B;&#xFF0C;&#x5176;&#x4F7F;&#x7528;XML&#x4F5C;&#x4E3A;&#x6570;&#x636E;&#x4EA4;&#x6362;&#x683C;&#x5F0F;&#xFF0C;&#x4F7F;&#x7528;HTTP&#x534F;&#x8BAE;&#x8FDB;&#x884C;&#x901A;&#x4FE1;&#x3002;</li>
+<li>&#x6240;&#x6709;IO&#x90FD;&#x662F;&#x975E;&#x963B;&#x585E;&#x5F0F;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x7F51;&#x7EDC;&#x72B6;&#x6001;&#x4E0D;&#x4F73;&#x4E5F;&#x4E0D;&#x4F1A;&#x62D6;&#x6162;&#x670D;&#x52A1;&#x7AEF;</li>
 </ul>
 
       
@@ -540,19 +540,19 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">机器人软件构造</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">其他</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">机器人系统开发</a>
+                <a href="javascript:void(0)" class="color3">机器人软件构造</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">机器人软件设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">机器人系统开发</a>
               </li>
              
               <li class="article-tag-list-item">

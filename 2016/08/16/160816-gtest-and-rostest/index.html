@@ -226,113 +226,113 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>[TOC]</p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h3 id="为什么要学GTest"><a href="#为什么要学GTest" class="headerlink" title="为什么要学GTest"></a>为什么要学GTest</h3><ul>
-<li><p>开源框架，完全免费</p>
+<h2 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h2><h3 id="&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x5B66;gtest"><a href="#&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x5B66;GTest" class="headerlink" title="&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x5B66;GTest"></a>&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x5B66;GTest</h3><ul>
+<li><p>&#x5F00;&#x6E90;&#x6846;&#x67B6;&#xFF0C;&#x5B8C;&#x5168;&#x514D;&#x8D39;</p>
 </li>
-<li><p>用得人多，项目多，比如ROS就用这个做测试，这是我学习GTEST的直接原因</p>
+<li><p>&#x7528;&#x5F97;&#x4EBA;&#x591A;&#xFF0C;&#x9879;&#x76EE;&#x591A;&#xFF0C;&#x6BD4;&#x5982;ROS&#x5C31;&#x7528;&#x8FD9;&#x4E2A;&#x505A;&#x6D4B;&#x8BD5;&#xFF0C;&#x8FD9;&#x662F;&#x6211;&#x5B66;&#x4E60;GTEST&#x7684;&#x76F4;&#x63A5;&#x539F;&#x56E0;</p>
 </li>
-<li><p>软件工程师入门啊！</p>
+<li><p>&#x8F6F;&#x4EF6;&#x5DE5;&#x7A0B;&#x5E08;&#x5165;&#x95E8;&#x554A;&#xFF01;</p>
 </li>
 </ul>
 <a id="more"></a>
-<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><blockquote>
-<p><a href="http://roclinux.cn/?p=2873" target="_blank" rel="external">Linux 大棚</a></p>
+<h2 id="&#x81F4;&#x8C22;"><a href="#&#x81F4;&#x8C22;" class="headerlink" title="&#x81F4;&#x8C22;"></a>&#x81F4;&#x8C22;</h2><blockquote>
+<p><a href="http://roclinux.cn/?p=2873" target="_blank" rel="external">Linux &#x5927;&#x68DA;</a></p>
 <p><a href="http://wiki.ros.org/rostest" target="_blank" rel="external">ROSTest</a></p>
 </blockquote>
-<h2 id="好的测试框架应该是（软件测试思想）"><a href="#好的测试框架应该是（软件测试思想）" class="headerlink" title="好的测试框架应该是（软件测试思想）"></a>好的测试框架应该是（软件测试思想）</h2><ul>
-<li><p>软件应该是独立的且可重复的，每个测试应该是一个独立的对象</p>
+<h2 id="&#x597D;&#x7684;&#x6D4B;&#x8BD5;&#x6846;&#x67B6;&#x5E94;&#x8BE5;&#x662F;&#x8F6F;&#x4EF6;&#x6D4B;&#x8BD5;&#x601D;&#x60F3;"><a href="#&#x597D;&#x7684;&#x6D4B;&#x8BD5;&#x6846;&#x67B6;&#x5E94;&#x8BE5;&#x662F;&#xFF08;&#x8F6F;&#x4EF6;&#x6D4B;&#x8BD5;&#x601D;&#x60F3;&#xFF09;" class="headerlink" title="&#x597D;&#x7684;&#x6D4B;&#x8BD5;&#x6846;&#x67B6;&#x5E94;&#x8BE5;&#x662F;&#xFF08;&#x8F6F;&#x4EF6;&#x6D4B;&#x8BD5;&#x601D;&#x60F3;&#xFF09;"></a>&#x597D;&#x7684;&#x6D4B;&#x8BD5;&#x6846;&#x67B6;&#x5E94;&#x8BE5;&#x662F;&#xFF08;&#x8F6F;&#x4EF6;&#x6D4B;&#x8BD5;&#x601D;&#x60F3;&#xFF09;</h2><ul>
+<li><p>&#x8F6F;&#x4EF6;&#x5E94;&#x8BE5;&#x662F;&#x72EC;&#x7ACB;&#x7684;&#x4E14;&#x53EF;&#x91CD;&#x590D;&#x7684;&#xFF0C;&#x6BCF;&#x4E2A;&#x6D4B;&#x8BD5;&#x5E94;&#x8BE5;&#x662F;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x5BF9;&#x8C61;</p>
 </li>
-<li><p>应该有一套好的方法来组织测试，这种组织方法能够较好的反映程序代码的结构</p>
+<li><p>&#x5E94;&#x8BE5;&#x6709;&#x4E00;&#x5957;&#x597D;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x7EC4;&#x7EC7;&#x6D4B;&#x8BD5;&#xFF0C;&#x8FD9;&#x79CD;&#x7EC4;&#x7EC7;&#x65B9;&#x6CD5;&#x80FD;&#x591F;&#x8F83;&#x597D;&#x7684;&#x53CD;&#x6620;&#x7A0B;&#x5E8F;&#x4EE3;&#x7801;&#x7684;&#x7ED3;&#x6784;</p>
 </li>
-<li><p>测试应该是可迁移的且可复用的（平台中立）（支持多种编译器）</p>
+<li><p>&#x6D4B;&#x8BD5;&#x5E94;&#x8BE5;&#x662F;&#x53EF;&#x8FC1;&#x79FB;&#x7684;&#x4E14;&#x53EF;&#x590D;&#x7528;&#x7684;&#xFF08;&#x5E73;&#x53F0;&#x4E2D;&#x7ACB;&#xFF09;&#xFF08;&#x652F;&#x6301;&#x591A;&#x79CD;&#x7F16;&#x8BD1;&#x5668;&#xFF09;</p>
 </li>
-<li><p>在测试失败时，要能够提供足够充分的测试信息</p>
+<li><p>&#x5728;&#x6D4B;&#x8BD5;&#x5931;&#x8D25;&#x65F6;&#xFF0C;&#x8981;&#x80FD;&#x591F;&#x63D0;&#x4F9B;&#x8DB3;&#x591F;&#x5145;&#x5206;&#x7684;&#x6D4B;&#x8BD5;&#x4FE1;&#x606F;</p>
 </li>
-<li><p>测试框架应该让开发者从琐碎的工作中解脱出来，让他们能够专注在测试内容上</p>
+<li><p>&#x6D4B;&#x8BD5;&#x6846;&#x67B6;&#x5E94;&#x8BE5;&#x8BA9;&#x5F00;&#x53D1;&#x8005;&#x4ECE;&#x7410;&#x788E;&#x7684;&#x5DE5;&#x4F5C;&#x4E2D;&#x89E3;&#x8131;&#x51FA;&#x6765;&#xFF0C;&#x8BA9;&#x4ED6;&#x4EEC;&#x80FD;&#x591F;&#x4E13;&#x6CE8;&#x5728;&#x6D4B;&#x8BD5;&#x5185;&#x5BB9;&#x4E0A;</p>
 </li>
-<li><p>测试应该是高效的</p>
-</li>
-</ul>
-<h3 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h3><ul>
-<li><p>如果你是一名开发工程师，或者你编写的程序要用到生产环境中，那么，你不可避免的需要学习和掌握一种自动化测试框架，以确保你的程序测试充分，质量上乘。</p>
-</li>
-<li><p>其实啊，测试工具是什么并不重要，重要的是测试思想，还是在大学期间上过的课，亲身做过的项目才是真货，好吧，去考个计算机三级软件测试技术？</p>
+<li><p>&#x6D4B;&#x8BD5;&#x5E94;&#x8BE5;&#x662F;&#x9AD8;&#x6548;&#x7684;</p>
 </li>
 </ul>
-<h2 id="GTest-入门"><a href="#GTest-入门" class="headerlink" title="GTest 入门"></a>GTest 入门</h2><h3 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h3><ul>
-<li><p>第一步就是：把gtest编译成一个库，并且链接到你的测试程序中</p>
+<h3 id="&#x79D1;&#x666E;"><a href="#&#x79D1;&#x666E;" class="headerlink" title="&#x79D1;&#x666E;"></a>&#x79D1;&#x666E;</h3><ul>
+<li><p>&#x5982;&#x679C;&#x4F60;&#x662F;&#x4E00;&#x540D;&#x5F00;&#x53D1;&#x5DE5;&#x7A0B;&#x5E08;&#xFF0C;&#x6216;&#x8005;&#x4F60;&#x7F16;&#x5199;&#x7684;&#x7A0B;&#x5E8F;&#x8981;&#x7528;&#x5230;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x4E2D;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;&#x4F60;&#x4E0D;&#x53EF;&#x907F;&#x514D;&#x7684;&#x9700;&#x8981;&#x5B66;&#x4E60;&#x548C;&#x638C;&#x63E1;&#x4E00;&#x79CD;&#x81EA;&#x52A8;&#x5316;&#x6D4B;&#x8BD5;&#x6846;&#x67B6;&#xFF0C;&#x4EE5;&#x786E;&#x4FDD;&#x4F60;&#x7684;&#x7A0B;&#x5E8F;&#x6D4B;&#x8BD5;&#x5145;&#x5206;&#xFF0C;&#x8D28;&#x91CF;&#x4E0A;&#x4E58;&#x3002;</p>
 </li>
-<li><p>你的测试项目程序要引用gtest/gtest.h，你的gtest安装在GTEST_ROOT路径下</p>
-</li>
-</ul>
-<h3 id="断言assertion"><a href="#断言assertion" class="headerlink" title="断言assertion"></a>断言assertion</h3><ul>
-<li><p>gtest 中的断言是一些宏，assertion在测试一个函数时，可以有两种方案，即ASSERT<em>*和EXPECT</em><em>。在失败发生时，ASSERT_</em>这类assertion会产生fatal failure，并且会终止当前函数；而EXPECT_*则只会产生nonfatal failure。</p>
-</li>
-<li><p>常用的宏有</p>
+<li><p>&#x5176;&#x5B9E;&#x554A;&#xFF0C;&#x6D4B;&#x8BD5;&#x5DE5;&#x5177;&#x662F;&#x4EC0;&#x4E48;&#x5E76;&#x4E0D;&#x91CD;&#x8981;&#xFF0C;&#x91CD;&#x8981;&#x7684;&#x662F;&#x6D4B;&#x8BD5;&#x601D;&#x60F3;&#xFF0C;&#x8FD8;&#x662F;&#x5728;&#x5927;&#x5B66;&#x671F;&#x95F4;&#x4E0A;&#x8FC7;&#x7684;&#x8BFE;&#xFF0C;&#x4EB2;&#x8EAB;&#x505A;&#x8FC7;&#x7684;&#x9879;&#x76EE;&#x624D;&#x662F;&#x771F;&#x8D27;&#xFF0C;&#x597D;&#x5427;&#xFF0C;&#x53BB;&#x8003;&#x4E2A;&#x8BA1;&#x7B97;&#x673A;&#x4E09;&#x7EA7;&#x8F6F;&#x4EF6;&#x6D4B;&#x8BD5;&#x6280;&#x672F;&#xFF1F;</p>
 </li>
 </ul>
-<p>EXPECT_EQ/NE/LT/LE/GT/GE([表达式],[表达式])</p>
+<h2 id="gtest-&#x5165;&#x95E8;"><a href="#GTest-&#x5165;&#x95E8;" class="headerlink" title="GTest &#x5165;&#x95E8;"></a>GTest &#x5165;&#x95E8;</h2><h3 id="&#x7EFC;&#x8FF0;"><a href="#&#x7EFC;&#x8FF0;" class="headerlink" title="&#x7EFC;&#x8FF0;"></a>&#x7EFC;&#x8FF0;</h3><ul>
+<li><p>&#x7B2C;&#x4E00;&#x6B65;&#x5C31;&#x662F;&#xFF1A;&#x628A;gtest&#x7F16;&#x8BD1;&#x6210;&#x4E00;&#x4E2A;&#x5E93;&#xFF0C;&#x5E76;&#x4E14;&#x94FE;&#x63A5;&#x5230;&#x4F60;&#x7684;&#x6D4B;&#x8BD5;&#x7A0B;&#x5E8F;&#x4E2D;</p>
+</li>
+<li><p>&#x4F60;&#x7684;&#x6D4B;&#x8BD5;&#x9879;&#x76EE;&#x7A0B;&#x5E8F;&#x8981;&#x5F15;&#x7528;gtest/gtest.h&#xFF0C;&#x4F60;&#x7684;gtest&#x5B89;&#x88C5;&#x5728;GTEST_ROOT&#x8DEF;&#x5F84;&#x4E0B;</p>
+</li>
+</ul>
+<h3 id="&#x65AD;&#x8A00;assertion"><a href="#&#x65AD;&#x8A00;assertion" class="headerlink" title="&#x65AD;&#x8A00;assertion"></a>&#x65AD;&#x8A00;assertion</h3><ul>
+<li><p>gtest &#x4E2D;&#x7684;&#x65AD;&#x8A00;&#x662F;&#x4E00;&#x4E9B;&#x5B8F;&#xFF0C;assertion&#x5728;&#x6D4B;&#x8BD5;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x6848;&#xFF0C;&#x5373;ASSERT<em>*&#x548C;EXPECT</em><em>&#x3002;&#x5728;&#x5931;&#x8D25;&#x53D1;&#x751F;&#x65F6;&#xFF0C;ASSERT_</em>&#x8FD9;&#x7C7B;assertion&#x4F1A;&#x4EA7;&#x751F;fatal failure&#xFF0C;&#x5E76;&#x4E14;&#x4F1A;&#x7EC8;&#x6B62;&#x5F53;&#x524D;&#x51FD;&#x6570;&#xFF1B;&#x800C;EXPECT_*&#x5219;&#x53EA;&#x4F1A;&#x4EA7;&#x751F;nonfatal failure&#x3002;</p>
+</li>
+<li><p>&#x5E38;&#x7528;&#x7684;&#x5B8F;&#x6709;</p>
+</li>
+</ul>
+<p>EXPECT_EQ/NE/LT/LE/GT/GE([&#x8868;&#x8FBE;&#x5F0F;],[&#x8868;&#x8FBE;&#x5F0F;])</p>
 <ul>
-<li><p>对于ASSERT_EQ比较两个C字符串指针，只会检查两个指针是否指向同一块区域，要想检查两个（C风格字符串）字符串内容是否相同，要使用ASSERT_STREQ，不过比较两个C++字符串的话就用ASSERT_EQ就可以了。</p>
+<li><p>&#x5BF9;&#x4E8E;ASSERT_EQ&#x6BD4;&#x8F83;&#x4E24;&#x4E2A;C&#x5B57;&#x7B26;&#x4E32;&#x6307;&#x9488;&#xFF0C;&#x53EA;&#x4F1A;&#x68C0;&#x67E5;&#x4E24;&#x4E2A;&#x6307;&#x9488;&#x662F;&#x5426;&#x6307;&#x5411;&#x540C;&#x4E00;&#x5757;&#x533A;&#x57DF;&#xFF0C;&#x8981;&#x60F3;&#x68C0;&#x67E5;&#x4E24;&#x4E2A;&#xFF08;C&#x98CE;&#x683C;&#x5B57;&#x7B26;&#x4E32;&#xFF09;&#x5B57;&#x7B26;&#x4E32;&#x5185;&#x5BB9;&#x662F;&#x5426;&#x76F8;&#x540C;&#xFF0C;&#x8981;&#x4F7F;&#x7528;ASSERT_STREQ&#xFF0C;&#x4E0D;&#x8FC7;&#x6BD4;&#x8F83;&#x4E24;&#x4E2A;C++&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x8BDD;&#x5C31;&#x7528;ASSERT_EQ&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;</p>
 </li>
-<li><p>特殊的比较宏——字符串比较宏</p>
+<li><p>&#x7279;&#x6B8A;&#x7684;&#x6BD4;&#x8F83;&#x5B8F;&#x2014;&#x2014;&#x5B57;&#x7B26;&#x4E32;&#x6BD4;&#x8F83;&#x5B8F;</p>
 </li>
 </ul>
-<p>ASSERT_STRCASEEQ()，此处CASE指不区分大小写的比较</p>
+<p>ASSERT_STRCASEEQ()&#xFF0C;&#x6B64;&#x5904;CASE&#x6307;&#x4E0D;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;&#x7684;&#x6BD4;&#x8F83;</p>
 <ul>
-<li>字符串比较宏的特殊规则</li>
+<li>&#x5B57;&#x7B26;&#x4E32;&#x6BD4;&#x8F83;&#x5B8F;&#x7684;&#x7279;&#x6B8A;&#x89C4;&#x5219;</li>
 </ul>
-<p>NULL和空字符串””是不相等的。</p>
+<p>NULL&#x548C;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#x201D;&#x201D;&#x662F;&#x4E0D;&#x76F8;&#x7B49;&#x7684;&#x3002;</p>
 <ul>
-<li>如果你想了解更多有关字符串比较的trick方法，比如在assertion中处理子字符串、前缀、后缀、正则匹配等，请进入“高级gtest指南”。</li>
+<li>&#x5982;&#x679C;&#x4F60;&#x60F3;&#x4E86;&#x89E3;&#x66F4;&#x591A;&#x6709;&#x5173;&#x5B57;&#x7B26;&#x4E32;&#x6BD4;&#x8F83;&#x7684;trick&#x65B9;&#x6CD5;&#xFF0C;&#x6BD4;&#x5982;&#x5728;assertion&#x4E2D;&#x5904;&#x7406;&#x5B50;&#x5B57;&#x7B26;&#x4E32;&#x3001;&#x524D;&#x7F00;&#x3001;&#x540E;&#x7F00;&#x3001;&#x6B63;&#x5219;&#x5339;&#x914D;&#x7B49;&#xFF0C;&#x8BF7;&#x8FDB;&#x5165;&#x201C;&#x9AD8;&#x7EA7;gtest&#x6307;&#x5357;&#x201D;&#x3002;</li>
 </ul>
-<h3 id="创建一个test"><a href="#创建一个test" class="headerlink" title="创建一个test"></a>创建一个test</h3><ul>
-<li>三件事</li>
+<h3 id="&#x521B;&#x5EFA;&#x4E00;&#x4E2A;test"><a href="#&#x521B;&#x5EFA;&#x4E00;&#x4E2A;test" class="headerlink" title="&#x521B;&#x5EFA;&#x4E00;&#x4E2A;test"></a>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;test</h3><ul>
+<li>&#x4E09;&#x4EF6;&#x4E8B;</li>
 </ul>
 <ol>
-<li><p>使用TEST()宏来定义和命名一个test函数，这个test函数不需要return任何值。</p>
+<li><p>&#x4F7F;&#x7528;TEST()&#x5B8F;&#x6765;&#x5B9A;&#x4E49;&#x548C;&#x547D;&#x540D;&#x4E00;&#x4E2A;test&#x51FD;&#x6570;&#xFF0C;&#x8FD9;&#x4E2A;test&#x51FD;&#x6570;&#x4E0D;&#x9700;&#x8981;return&#x4EFB;&#x4F55;&#x503C;&#x3002;</p>
 </li>
-<li><p>在这个test函数中，你可以写任何C++语句，并且使用assertion来检查。</p>
+<li><p>&#x5728;&#x8FD9;&#x4E2A;test&#x51FD;&#x6570;&#x4E2D;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5199;&#x4EFB;&#x4F55;C++&#x8BED;&#x53E5;&#xFF0C;&#x5E76;&#x4E14;&#x4F7F;&#x7528;assertion&#x6765;&#x68C0;&#x67E5;&#x3002;</p>
 </li>
-<li><p>这个test的结果是由assertion决定的。如果任何一个assertion失败了，或者这个test函数崩溃了，这个test则会返回fail。否则，会返回success。</p>
+<li><p>&#x8FD9;&#x4E2A;test&#x7684;&#x7ED3;&#x679C;&#x662F;&#x7531;assertion&#x51B3;&#x5B9A;&#x7684;&#x3002;&#x5982;&#x679C;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;assertion&#x5931;&#x8D25;&#x4E86;&#xFF0C;&#x6216;&#x8005;&#x8FD9;&#x4E2A;test&#x51FD;&#x6570;&#x5D29;&#x6E83;&#x4E86;&#xFF0C;&#x8FD9;&#x4E2A;test&#x5219;&#x4F1A;&#x8FD4;&#x56DE;fail&#x3002;&#x5426;&#x5219;&#xFF0C;&#x4F1A;&#x8FD4;&#x56DE;success&#x3002;</p>
 </li>
 </ol>
 <ul>
-<li>语法</li>
+<li>&#x8BED;&#x6CD5;</li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">TEST(test_case_name, test_name) &#123;</span><br><span class="line"></span><br><span class="line">... test body ...</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">TEST(test_case_name, test_name) {</span><br><span class="line"></span><br><span class="line">... test body ...</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 <ul>
 <li>Test Fixtures</li>
 </ul>
-<p>如果你发现你所写的多个test都在操作类似的数据，那么我推荐你使用test fixture。这个特性允许你在不同的test里复用相同的配置。</p>
-<p>机制主要是类的继承，具体请看参考教程，见文首</p>
-<p>使用Test Fixtures时的宏</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">TEST_F(test_case_name, test_name) &#123;</span><br><span class="line"></span><br><span class="line">... test body ...</span><br><span class="line"></span><br><span class="line">&#125;<span class="comment">// test_case_name 必须是定义的test fixture类的名称</span></span><br></pre></td></tr></table></figure>
-<h3 id="运行测试"><a href="#运行测试" class="headerlink" title="运行测试"></a>运行测试</h3><p>如果要触发运行，请执行RUN_ALL_TESTS()宏，如果所有的test都测试通过，它会返回0，否则会返回1。</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x53D1;&#x73B0;&#x4F60;&#x6240;&#x5199;&#x7684;&#x591A;&#x4E2A;test&#x90FD;&#x5728;&#x64CD;&#x4F5C;&#x7C7B;&#x4F3C;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x63A8;&#x8350;&#x4F60;&#x4F7F;&#x7528;test fixture&#x3002;&#x8FD9;&#x4E2A;&#x7279;&#x6027;&#x5141;&#x8BB8;&#x4F60;&#x5728;&#x4E0D;&#x540C;&#x7684;test&#x91CC;&#x590D;&#x7528;&#x76F8;&#x540C;&#x7684;&#x914D;&#x7F6E;&#x3002;</p>
+<p>&#x673A;&#x5236;&#x4E3B;&#x8981;&#x662F;&#x7C7B;&#x7684;&#x7EE7;&#x627F;&#xFF0C;&#x5177;&#x4F53;&#x8BF7;&#x770B;&#x53C2;&#x8003;&#x6559;&#x7A0B;&#xFF0C;&#x89C1;&#x6587;&#x9996;</p>
+<p>&#x4F7F;&#x7528;Test Fixtures&#x65F6;&#x7684;&#x5B8F;</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">TEST_F(test_case_name, test_name) {</span><br><span class="line"></span><br><span class="line">... test body ...</span><br><span class="line"></span><br><span class="line">}<span class="comment">// test_case_name &#x5FC5;&#x987B;&#x662F;&#x5B9A;&#x4E49;&#x7684;test fixture&#x7C7B;&#x7684;&#x540D;&#x79F0;</span></span><br></pre></td></tr></table></figure>
+<h3 id="&#x8FD0;&#x884C;&#x6D4B;&#x8BD5;"><a href="#&#x8FD0;&#x884C;&#x6D4B;&#x8BD5;" class="headerlink" title="&#x8FD0;&#x884C;&#x6D4B;&#x8BD5;"></a>&#x8FD0;&#x884C;&#x6D4B;&#x8BD5;</h3><p>&#x5982;&#x679C;&#x8981;&#x89E6;&#x53D1;&#x8FD0;&#x884C;&#xFF0C;&#x8BF7;&#x6267;&#x884C;RUN_ALL_TESTS()&#x5B8F;&#xFF0C;&#x5982;&#x679C;&#x6240;&#x6709;&#x7684;test&#x90FD;&#x6D4B;&#x8BD5;&#x901A;&#x8FC7;&#xFF0C;&#x5B83;&#x4F1A;&#x8FD4;&#x56DE;0&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x8FD4;&#x56DE;1&#x3002;</p>
 <ul>
-<li>注意</li>
+<li>&#x6CE8;&#x610F;</li>
 </ul>
-<p>你bixu在你的main函数中return这个值。</p>
-<h3 id="编写测试的main函数"><a href="#编写测试的main函数" class="headerlink" title="编写测试的main函数"></a>编写测试的main函数</h3><ul>
-<li>参考如下模板</li>
+<p>&#x4F60;bixu&#x5728;&#x4F60;&#x7684;main&#x51FD;&#x6570;&#x4E2D;return&#x8FD9;&#x4E2A;&#x503C;&#x3002;</p>
+<h3 id="&#x7F16;&#x5199;&#x6D4B;&#x8BD5;&#x7684;main&#x51FD;&#x6570;"><a href="#&#x7F16;&#x5199;&#x6D4B;&#x8BD5;&#x7684;main&#x51FD;&#x6570;" class="headerlink" title="&#x7F16;&#x5199;&#x6D4B;&#x8BD5;&#x7684;main&#x51FD;&#x6570;"></a>&#x7F16;&#x5199;&#x6D4B;&#x8BD5;&#x7684;main&#x51FD;&#x6570;</h3><ul>
+<li>&#x53C2;&#x8003;&#x5982;&#x4E0B;&#x6A21;&#x677F;</li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="string">"this/package/foo.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="string">"gtest/gtest.h"</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// The fixture for testing class Foo.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> FooTest : <span class="keyword">public</span> ::testing::Test &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line"></span><br><span class="line"><span class="comment">// You can remove any or all of the following functions if its body is empty.</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">FooTest() &#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">// You can do set-up work for each test here.</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Virtual ~FooTest() &#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">// You can do clean-up work that doesn't throw exceptions here.</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// If the constructor and destructor are not enough for setting up</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// and cleaning up each test, you can define the following methods:</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">SetUp</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Code here will be called immediately after the constructor</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">TearDown</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Code here will be called immediately after each test</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// Object declared here can be used by all tests in the test case for Foo.</span></span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// Tests that the Foo::Bar() method does Abc.</span></span><br><span class="line"></span><br><span class="line">TEST_F(FooTest, MethodBarDoesAbc) &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="built_in">string</span> input_filepath = <span class="string">"this/package/testdata/myinputfile.dat"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="built_in">string</span> output_filepath = <span class="string">"this/package/testdata/myoutputfile.dat"</span>;</span><br><span class="line"></span><br><span class="line">Foo f;</span><br><span class="line"></span><br><span class="line">EXPECT_EQ(<span class="number">0</span>, f.Bar(input_filepath, output_filepath));</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// Tests that Foo does Xyz.</span></span><br><span class="line"></span><br><span class="line">TEST_F(FooTest, DoesXyz) &#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Execises the Xyz feature of Foo.</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125; <span class="comment">// namespace</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">::testing::InitGoogleTest(&amp;amp;argc, argv);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> RUN_ALL_TESTS();</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="ROSTest-学习"><a href="#ROSTest-学习" class="headerlink" title="ROSTest 学习"></a>ROSTest 学习</h2><ul>
-<li>rostest是roslaunch的扩展，允许跨越多节点进行测试！文件格式可以是.test或.launch，非常建议将测试launch文件嵌入到普通launch文件中</li>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="string">&quot;this/package/foo.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="string">&quot;gtest/gtest.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> {</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// The fixture for testing class Foo.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> FooTest : <span class="keyword">public</span> ::testing::Test {</span><br><span class="line"></span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line"></span><br><span class="line"><span class="comment">// You can remove any or all of the following functions if its body is empty.</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">FooTest() {</span><br><span class="line"></span><br><span class="line"><span class="comment">// You can do set-up work for each test here.</span></span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Virtual ~FooTest() {</span><br><span class="line"></span><br><span class="line"><span class="comment">// You can do clean-up work that doesn&apos;t throw exceptions here.</span></span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// If the constructor and destructor are not enough for setting up</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// and cleaning up each test, you can define the following methods:</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">SetUp</span><span class="params">()</span> </span>{</span><br><span class="line"></span><br><span class="line"><span class="comment">// Code here will be called immediately after the constructor</span></span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">TearDown</span><span class="params">()</span> </span>{</span><br><span class="line"></span><br><span class="line"><span class="comment">// Code here will be called immediately after each test</span></span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// Object declared here can be used by all tests in the test case for Foo.</span></span><br><span class="line"></span><br><span class="line">};</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// Tests that the Foo::Bar() method does Abc.</span></span><br><span class="line"></span><br><span class="line">TEST_F(FooTest, MethodBarDoesAbc) {</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="built_in">string</span> input_filepath = <span class="string">&quot;this/package/testdata/myinputfile.dat&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="built_in">string</span> output_filepath = <span class="string">&quot;this/package/testdata/myoutputfile.dat&quot;</span>;</span><br><span class="line"></span><br><span class="line">Foo f;</span><br><span class="line"></span><br><span class="line">EXPECT_EQ(<span class="number">0</span>, f.Bar(input_filepath, output_filepath));</span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// Tests that Foo does Xyz.</span></span><br><span class="line"></span><br><span class="line">TEST_F(FooTest, DoesXyz) {</span><br><span class="line"></span><br><span class="line"><span class="comment">// Execises the Xyz feature of Foo.</span></span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">} <span class="comment">// namespace</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span> </span>{</span><br><span class="line"></span><br><span class="line">::testing::InitGoogleTest(&amp;amp;argc, argv);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> RUN_ALL_TESTS();</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h2 id="rostest-&#x5B66;&#x4E60;"><a href="#ROSTest-&#x5B66;&#x4E60;" class="headerlink" title="ROSTest &#x5B66;&#x4E60;"></a>ROSTest &#x5B66;&#x4E60;</h2><ul>
+<li>rostest&#x662F;roslaunch&#x7684;&#x6269;&#x5C55;&#xFF0C;&#x5141;&#x8BB8;&#x8DE8;&#x8D8A;&#x591A;&#x8282;&#x70B9;&#x8FDB;&#x884C;&#x6D4B;&#x8BD5;&#xFF01;&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#x53EF;&#x4EE5;&#x662F;.test&#x6216;.launch&#xFF0C;&#x975E;&#x5E38;&#x5EFA;&#x8BAE;&#x5C06;&#x6D4B;&#x8BD5;launch&#x6587;&#x4EF6;&#x5D4C;&#x5165;&#x5230;&#x666E;&#x901A;launch&#x6587;&#x4EF6;&#x4E2D;</li>
 </ul>
-<h3 id="编写测试"><a href="#编写测试" class="headerlink" title="编写测试"></a>编写测试</h3><h4 id="前期概念"><a href="#前期概念" class="headerlink" title="前期概念"></a>前期概念</h4><ul>
-<li><p>两种层次上的测试：一种是节点层级的测试，主要测试节点与节点之间的交互是否有效，如消息订阅，服务请求等；另一种是代码层级的测试，主要测试节点内部具体执行的程序的有效性，如特定算法。</p>
+<h3 id="&#x7F16;&#x5199;&#x6D4B;&#x8BD5;"><a href="#&#x7F16;&#x5199;&#x6D4B;&#x8BD5;" class="headerlink" title="&#x7F16;&#x5199;&#x6D4B;&#x8BD5;"></a>&#x7F16;&#x5199;&#x6D4B;&#x8BD5;</h3><h4 id="&#x524D;&#x671F;&#x6982;&#x5FF5;"><a href="#&#x524D;&#x671F;&#x6982;&#x5FF5;" class="headerlink" title="&#x524D;&#x671F;&#x6982;&#x5FF5;"></a>&#x524D;&#x671F;&#x6982;&#x5FF5;</h4><ul>
+<li><p>&#x4E24;&#x79CD;&#x5C42;&#x6B21;&#x4E0A;&#x7684;&#x6D4B;&#x8BD5;&#xFF1A;&#x4E00;&#x79CD;&#x662F;&#x8282;&#x70B9;&#x5C42;&#x7EA7;&#x7684;&#x6D4B;&#x8BD5;&#xFF0C;&#x4E3B;&#x8981;&#x6D4B;&#x8BD5;&#x8282;&#x70B9;&#x4E0E;&#x8282;&#x70B9;&#x4E4B;&#x95F4;&#x7684;&#x4EA4;&#x4E92;&#x662F;&#x5426;&#x6709;&#x6548;&#xFF0C;&#x5982;&#x6D88;&#x606F;&#x8BA2;&#x9605;&#xFF0C;&#x670D;&#x52A1;&#x8BF7;&#x6C42;&#x7B49;&#xFF1B;&#x53E6;&#x4E00;&#x79CD;&#x662F;&#x4EE3;&#x7801;&#x5C42;&#x7EA7;&#x7684;&#x6D4B;&#x8BD5;&#xFF0C;&#x4E3B;&#x8981;&#x6D4B;&#x8BD5;&#x8282;&#x70B9;&#x5185;&#x90E8;&#x5177;&#x4F53;&#x6267;&#x884C;&#x7684;&#x7A0B;&#x5E8F;&#x7684;&#x6709;&#x6548;&#x6027;&#xFF0C;&#x5982;&#x7279;&#x5B9A;&#x7B97;&#x6CD5;&#x3002;</p>
 </li>
-<li><p>实际上需要编写一些测试节点来运行测试，rostest基于gtest框架</p>
+<li><p>&#x5B9E;&#x9645;&#x4E0A;&#x9700;&#x8981;&#x7F16;&#x5199;&#x4E00;&#x4E9B;&#x6D4B;&#x8BD5;&#x8282;&#x70B9;&#x6765;&#x8FD0;&#x884C;&#x6D4B;&#x8BD5;&#xFF0C;rostest&#x57FA;&#x4E8E;gtest&#x6846;&#x67B6;</p>
 </li>
 </ul>
-<h4 id="编写"><a href="#编写" class="headerlink" title="编写"></a>编写</h4><blockquote>
+<h4 id="&#x7F16;&#x5199;"><a href="#&#x7F16;&#x5199;" class="headerlink" title="&#x7F16;&#x5199;"></a>&#x7F16;&#x5199;</h4><blockquote>
 <p><a href="http://wiki.ros.org/gtest" target="_blank" rel="external">Writing C++ tests with gtest</a></p>
 </blockquote>
-<h4 id="构造描述文件"><a href="#构造描述文件" class="headerlink" title="构造描述文件"></a>构造描述文件</h4><ul>
+<h4 id="&#x6784;&#x9020;&#x63CF;&#x8FF0;&#x6587;&#x4EF6;"><a href="#&#x6784;&#x9020;&#x63CF;&#x8FF0;&#x6587;&#x4EF6;" class="headerlink" title="&#x6784;&#x9020;&#x63CF;&#x8FF0;&#x6587;&#x4EF6;"></a>&#x6784;&#x9020;&#x63CF;&#x8FF0;&#x6587;&#x4EF6;</h4><ul>
 <li>CMakeLists</li>
 </ul>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(CATKIN_ENABLE_TESTING)</span><br><span class="line">  <span class="keyword">find_package</span>(rostest REQUIRED)</span><br><span class="line">  add_rostest_gtest(tests_mynode test/mynode.test src/test/test_mynode.cpp [more cpp files])</span><br><span class="line">  <span class="keyword">target_link_libraries</span>(tests_mynode <span class="variable">$&#123;catkin_LIBRARIES&#125;</span>)</span><br><span class="line"><span class="keyword">endif</span>()</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(CATKIN_ENABLE_TESTING)</span><br><span class="line">  <span class="keyword">find_package</span>(rostest REQUIRED)</span><br><span class="line">  add_rostest_gtest(tests_mynode test/mynode.test src/test/test_mynode.cpp [more cpp files])</span><br><span class="line">  <span class="keyword">target_link_libraries</span>(tests_mynode <span class="variable">${catkin_LIBRARIES}</span>)</span><br><span class="line"><span class="keyword">endif</span>()</span><br></pre></td></tr></table></figure>
 <ul>
 <li>Package.xml</li>
 </ul>
@@ -340,11 +340,11 @@
 <ul>
 <li>launch file</li>
 </ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">launch</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">node</span> <span class="attr">pkg</span>=<span class="string">"mypkg"</span> <span class="attr">type</span>=<span class="string">"mynode"</span> <span class="attr">name</span>=<span class="string">"mynode"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">test</span> <span class="attr">test-name</span>=<span class="string">"test_mynode"</span> <span class="attr">pkg</span>=<span class="string">"mypkg"</span> <span class="attr">type</span>=<span class="string">"test_mynode"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">launch</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">launch</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">node</span> <span class="attr">pkg</span>=<span class="string">&quot;mypkg&quot;</span> <span class="attr">type</span>=<span class="string">&quot;mynode&quot;</span> <span class="attr">name</span>=<span class="string">&quot;mynode&quot;</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">test</span> <span class="attr">test-name</span>=<span class="string">&quot;test_mynode&quot;</span> <span class="attr">pkg</span>=<span class="string">&quot;mypkg&quot;</span> <span class="attr">type</span>=<span class="string">&quot;test_mynode&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">launch</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>launch 文件会启动节点后立即启动测试节点</p>
+<p>launch &#x6587;&#x4EF6;&#x4F1A;&#x542F;&#x52A8;&#x8282;&#x70B9;&#x540E;&#x7ACB;&#x5373;&#x542F;&#x52A8;&#x6D4B;&#x8BD5;&#x8282;&#x70B9;</p>
 </blockquote>
-<h4 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h4><h2 id="项目：测试zsDoor项目"><a href="#项目：测试zsDoor项目" class="headerlink" title="项目：测试zsDoor项目"></a>项目：测试zsDoor项目</h2>
+<h4 id="&#x8FD0;&#x884C;"><a href="#&#x8FD0;&#x884C;" class="headerlink" title="&#x8FD0;&#x884C;"></a>&#x8FD0;&#x884C;</h4><h2 id="&#x9879;&#x76EE;&#x6D4B;&#x8BD5;zsdoor&#x9879;&#x76EE;"><a href="#&#x9879;&#x76EE;&#xFF1A;&#x6D4B;&#x8BD5;zsDoor&#x9879;&#x76EE;" class="headerlink" title="&#x9879;&#x76EE;&#xFF1A;&#x6D4B;&#x8BD5;zsDoor&#x9879;&#x76EE;"></a>&#x9879;&#x76EE;&#xFF1A;&#x6D4B;&#x8BD5;zsDoor&#x9879;&#x76EE;</h2>
       
 
       
@@ -613,19 +613,19 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">机器人软件构造</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">其他</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">机器人系统开发</a>
+                <a href="javascript:void(0)" class="color3">机器人软件构造</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">机器人软件设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">机器人系统开发</a>
               </li>
              
               <li class="article-tag-list-item">
