@@ -6,23 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://ZhenshengLee.github.io">
-  <title>【ROS】roscommon详解 | 哈骑士的博客</title>
+  <title>roscommon详解 | 哈骑士的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="[TOC]
-前言
+  <meta name="description" content="前言
 ROS，其实从本质上讲就是一个消息通信中间件，其最基础的功能就是在ros_common这个包中实现的，如消息，服务，控制台，roslaunch等等，在这里重点学习几个平时没有用到，但也非常重要的模块">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【ROS】roscommon详解">
+<meta property="og:title" content="roscommon详解">
 <meta property="og:url" content="https://ZhenshengLee.github.io/2016/08/16/160816-roscommon详解/index.html">
 <meta property="og:site_name" content="哈骑士的博客">
-<meta property="og:description" content="[TOC]
-前言
+<meta property="og:description" content="前言
 ROS，其实从本质上讲就是一个消息通信中间件，其最基础的功能就是在ros_common这个包中实现的，如消息，服务，控制台，roslaunch等等，在这里重点学习几个平时没有用到，但也非常重要的模块">
-<meta property="og:updated_time" content="2016-08-16T08:26:33.000Z">
+<meta property="og:updated_time" content="2017-01-02T15:42:58.598Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【ROS】roscommon详解">
-<meta name="twitter:description" content="[TOC]
-前言
+<meta name="twitter:title" content="roscommon详解">
+<meta name="twitter:description" content="前言
 ROS，其实从本质上讲就是一个消息通信中间件，其最基础的功能就是在ros_common这个包中实现的，如消息，服务，控制台，roslaunch等等，在这里重点学习几个平时没有用到，但也非常重要的模块">
   
     <link rel="alternative" href="/atom.xml" title="哈骑士的博客" type="application/atom+xml">
@@ -66,17 +63,9 @@ ROS，其实从本质上讲就是一个消息通信中间件，其最基础的�
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/archives/">所有文章</a></li>
+				<li><a href="/tags/机器人/">机器人</a></li>
 	        
-				<li><a href="/tags/写在前面/">写在前面</a></li>
-	        
-				<li><a href="/tags/机器人软件构造/">机器人软件构造</a></li>
-	        
-				<li><a href="/tags/机器人软件设计/">机器人软件设计</a></li>
-	        
-				<li><a href="/tags/机器人系统开发/">机器人系统开发</a></li>
-	        
-				<li><a href="/tags/机械设计/">机械设计</a></li>
+				<li><a href="/tags/嵌入式/">嵌入式</a></li>
 	        
 				<li><a href="/tags/其他/">其他</a></li>
 	        
@@ -138,14 +127,6 @@ ROS，其实从本质上讲就是一个消息通信中间件，其最基础的�
 			
 				
 			
-				
-			
-				
-			
-				
-			
-				
-			
 			
 			
 			<nav class="header-nav">
@@ -164,21 +145,13 @@ ROS，其实从本质上讲就是一个消息通信中间件，其最基础的�
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 12.5%"><a href="/">主页</a></li>
+					<li style="width: 25%"><a href="/">主页</a></li>
 		        
-					<li style="width: 12.5%"><a href="/archives/">所有文章</a></li>
+					<li style="width: 25%"><a href="/tags/机器人/">机器人</a></li>
 		        
-					<li style="width: 12.5%"><a href="/tags/写在前面/">写在前面</a></li>
+					<li style="width: 25%"><a href="/tags/嵌入式/">嵌入式</a></li>
 		        
-					<li style="width: 12.5%"><a href="/tags/机器人软件构造/">机器人软件构造</a></li>
-		        
-					<li style="width: 12.5%"><a href="/tags/机器人软件设计/">机器人软件设计</a></li>
-		        
-					<li style="width: 12.5%"><a href="/tags/机器人系统开发/">机器人系统开发</a></li>
-		        
-					<li style="width: 12.5%"><a href="/tags/机械设计/">机械设计</a></li>
-		        
-					<li style="width: 12.5%"><a href="/tags/其他/">其他</a></li>
+					<li style="width: 25%"><a href="/tags/其他/">其他</a></li>
 		        
 				</ul>
 			</nav>
@@ -200,7 +173,7 @@ ROS，其实从本质上讲就是一个消息通信中间件，其最基础的�
         
   
     <h1 class="article-title" itemprop="name">
-      【ROS】roscommon详解
+      roscommon详解
     </h1>
   
 
@@ -213,11 +186,31 @@ ROS，其实从本质上讲就是一个消息通信中间件，其最基础的�
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>[TOC]</p>
-<h2 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h2><ul>
+        <h2 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h2><ul>
 <li>ROS&#xFF0C;&#x5176;&#x5B9E;&#x4ECE;&#x672C;&#x8D28;&#x4E0A;&#x8BB2;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x6D88;&#x606F;&#x901A;&#x4FE1;&#x4E2D;&#x95F4;&#x4EF6;&#xFF0C;&#x5176;&#x6700;&#x57FA;&#x7840;&#x7684;&#x529F;&#x80FD;&#x5C31;&#x662F;&#x5728;ros_common&#x8FD9;&#x4E2A;&#x5305;&#x4E2D;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x5982;&#x6D88;&#x606F;&#xFF0C;&#x670D;&#x52A1;&#xFF0C;&#x63A7;&#x5236;&#x53F0;&#xFF0C;roslaunch&#x7B49;&#x7B49;&#xFF0C;&#x5728;&#x8FD9;&#x91CC;&#x91CD;&#x70B9;&#x5B66;&#x4E60;&#x51E0;&#x4E2A;&#x5E73;&#x65F6;&#x6CA1;&#x6709;&#x7528;&#x5230;&#xFF0C;&#x4F46;&#x4E5F;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x7684;&#x6A21;&#x5757;</li>
 </ul>
 <a id="more"></a>
+<h2 id="&#x76EE;&#x5F55;"><a href="#&#x76EE;&#x5F55;" class="headerlink" title="&#x76EE;&#x5F55;"></a>&#x76EE;&#x5F55;</h2><!-- toc -->
+<ul>
+<li><a href="#&#x53C2;&#x8003;">&#x53C2;&#x8003;</a></li>
+<li><a href="#&#x8BB0;&#x5F55;">&#x8BB0;&#x5F55;</a><ul>
+<li><a href="#message_filtershttpwikirosorgmessage_filters">message_filters</a><ul>
+<li><a href="#&#x57FA;&#x672C;&#x6982;&#x5FF5;">&#x57FA;&#x672C;&#x6982;&#x5FF5;</a></li>
+<li><a href="#&#x57FA;&#x672C;&#x4EE3;&#x7801;">&#x57FA;&#x672C;&#x4EE3;&#x7801;</a></li>
+<li><a href="#time-synchronizer">Time Synchronizer</a></li>
+<li><a href="#time-sequencer">Time Sequencer</a></li>
+<li><a href="#cache">Cache</a></li>
+<li><a href="#policy-based-synchronizer">Policy-Based Synchronizer</a></li>
+<li><a href="#chain">Chain</a></li>
+</ul>
+</li>
+<li><a href="#ros_baghttpwikirosorgrosbagdistrokinetic">ros_bag</a></li>
+<li><a href="#ros_graphhttpwikirosorgrosgraphdistrokinetic">ros_graph</a></li>
+<li><a href="#xmlrpchttpxmlrpcppsourceforgenet">XmlRpc++</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
 <h2 id="&#x53C2;&#x8003;"><a href="#&#x53C2;&#x8003;" class="headerlink" title="&#x53C2;&#x8003;"></a>&#x53C2;&#x8003;</h2><p><a href="http://wiki.ros.org/ros_comm?distro=kinetic" target="_blank" rel="external">Wiki Page</a></p>
 <h2 id="&#x8BB0;&#x5F55;"><a href="#&#x8BB0;&#x5F55;" class="headerlink" title="&#x8BB0;&#x5F55;"></a>&#x8BB0;&#x5F55;</h2><h3 id="message_filters"><a href="#message-filters" class="headerlink" title="message_filters"></a><a href="http://wiki.ros.org/message_filters" target="_blank" rel="external">message_filters</a></h3><h4 id="&#x57FA;&#x672C;&#x6982;&#x5FF5;"><a href="#&#x57FA;&#x672C;&#x6982;&#x5FF5;" class="headerlink" title="&#x57FA;&#x672C;&#x6982;&#x5FF5;"></a>&#x57FA;&#x672C;&#x6982;&#x5FF5;</h4><ul>
 <li>&#x96C6;&#x4E2D;&#x5904;&#x7406;&#x591A;&#x4E2A;&#x6D88;&#x606F;&#x6765;&#x6E90;&#x7684;&#x6A21;&#x5757;&#xFF0C;&#x6216;&#x8005;&#x8BF4;&#x662F;&#x8FDB;&#x884C;&#x6D88;&#x606F;&#x540C;&#x6B65;&#x7684;&#x6A21;&#x5757;<ul>
@@ -287,6 +280,16 @@ ROS，其实从本质上讲就是一个消息通信中间件，其最基础的�
                   <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://7xvunf.com1.z0.glb.clouddn.com/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://7xvunf.com1.z0.glb.clouddn.com/wechatpay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
                     
                   </div>
                 </span>
@@ -305,7 +308,15 @@ ROS，其实从本质上讲就是一个消息通信中间件，其最基础的�
 		<ul class="article-tag-list">
 			 
         <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">机器人</a>
+        </li>
+       
+        <li class="article-tag-list-item">
         	<a href="javascript:void(0)" class="article-tag-list-link color3">机器人软件设计</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">ROS</a>
         </li>
       
 		</ul>
@@ -375,18 +386,18 @@ ROS，其实从本质上讲就是一个消息通信中间件，其最基础的�
   
 <nav id="article-nav">
   
-    <a href="/2016/08/16/160816ROS中有用的模块/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/08/16/160816-ROS中有用的模块/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          【ROS】ROS中其他有价值的模块
+          ROS中其他有价值的模块
         
       </div>
     </a>
   
   
-    <a href="/2016/08/16/160816ROS-Bag介绍/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">【ROS】rosbag-数据记录工具</div>
+    <a href="/2016/08/16/160816-ROS-Bag介绍/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">rosbag-数据记录工具</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -400,7 +411,7 @@ ROS，其实从本质上讲就是一个消息通信中间件，其最基础的�
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="160816-roscommon详解" data-title="【ROS】roscommon详解" data-url="https://ZhenshengLee.github.io/2016/08/16/160816-roscommon详解/"></div>
+	<div class="ds-thread" data-thread-key="160816-roscommon详解" data-title="roscommon详解" data-url="https://ZhenshengLee.github.io/2016/08/16/160816-roscommon详解/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -540,11 +551,31 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">其他</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">建站</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">机器人软件构造</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">其他</a>
+                <a href="javascript:void(0)" class="color4">机器人</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">部署</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -552,11 +583,51 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">ROS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">编译</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">论文</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">调试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">机器人系统开发</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">写在前面</a>
+                <a href="javascript:void(0)" class="color4">编辑器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">整机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">组件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">ompl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">深度学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">caffe</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">库</a>
               </li>
             
             <div class="clearfix"></div>
@@ -607,7 +678,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">机械电子工程在读研究生，从事机器人软件开发</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">本科学机械，硕士程序员，读书在中南，工作在中兴。</div>
   	  	
     	</section>
     

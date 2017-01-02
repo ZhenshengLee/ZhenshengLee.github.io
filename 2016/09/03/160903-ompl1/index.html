@@ -6,23 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://ZhenshengLee.github.io">
-  <title>【组件】ompl-open motion planning library1-基础理论 | 哈骑士的博客</title>
+  <title>ompl-open motion planning library1-基础理论 | 哈骑士的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="前言
 open motion plan library，一个开源的运动规划库，主要以sample-based planning算法为主
 
 包括两个核心组件，OMPL，算法库，和OMPL.app，前端用户界面">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【组件】ompl-open motion planning library1-基础理论">
+<meta property="og:title" content="ompl-open motion planning library1-基础理论">
 <meta property="og:url" content="https://ZhenshengLee.github.io/2016/09/03/160903-ompl1/index.html">
 <meta property="og:site_name" content="哈骑士的博客">
 <meta property="og:description" content="前言
 open motion plan library，一个开源的运动规划库，主要以sample-based planning算法为主
 
 包括两个核心组件，OMPL，算法库，和OMPL.app，前端用户界面">
-<meta property="og:updated_time" content="2016-09-03T08:35:36.000Z">
+<meta property="og:updated_time" content="2017-01-02T15:44:23.337Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【组件】ompl-open motion planning library1-基础理论">
+<meta name="twitter:title" content="ompl-open motion planning library1-基础理论">
 <meta name="twitter:description" content="前言
 open motion plan library，一个开源的运动规划库，主要以sample-based planning算法为主
 
@@ -69,17 +69,9 @@ open motion plan library，一个开源的运动规划库，主要以sample-base
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/archives/">所有文章</a></li>
+				<li><a href="/tags/机器人/">机器人</a></li>
 	        
-				<li><a href="/tags/写在前面/">写在前面</a></li>
-	        
-				<li><a href="/tags/机器人软件构造/">机器人软件构造</a></li>
-	        
-				<li><a href="/tags/机器人软件设计/">机器人软件设计</a></li>
-	        
-				<li><a href="/tags/机器人系统开发/">机器人系统开发</a></li>
-	        
-				<li><a href="/tags/机械设计/">机械设计</a></li>
+				<li><a href="/tags/嵌入式/">嵌入式</a></li>
 	        
 				<li><a href="/tags/其他/">其他</a></li>
 	        
@@ -141,14 +133,6 @@ open motion plan library，一个开源的运动规划库，主要以sample-base
 			
 				
 			
-				
-			
-				
-			
-				
-			
-				
-			
 			
 			
 			<nav class="header-nav">
@@ -167,21 +151,13 @@ open motion plan library，一个开源的运动规划库，主要以sample-base
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 12.5%"><a href="/">主页</a></li>
+					<li style="width: 25%"><a href="/">主页</a></li>
 		        
-					<li style="width: 12.5%"><a href="/archives/">所有文章</a></li>
+					<li style="width: 25%"><a href="/tags/机器人/">机器人</a></li>
 		        
-					<li style="width: 12.5%"><a href="/tags/写在前面/">写在前面</a></li>
+					<li style="width: 25%"><a href="/tags/嵌入式/">嵌入式</a></li>
 		        
-					<li style="width: 12.5%"><a href="/tags/机器人软件构造/">机器人软件构造</a></li>
-		        
-					<li style="width: 12.5%"><a href="/tags/机器人软件设计/">机器人软件设计</a></li>
-		        
-					<li style="width: 12.5%"><a href="/tags/机器人系统开发/">机器人系统开发</a></li>
-		        
-					<li style="width: 12.5%"><a href="/tags/机械设计/">机械设计</a></li>
-		        
-					<li style="width: 12.5%"><a href="/tags/其他/">其他</a></li>
+					<li style="width: 25%"><a href="/tags/其他/">其他</a></li>
 		        
 				</ul>
 			</nav>
@@ -203,7 +179,7 @@ open motion plan library，一个开源的运动规划库，主要以sample-base
         
   
     <h1 class="article-title" itemprop="name">
-      【组件】ompl-open motion planning library1-基础理论
+      ompl-open motion planning library1-基础理论
     </h1>
   
 
@@ -223,7 +199,36 @@ open motion plan library，一个开源的运动规划库，主要以sample-base
 </li>
 </ul>
 <a id="more"></a>
-<h2 id="&#x76EE;&#x5F55;"><a href="#&#x76EE;&#x5F55;" class="headerlink" title="&#x76EE;&#x5F55;"></a>&#x76EE;&#x5F55;</h2><p>[TOC]</p>
+<h2 id="&#x76EE;&#x5F55;"><a href="#&#x76EE;&#x5F55;" class="headerlink" title="&#x76EE;&#x5F55;"></a>&#x76EE;&#x5F55;</h2><!-- toc -->
+<ul>
+<li><a href="#&#x53C2;&#x8003;">&#x53C2;&#x8003;</a></li>
+<li><a href="#&#x5B89;&#x88C5;">&#x5B89;&#x88C5;</a><ul>
+<li><a href="#&#x8FD0;&#x884C;demo">&#x8FD0;&#x884C;demo</a></li>
+</ul>
+</li>
+<li><a href="#&#x57FA;&#x7840;&#x77E5;&#x8BC6;">&#x57FA;&#x7840;&#x77E5;&#x8BC6;</a><ul>
+<li><a href="#&#x7EEA;&#x8BBA;">&#x7EEA;&#x8BBA;</a></li>
+<li><a href="#sampling-based-motion-planning">Sampling-based Motion Planning</a></li>
+<li><a href="#&#x89C4;&#x5212;&#x7406;&#x8BBA;&#x7684;&#x5386;&#x53F2;&#x8FDB;&#x7A0B;">&#x89C4;&#x5212;&#x7406;&#x8BBA;&#x7684;&#x5386;&#x53F2;&#x8FDB;&#x7A0B;</a></li>
+<li><a href="#&#x57FA;&#x4E8E;&#x91C7;&#x6837;&#x7684;&#x8FD0;&#x52A8;&#x89C4;&#x5212;">&#x57FA;&#x4E8E;&#x91C7;&#x6837;&#x7684;&#x8FD0;&#x52A8;&#x89C4;&#x5212;</a><ul>
+<li><a href="#&#x4E00;&#x4E9B;&#x5B9A;&#x4E49;">&#x4E00;&#x4E9B;&#x5B9A;&#x4E49;</a></li>
+<li><a href="#&#x6982;&#x7387;&#x5730;&#x56FE;prm">&#x6982;&#x7387;&#x5730;&#x56FE;&#xFF08;PRM&#xFF09;</a></li>
+<li><a href="#&#x57FA;&#x4E8E;&#x6811;&#x7684;&#x5730;&#x56FE;rrt&#x5FEB;&#x901F;&#x968F;&#x673A;&#x6811;&#x641C;&#x7D22;">&#x57FA;&#x4E8E;&#x6811;&#x7684;&#x5730;&#x56FE;&#xFF08;RRT&#xFF0C;&#x5FEB;&#x901F;&#x968F;&#x673A;&#x6811;&#x641C;&#x7D22;&#xFF09;</a></li>
+<li><a href="#prm&#x548C;rrt&#x7684;&#x4E0D;&#x540C;">PRM&#x548C;RRT&#x7684;&#x4E0D;&#x540C;</a></li>
+<li><a href="#&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</a></li>
+</ul>
+</li>
+<li><a href="#&#x57FA;&#x4E8E;&#x91C7;&#x6837;&#x7684;&#x89C4;&#x5212;&#x7684;&#x57FA;&#x672C;&#x7EC4;&#x6210;">&#x57FA;&#x4E8E;&#x91C7;&#x6837;&#x7684;&#x89C4;&#x5212;&#x7684;&#x57FA;&#x672C;&#x7EC4;&#x6210;</a><ul>
+<li><a href="#&#x969C;&#x788D;&#x68C0;&#x6D4B;">&#x969C;&#x788D;&#x68C0;&#x6D4B;</a></li>
+<li><a href="#&#x6700;&#x4E34;&#x8FD1;&#x641C;&#x7D22;">&#x6700;&#x4E34;&#x8FD1;&#x641C;&#x7D22;</a></li>
+<li><a href="#ompl">OMPL</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#&#x4E0B;&#x671F;&#x9884;&#x544A;">&#x4E0B;&#x671F;&#x9884;&#x544A;</a></li>
+</ul>
+<!-- tocstop -->
 <h2 id="&#x53C2;&#x8003;"><a href="#&#x53C2;&#x8003;" class="headerlink" title="&#x53C2;&#x8003;"></a>&#x53C2;&#x8003;</h2><blockquote>
 <p><a href="http://ompl.kavrakilab.org/" target="_blank" rel="external">ompl home page</a></p>
 <p><a href="http://ompl.kavrakilab.org/group__demos.html" target="_blank" rel="external">demos</a></p>
@@ -363,6 +368,16 @@ open motion plan library，一个开源的运动规划库，主要以sample-base
                   <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://7xvunf.com1.z0.glb.clouddn.com/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://7xvunf.com1.z0.glb.clouddn.com/wechatpay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
                     
                   </div>
                 </span>
@@ -381,7 +396,19 @@ open motion plan library，一个开源的运动规划库，主要以sample-base
 		<ul class="article-tag-list">
 			 
         <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">机器人</a>
+        </li>
+       
+        <li class="article-tag-list-item">
         	<a href="javascript:void(0)" class="article-tag-list-link color3">机器人软件设计</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">组件</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color5">ompl</a>
         </li>
       
 		</ul>
@@ -455,14 +482,14 @@ open motion plan library，一个开源的运动规划库，主要以sample-base
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          【整机】安装显卡驱动.md
+          安装显卡驱动.md
         
       </div>
     </a>
   
   
     <a href="/2016/09/02/160902-机器人抓取仿真1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">【ROS实战】机器人抓取仿真1-安装与构造</div>
+      <div class="article-nav-title">机器人抓取仿真1-安装与构造</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -476,7 +503,7 @@ open motion plan library，一个开源的运动规划库，主要以sample-base
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="160903-ompl1" data-title="【组件】ompl-open motion planning library1-基础理论" data-url="https://ZhenshengLee.github.io/2016/09/03/160903-ompl1/"></div>
+	<div class="ds-thread" data-thread-key="160903-ompl1" data-title="ompl-open motion planning library1-基础理论" data-url="https://ZhenshengLee.github.io/2016/09/03/160903-ompl1/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -616,11 +643,31 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">其他</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">建站</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">机器人软件构造</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">其他</a>
+                <a href="javascript:void(0)" class="color4">机器人</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">部署</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -628,11 +675,51 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">ROS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">编译</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">论文</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">调试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">机器人系统开发</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">写在前面</a>
+                <a href="javascript:void(0)" class="color4">编辑器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">整机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">组件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">ompl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">深度学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">caffe</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">库</a>
               </li>
             
             <div class="clearfix"></div>
@@ -683,7 +770,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">机械电子工程在读研究生，从事机器人软件开发</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">本科学机械，硕士程序员，读书在中南，工作在中兴。</div>
   	  	
     	</section>
     

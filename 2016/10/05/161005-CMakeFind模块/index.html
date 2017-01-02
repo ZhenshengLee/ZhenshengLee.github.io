@@ -6,27 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://ZhenshengLee.github.io">
-  <title>【设计】CMake专题-finding libraries | 哈骑士的博客</title>
+  <title>CMake专题-finding libraries | 哈骑士的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="前言
-cmake 过程中总是出现找不到模块，所以学习一下，最好要会写FindXXX.cmake
-
-[TOC]">
+cmake 过程中总是出现找不到模块，所以学习一下，最好要会写FindXXX.cmake">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【设计】CMake专题-finding libraries">
+<meta property="og:title" content="CMake专题-finding libraries">
 <meta property="og:url" content="https://ZhenshengLee.github.io/2016/10/05/161005-CMakeFind模块/index.html">
 <meta property="og:site_name" content="哈骑士的博客">
 <meta property="og:description" content="前言
-cmake 过程中总是出现找不到模块，所以学习一下，最好要会写FindXXX.cmake
-
-[TOC]">
-<meta property="og:updated_time" content="2016-10-05T04:25:55.000Z">
+cmake 过程中总是出现找不到模块，所以学习一下，最好要会写FindXXX.cmake">
+<meta property="og:updated_time" content="2017-01-02T15:44:56.651Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【设计】CMake专题-finding libraries">
+<meta name="twitter:title" content="CMake专题-finding libraries">
 <meta name="twitter:description" content="前言
-cmake 过程中总是出现找不到模块，所以学习一下，最好要会写FindXXX.cmake
-
-[TOC]">
+cmake 过程中总是出现找不到模块，所以学习一下，最好要会写FindXXX.cmake">
   
     <link rel="alternative" href="/atom.xml" title="哈骑士的博客" type="application/atom+xml">
   
@@ -69,17 +63,9 @@ cmake 过程中总是出现找不到模块，所以学习一下，最好要会�
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/archives/">所有文章</a></li>
+				<li><a href="/tags/机器人/">机器人</a></li>
 	        
-				<li><a href="/tags/写在前面/">写在前面</a></li>
-	        
-				<li><a href="/tags/机器人软件构造/">机器人软件构造</a></li>
-	        
-				<li><a href="/tags/机器人软件设计/">机器人软件设计</a></li>
-	        
-				<li><a href="/tags/机器人系统开发/">机器人系统开发</a></li>
-	        
-				<li><a href="/tags/机械设计/">机械设计</a></li>
+				<li><a href="/tags/嵌入式/">嵌入式</a></li>
 	        
 				<li><a href="/tags/其他/">其他</a></li>
 	        
@@ -141,14 +127,6 @@ cmake 过程中总是出现找不到模块，所以学习一下，最好要会�
 			
 				
 			
-				
-			
-				
-			
-				
-			
-				
-			
 			
 			
 			<nav class="header-nav">
@@ -167,21 +145,13 @@ cmake 过程中总是出现找不到模块，所以学习一下，最好要会�
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 12.5%"><a href="/">主页</a></li>
+					<li style="width: 25%"><a href="/">主页</a></li>
 		        
-					<li style="width: 12.5%"><a href="/archives/">所有文章</a></li>
+					<li style="width: 25%"><a href="/tags/机器人/">机器人</a></li>
 		        
-					<li style="width: 12.5%"><a href="/tags/写在前面/">写在前面</a></li>
+					<li style="width: 25%"><a href="/tags/嵌入式/">嵌入式</a></li>
 		        
-					<li style="width: 12.5%"><a href="/tags/机器人软件构造/">机器人软件构造</a></li>
-		        
-					<li style="width: 12.5%"><a href="/tags/机器人软件设计/">机器人软件设计</a></li>
-		        
-					<li style="width: 12.5%"><a href="/tags/机器人系统开发/">机器人系统开发</a></li>
-		        
-					<li style="width: 12.5%"><a href="/tags/机械设计/">机械设计</a></li>
-		        
-					<li style="width: 12.5%"><a href="/tags/其他/">其他</a></li>
+					<li style="width: 25%"><a href="/tags/其他/">其他</a></li>
 		        
 				</ul>
 			</nav>
@@ -203,7 +173,7 @@ cmake 过程中总是出现找不到模块，所以学习一下，最好要会�
         
   
     <h1 class="article-title" itemprop="name">
-      【设计】CMake专题-finding libraries
+      CMake专题-finding libraries
     </h1>
   
 
@@ -219,8 +189,29 @@ cmake 过程中总是出现找不到模块，所以学习一下，最好要会�
         <h2 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h2><ul>
 <li>cmake &#x8FC7;&#x7A0B;&#x4E2D;&#x603B;&#x662F;&#x51FA;&#x73B0;&#x627E;&#x4E0D;&#x5230;&#x6A21;&#x5757;&#xFF0C;&#x6240;&#x4EE5;&#x5B66;&#x4E60;&#x4E00;&#x4E0B;&#xFF0C;&#x6700;&#x597D;&#x8981;&#x4F1A;&#x5199;FindXXX.cmake</li>
 </ul>
-<p>[TOC]</p>
 <a id="more"></a>
+<h2 id="&#x76EE;&#x5F55;"><a href="#&#x76EE;&#x5F55;" class="headerlink" title="&#x76EE;&#x5F55;"></a>&#x76EE;&#x5F55;</h2><!-- toc -->
+<ul>
+<li><a href="#&#x53C2;&#x8003;">&#x53C2;&#x8003;</a></li>
+<li><a href="#&#x5B66;&#x4E60;&#x8BB0;&#x5F55;">&#x5B66;&#x4E60;&#x8BB0;&#x5F55;</a><ul>
+<li><a href="#&#x57FA;&#x7840;&#x77E5;&#x8BC6;">&#x57FA;&#x7840;&#x77E5;&#x8BC6;</a></li>
+<li><a href="#find_package&#x8BE6;&#x89E3;">find_package&#x8BE6;&#x89E3;</a><ul>
+<li><a href="#&#x4F7F;&#x7528;&#x5916;&#x90E8;&#x5E93;">&#x4F7F;&#x7528;&#x5916;&#x90E8;&#x5E93;</a></li>
+<li><a href="#&#x5982;&#x679C;&#x5728;&#x7F51;&#x4E0A;&#x627E;&#x5230;&#x4E86;findxxxcmake&#x6587;&#x4EF6;">&#x5982;&#x679C;&#x5728;&#x7F51;&#x4E0A;&#x627E;&#x5230;&#x4E86;FindXXX.cmake&#x6587;&#x4EF6;</a></li>
+<li><a href="#&#x5E26;&#x6709;&#x7EC4;&#x4EF6;&#x7684;&#x5E93;">&#x5E26;&#x6709;&#x7EC4;&#x4EF6;&#x7684;&#x5E93;</a></li>
+<li><a href="#find_package&#x5DE5;&#x4F5C;&#x673A;&#x5236;">find_package&#x5DE5;&#x4F5C;&#x673A;&#x5236;</a></li>
+<li><a href="#pkg-config">pkg-config</a></li>
+</ul>
+</li>
+<li><a href="#&#x81EA;&#x5DF1;&#x5199;findxxxcmake">&#x81EA;&#x5DF1;&#x5199;findxxx.cmake</a><ul>
+<li><a href="#&#x4F20;&#x7EDF;&#x65B9;&#x6CD5;">&#x4F20;&#x7EDF;&#x65B9;&#x6CD5;</a></li>
+<li><a href="#&#x501F;&#x52A9;libfindmacros&#x5B8F;">&#x501F;&#x52A9;LibFindMacros&#x5B8F;</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
 <h2 id="&#x53C2;&#x8003;"><a href="#&#x53C2;&#x8003;" class="headerlink" title="&#x53C2;&#x8003;"></a>&#x53C2;&#x8003;</h2><blockquote>
 <p><a href="https://cmake.org/Wiki/CMake:How_To_Find_Libraries" target="_blank" rel="external">cmake wiki: how to find libraries</a><br><a href="https://cmake.org/Wiki/CMake/Tutorials/How_to_create_a_ProjectConfig.cmake_file" target="_blank" rel="external">How_to_create_a_ProjectConfig.cmake_file</a><br><a href="https://cmake.org/cmake/help/v2.8.8/cmake.html#command:find_package" target="_blank" rel="external">cmake documentation: home page</a><br><a href="https://github.com/rpavlik/cmake-modules/blob/master/module-docs/Example-FindMyPackage.cmake" target="_blank" rel="external">Find package example</a><br>Martin K, Hoffman B. Mastering CMake[M]. Kitware, 2015.</p>
 </blockquote>
@@ -340,6 +331,16 @@ cmake 过程中总是出现找不到模块，所以学习一下，最好要会�
                   <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://7xvunf.com1.z0.glb.clouddn.com/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://7xvunf.com1.z0.glb.clouddn.com/wechatpay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
                     
                   </div>
                 </span>
@@ -359,6 +360,10 @@ cmake 过程中总是出现找不到模块，所以学习一下，最好要会�
 			 
         <li class="article-tag-list-item">
         	<a href="javascript:void(0)" class="article-tag-list-link color3">机器人软件构造</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">机器人</a>
         </li>
       
 		</ul>
@@ -432,14 +437,14 @@ cmake 过程中总是出现找不到模块，所以学习一下，最好要会�
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          【组件】ompl-open motion planning library2-omplapp
+          ompl-open motion planning library2-omplapp
         
       </div>
     </a>
   
   
     <a href="/2016/10/02/161002-Caffe-opencl-1构建/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">【深度学习】Caffe-opencl-1构建</div>
+      <div class="article-nav-title">Caffe-opencl-1构建</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -453,7 +458,7 @@ cmake 过程中总是出现找不到模块，所以学习一下，最好要会�
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="161005-CMakeFind模块" data-title="【设计】CMake专题-finding libraries" data-url="https://ZhenshengLee.github.io/2016/10/05/161005-CMakeFind模块/"></div>
+	<div class="ds-thread" data-thread-key="161005-CMakeFind模块" data-title="CMake专题-finding libraries" data-url="https://ZhenshengLee.github.io/2016/10/05/161005-CMakeFind模块/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -593,11 +598,31 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">其他</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">建站</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">机器人软件构造</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">其他</a>
+                <a href="javascript:void(0)" class="color4">机器人</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">部署</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -605,11 +630,51 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">ROS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">编译</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">论文</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">调试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">机器人系统开发</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">写在前面</a>
+                <a href="javascript:void(0)" class="color4">编辑器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">整机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">组件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">ompl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">深度学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">caffe</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">库</a>
               </li>
             
             <div class="clearfix"></div>
@@ -660,7 +725,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">机械电子工程在读研究生，从事机器人软件开发</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">本科学机械，硕士程序员，读书在中南，工作在中兴。</div>
   	  	
     	</section>
     

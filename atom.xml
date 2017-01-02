@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ZhenshengLee.github.io/"/>
-  <updated>2016-08-14T04:01:38.000Z</updated>
+  <updated>2017-01-02T15:56:57.685Z</updated>
   <id>https://ZhenshengLee.github.io/</id>
   
   <author>
@@ -16,20 +16,253 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>【Ubuntu】常用系统维护</title>
-    <link href="https://ZhenshengLee.github.io/2016/12/15/160716%E5%B8%B8%E7%94%A8%E7%B3%BB%E7%BB%9F%E7%BB%B4%E6%8A%A4/"/>
-    <id>https://ZhenshengLee.github.io/2016/12/15/160716常用系统维护/</id>
-    <published>2016-12-14T16:41:56.157Z</published>
-    <updated>2016-08-14T04:01:38.000Z</updated>
+    <title>科研环境搭建</title>
+    <link href="https://ZhenshengLee.github.io/2017/01/02/170102-%E7%A7%91%E7%A0%94%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+    <id>https://ZhenshengLee.github.io/2017/01/02/170102-科研环境搭建/</id>
+    <published>2017-01-02T15:56:57.685Z</published>
+    <updated>2017-01-02T15:56:57.685Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h2><ul>
+<li>&#x8BB0;&#x5F55;&#x800C;&#x5DF2;</li>
+</ul>
+<a id="more"></a>
+<h2 id="&#x76EE;&#x5F55;"><a href="#&#x76EE;&#x5F55;" class="headerlink" title="&#x76EE;&#x5F55;"></a>&#x76EE;&#x5F55;</h2><!-- toc -->
+<ul>
+<li><a href="#&#x5B66;&#x4E60;&#x8BB0;&#x5F55;">&#x5B66;&#x4E60;&#x8BB0;&#x5F55;</a><ul>
+<li><a href="#&#x89C6;&#x9891;&#x7F16;&#x8F91;&#x8F6F;&#x4EF6;kdenlive">&#x89C6;&#x9891;&#x7F16;&#x8F91;&#x8F6F;&#x4EF6;kdenlive</a></li>
+<li><a href="#pip">pip</a></li>
+<li><a href="#&#x6E38;&#x620F;">&#x6E38;&#x620F;</a></li>
+<li><a href="#&#x7F51;&#x7EDC;&#x8F85;&#x52A9;&#x5DE5;&#x5177;avahi-discover">&#x7F51;&#x7EDC;&#x8F85;&#x52A9;&#x5DE5;&#x5177;avahi-discover</a></li>
+<li><a href="#cad">cad</a></li>
+<li><a href="#clang">clang</a></li>
+<li><a href="#net-corehttpswwwmicrosoftcomnetcorelinuxubuntu">.net core</a></li>
+<li><a href="#gdebi">gdebi</a></li>
+<li><a href="#&#x4E0B;&#x8F7D;&#x5BA2;&#x6237;&#x7AEF;">&#x4E0B;&#x8F7D;&#x5BA2;&#x6237;&#x7AEF;</a></li>
+<li><a href="#eclipsec">eclipse(c++)</a></li>
+<li><a href="#skype">skype</a></li>
+<li><a href="#&#x793E;&#x4EA4;&#x6C9F;&#x901A;&#x652F;&#x6301;webqq-gtalk">&#x793E;&#x4EA4;&#x6C9F;&#x901A;&#xFF0C;&#x652F;&#x6301;webqq gtalk</a></li>
+<li><a href="#&#x6587;&#x732E;&#x7BA1;&#x7406;mendeley">&#x6587;&#x732E;&#x7BA1;&#x7406;mendeley</a></li>
+<li><a href="#rar">rar</a></li>
+<li><a href="#wps&#x5B57;&#x4F53;">wps&#x5B57;&#x4F53;</a></li>
+<li><a href="#&#x773C;&#x775B;&#x4FDD;&#x62A4;">&#x773C;&#x775B;&#x4FDD;&#x62A4;</a></li>
+<li><a href="#zsh">zsh</a></li>
+<li><a href="#&#x4E3B;&#x9898;&#x7F8E;&#x5316;">&#x4E3B;&#x9898;&#x7F8E;&#x5316;</a></li>
+<li><a href="#&#x622A;&#x5C4F;&#x8F6F;&#x4EF6;">&#x622A;&#x5C4F;&#x8F6F;&#x4EF6;</a></li>
+<li><a href="#&#x6587;&#x5B57;&#x5904;&#x7406;latex">&#x6587;&#x5B57;&#x5904;&#x7406;latex</a></li>
+<li><a href="#ros-kinetic">ROS kinetic</a></li>
+<li><a href="#wiznote">wiznote</a></li>
+<li><a href="#&#x4E09;&#x7EF4;&#x5EFA;&#x6A21;blender">&#x4E09;&#x7EF4;&#x5EFA;&#x6A21;blender</a></li>
+<li><a href="#&#x514D;&#x8D39;&#x7248;&#x672C;&#x7684;viso">&#x514D;&#x8D39;&#x7248;&#x672C;&#x7684;viso</a></li>
+<li><a href="#&#x514D;&#x8D39;&#x7248;&#x672C;&#x7684;matlab">&#x514D;&#x8D39;&#x7248;&#x672C;&#x7684;matlab</a></li>
+<li><a href="#&#x56FE;&#x5F62;&#x5305;&#x7BA1;&#x7406;&#x8F6F;&#x4EF6;">&#x56FE;&#x5F62;&#x5305;&#x7BA1;&#x7406;&#x8F6F;&#x4EF6;</a></li>
+<li><a href="#chrome">chrome</a></li>
+<li><a href="#&#x79D1;&#x5B66;&#x4E0A;&#x7F51;">&#x79D1;&#x5B66;&#x4E0A;&#x7F51;</a></li>
+<li><a href="#synaptic-software-manager">synaptic software manager</a></li>
+<li><a href="#&#x6587;&#x6863;&#x6784;&#x5EFA;&#x5DE5;&#x5177;">&#x6587;&#x6863;&#x6784;&#x5EFA;&#x5DE5;&#x5177;</a></li>
+<li><a href="#&#x5F55;&#x5C4F;&#x8F6F;&#x4EF6;simplescreenrecorder">&#x5F55;&#x5C4F;&#x8F6F;&#x4EF6;simplescreenrecorder</a></li>
+<li><a href="#securecrt-for-linux">SecureCRT for linux</a></li>
+<li><a href="#&#x6587;&#x4EF6;&#x4F20;&#x8F93;&#x5DE5;&#x5177;">&#x6587;&#x4EF6;&#x4F20;&#x8F93;&#x5DE5;&#x5177;</a></li>
+<li><a href="#&#x5B89;&#x88C5;&#x591A;&#x9009;&#x9879;&#x5361;&#x7EC8;&#x7AEF;terminator">&#x5B89;&#x88C5;&#x591A;&#x9009;&#x9879;&#x5361;&#x7EC8;&#x7AEF;terminator</a></li>
+<li><a href="#&#x5B89;&#x88C5;&#x4F18;&#x79C0;&#x90AE;&#x4EF6;&#x5BA2;&#x6237;&#x7AEF;nylas-n1">&#x5B89;&#x88C5;&#x4F18;&#x79C0;&#x90AE;&#x4EF6;&#x5BA2;&#x6237;&#x7AEF;Nylas N1</a></li>
+<li><a href="#install-virtualbox">install virtualbox</a></li>
+<li><a href="#&#x5B89;&#x88C5;clion">&#x5B89;&#x88C5;clion</a></li>
+<li><a href="#&#x5B89;&#x88C5;&#x7231;&#x58C1;&#x7EB8;">&#x5B89;&#x88C5;&#x7231;&#x58C1;&#x7EB8;</a></li>
+<li><a href="#&#x5B89;&#x88C5;-xmind">&#x5B89;&#x88C5; xmind</a></li>
+<li><a href="#&#x5B89;&#x88C5;&#x8BA1;&#x7B97;&#x673A;&#x7F51;&#x7EDC;&#x5B66;&#x4E60;&#x5305;wireshark">&#x5B89;&#x88C5;&#x8BA1;&#x7B97;&#x673A;&#x7F51;&#x7EDC;&#x5B66;&#x4E60;&#x5305;wireshark</a></li>
+<li><a href="#&#x4E3A;sublime-&#x5B89;&#x88C5;&#x641C;&#x72D7;&#x8F93;&#x5165;&#x6CD5;">&#x4E3A;sublime &#x5B89;&#x88C5;&#x641C;&#x72D7;&#x8F93;&#x5165;&#x6CD5;</a></li>
+<li><a href="#&#x5B89;&#x88C5;eset-node-32">&#x5B89;&#x88C5;eset node 32</a></li>
+<li><a href="#wine-linux&#x4E0B;&#x7684;windows&#x73AF;&#x5883;-wine-is-not-an-emulator">wine-Linux&#x4E0B;&#x7684;windows&#x73AF;&#x5883;-wine is not an Emulator</a></li>
+<li><a href="#sublime">sublime</a></li>
+<li><a href="#windows-&#x53F0;&#x5F0F;&#x673A;&#x548C;ubuntu&#x7B14;&#x8BB0;&#x672C;&#x534F;&#x4F5C;">windows &#x53F0;&#x5F0F;&#x673A;&#x548C;ubuntu&#x7B14;&#x8BB0;&#x672C;&#x534F;&#x4F5C;</a></li>
+<li><a href="#&#x6570;&#x5B66;&#x8F6F;&#x4EF6;matlab-2015">&#x6570;&#x5B66;&#x8F6F;&#x4EF6;matlab 2015</a></li>
+<li><a href="#&#x4EE3;&#x7801;&#x7F16;&#x8F91;&#x5DE5;&#x5177;">&#x4EE3;&#x7801;&#x7F16;&#x8F91;&#x5DE5;&#x5177;</a></li>
+<li><a href="#&#x5B89;&#x88C5;&#x6587;&#x732E;&#x7BA1;&#x7406;&#x8F6F;&#x4EF6;mendelay">&#x5B89;&#x88C5;&#x6587;&#x732E;&#x7BA1;&#x7406;&#x8F6F;&#x4EF6;mendelay</a></li>
+<li><a href="#&#x4E0B;&#x8F7D;&#x5DE5;&#x5177;ugetaria2">&#x4E0B;&#x8F7D;&#x5DE5;&#x5177;uget+aria2</a></li>
+<li><a href="#&#x641C;&#x72D7;&#x8F93;&#x5165;&#x6CD5;">&#x641C;&#x72D7;&#x8F93;&#x5165;&#x6CD5;</a></li>
+<li><a href="#pdf-&#x7F16;&#x8F91;&#x5668;master-pdf-editor-&#x548C;-foxit-reader">PDF &#x7F16;&#x8F91;&#x5668;master pdf editor &#x548C; Foxit Reader</a></li>
+<li><a href="#&#x6709;&#x9053;&#x8F9E;&#x5178;">&#x6709;&#x9053;&#x8F9E;&#x5178;</a></li>
+<li><a href="#uml-&#x7ED8;&#x56FE;&#x5DE5;&#x5177;staruml">UML &#x7ED8;&#x56FE;&#x5DE5;&#x5177;starUML</a></li>
+<li><a href="#&#x601D;&#x7EF4;&#x5BFC;&#x56FE;&#x5DE5;&#x5177;xmind">&#x601D;&#x7EF4;&#x5BFC;&#x56FE;&#x5DE5;&#x5177;XMIND</a></li>
+<li><a href="#&#x5E2E;&#x52A9;&#x6587;&#x4EF6;&#x9605;&#x8BFB;&#x5668;kchm-viewer">&#x5E2E;&#x52A9;&#x6587;&#x4EF6;&#x9605;&#x8BFB;&#x5668;KCHM Viewer</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+<h2 id="&#x5B66;&#x4E60;&#x8BB0;&#x5F55;"><a href="#&#x5B66;&#x4E60;&#x8BB0;&#x5F55;" class="headerlink" title="&#x5B66;&#x4E60;&#x8BB0;&#x5F55;"></a>&#x5B66;&#x4E60;&#x8BB0;&#x5F55;</h2><h3 id="&#x89C6;&#x9891;&#x7F16;&#x8F91;&#x8F6F;&#x4EF6;kdenlive"><a href="#&#x89C6;&#x9891;&#x7F16;&#x8F91;&#x8F6F;&#x4EF6;kdenlive" class="headerlink" title="&#x89C6;&#x9891;&#x7F16;&#x8F91;&#x8F6F;&#x4EF6;kdenlive"></a>&#x89C6;&#x9891;&#x7F16;&#x8F91;&#x8F6F;&#x4EF6;kdenlive</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:kdenlive/kdenlive-stable</span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt-get install kdenlive</span><br></pre></td></tr></table></figure>
+<ul>
+<li>&#x8FD8;&#x662F;&#x63A8;&#x8350;kdenlive</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:openshot.developers/ppa</span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt-get install openshot-qt</span><br></pre></td></tr></table></figure>
+<h3 id="pip"><a href="#pip" class="headerlink" title="pip"></a>pip</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install python-pip</span><br><span class="line">sudo -H pip install --upgrade pip</span><br></pre></td></tr></table></figure>
+<h3 id="&#x6E38;&#x620F;"><a href="#&#x6E38;&#x620F;" class="headerlink" title="&#x6E38;&#x620F;"></a>&#x6E38;&#x620F;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install steam</span><br></pre></td></tr></table></figure>
+<h3 id="&#x7F51;&#x7EDC;&#x8F85;&#x52A9;&#x5DE5;&#x5177;avahi-discover"><a href="#&#x7F51;&#x7EDC;&#x8F85;&#x52A9;&#x5DE5;&#x5177;avahi-discover" class="headerlink" title="&#x7F51;&#x7EDC;&#x8F85;&#x52A9;&#x5DE5;&#x5177;avahi-discover"></a>&#x7F51;&#x7EDC;&#x8F85;&#x52A9;&#x5DE5;&#x5177;avahi-discover</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install avahi-discover</span><br><span class="line"># &#x4F7F;&#x7528;</span><br><span class="line">avahi-discover</span><br></pre></td></tr></table></figure>
+<h3 id="cad"><a href="#cad" class="headerlink" title="cad"></a>cad</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install librecad</span><br></pre></td></tr></table></figure>
+<h3 id="clang"><a href="#clang" class="headerlink" title="clang"></a>clang</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install clang</span><br></pre></td></tr></table></figure>
+<h3 id="net-core"><a href="#net-core" class="headerlink" title=".net core"></a><a href="https://www.microsoft.com/net/core#linuxubuntu" target="_blank" rel="external">.net core</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo sh -c &apos;echo &quot;deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ xenial main&quot; &gt; /etc/apt/sources.list.d/dotnetdev.list&apos;</span><br><span class="line">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 417A0893</span><br><span class="line">sudo apt-get update</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h3 id="gdebi"><a href="#gdebi" class="headerlink" title="gdebi"></a>gdebi</h3><ul>
+<li><p>sudo apt install gdebi</p>
+</li>
+<li><p>sudo gdebi install nautilus_nutstore_amd64.deb</p>
+</li>
+</ul>
+<h3 id="&#x4E0B;&#x8F7D;&#x5BA2;&#x6237;&#x7AEF;"><a href="#&#x4E0B;&#x8F7D;&#x5BA2;&#x6237;&#x7AEF;" class="headerlink" title="&#x4E0B;&#x8F7D;&#x5BA2;&#x6237;&#x7AEF;"></a>&#x4E0B;&#x8F7D;&#x5BA2;&#x6237;&#x7AEF;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:plushuang-tw/uget-stable</span><br><span class="line">sudo add-apt-repository ppa:t-tujikawa/ppa&#xFF08;&#x6CA1;&#x6709;16.04&#x7684;&#x6E90;&#xFF09;</span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt-get install uget aria2</span><br></pre></td></tr></table></figure>
+<h3 id="eclipsec"><a href="#eclipse-c" class="headerlink" title="eclipse(c++)"></a>eclipse(c++)</h3><ul>
+<li>&#x89E3;&#x538B;&#x6587;&#x4EF6;</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">sudo mv eclipse/ /usr/local/</span><br><span class="line">sudo gedit /usr/share/applications/eclipse.desktop</span><br><span class="line"></span><br><span class="line">[Desktop Entry]</span><br><span class="line">Name=Eclipse</span><br><span class="line">Type=Application</span><br><span class="line">Exec=/usr/local/eclipse/eclipse</span><br><span class="line">Terminal=false</span><br><span class="line">Icon=/usr/local/eclipse/icon.xpm</span><br><span class="line">Comment=Integrated Development Environment</span><br><span class="line">NoDisplay=false</span><br><span class="line">Categories=Development;IDE;</span><br><span class="line">Name[en]=Eclipse</span><br></pre></td></tr></table></figure>
+<h3 id="skype"><a href="#skype" class="headerlink" title="skype"></a>skype</h3><ul>
+<li><p>parters software enable in other software mangment</p>
+</li>
+<li><p>sudo apt install skype</p>
+</li>
+</ul>
+<h3 id="&#x793E;&#x4EA4;&#x6C9F;&#x901A;&#x652F;&#x6301;webqq-gtalk"><a href="#&#x793E;&#x4EA4;&#x6C9F;&#x901A;&#xFF0C;&#x652F;&#x6301;webqq-gtalk" class="headerlink" title="&#x793E;&#x4EA4;&#x6C9F;&#x901A;&#xFF0C;&#x652F;&#x6301;webqq gtalk"></a>&#x793E;&#x4EA4;&#x6C9F;&#x901A;&#xFF0C;&#x652F;&#x6301;webqq gtalk</h3><ul>
+<li>sudo apt-get install pidgin</li>
+</ul>
+<p><a href="https://developer.pidgin.im/wiki/ThirdPartyPlugins" target="_blank" rel="external">&#x63D2;&#x4EF6;&#x7F51;&#x7AD9;</a></p>
+<h3 id="&#x6587;&#x732E;&#x7BA1;&#x7406;mendeley"><a href="#&#x6587;&#x732E;&#x7BA1;&#x7406;mendeley" class="headerlink" title="&#x6587;&#x732E;&#x7BA1;&#x7406;mendeley"></a>&#x6587;&#x732E;&#x7BA1;&#x7406;mendeley</h3><ul>
+<li>&#x5148;&#x624B;&#x52A8;&#x5B89;&#x88C5;deb&#x5305;</li>
+<li>sudo apt-get install mendeleydesktop</li>
+</ul>
+<h3 id="rar"><a href="#rar" class="headerlink" title="rar"></a>rar</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install rar unrar</span><br></pre></td></tr></table></figure>
+<h3 id="wps&#x5B57;&#x4F53;"><a href="#wps&#x5B57;&#x4F53;" class="headerlink" title="wps&#x5B57;&#x4F53;"></a>wps&#x5B57;&#x4F53;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo mv wps_symbol_fonts/ /usr/share/fonts/</span><br><span class="line">cd /usr/share/fonts/</span><br><span class="line">sudo mkfontscale</span><br><span class="line">sudo mkfontdir</span><br><span class="line">sudo fc-cache</span><br></pre></td></tr></table></figure>
+<h3 id="&#x773C;&#x775B;&#x4FDD;&#x62A4;"><a href="#&#x773C;&#x775B;&#x4FDD;&#x62A4;" class="headerlink" title="&#x773C;&#x775B;&#x4FDD;&#x62A4;"></a>&#x773C;&#x775B;&#x4FDD;&#x62A4;</h3><ul>
+<li>sudo apt install redshift redshift-gtk</li>
+</ul>
+<h3 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">echo $SHELL</span><br><span class="line">sudo apt-get install zsh</span><br><span class="line">chsh -s /bin/zsh</span><br><span class="line">reboot</span><br><span class="line">wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</span><br><span class="line">cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># &#x914D;&#x7F6E;&#x73AF;&#x5883;</span><br><span class="line">CASE_SENSITIVE=&quot;true&quot;</span><br><span class="line">COMPLETION_WAITING_DOTS=&quot;true&quot;</span><br><span class="line">export SSH_KEY_PATH=&quot;~/.ssh/dsa_id&quot;</span><br><span class="line">plugins=(git colored-man-pages cp z)</span><br></pre></td></tr></table></figure>
+<h3 id="&#x4E3B;&#x9898;&#x7F8E;&#x5316;"><a href="#&#x4E3B;&#x9898;&#x7F8E;&#x5316;" class="headerlink" title="&#x4E3B;&#x9898;&#x7F8E;&#x5316;"></a>&#x4E3B;&#x9898;&#x7F8E;&#x5316;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install unity-tweak-tool</span><br><span class="line"></span><br><span class="line">sudo add-apt-repository ppa:noobslab/themes</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install flatabulous-theme</span><br><span class="line"></span><br><span class="line">sudo mv Flatabulous-master/ /usr/share/themes/</span><br><span class="line"></span><br><span class="line">sudo add-apt-repository ppa:noobslab/icons</span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt-get install ultra-flat-icons ultra-flat-icons-orange ultra-flat-icons-green</span><br><span class="line"># &#x63A5;&#x4E0B;&#x6765;&#x8BBE;&#x7F6E;unity-tweak&#x5373;&#x53EF;</span><br><span class="line"></span><br><span class="line"># &#x5B57;&#x4F53;</span><br><span class="line">sudo mv wqy-microhei/ /usr/share/fonts/</span><br><span class="line">cd /usr/share/fonts/wqy-microhei/</span><br><span class="line">sudo mkfontscale</span><br><span class="line">sudo mkfontdir</span><br><span class="line">sudo fc-cache -fv</span><br></pre></td></tr></table></figure>
+<h3 id="&#x622A;&#x5C4F;&#x8F6F;&#x4EF6;"><a href="#&#x622A;&#x5C4F;&#x8F6F;&#x4EF6;" class="headerlink" title="&#x622A;&#x5C4F;&#x8F6F;&#x4EF6;"></a>&#x622A;&#x5C4F;&#x8F6F;&#x4EF6;</h3><ul>
+<li>sudo apt install shutter</li>
+</ul>
+<h3 id="&#x6587;&#x5B57;&#x5904;&#x7406;latex"><a href="#&#x6587;&#x5B57;&#x5904;&#x7406;latex" class="headerlink" title="&#x6587;&#x5B57;&#x5904;&#x7406;latex"></a>&#x6587;&#x5B57;&#x5904;&#x7406;latex</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install texlive-full latex-beamer</span><br></pre></td></tr></table></figure>
+<ul>
+<li>&#x53EF;&#x7528;&#x6A21;&#x677F;</li>
+</ul>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">documentclass</span><span class="string">[11pt]</span><span class="string">{article}</span></span></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">{CJK}</span></span></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">{indentfirst}</span></span></span><br><span class="line"><span class="tag">\<span class="name">setlength</span><span class="string">{\parindent}</span><span class="string">{2em}</span></span></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">{amsmath,amssymb}</span></span></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">{latexsym}</span></span></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">[latin1]</span><span class="string">{inputenc}</span></span></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">{pgf}</span></span></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">{tikz}</span></span></span><br><span class="line"><span class="tag">\<span class="name">usetikzlibrary</span><span class="string">{arrows,automata}</span></span></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">{document}</span></span></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">{CJK}</span><span class="string">{UTF8}</span><span class="string">{gbsn}</span></span></span><br><span class="line"><span class="tag">\<span class="name">title</span><span class="string">{&#x901A;&#x4FE1;&#x539F;&#x7406;&#x6982;&#x8BBA;&#x4F5C;&#x4E1A;&#xFF08;&#x4E09;&#xFF09;}</span></span></span><br><span class="line"><span class="tag">\<span class="name">author</span><span class="string">{&#x5F20;&#x4E09;}</span></span></span><br><span class="line"><span class="tag">\<span class="name">date</span><span class="string">{\today}</span></span></span><br><span class="line"><span class="tag">\<span class="name">maketitle</span></span></span><br><span class="line"><span class="comment">%&#x7B2C;&#x4E09;&#x7AE0;2,4,11,14,29</span></span><br><span class="line"><span class="tag">\<span class="name">section*</span><span class="string">{3.2}</span></span></span><br><span class="line">&#x4E0D;&#x4F1A;&#x505A;</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">{CJK}</span></span></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">{document}</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="ros-kinetic"><a href="#ROS-kinetic" class="headerlink" title="ROS kinetic"></a>ROS kinetic</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">sudo sh -c &apos;echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list&apos;</span><br><span class="line">sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 0xB01FA116</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install ros-kinetic-desktop-full</span><br><span class="line">sudo rosdep init</span><br><span class="line">rosdep update</span><br><span class="line">echo &quot;source /opt/ros/kinetic/setup.bash&quot; &gt;&gt; ~/.bashrc</span><br><span class="line"></span><br><span class="line">source ~/.bashrc</span><br><span class="line">sudo apt-get install python-rosinstall</span><br></pre></td></tr></table></figure>
+<h3 id="wiznote"><a href="#wiznote" class="headerlink" title="wiznote"></a>wiznote</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:wiznote-team</span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt install wiznote</span><br></pre></td></tr></table></figure>
+<h3 id="&#x4E09;&#x7EF4;&#x5EFA;&#x6A21;blender"><a href="#&#x4E09;&#x7EF4;&#x5EFA;&#x6A21;blender" class="headerlink" title="&#x4E09;&#x7EF4;&#x5EFA;&#x6A21;blender"></a>&#x4E09;&#x7EF4;&#x5EFA;&#x6A21;blender</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:thomas-schiex/blender</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install blender</span><br></pre></td></tr></table></figure>
+<h3 id="&#x514D;&#x8D39;&#x7248;&#x672C;&#x7684;viso"><a href="#&#x514D;&#x8D39;&#x7248;&#x672C;&#x7684;viso" class="headerlink" title="&#x514D;&#x8D39;&#x7248;&#x672C;&#x7684;viso"></a>&#x514D;&#x8D39;&#x7248;&#x672C;&#x7684;viso</h3><ul>
+<li><a href="http://dia-installer.de/" target="_blank" rel="external">Dia Diagram Editor</a></li>
+<li>&#x8DE8;&#x5E73;&#x53F0;&#x54E6;&#xFF01;</li>
+</ul>
+<h3 id="&#x514D;&#x8D39;&#x7248;&#x672C;&#x7684;matlab"><a href="#&#x514D;&#x8D39;&#x7248;&#x672C;&#x7684;matlab" class="headerlink" title="&#x514D;&#x8D39;&#x7248;&#x672C;&#x7684;matlab"></a>&#x514D;&#x8D39;&#x7248;&#x672C;&#x7684;matlab</h3><p><a href="https://www.gnu.org/software/octave/" target="_blank" rel="external">GNU Octave</a></p>
+<h3 id="&#x56FE;&#x5F62;&#x5305;&#x7BA1;&#x7406;&#x8F6F;&#x4EF6;"><a href="#&#x56FE;&#x5F62;&#x5305;&#x7BA1;&#x7406;&#x8F6F;&#x4EF6;" class="headerlink" title="&#x56FE;&#x5F62;&#x5305;&#x7BA1;&#x7406;&#x8F6F;&#x4EF6;"></a>&#x56FE;&#x5F62;&#x5305;&#x7BA1;&#x7406;&#x8F6F;&#x4EF6;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install synaptic</span><br></pre></td></tr></table></figure>
+<h3 id="chrome"><a href="#chrome" class="headerlink" title="chrome"></a>chrome</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget -q -O - https://raw.githubusercontent.com/longhr/ubuntu1604hub/master/linux_signing_key.pub | sudo apt-key add</span><br><span class="line">sudo sh -c &apos;echo &quot;deb [ arch=amd64 ] http://dl.google.com/linux/chrome/deb/ stable main&quot; &gt;&gt; /etc/apt/sources.list.d/google-chrome.list&apos;</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install google-chrome-stable</span><br></pre></td></tr></table></figure>
+<h3 id="&#x79D1;&#x5B66;&#x4E0A;&#x7F51;"><a href="#&#x79D1;&#x5B66;&#x4E0A;&#x7F51;" class="headerlink" title="&#x79D1;&#x5B66;&#x4E0A;&#x7F51;"></a>&#x79D1;&#x5B66;&#x4E0A;&#x7F51;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:hzwhuang/ss-qt5</span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt-get install shadowsocks-qt5</span><br><span class="line"></span><br><span class="line">https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt</span><br></pre></td></tr></table></figure>
+<h3 id="synaptic-software-manager"><a href="#synaptic-software-manager" class="headerlink" title="synaptic software manager"></a>synaptic software manager</h3><ul>
+<li>sudo apt-get install synaptic</li>
+</ul>
+<h3 id="&#x6587;&#x6863;&#x6784;&#x5EFA;&#x5DE5;&#x5177;"><a href="#&#x6587;&#x6863;&#x6784;&#x5EFA;&#x5DE5;&#x5177;" class="headerlink" title="&#x6587;&#x6863;&#x6784;&#x5EFA;&#x5DE5;&#x5177;"></a>&#x6587;&#x6863;&#x6784;&#x5EFA;&#x5DE5;&#x5177;</h3><ul>
+<li>sudo apt-get install doxygen</li>
+<li>sudo apt-get install graphviz graphviz-doc</li>
+</ul>
+<h3 id="&#x5F55;&#x5C4F;&#x8F6F;&#x4EF6;simplescreenrecorder"><a href="#&#x5F55;&#x5C4F;&#x8F6F;&#x4EF6;simplescreenrecorder" class="headerlink" title="&#x5F55;&#x5C4F;&#x8F6F;&#x4EF6;simplescreenrecorder"></a>&#x5F55;&#x5C4F;&#x8F6F;&#x4EF6;simplescreenrecorder</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* sudo add-apt-repository ppa:maarten-baert/simplescreenrecorder</span><br><span class="line">* sudo apt-get update</span><br><span class="line">* sudo apt-get install simplescreenrecorder</span><br><span class="line">* sudo apt-get install simplescreenrecorder-lib:i386</span><br></pre></td></tr></table></figure>
+<h3 id="securecrt-for-linux"><a href="#SecureCRT-for-linux" class="headerlink" title="SecureCRT for linux"></a>SecureCRT for linux</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i install scrt-8.0.0-1063.ubuntu14-64.x86_64.deb</span><br><span class="line">wget http://download.boll.me/securecrt_linux_crack.pl</span><br><span class="line">sudo perl securecrt_linux_crack.pl /usr/bin/SecureCRT</span><br><span class="line">SecureCRT &amp;</span><br><span class="line">&#x8F93;&#x5165;&#x751F;&#x6210;&#x7684;&#x79D8;&#x94A5;&#xFF0C;&#x624B;&#x52A8;&#x8F93;&#x5165;</span><br><span class="line">	Name:		xiaobo_l</span><br><span class="line">	Company:	www.boll.me</span><br><span class="line">	Serial Number:	03-15-097355</span><br><span class="line">	License Key:	AC81ET 9RKAWY 6WP69G 8EQ1JB ABCM3D K4E85M D3WG57 RGFWT2</span><br><span class="line">	Issue Date:	08-16-2015</span><br><span class="line">pass: zscrt</span><br></pre></td></tr></table></figure>
+<h3 id="&#x6587;&#x4EF6;&#x4F20;&#x8F93;&#x5DE5;&#x5177;"><a href="#&#x6587;&#x4EF6;&#x4F20;&#x8F93;&#x5DE5;&#x5177;" class="headerlink" title="&#x6587;&#x4EF6;&#x4F20;&#x8F93;&#x5DE5;&#x5177;"></a>&#x6587;&#x4EF6;&#x4F20;&#x8F93;&#x5DE5;&#x5177;</h3><ul>
+<li>sudo apt-get install iptux</li>
+</ul>
+<h3 id="&#x5B89;&#x88C5;&#x591A;&#x9009;&#x9879;&#x5361;&#x7EC8;&#x7AEF;terminator"><a href="#&#x5B89;&#x88C5;&#x591A;&#x9009;&#x9879;&#x5361;&#x7EC8;&#x7AEF;terminator" class="headerlink" title="&#x5B89;&#x88C5;&#x591A;&#x9009;&#x9879;&#x5361;&#x7EC8;&#x7AEF;terminator"></a>&#x5B89;&#x88C5;&#x591A;&#x9009;&#x9879;&#x5361;&#x7EC8;&#x7AEF;terminator</h3><ul>
+<li>sudo apt-get install terminator</li>
+</ul>
+<h3 id="&#x5B89;&#x88C5;&#x4F18;&#x79C0;&#x90AE;&#x4EF6;&#x5BA2;&#x6237;&#x7AEF;nylas-n1"><a href="#&#x5B89;&#x88C5;&#x4F18;&#x79C0;&#x90AE;&#x4EF6;&#x5BA2;&#x6237;&#x7AEF;Nylas-N1" class="headerlink" title="&#x5B89;&#x88C5;&#x4F18;&#x79C0;&#x90AE;&#x4EF6;&#x5BA2;&#x6237;&#x7AEF;Nylas N1"></a>&#x5B89;&#x88C5;&#x4F18;&#x79C0;&#x90AE;&#x4EF6;&#x5BA2;&#x6237;&#x7AEF;Nylas N1</h3><ul>
+<li>&#x4E0D;&#x8FC7;&#x8FD8;&#x662F;&#x4E0D;&#x80FD;&#x540C;&#x6B65;&#x65E5;&#x5386;&#xFF0C;&#x592A;&#x75DB;&#x82E6;&#x4E86;&#xFF0C;&#x54CE;&#xFF01;</li>
+</ul>
+<h3 id="install-virtualbox"><a href="#install-virtualbox" class="headerlink" title="install virtualbox"></a>install virtualbox</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo sh -c &apos;echo &quot;deb http://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib&quot; &gt;&gt; /etc/apt/sources.list.d/virtualbox.list&apos;</span><br><span class="line">wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install virtualbox-5.0</span><br></pre></td></tr></table></figure>
+<h3 id="&#x5B89;&#x88C5;clion"><a href="#&#x5B89;&#x88C5;clion" class="headerlink" title="&#x5B89;&#x88C5;clion"></a>&#x5B89;&#x88C5;clion</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo mv ./clion..folder/ /usr/local/</span><br><span class="line">cd /usr/local/clion..folder/bin</span><br><span class="line">./clion.sh</span><br></pre></td></tr></table></figure>
+<h3 id="&#x5B89;&#x88C5;&#x7231;&#x58C1;&#x7EB8;"><a href="#&#x5B89;&#x88C5;&#x7231;&#x58C1;&#x7EB8;" class="headerlink" title="&#x5B89;&#x88C5;&#x7231;&#x58C1;&#x7EB8;"></a>&#x5B89;&#x88C5;&#x7231;&#x58C1;&#x7EB8;</h3><h3 id="&#x5B89;&#x88C5;-xmind"><a href="#&#x5B89;&#x88C5;-xmind" class="headerlink" title="&#x5B89;&#x88C5; xmind"></a>&#x5B89;&#x88C5; xmind</h3><h3 id="&#x5B89;&#x88C5;&#x8BA1;&#x7B97;&#x673A;&#x7F51;&#x7EDC;&#x5B66;&#x4E60;&#x5305;wireshark"><a href="#&#x5B89;&#x88C5;&#x8BA1;&#x7B97;&#x673A;&#x7F51;&#x7EDC;&#x5B66;&#x4E60;&#x5305;wireshark" class="headerlink" title="&#x5B89;&#x88C5;&#x8BA1;&#x7B97;&#x673A;&#x7F51;&#x7EDC;&#x5B66;&#x4E60;&#x5305;wireshark"></a>&#x5B89;&#x88C5;&#x8BA1;&#x7B97;&#x673A;&#x7F51;&#x7EDC;&#x5B66;&#x4E60;&#x5305;wireshark</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* sudo apt-get install wireshark</span><br><span class="line">* sudo dpkg-reconfigure wireshark-common</span><br><span class="line">* sudo adduser zs wireshark</span><br></pre></td></tr></table></figure>
+<h3 id="&#x4E3A;sublime-&#x5B89;&#x88C5;&#x641C;&#x72D7;&#x8F93;&#x5165;&#x6CD5;"><a href="#&#x4E3A;sublime-&#x5B89;&#x88C5;&#x641C;&#x72D7;&#x8F93;&#x5165;&#x6CD5;" class="headerlink" title="&#x4E3A;sublime &#x5B89;&#x88C5;&#x641C;&#x72D7;&#x8F93;&#x5165;&#x6CD5;"></a>&#x4E3A;sublime &#x5B89;&#x88C5;&#x641C;&#x72D7;&#x8F93;&#x5165;&#x6CD5;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install build-essential libgtk2.0-dev</span><br><span class="line">subl sublime_imfix.c</span><br><span class="line"></span><br><span class="line">gcc -shared -o libsublime-imfix.so sublime-imfix.c  `pkg-config --libs --cflags gtk+-2.0` -fPIC</span><br><span class="line">sudo cp libsublime-imfix.so /opt/sublime_text/</span><br><span class="line">LD_PRELOAD=./libsublime-imfix.so subl</span><br><span class="line">sudo gedit /usr/bin/subl</span><br><span class="line">LD_PRELOAD=/opt/sublime_text/libsublime-imfix.so exec /opt/sublime_text/sublime_text &quot;$@&quot;</span><br><span class="line">have a check, use subl</span><br><span class="line">#&#x4E3A;&#x4E86;&#x80FD;&#x5728;Unity&#x4E0A;&#x7684;Sublime text 3&#x56FE;&#x6807;&#x6253;&#x5F00;&#x65F6;&#x4E5F;&#x80FD;&#x4F7F;&#x7528;&#xFF0C;&#x4E0B;&#x9762;&#x7EE7;&#x7EED;&#x4FEE;&#x6539;&#x6587;&#x4EF6;sublime_text.desktop&#x7684;&#x5185;&#x5BB9;</span><br><span class="line">#&#x4E0D;&#x5E72;&#x4E86;&#xFF0C;&#x6CA1;&#x6709;&#x8FD9;&#x4E2A;&#x9700;&#x6C42;</span><br><span class="line">#&#x64A4;&#x9500;&#x8FD9;&#x4E2A;&#x9700;&#x6C42;</span><br><span class="line">sudo gedit /usr/bin/subl</span><br><span class="line">#&#x5207;&#x6362;&#x542F;&#x52A8;&#x4EE3;&#x7801;&#x5373;&#x53EF;</span><br><span class="line">#&#x8F93;&#x5165;&#x6846;&#x4E00;&#x76F4;&#x5728;&#x5DE6;&#x4E0B;&#x89D2;&#x7684;&#x95EE;&#x9898;&#x65E0;&#x6CD5;&#x89E3;&#x51B3;&#xFF0C;&#x5728;windows&#x4E0B;&#x53EF;&#x4EE5;&#x641C;&#x7D22;IMESupport&#x6765;&#x89E3;&#x51B3;</span><br></pre></td></tr></table></figure>
+<h3 id="&#x5B89;&#x88C5;eset-node-32"><a href="#&#x5B89;&#x88C5;eset-node-32" class="headerlink" title="&#x5B89;&#x88C5;eset node 32"></a>&#x5B89;&#x88C5;eset node 32</h3><ul>
+<li>&#x6CE8;&#x610F;&#x5B89;&#x88C5;&#x65B9;&#x5F0F;&#x4E3A;&#x81EA;&#x5B9A;&#x4E49;&#xFF0C;&#x7ED9;&#x6240;&#x6709;&#x7528;&#x6237;&#x6388;&#x6743;&#xFF0C;&#x4E0D;&#x7136;&#x65E0;&#x6CD5;&#x9A8C;&#x8BC1;&#x7528;&#x6237;&#x540D;&#x548C;&#x5BC6;&#x7801;</li>
+</ul>
+<h3 id="wine-linux&#x4E0B;&#x7684;windows&#x73AF;&#x5883;-wine-is-not-an-emulator"><a href="#wine-Linux&#x4E0B;&#x7684;windows&#x73AF;&#x5883;-wine-is-not-an-Emulator" class="headerlink" title="wine-Linux&#x4E0B;&#x7684;windows&#x73AF;&#x5883;-wine is not an Emulator"></a>wine-Linux&#x4E0B;&#x7684;windows&#x73AF;&#x5883;-wine is not an Emulator</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:ubuntu-wine/ppa</span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt install wine</span><br><span class="line"># &#x5230;dash&#x4E2D;&#x914D;&#x7F6E;&#x81F3;&#x5C11;&#x4E00;&#x6B21;</span><br><span class="line"># &#x5378;&#x8F7D;</span><br><span class="line">sudo apt-get remove --purge wine</span><br><span class="line">rm -r ~/.wine</span><br><span class="line">sudo apt autoremove</span><br></pre></td></tr></table></figure>
+<h3 id="sublime"><a href="#sublime" class="headerlink" title="sublime"></a>sublime</h3><p>sudo add-apt-repository ppa:webupd8team/sublime-text-3<br>sudo apt-get install sublime-text-installer</p>
+<h3 id="windows-&#x53F0;&#x5F0F;&#x673A;&#x548C;ubuntu&#x7B14;&#x8BB0;&#x672C;&#x534F;&#x4F5C;"><a href="#windows-&#x53F0;&#x5F0F;&#x673A;&#x548C;ubuntu&#x7B14;&#x8BB0;&#x672C;&#x534F;&#x4F5C;" class="headerlink" title="windows &#x53F0;&#x5F0F;&#x673A;&#x548C;ubuntu&#x7B14;&#x8BB0;&#x672C;&#x534F;&#x4F5C;"></a>windows &#x53F0;&#x5F0F;&#x673A;&#x548C;ubuntu&#x7B14;&#x8BB0;&#x672C;&#x534F;&#x4F5C;</h3><p>&#x5171;&#x4EAB;&#x4E00;&#x5957;&#x952E;&#x76D8;&#x9F20;&#x6807;<br>synergy&#xFF08;&#x8F6F;&#x4EF6;&#x88C5;&#x6210;&#x529F;&#xFF0C;&#x914D;&#x7F6E;&#x5931;&#x8D25;&#xFF09;<br>&#x5171;&#x4EAB;&#x6587;&#x4EF6;<br>samba&#xFF08;&#x7565;&#x9EBB;&#x70E6;&#xFF09;<br>windows&#x4E2D;&#x76F4;&#x63A5;&#x5728;&#x8D44;&#x6E90;&#x7BA1;&#x7406;&#x5668;&#x4E2D;\ubuntu_ip<br>ubuntu&#x4E2D;&#x5728;&#x8D44;&#x6E90;&#x7BA1;&#x7406;&#x5668;&#x4E2D;Browse network&#xFF0C;&#x81EA;&#x5DF1;&#x7684;&#x7528;&#x6237;&#x540D;&#x4E3A;zhens</p>
+<h3 id="&#x6570;&#x5B66;&#x8F6F;&#x4EF6;matlab-2015"><a href="#&#x6570;&#x5B66;&#x8F6F;&#x4EF6;matlab-2015" class="headerlink" title="&#x6570;&#x5B66;&#x8F6F;&#x4EF6;matlab 2015"></a>&#x6570;&#x5B66;&#x8F6F;&#x4EF6;matlab 2015</h3><p>mount iso:&#x53F3;&#x51FB;&#x5149;&#x76D8;&#x6587;&#x4EF6;-open with disk image mounter</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo ./install</span><br><span class="line"># &#x5C06;~/crack/bin/&#x4E2D;&#x7684;&#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230;~/MATLAB/Rxxxx/bin</span><br><span class="line">sudo cp /home/zs/Downloads/&#xFF2D;atlab_Linux/Matlab-2015b-Linux64-Crack/R2015b/bin/glnxa64/* /usr/local/MATLAB/R2015b/bin/glnxa64/</span><br><span class="line">sudo cp &apos;/home/zs/Downloads/&#xFF2D;atlab_Linux/Matlab-2015b-Linux64-Crack/license_standalone.lic&apos; .</span><br><span class="line"># &#x9996;&#x6B21;&#x6253;&#x5F00;</span><br><span class="line">cd /usr/local/MATLAB/R2015b/bin</span><br><span class="line">sudo ./matlab</span><br><span class="line"># &#x9009;&#x5728;&#x4E4B;&#x524D;&#x590D;&#x5236;&#x7684;lic&#x6587;&#x4EF6;</span><br><span class="line"># &#x63A5;&#x4E0B;&#x6765;&#x521B;&#x5EFA;&#x5FEB;&#x6377;&#x65B9;&#x5F0F;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /usr/share/applications/Matlab2015b.desktop</span><br><span class="line"></span><br><span class="line">[Desktop Entry] Encoding=UTF-8</span><br><span class="line">Name=Matlab 2015b</span><br><span class="line">Exec=/usr/local/MATLAB/R2015b/bin/matlab Icon=/usr/local/MATLAB/R2015b/toolbox/shared/dastudio/resources/MatlabIcon.png</span><br><span class="line">Terminal=true</span><br><span class="line">Type=Application</span><br><span class="line">Name[zh_CN]=Matlab_2015b</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install matlab-support</span><br><span class="line"># &#x914D;&#x7F6E;&#x597D;</span><br><span class="line">sudo rm -r ~/.matlab/</span><br><span class="line"># &#x89E3;&#x51B3;&#x6743;&#x9650;&#x95EE;&#x9898;</span><br></pre></td></tr></table></figure>
+<h3 id="&#x4EE3;&#x7801;&#x7F16;&#x8F91;&#x5DE5;&#x5177;"><a href="#&#x4EE3;&#x7801;&#x7F16;&#x8F91;&#x5DE5;&#x5177;" class="headerlink" title="&#x4EE3;&#x7801;&#x7F16;&#x8F91;&#x5DE5;&#x5177;"></a>&#x4EE3;&#x7801;&#x7F16;&#x8F91;&#x5DE5;&#x5177;</h3><p>VS CODE<br>codeblocks IDE<br>VIM</p>
+<h3 id="&#x5B89;&#x88C5;&#x6587;&#x732E;&#x7BA1;&#x7406;&#x8F6F;&#x4EF6;mendelay"><a href="#&#x5B89;&#x88C5;&#x6587;&#x732E;&#x7BA1;&#x7406;&#x8F6F;&#x4EF6;mendelay" class="headerlink" title="&#x5B89;&#x88C5;&#x6587;&#x732E;&#x7BA1;&#x7406;&#x8F6F;&#x4EF6;mendelay"></a>&#x5B89;&#x88C5;&#x6587;&#x732E;&#x7BA1;&#x7406;&#x8F6F;&#x4EF6;mendelay</h3><h3 id="&#x4E0B;&#x8F7D;&#x5DE5;&#x5177;ugetaria2"><a href="#&#x4E0B;&#x8F7D;&#x5DE5;&#x5177;uget-aria2" class="headerlink" title="&#x4E0B;&#x8F7D;&#x5DE5;&#x5177;uget+aria2"></a>&#x4E0B;&#x8F7D;&#x5DE5;&#x5177;uget+aria2</h3><h3 id="&#x641C;&#x72D7;&#x8F93;&#x5165;&#x6CD5;"><a href="#&#x641C;&#x72D7;&#x8F93;&#x5165;&#x6CD5;" class="headerlink" title="&#x641C;&#x72D7;&#x8F93;&#x5165;&#x6CD5;"></a>&#x641C;&#x72D7;&#x8F93;&#x5165;&#x6CD5;</h3><h3 id="pdf-&#x7F16;&#x8F91;&#x5668;master-pdf-editor-&#x548C;-foxit-reader"><a href="#PDF-&#x7F16;&#x8F91;&#x5668;master-pdf-editor-&#x548C;-Foxit-Reader" class="headerlink" title="PDF &#x7F16;&#x8F91;&#x5668;master pdf editor &#x548C; Foxit Reader"></a>PDF &#x7F16;&#x8F91;&#x5668;master pdf editor &#x548C; Foxit Reader</h3><h3 id="&#x6709;&#x9053;&#x8F9E;&#x5178;"><a href="#&#x6709;&#x9053;&#x8F9E;&#x5178;" class="headerlink" title="&#x6709;&#x9053;&#x8F9E;&#x5178;"></a>&#x6709;&#x9053;&#x8F9E;&#x5178;</h3><h3 id="uml-&#x7ED8;&#x56FE;&#x5DE5;&#x5177;staruml"><a href="#UML-&#x7ED8;&#x56FE;&#x5DE5;&#x5177;starUML" class="headerlink" title="UML &#x7ED8;&#x56FE;&#x5DE5;&#x5177;starUML"></a>UML &#x7ED8;&#x56FE;&#x5DE5;&#x5177;starUML</h3><h3 id="&#x601D;&#x7EF4;&#x5BFC;&#x56FE;&#x5DE5;&#x5177;xmind"><a href="#&#x601D;&#x7EF4;&#x5BFC;&#x56FE;&#x5DE5;&#x5177;XMIND" class="headerlink" title="&#x601D;&#x7EF4;&#x5BFC;&#x56FE;&#x5DE5;&#x5177;XMIND"></a>&#x601D;&#x7EF4;&#x5BFC;&#x56FE;&#x5DE5;&#x5177;XMIND</h3><h3 id="&#x5E2E;&#x52A9;&#x6587;&#x4EF6;&#x9605;&#x8BFB;&#x5668;kchm-viewer"><a href="#&#x5E2E;&#x52A9;&#x6587;&#x4EF6;&#x9605;&#x8BFB;&#x5668;KCHM-Viewer" class="headerlink" title="&#x5E2E;&#x52A9;&#x6587;&#x4EF6;&#x9605;&#x8BFB;&#x5668;KCHM Viewer"></a>&#x5E2E;&#x52A9;&#x6587;&#x4EF6;&#x9605;&#x8BFB;&#x5668;KCHM Viewer</h3><ul>
+<li>sudo apt-get install kchmviewer</li>
+<li>&#x6CE8;&#x610F;&#x8F6F;&#x4EF6;&#x4E0D;&#x80FD;&#x6253;&#x5F00;&#x4E2D;&#x6587;&#x6587;&#x4EF6;&#x540D;&#x7684;&#x6587;&#x4EF6;</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;记录而已&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="其他" scheme="https://ZhenshengLee.github.io/tags/%E5%85%B6%E4%BB%96/"/>
+    
+      <category term="Ubuntu" scheme="https://ZhenshengLee.github.io/tags/Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常用系统维护</title>
+    <link href="https://ZhenshengLee.github.io/2017/01/02/160716-%E5%B8%B8%E7%94%A8%E7%B3%BB%E7%BB%9F%E7%BB%B4%E6%8A%A4/"/>
+    <id>https://ZhenshengLee.github.io/2017/01/02/160716-常用系统维护/</id>
+    <published>2017-01-02T15:41:01.118Z</published>
+    <updated>2017-01-02T15:41:01.118Z</updated>
     
     <content type="html"><![CDATA[<h2 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h2><ul>
 <li>&#x7EAF;&#x7CB9;&#x7B14;&#x8BB0;&#xFF0C;&#x4EE5;&#x9632;&#x5FD8;&#x8BB0;</li>
 </ul>
 <a id="more"></a>
-<h2 id="&#x8BB0;&#x5F55;"><a href="#&#x8BB0;&#x5F55;" class="headerlink" title="&#x8BB0;&#x5F55;"></a>&#x8BB0;&#x5F55;</h2><h3 id="&#x5728;live-cd-&#x4E0B;&#x4E3A;&#x67D0;&#x78C1;&#x76D8;&#x5B89;&#x88C5;grub"><a href="#&#x5728;live-cd-&#x4E0B;&#x4E3A;&#x67D0;&#x78C1;&#x76D8;&#x5B89;&#x88C5;grub" class="headerlink" title="&#x5728;live cd &#x4E0B;&#x4E3A;&#x67D0;&#x78C1;&#x76D8;&#x5B89;&#x88C5;grub"></a>&#x5728;live cd &#x4E0B;&#x4E3A;&#x67D0;&#x78C1;&#x76D8;&#x5B89;&#x88C5;grub</h3><ul>
-<li>&#x4ECE;live cd &#x8FDB;&#x5165;ubuntu<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br><span class="line">fdisk -l </span><br><span class="line">mount /dev/sdc1</span><br></pre></td></tr></table></figure>
+<h2 id="&#x76EE;&#x5F55;"><a href="#&#x76EE;&#x5F55;" class="headerlink" title="&#x76EE;&#x5F55;"></a>&#x76EE;&#x5F55;</h2><!-- toc -->
+<ul>
+<li><a href="#&#x8BB0;&#x5F55;">&#x8BB0;&#x5F55;</a><ul>
+<li><a href="#&#x5728;live-cd-&#x4E0B;&#x4E3A;&#x67D0;&#x78C1;&#x76D8;&#x5B89;&#x88C5;grub">&#x5728;live cd &#x4E0B;&#x4E3A;&#x67D0;&#x78C1;&#x76D8;&#x5B89;&#x88C5;grub</a></li>
+<li><a href="#&#x6302;&#x8F7D;">&#x6302;&#x8F7D;</a></li>
+<li><a href="#&#x66F4;&#x6539;&#x4E3B;&#x663E;&#x793A;&#x5668;">&#x66F4;&#x6539;&#x4E3B;&#x663E;&#x793A;&#x5668;</a></li>
+<li><a href="#&#x67E5;&#x770B;&#x8BBE;&#x5907;">&#x67E5;&#x770B;&#x8BBE;&#x5907;</a></li>
+<li><a href="#grub-&#x56FE;&#x5F62;&#x5316;&#x7F16;&#x8F91;">grub &#x56FE;&#x5F62;&#x5316;&#x7F16;&#x8F91;</a></li>
+<li><a href="#&#x67E5;&#x627E;-package">&#x67E5;&#x627E; package</a></li>
+<li><a href="#&#x67E5;&#x8BE2;&#x94FE;&#x63A5;&#x5E93;&#x4F9D;&#x8D56;&#x9879;">&#x67E5;&#x8BE2;&#x94FE;&#x63A5;&#x5E93;&#x4F9D;&#x8D56;&#x9879;</a></li>
+<li><a href="#&#x5220;&#x9664;&#x6587;&#x4EF6;&#x5939;">&#x5220;&#x9664;&#x6587;&#x4EF6;&#x5939;</a></li>
+<li><a href="#&#x67E5;&#x627E;&#x5305;">&#x67E5;&#x627E;&#x5305;</a></li>
+<li><a href="#&#x5378;&#x8F7D;&#x5305;">&#x5378;&#x8F7D;&#x5305;</a></li>
+<li><a href="#&#x5378;&#x8F7D;&#x8F6F;&#x4EF6;">&#x5378;&#x8F7D;&#x8F6F;&#x4EF6;</a></li>
+<li><a href="#grub">grub</a></li>
+<li><a href="#&#x4FEE;&#x6539;hosts&#x6587;&#x4EF6;">&#x4FEE;&#x6539;hosts&#x6587;&#x4EF6;</a></li>
+<li><a href="#choose-server">Choose server</a></li>
+<li><a href="#su-&#x547D;&#x4EE4;&#x5931;&#x8D25;">su &#x547D;&#x4EE4;&#x5931;&#x8D25;</a></li>
+<li><a href="#&#x73AF;&#x5883;&#x53D8;&#x91CF;">&#x73AF;&#x5883;&#x53D8;&#x91CF;</a></li>
+<li><a href="#&#x66F4;&#x65B0;">&#x66F4;&#x65B0;</a></li>
+<li><a href="#&#x5B89;&#x88C5;">&#x5B89;&#x88C5;</a></li>
+<li><a href="#&#x66F4;&#x6539;&#x8BA1;&#x7B97;&#x673A;&#x540D;">&#x66F4;&#x6539;&#x8BA1;&#x7B97;&#x673A;&#x540D;</a></li>
+<li><a href="#&#x7F51;&#x7EDC;&#x8FDC;&#x7A0B;&#x767B;&#x9646;&#x5DE5;&#x5177;">&#x7F51;&#x7EDC;&#x8FDC;&#x7A0B;&#x767B;&#x9646;&#x5DE5;&#x5177;</a></li>
+<li><a href="#&#x67E5;&#x770B;&#x7F51;&#x901F;">&#x67E5;&#x770B;&#x7F51;&#x901F;</a></li>
+<li><a href="#&#x542F;&#x52A8;&#x5668;&#x4E0A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x56FE;&#x6807;&#x4E3A;&#x7070;&#x8272;&#x95EE;&#x53F7;">&#x542F;&#x52A8;&#x5668;&#x4E0A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x56FE;&#x6807;&#x4E3A;&#x7070;&#x8272;&#x95EE;&#x53F7;&#xFF1F;</a></li>
+<li><a href="#&#x5904;&#x7406;&#x5305;&#x51B2;&#x7A81;&#x95EE;&#x9898;&#x6280;&#x5DE7;">&#x5904;&#x7406;&#x5305;&#x51B2;&#x7A81;&#x95EE;&#x9898;&#x6280;&#x5DE7;</a></li>
+<li><a href="#getting-help">Getting help</a></li>
+<li><a href="#umet-dependencies&#x8F6F;&#x4EF6;&#x5B89;&#x88C5;&#x5305;&#x51B2;&#x7A81;&#x65F6;&#x7684;&#x89E3;&#x51B3;&#x601D;&#x8DEF;">Umet dependencies&#x2014;&#x2014;&#x8F6F;&#x4EF6;&#x5B89;&#x88C5;&#x5305;&#x51B2;&#x7A81;&#x65F6;&#x7684;&#x89E3;&#x51B3;&#x601D;&#x8DEF;</a></li>
+<li><a href="#&#x5173;&#x4E8E;ppaspersonal-package-archive">&#x5173;&#x4E8E;PPAs(Personal Package Archive)</a><ul>
+<li><a href="#disable">Disable</a></li>
+<li><a href="#purge">Purge</a></li>
+<li><a href="#remove">Remove:</a></li>
+<li><a href="#preventive-measures">Preventive Measures</a></li>
+</ul>
+</li>
+<li><a href="#&#x53CC;&#x786C;&#x76D8;&#x540C;&#x5F15;&#x5BFC;&#x53CC;&#x7CFB;&#x7EDF;">&#x53CC;&#x786C;&#x76D8;&#x540C;&#x5F15;&#x5BFC;&#x53CC;&#x7CFB;&#x7EDF;</a></li>
+<li><a href="#&#x91CD;&#x65B0;&#x5206;&#x533A;&#x7684;&#x95EE;&#x9898;">&#x91CD;&#x65B0;&#x5206;&#x533A;&#x7684;&#x95EE;&#x9898;</a></li>
+<li><a href="#&#x88C5;&#x7CFB;&#x7EDF;&#x5B9E;&#x8DF5;">&#x88C5;&#x7CFB;&#x7EDF;&#x5B9E;&#x8DF5;</a></li>
+<li><a href="#&#x7F3A;&#x5C11;&#x5E93;&#x6587;&#x4EF6;">&#x7F3A;&#x5C11;&#x5E93;&#x6587;&#x4EF6;</a></li>
+</ul>
 </li>
 </ul>
+<!-- tocstop -->
+<h2 id="&#x8BB0;&#x5F55;"><a href="#&#x8BB0;&#x5F55;" class="headerlink" title="&#x8BB0;&#x5F55;"></a>&#x8BB0;&#x5F55;</h2><h3 id="&#x5728;live-cd-&#x4E0B;&#x4E3A;&#x67D0;&#x78C1;&#x76D8;&#x5B89;&#x88C5;grub"><a href="#&#x5728;live-cd-&#x4E0B;&#x4E3A;&#x67D0;&#x78C1;&#x76D8;&#x5B89;&#x88C5;grub" class="headerlink" title="&#x5728;live cd &#x4E0B;&#x4E3A;&#x67D0;&#x78C1;&#x76D8;&#x5B89;&#x88C5;grub"></a>&#x5728;live cd &#x4E0B;&#x4E3A;&#x67D0;&#x78C1;&#x76D8;&#x5B89;&#x88C5;grub</h3><ul>
+<li>&#x4ECE;live cd &#x8FDB;&#x5165;ubuntu</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br><span class="line">fdisk -l</span><br><span class="line">mount /dev/sdc1</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>&#x8FD9;&#x662F;&#x67D0;&#x78C1;&#x76D8;ubuntu &#x542F;&#x52A8;&#x5206;&#x533A;</p>
 </blockquote>
@@ -59,7 +292,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo update-grub</span><br></pre></td></tr></table></figure>
 <h3 id="&#x4FEE;&#x6539;hosts&#x6587;&#x4EF6;"><a href="#&#x4FEE;&#x6539;hosts&#x6587;&#x4EF6;" class="headerlink" title="&#x4FEE;&#x6539;hosts&#x6587;&#x4EF6;"></a>&#x4FEE;&#x6539;hosts&#x6587;&#x4EF6;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/hosts</span><br><span class="line">sudo rcnscd restart</span><br><span class="line">sudo apt-get install nscd</span><br><span class="line">sudo /etc/init.d/nscd restart</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>127.0.1.1    zsUbuntu</p>
+<p>127.0.1.1 zsUbuntu</p>
 </blockquote>
 <h3 id="choose-server"><a href="#Choose-server" class="headerlink" title="Choose server"></a>Choose server</h3><ul>
 <li>Choose the ubuntu server sjtu.edu.cn</li>
@@ -113,10 +346,10 @@
 </blockquote>
 <h3 id="&#x542F;&#x52A8;&#x5668;&#x4E0A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x56FE;&#x6807;&#x4E3A;&#x7070;&#x8272;&#x95EE;&#x53F7;"><a href="#&#x542F;&#x52A8;&#x5668;&#x4E0A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x56FE;&#x6807;&#x4E3A;&#x7070;&#x8272;&#x95EE;&#x53F7;&#xFF1F;" class="headerlink" title="&#x542F;&#x52A8;&#x5668;&#x4E0A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x56FE;&#x6807;&#x4E3A;&#x7070;&#x8272;&#x95EE;&#x53F7;&#xFF1F;"></a>&#x542F;&#x52A8;&#x5668;&#x4E0A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x56FE;&#x6807;&#x4E3A;&#x7070;&#x8272;&#x95EE;&#x53F7;&#xFF1F;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd &#xFF5E;/.local/share/applications/</span><br><span class="line">gedit ${&#x67D0;&#x4E00;&#x4E2A;&#x684C;&#x9762;&#x5FEB;&#x6377;&#x65B9;&#x5F0F;&#x6587;&#x4EF6;}</span><br><span class="line">${ICON}&#x53D8;&#x91CF;&#x8FDB;&#x884C;&#x8BBE;&#x7F6E;</span><br></pre></td></tr></table></figure>
 <h3 id="&#x5904;&#x7406;&#x5305;&#x51B2;&#x7A81;&#x95EE;&#x9898;&#x6280;&#x5DE7;"><a href="#&#x5904;&#x7406;&#x5305;&#x51B2;&#x7A81;&#x95EE;&#x9898;&#x6280;&#x5DE7;" class="headerlink" title="&#x5904;&#x7406;&#x5305;&#x51B2;&#x7A81;&#x95EE;&#x9898;&#x6280;&#x5DE7;"></a>&#x5904;&#x7406;&#x5305;&#x51B2;&#x7A81;&#x95EE;&#x9898;&#x6280;&#x5DE7;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aptitude</span><br></pre></td></tr></table></figure>
-<h4 id="getting-help"><a href="#Getting-Help" class="headerlink" title="Getting Help:"></a>Getting Help:</h4><ul>
-<li>When asking for help on Askubuntu or any other help forum, you should include the output of the following commands in your question:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install package-name</span><br></pre></td></tr></table></figure>
-</li>
+<h3 id="getting-help"><a href="#Getting-help" class="headerlink" title="Getting help"></a>Getting help</h3><ul>
+<li>When asking for help on Askubuntu or any other help forum, you should include the output of the following commands in your question:</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install package-name</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>Output of actual error.</p>
 </blockquote>
@@ -129,17 +362,22 @@
 <p>This will show the list of PPAs (If any).</p>
 </blockquote>
 <h3 id="umet-dependencies&#x8F6F;&#x4EF6;&#x5B89;&#x88C5;&#x5305;&#x51B2;&#x7A81;&#x65F6;&#x7684;&#x89E3;&#x51B3;&#x601D;&#x8DEF;"><a href="#Umet-dependencies&#x2014;&#x2014;&#x8F6F;&#x4EF6;&#x5B89;&#x88C5;&#x5305;&#x51B2;&#x7A81;&#x65F6;&#x7684;&#x89E3;&#x51B3;&#x601D;&#x8DEF;" class="headerlink" title="Umet dependencies&#x2014;&#x2014;&#x8F6F;&#x4EF6;&#x5B89;&#x88C5;&#x5305;&#x51B2;&#x7A81;&#x65F6;&#x7684;&#x89E3;&#x51B3;&#x601D;&#x8DEF;"></a>Umet dependencies&#x2014;&#x2014;&#x8F6F;&#x4EF6;&#x5B89;&#x88C5;&#x5305;&#x51B2;&#x7A81;&#x65F6;&#x7684;&#x89E3;&#x51B3;&#x601D;&#x8DEF;</h3><ul>
-<li><p>&#x5907;&#x4EFD;APT&#x6E90;&#x6570;&#x636E;&#x6587;&#x4EF6;</p>
+<li>&#x5907;&#x4EFD;APT&#x6E90;&#x6570;&#x636E;&#x6587;&#x4EF6;</li>
+</ul>
 <blockquote>
 <p>APT is a package management system for Debian and other Linux distributions based on it, such as Ubuntu. For the most part, APT is easy to use for installing, removing, and updating packages. In rare instances, often when you are mixing in third-party dependencies, there is a chance that apt-get may end up giving you an error telling you that a package installation could not be completed.<br>It is always a good idea to back up configuration files like /etc/apt/sources.list, so you can revert the changes if needed.</p>
 </blockquote>
-</li>
-<li><p>&#x7248;&#x672C;&#x53F7;&#x4E0D;&#x4E00;&#x81F4;&#xFF0C;&#x6709;&#x4E00;&#x4E2A;&#x7248;&#x672C;&#x5DF2;&#x7ECF;&#x5B89;&#x88C5;&#xFF0C;&#x4F46;&#x662F;&#x4F60;&#x8981;&#x5B89;&#x88C5;&#x53E6;&#x4E00;&#x4E2A;&#x7248;&#x672C;</p>
-<blockquote>
-<p>If the error shows something like this:<br><some-package>: Depends: <other-package> (= version) but this-version is to be installed<br>Then make sure that the restricted and universe repositories are enabled. Hit Alt+F2, type software-properties-gtk and hit Enter.<br>Under Ubuntu Software tab, enable all the repositories.</other-package></some-package></p>
-</blockquote>
-</li>
+<ul>
+<li>&#x7248;&#x672C;&#x53F7;&#x4E0D;&#x4E00;&#x81F4;&#xFF0C;&#x6709;&#x4E00;&#x4E2A;&#x7248;&#x672C;&#x5DF2;&#x7ECF;&#x5B89;&#x88C5;&#xFF0C;&#x4F46;&#x662F;&#x4F60;&#x8981;&#x5B89;&#x88C5;&#x53E6;&#x4E00;&#x4E2A;&#x7248;&#x672C;</li>
 </ul>
+<blockquote>
+<p>If the error shows something like this:</p>
+</blockquote>
+<p><some-package>: Depends: <other-package> (= version) but this-version is to be installed</other-package></some-package></p>
+<p>Then make sure that the restricted and universe repositories are enabled. Hit Alt+F2, type software-properties-gtk and hit Enter.</p>
+<blockquote>
+<p>Under Ubuntu Software tab, enable all the repositories.</p>
+</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get clean</span><br><span class="line">sudo apt-get autoclean</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>One possible cause of unmet dependencies could be corrupted package database, and/or some packages weren&#x2019;t installed properly. To fix this problem, hit Alt+Ctrl+T to open terminal and try to run one of the following commands:<br>apt-get clean clears out the local repository of retrieved package files (the .deb files). It removes everything but the lock file from /var/cache/apt/archives/ and /var/cache/apt/archives/partial/. apt-get autoclean clears out the local repository of retrieved package files, but unlike apt-get clean, it only removes package files that can no longer be downloaded, and are largely useless.</p>
@@ -177,52 +415,56 @@
 </ul>
 <h3 id="&#x5173;&#x4E8E;ppaspersonal-package-archive"><a href="#&#x5173;&#x4E8E;PPAs-Personal-Package-Archive" class="headerlink" title="&#x5173;&#x4E8E;PPAs(Personal Package Archive)"></a>&#x5173;&#x4E8E;PPAs(Personal Package Archive)</h3><ul>
 <li>PPAs (Personal Package Archive) are repositories hosted on Launchpad. You can use PPAs to install or upgrade packages that are not available in the official Ubuntu repositories.</li>
-<li><p>One of the most common causes of unmet dependencies are PPAs, specially when used to upgrade the existing package in Ubuntu repositories. To solve the problem you have three options, disable, purge (revert back to original package in Ubuntu repositories) or remove PPA.</p>
-<h4 id="disable"><a href="#Disable" class="headerlink" title="Disable:"></a>Disable:</h4></li>
-<li><p>Disabling a PPA means no more updates for the packages installed from that PPA. To disable a PPA: Open Software Center &gt; Edit &gt; Software Sources Or,</p>
-</li>
-<li>Hit Alt+F2 and run software-properties-gtk.<br>Click on Other Software tab, you&#x2019;ll see that each PPA have two lines here, one for the compiled packages and one for the source, Uncheck both lines to disable a PPA. Here you can also add and remove PPAs.<h4 id="purge"><a href="#Purge" class="headerlink" title="Purge:"></a>Purge:</h4></li>
+<li>One of the most common causes of unmet dependencies are PPAs, specially when used to upgrade the existing package in Ubuntu repositories. To solve the problem you have three options, disable, purge (revert back to original package in Ubuntu repositories) or remove PPA.</li>
 </ul>
-<p>Purging a PPA means, downgrading the packages in the selected PPA to the version in the official Ubuntu repositories and disabling that PPA. PPA Purge does exactly that. To install PPA Purge run the following command:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install ppa-purge</span><br></pre></td></tr></table></figure></p>
+<h4 id="disable"><a href="#Disable" class="headerlink" title="Disable"></a>Disable</h4><ul>
+<li>Disabling a PPA means no more updates for the packages installed from that PPA. To disable a PPA: Open Software Center &gt; Edit &gt; Software Sources Or,</li>
+<li>Hit Alt+F2 and run software-properties-gtk.</li>
+</ul>
+<p>Click on Other Software tab, you&#x2019;ll see that each PPA have two lines here, one for the compiled packages and one for the source, Uncheck both lines to disable a PPA. Here you can also add and remove PPAs.</p>
+<h4 id="purge"><a href="#Purge" class="headerlink" title="Purge"></a>Purge</h4><p>Purging a PPA means, downgrading the packages in the selected PPA to the version in the official Ubuntu repositories and disabling that PPA. PPA Purge does exactly that. To install PPA Purge run the following command:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install ppa-purge</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>But, Considering the question apt is broken so the above command will fail. So use this command</p>
+<li>But, Considering the question apt is broken so the above command will fail. So use this command</li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir ppa-purge &amp;&amp; cd ppa-purge &amp;&amp; wget http://mirror.pnl.gov/ubuntu/pool/universe/p/ppa-purge/ppa-purge_0.2.8+bzr56_all.deb &amp;&amp; wget http://mirror.pnl.gov/ubuntu//pool/main/a/aptitude/aptitude_0.6.6-1ubuntu1_i386.deb &amp;&amp; sudo dpkg -i ./*.deb</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>To use PPA Purge:</p>
+<ul>
+<li>To use PPA Purge:</li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ppa-purge ppa:someppa/ppa</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>If &#x2018;ppa-purge&#x2019; command fails for some reason, you can&#x2019;t run &#x2018;ppa-purge&#x2019; again unless you re-enable the PPA (To enable the PPA follow the same steps as disabling a PPA and Check the both lines of a particular PPA to enable it).<br>Note: PPA Purge doesn&#x2019;t remove PPAs (may be in future), So you&#x2019;ll have to manually remove the PPA.</p>
-</li>
+<ul>
+<li>If &#x2018;ppa-purge&#x2019; command fails for some reason, you can&#x2019;t run &#x2018;ppa-purge&#x2019; again unless you re-enable the PPA (To enable the PPA follow the same steps as disabling a PPA and Check the both lines of a particular PPA to enable it).</li>
 </ul>
+<p>Note: PPA Purge doesn&#x2019;t remove PPAs (may be in future), So you&#x2019;ll have to manually remove the PPA.</p>
 <h4 id="remove"><a href="#Remove" class="headerlink" title="Remove:"></a>Remove:</h4><ul>
-<li><p>If the package installed from a PPA doesn&#x2019;t exist in official Ubuntu repositories then using PPA Purge is not recommended, because there&#x2019;s nothing to be downgraded and PPA Purge wouldn&#x2019;t delete it either. To remove a PPA and installed packages run the following commands: (Ignore the first command if you don&#x2019;t want to remove the installed packages)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get autoremove --purge package-name</span><br><span class="line">sudo add-apt-repository --remove ppa:someppa/ppa</span><br><span class="line">sudo apt-get autoclean</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Alternatively you can use Y PPA Manager to disable/remove/purge PPA&#x2019;s (Details at the end of answer).</p>
-</li>
+<li>If the package installed from a PPA doesn&#x2019;t exist in official Ubuntu repositories then using PPA Purge is not recommended, because there&#x2019;s nothing to be downgraded and PPA Purge wouldn&#x2019;t delete it either. To remove a PPA and installed packages run the following commands: (Ignore the first command if you don&#x2019;t want to remove the installed packages)</li>
 </ul>
-<h4 id="preventive-measures"><a href="#Preventive-Measures" class="headerlink" title="Preventive Measures:"></a>Preventive Measures:</h4><ul>
-<li>So how can we avoid this from happening in the first place?<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get autoremove --purge package-name</span><br><span class="line">sudo add-apt-repository --remove ppa:someppa/ppa</span><br><span class="line">sudo apt-get autoclean</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Alternatively you can use Y PPA Manager to disable/remove/purge PPA&#x2019;s (Details at the end of answer).</li>
+</ul>
+<h4 id="preventive-measures"><a href="#Preventive-Measures" class="headerlink" title="Preventive Measures"></a>Preventive Measures</h4><ul>
+<li>So how can we avoid this from happening in the first place?</li>
+</ul>
+<blockquote>
 <p>Keep Ubuntu Up to date. Ubuntu automatically notifies when updates are available, you can also check for available updates by clicking on Session Indicator in Unity panel:<br>Or, Hit Alt+Ctrl+T to open terminal and run following commands:</p>
 </blockquote>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update </span><br><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>Update: Synchronizes your list of available packages with the servers in source repositories. Upgrade: Downloads &amp; installs any newer versions of your installed packages.</p>
 </blockquote>
 <ul>
-<li><p>&#x5E38;&#x66F4;&#x65B0;&#xFF01;</p>
+<li>&#x5E38;&#x66F4;&#x65B0;&#xFF01;</li>
+</ul>
 <blockquote>
 <p>If you decide to add other repositories to sources.list, make sure that the repository is meant to work (and known to work) with Ubuntu. Repositories that are not designed to work with your version of Ubuntu can introduce inconsistencies in your system and might force you to re-install. Also, make sure that you really need to add external repositories as the software package(s) you are looking for may already have been introduced into the official repositories! </p>
 </blockquote>
-</li>
-<li><p>&#x6DFB;&#x52A0;&#x6E90;&#x65F6;&#x5E94;&#x8C28;&#x614E;&#xFF0C;&#x4E00;&#x5B9A;&#x8981;&#x6DFB;&#x52A0;&#x4E48;&#xFF1F;&#x8FD9;&#x4E2A;&#x8F6F;&#x4EF6;&#x9002;&#x5408;&#x5F53;&#x524D;Ubuntu&#x7248;&#x672C;&#x4E48;&#xFF1F;&#x8FD9;&#x4E2A;&#x5916;&#x90E8;&#x6E90;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x4E8E;&#x5B98;&#x65B9;&#x6E90;&#x4E2D;&#x4E86;&#x5462;&#xFF1F;</p>
+<ul>
+<li>&#x6DFB;&#x52A0;&#x6E90;&#x65F6;&#x5E94;&#x8C28;&#x614E;&#xFF0C;&#x4E00;&#x5B9A;&#x8981;&#x6DFB;&#x52A0;&#x4E48;&#xFF1F;&#x8FD9;&#x4E2A;&#x8F6F;&#x4EF6;&#x9002;&#x5408;&#x5F53;&#x524D;Ubuntu&#x7248;&#x672C;&#x4E48;&#xFF1F;&#x8FD9;&#x4E2A;&#x5916;&#x90E8;&#x6E90;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x4E8E;&#x5B98;&#x65B9;&#x6E90;&#x4E2D;&#x4E86;&#x5462;&#xFF1F;</li>
+</ul>
 <blockquote>
 <p>Remove duplicate PPAs. Y PPA Manager (installation guide at the end of answer) can easily scan and remove duplicate PPAs.<br>Hit Alt+F2 and run y-ppa-manager to open Y PPA Manager.Once open, double click or hit Enter on Advanced.In resulting window select Scan and remove duplicate PPAs and click OK.</p>
 </blockquote>
-</li>
-</ul>
 <h3 id="&#x53CC;&#x786C;&#x76D8;&#x540C;&#x5F15;&#x5BFC;&#x53CC;&#x7CFB;&#x7EDF;"><a href="#&#x53CC;&#x786C;&#x76D8;&#x540C;&#x5F15;&#x5BFC;&#x53CC;&#x7CFB;&#x7EDF;" class="headerlink" title="&#x53CC;&#x786C;&#x76D8;&#x540C;&#x5F15;&#x5BFC;&#x53CC;&#x7CFB;&#x7EDF;"></a>&#x53CC;&#x786C;&#x76D8;&#x540C;&#x5F15;&#x5BFC;&#x53CC;&#x7CFB;&#x7EDF;</h3><ul>
 <li>&#x5148;&#x8BA4;&#x771F;&#x628A;&#x300A;&#x9E1F;&#x53D4;&#x300B;&#x770B;&#x61C2;&#xFF01;</li>
 <li>&#x57FA;&#x672C;&#x6761;&#x4EF6;&#xFF0C;SSD&#xFF08;sd0&#xFF09;&#x88C5;windows&#xFF0C;&#x540C;&#x65F6;HDD&#xFF08;sd1&#xFF09;&#x4F5C;&#x4E3A;&#x6570;&#x636E;&#x76D8;&#xFF1B;&#x8BA1;&#x5212;&#x628A;Ubuntu&#x5B89;&#x88C5;&#x5728;HDD&#x7684;&#x4E00;&#x4E2A;&#x5206;&#x533A;&#x4E2D;&#xFF0C;&#x5206;/swap&#xFF0C;/boot&#xFF0C;/&#xFF0C;/home &#x56DB;&#x4E2A;&#x5206;&#x533A;&#xFF1B;&#x4F46;&#x662F;&#x7B2C;&#x4E00;&#x6B21;&#x5B89;&#x88C5;&#xFF0C;&#x5EFA;&#x8BAE;&#x5C31;&#x5728;HDD&#x4E2D;&#x7684;F&#x76D8;&#xFF0C;&#x4E3B;&#x5206;&#x533A;&#x4E2D;&#x5B89;&#x88C5;&#x5427;&#xFF0C;F&#x76D8;&#x662F;HDD&#x7684;&#x4E00;&#x4E2A;&#x5206;&#x533A;</li>
@@ -283,20 +525,50 @@
     
       <category term="其他" scheme="https://ZhenshengLee.github.io/tags/%E5%85%B6%E4%BB%96/"/>
     
+      <category term="Ubuntu" scheme="https://ZhenshengLee.github.io/tags/Ubuntu/"/>
+    
   </entry>
   
   <entry>
-    <title>【建站】开开心心建网站</title>
-    <link href="https://ZhenshengLee.github.io/2016/12/15/160619%E5%BC%80%E5%BC%80%E5%BF%83%E5%BF%83%E5%BB%BA%E7%BD%91%E7%AB%99/"/>
-    <id>https://ZhenshengLee.github.io/2016/12/15/160619开开心心建网站/</id>
-    <published>2016-12-14T16:41:56.109Z</published>
-    <updated>2016-07-16T03:52:54.000Z</updated>
+    <title>开开心心建网站</title>
+    <link href="https://ZhenshengLee.github.io/2017/01/02/160619-%E5%BC%80%E5%BC%80%E5%BF%83%E5%BF%83%E5%BB%BA%E7%BD%91%E7%AB%99/"/>
+    <id>https://ZhenshengLee.github.io/2017/01/02/160619-开开心心建网站/</id>
+    <published>2017-01-02T15:40:28.085Z</published>
+    <updated>2017-01-02T15:40:28.085Z</updated>
     
     <content type="html"><![CDATA[<h2 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h2><ul>
 <li>&#x672C;&#x6765;&#x51C6;&#x5907;&#x5728;CSDN&#x4E0A;&#x5EFA;&#x4E2A;&#x535A;&#x5BA2;&#xFF0C;&#x540E;&#x6765;&#x4E3A;&#x4E86;&#x80FD;&#x591F;&#x66F4;&#x52A0;&#x81EA;&#x52A8;&#x5316;&#xFF0C;&#x8FD8;&#x662F;&#x5728;GitHub Pages &#x4E0A;&#x5F04;&#x4E00;&#x4E2A;</li>
 </ul>
 <a id="more"></a>
-<p>[TOC]</p>
+<h2 id="&#x76EE;&#x5F55;"><a href="#&#x76EE;&#x5F55;" class="headerlink" title="&#x76EE;&#x5F55;"></a>&#x76EE;&#x5F55;</h2><!-- toc -->
+<ul>
+<li><a href="#&#x6B65;&#x9AA4;">&#x6B65;&#x9AA4;</a><ul>
+<li><a href="#&#x51C6;&#x5907;">&#x51C6;&#x5907;</a></li>
+<li><a href="#&#x672C;&#x5730;&#x5EFA;&#x7AD9;">&#x672C;&#x5730;&#x5EFA;&#x7AD9;</a></li>
+<li><a href="#&#x7B2C;&#x4E00;&#x4E2A;&#x9875;&#x9762;">&#x7B2C;&#x4E00;&#x4E2A;&#x9875;&#x9762;</a></li>
+<li><a href="#&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x5E76;&#x9884;&#x89C8;">&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x5E76;&#x9884;&#x89C8;</a></li>
+<li><a href="#&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x4E3B;&#x9898;">&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x4E3B;&#x9898;</a></li>
+<li><a href="#&#x4E3B;&#x9898;&#x914D;&#x7F6E;">&#x4E3B;&#x9898;&#x914D;&#x7F6E;</a></li>
+<li><a href="#deploy-&#x6CA1;&#x53CD;&#x5E94;">deploy &#x6CA1;&#x53CD;&#x5E94;</a></li>
+</ul>
+</li>
+<li><a href="#hexo&#x914D;&#x7F6E;">Hexo&#x914D;&#x7F6E;</a><ul>
+<li><a href="#&#x9996;&#x9875;&#x663E;&#x793A;&#x6458;&#x8981;">&#x9996;&#x9875;&#x663E;&#x793A;&#x6458;&#x8981;</a></li>
+<li><a href="#&#x5173;&#x4E8E;&#x4F4D;&#x7F6E;&#x663E;&#x793A;&#xFC;ber">&#x5173;&#x4E8E;&#x4F4D;&#x7F6E;&#x663E;&#x793A;&#x201D;&#xDC;ber&#x201D;</a></li>
+<li><a href="#&#x591A;&#x8BF4;&#x8BC4;&#x8BBA;">&#x591A;&#x8BF4;&#x8BC4;&#x8BBA;</a></li>
+<li><a href="#&#x6CE8;&#x518C;google_analytics">&#x6CE8;&#x518C;google_analytics</a></li>
+<li><a href="#&#x6DFB;&#x52A0;rss">&#x6DFB;&#x52A0;RSS</a></li>
+<li><a href="#&#x6DFB;&#x52A0;sitemap">&#x6DFB;&#x52A0;sitemap</a></li>
+</ul>
+</li>
+<li><a href="#yilia&#x4E3B;&#x9898;&#x914D;&#x7F6E;">Yilia&#x4E3B;&#x9898;&#x914D;&#x7F6E;</a></li>
+<li><a href="#&#x5176;&#x4ED6;&#x8BBE;&#x7F6E;">&#x5176;&#x4ED6;&#x8BBE;&#x7F6E;</a><ul>
+<li><a href="#vscode">vscode</a></li>
+</ul>
+</li>
+<li><a href="#&#x81F4;&#x8C22;">&#x81F4;&#x8C22;</a></li>
+</ul>
+<!-- tocstop -->
 <h2 id="&#x6B65;&#x9AA4;"><a href="#&#x6B65;&#x9AA4;" class="headerlink" title="&#x6B65;&#x9AA4;"></a>&#x6B65;&#x9AA4;</h2><h3 id="&#x51C6;&#x5907;"><a href="#&#x51C6;&#x5907;" class="headerlink" title="&#x51C6;&#x5907;"></a>&#x51C6;&#x5907;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh</span><br><span class="line"></span><br><span class="line">nvm install node</span><br><span class="line"></span><br><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 <ul>
 <li>&#x5EFA;&#x7ACB;github.io&#x9879;&#x76EE;</li>
@@ -369,19 +641,31 @@
     
       <category term="其他" scheme="https://ZhenshengLee.github.io/tags/%E5%85%B6%E4%BB%96/"/>
     
+      <category term="建站" scheme="https://ZhenshengLee.github.io/tags/%E5%BB%BA%E7%AB%99/"/>
+    
   </entry>
   
   <entry>
-    <title>161107-thunderbird配置</title>
+    <title>thunderbird配置</title>
     <link href="https://ZhenshengLee.github.io/2016/11/07/161107-thunderbird%E9%85%8D%E7%BD%AE/"/>
     <id>https://ZhenshengLee.github.io/2016/11/07/161107-thunderbird配置/</id>
     <published>2016-11-07T12:26:57.000Z</published>
-    <updated>2016-11-07T12:31:49.000Z</updated>
+    <updated>2017-01-02T15:45:11.687Z</updated>
     
     <content type="html"><![CDATA[<h1 id="&#x90AE;&#x7BB1;&#x8F6F;&#x4EF6;&#x589E;&#x5F3A;"><a href="#&#x90AE;&#x7BB1;&#x8F6F;&#x4EF6;&#x589E;&#x5F3A;" class="headerlink" title="&#x90AE;&#x7BB1;&#x8F6F;&#x4EF6;&#x589E;&#x5F3A;"></a>&#x90AE;&#x7BB1;&#x8F6F;&#x4EF6;&#x589E;&#x5F3A;</h1><h2 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h2><ul>
 <li>&#x5C5E;&#x4E8E;&#x65E5;&#x5E38;&#x7EF4;&#x62A4;&#x7CFB;&#x5217;</li>
 </ul>
 <a id="more"></a>
+<h2 id="&#x76EE;&#x5F55;"><a href="#&#x76EE;&#x5F55;" class="headerlink" title="&#x76EE;&#x5F55;"></a>&#x76EE;&#x5F55;</h2><!-- toc -->
+<ul>
+<li><a href="#&#x53C2;&#x8003;">&#x53C2;&#x8003;</a><ul>
+<li><a href="#&#x8FB9;&#x680F;&#x5B57;&#x4F53;">&#x8FB9;&#x680F;&#x5B57;&#x4F53;</a></li>
+<li><a href="#&#x63D2;&#x4EF6;">&#x63D2;&#x4EF6;</a></li>
+<li><a href="#&#x65B0;&#x5EFA;&#x8C37;&#x6B4C;&#x65E5;&#x5386;">&#x65B0;&#x5EFA;&#x8C37;&#x6B4C;&#x65E5;&#x5386;</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
 <h2 id="&#x53C2;&#x8003;"><a href="#&#x53C2;&#x8003;" class="headerlink" title="&#x53C2;&#x8003;"></a>&#x53C2;&#x8003;</h2><blockquote>
 <p><a href="http://libukai.me/post/_public/2014-03-01-thunderbird-preferences" target="_blank" rel="external">&#x5954;&#x6B4C;&#x7248;&#x914D;&#x7F6E;&#x6559;&#x7A0B;</a></p>
 <p><a href="http://www.linnhe2.free-online.co.uk/thunderbird/chrome.html" target="_blank" rel="external">Thunderbird chrome &#x914D;&#x7F6E;&#x6587;&#x4EF6;</a></p>
@@ -419,17 +703,26 @@
   </entry>
   
   <entry>
-    <title>【组件】ompl-open motion planning library2-omplapp</title>
+    <title>ompl-open motion planning library2-omplapp</title>
     <link href="https://ZhenshengLee.github.io/2016/10/05/161005-ompl2-%E4%BD%BF%E7%94%A8omplapp/"/>
     <id>https://ZhenshengLee.github.io/2016/10/05/161005-ompl2-使用omplapp/</id>
     <published>2016-10-05T04:18:45.000Z</published>
-    <updated>2016-10-05T04:21:33.000Z</updated>
+    <updated>2017-01-02T15:45:06.991Z</updated>
     
     <content type="html"><![CDATA[<h2 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h2><ul>
 <li>&#x4F7F;&#x7528;ompl&#x524D;&#x7AEF;&#x5DE5;&#x5177;</li>
 </ul>
-<p>[TOC]</p>
 <a id="more"></a>
+<h2 id="&#x76EE;&#x5F55;"><a href="#&#x76EE;&#x5F55;" class="headerlink" title="&#x76EE;&#x5F55;"></a>&#x76EE;&#x5F55;</h2><!-- toc -->
+<ul>
+<li><a href="#&#x53C2;&#x8003;">&#x53C2;&#x8003;</a></li>
+<li><a href="#&#x5B66;&#x4E60;&#x8BB0;&#x5F55;">&#x5B66;&#x4E60;&#x8BB0;&#x5F55;</a><ul>
+<li><a href="#&#x5B89;&#x88C5;">&#x5B89;&#x88C5;</a></li>
+<li><a href="#&#x8FD0;&#x884C;&#x5B9E;&#x4F8B;">&#x8FD0;&#x884C;&#x5B9E;&#x4F8B;</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
 <h2 id="&#x53C2;&#x8003;"><a href="#&#x53C2;&#x8003;" class="headerlink" title="&#x53C2;&#x8003;"></a>&#x53C2;&#x8003;</h2><blockquote>
 <p><a href="https://bitbucket.org/ompl/ompl/issues/232/omplapp-cmake-issue" target="_blank" rel="external">CMake issue installing omplapp</a><br><a href="https://bitbucket.org/ompl/ompl/issues/8/no-module-named-_util" target="_blank" rel="external">no moudule name _util</a><br><a href="http://ompl.kavrakilab.org/installPyPlusPlus.html" target="_blank" rel="external">installing of Py++</a><br><a href="https://bitbucket.org/ompl/ompl/issues/267/ompl-installation-fails-at-updte_bindings" target="_blank" rel="external">Python binding failed</a></p>
 </blockquote>
@@ -472,27 +765,53 @@
       &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;使用ompl前端工具&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;[TOC]&lt;/p&gt;
     
     </summary>
     
     
+      <category term="机器人" scheme="https://ZhenshengLee.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    
       <category term="机器人软件设计" scheme="https://ZhenshengLee.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="组件" scheme="https://ZhenshengLee.github.io/tags/%E7%BB%84%E4%BB%B6/"/>
+    
+      <category term="ompl" scheme="https://ZhenshengLee.github.io/tags/ompl/"/>
     
   </entry>
   
   <entry>
-    <title>【设计】CMake专题-finding libraries</title>
+    <title>CMake专题-finding libraries</title>
     <link href="https://ZhenshengLee.github.io/2016/10/05/161005-CMakeFind%E6%A8%A1%E5%9D%97/"/>
     <id>https://ZhenshengLee.github.io/2016/10/05/161005-CMakeFind模块/</id>
     <published>2016-10-05T04:15:02.000Z</published>
-    <updated>2016-10-05T04:25:55.000Z</updated>
+    <updated>2017-01-02T15:44:56.651Z</updated>
     
     <content type="html"><![CDATA[<h2 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h2><ul>
 <li>cmake &#x8FC7;&#x7A0B;&#x4E2D;&#x603B;&#x662F;&#x51FA;&#x73B0;&#x627E;&#x4E0D;&#x5230;&#x6A21;&#x5757;&#xFF0C;&#x6240;&#x4EE5;&#x5B66;&#x4E60;&#x4E00;&#x4E0B;&#xFF0C;&#x6700;&#x597D;&#x8981;&#x4F1A;&#x5199;FindXXX.cmake</li>
 </ul>
-<p>[TOC]</p>
 <a id="more"></a>
+<h2 id="&#x76EE;&#x5F55;"><a href="#&#x76EE;&#x5F55;" class="headerlink" title="&#x76EE;&#x5F55;"></a>&#x76EE;&#x5F55;</h2><!-- toc -->
+<ul>
+<li><a href="#&#x53C2;&#x8003;">&#x53C2;&#x8003;</a></li>
+<li><a href="#&#x5B66;&#x4E60;&#x8BB0;&#x5F55;">&#x5B66;&#x4E60;&#x8BB0;&#x5F55;</a><ul>
+<li><a href="#&#x57FA;&#x7840;&#x77E5;&#x8BC6;">&#x57FA;&#x7840;&#x77E5;&#x8BC6;</a></li>
+<li><a href="#find_package&#x8BE6;&#x89E3;">find_package&#x8BE6;&#x89E3;</a><ul>
+<li><a href="#&#x4F7F;&#x7528;&#x5916;&#x90E8;&#x5E93;">&#x4F7F;&#x7528;&#x5916;&#x90E8;&#x5E93;</a></li>
+<li><a href="#&#x5982;&#x679C;&#x5728;&#x7F51;&#x4E0A;&#x627E;&#x5230;&#x4E86;findxxxcmake&#x6587;&#x4EF6;">&#x5982;&#x679C;&#x5728;&#x7F51;&#x4E0A;&#x627E;&#x5230;&#x4E86;FindXXX.cmake&#x6587;&#x4EF6;</a></li>
+<li><a href="#&#x5E26;&#x6709;&#x7EC4;&#x4EF6;&#x7684;&#x5E93;">&#x5E26;&#x6709;&#x7EC4;&#x4EF6;&#x7684;&#x5E93;</a></li>
+<li><a href="#find_package&#x5DE5;&#x4F5C;&#x673A;&#x5236;">find_package&#x5DE5;&#x4F5C;&#x673A;&#x5236;</a></li>
+<li><a href="#pkg-config">pkg-config</a></li>
+</ul>
+</li>
+<li><a href="#&#x81EA;&#x5DF1;&#x5199;findxxxcmake">&#x81EA;&#x5DF1;&#x5199;findxxx.cmake</a><ul>
+<li><a href="#&#x4F20;&#x7EDF;&#x65B9;&#x6CD5;">&#x4F20;&#x7EDF;&#x65B9;&#x6CD5;</a></li>
+<li><a href="#&#x501F;&#x52A9;libfindmacros&#x5B8F;">&#x501F;&#x52A9;LibFindMacros&#x5B8F;</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
 <h2 id="&#x53C2;&#x8003;"><a href="#&#x53C2;&#x8003;" class="headerlink" title="&#x53C2;&#x8003;"></a>&#x53C2;&#x8003;</h2><blockquote>
 <p><a href="https://cmake.org/Wiki/CMake:How_To_Find_Libraries" target="_blank" rel="external">cmake wiki: how to find libraries</a><br><a href="https://cmake.org/Wiki/CMake/Tutorials/How_to_create_a_ProjectConfig.cmake_file" target="_blank" rel="external">How_to_create_a_ProjectConfig.cmake_file</a><br><a href="https://cmake.org/cmake/help/v2.8.8/cmake.html#command:find_package" target="_blank" rel="external">cmake documentation: home page</a><br><a href="https://github.com/rpavlik/cmake-modules/blob/master/module-docs/Example-FindMyPackage.cmake" target="_blank" rel="external">Find package example</a><br>Martin K, Hoffman B. Mastering CMake[M]. Kitware, 2015.</p>
 </blockquote>
@@ -603,28 +922,49 @@
       &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;cmake 过程中总是出现找不到模块，所以学习一下，最好要会写FindXXX.cmake&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;[TOC]&lt;/p&gt;
     
     </summary>
     
     
       <category term="机器人软件构造" scheme="https://ZhenshengLee.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%BD%AF%E4%BB%B6%E6%9E%84%E9%80%A0/"/>
     
+      <category term="机器人" scheme="https://ZhenshengLee.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    
   </entry>
   
   <entry>
-    <title>【深度学习】Caffe-opencl-1构建</title>
+    <title>Caffe-opencl-1构建</title>
     <link href="https://ZhenshengLee.github.io/2016/10/02/161002-Caffe-opencl-1%E6%9E%84%E5%BB%BA/"/>
     <id>https://ZhenshengLee.github.io/2016/10/02/161002-Caffe-opencl-1构建/</id>
     <published>2016-10-02T11:34:41.000Z</published>
-    <updated>2016-10-03T08:08:45.000Z</updated>
+    <updated>2017-01-02T15:44:41.268Z</updated>
     
     <content type="html"><![CDATA[<h2 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h2><ul>
 <li>&#x81EA;&#x5DF1;&#x8111;&#x6B8B;&#xFF0C;&#x5F53;&#x5E74;&#x4E70;&#x4E86;&#x4E2A;A&#x5361;&#xFF0C;&#x6709;&#x70B9;&#x5174;&#x8DA3;&#xFF0C;&#x6784;&#x5EFA;&#x4E86;&#x4E00;&#x4E0B;Caffe-opencl</li>
 <li>&#x91CD;&#x8981;&#x7ECF;&#x9A8C;&#xFF1A;&#x91CD;&#x65B0;&#x6784;&#x5EFA;&#x4E00;&#x5B9A;&#x8981;make clean</li>
 </ul>
-<p>[TOC]</p>
 <a id="more"></a>
+<h2 id="&#x76EE;&#x5F55;"><a href="#&#x76EE;&#x5F55;" class="headerlink" title="&#x76EE;&#x5F55;"></a>&#x76EE;&#x5F55;</h2><!-- toc -->
+<ul>
+<li><a href="#&#x53C2;&#x8003;">&#x53C2;&#x8003;</a></li>
+<li><a href="#&#x8BB0;&#x5F55;">&#x8BB0;&#x5F55;</a><ul>
+<li><a href="#&#x5B89;&#x88C5;&#x79C1;&#x6709;&#x663E;&#x5361;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;">&#x5B89;&#x88C5;&#x79C1;&#x6709;&#x663E;&#x5361;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;</a></li>
+<li><a href="#&#x5B89;&#x88C5;&#x663E;&#x5361;appsdk">&#x5B89;&#x88C5;&#x663E;&#x5361;APPSDK</a></li>
+<li><a href="#&#x5B89;&#x88C5;cuda">&#x5B89;&#x88C5;CUDA</a></li>
+<li><a href="#&#x5B89;&#x88C5;boost">&#x5B89;&#x88C5;boost</a></li>
+<li><a href="#&#x5B89;&#x88C5;googletest">&#x5B89;&#x88C5;googletest</a></li>
+<li><a href="#&#x4F7F;&#x7528;acml&#x6570;&#x5B66;&#x5E93;amd-concurrent-mathmatical-library">&#x4F7F;&#x7528;ACML&#x6570;&#x5B66;&#x5E93;(AMD Concurrent Mathmatical Library)</a><ul>
+<li><a href="#&#x5148;&#x5B89;&#x88C5;gfortran">&#x5148;&#x5B89;&#x88C5;gfortran</a></li>
+<li><a href="#&#x5B89;&#x88C5;acml">&#x5B89;&#x88C5;ACML</a></li>
+</ul>
+</li>
+<li><a href="#&#x5B89;&#x88C5;ciblasa-software-library-containing-blas-functions-written-in-opencl">&#x5B89;&#x88C5;cIBLAS(a software library containing BLAS functions written in OpenCL)</a></li>
+<li><a href="#&#x5B89;&#x88C5;caffe-opencl">&#x5B89;&#x88C5;Caffe-opencl</a></li>
+</ul>
+</li>
+<li><a href="#mnist&#x5B9E;&#x4F8B;">mnist&#x5B9E;&#x4F8B;</a></li>
+</ul>
+<!-- tocstop -->
 <h2 id="&#x53C2;&#x8003;"><a href="#&#x53C2;&#x8003;" class="headerlink" title="&#x53C2;&#x8003;"></a>&#x53C2;&#x8003;</h2><blockquote>
 <p><a href="https://github.com/BVLC/caffe/issues/4167" target="_blank" rel="external">Problem with greentea</a><br><a href="https://github.com/BVLC/caffe/tree/opencl" target="_blank" rel="external">Github-caffe-opencl</a><br><a href="https://github.com/BVLC/caffe/issues/4157" target="_blank" rel="external">TestSharedWeightsUpdate Test Failed</a></p>
 </blockquote>
@@ -782,27 +1122,50 @@
 &lt;li&gt;自己脑残，当年买了个A卡，有点兴趣，构建了一下Caffe-opencl&lt;/li&gt;
 &lt;li&gt;重要经验：重新构建一定要make clean&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;[TOC]&lt;/p&gt;
     
     </summary>
     
     
+      <category term="机器人" scheme="https://ZhenshengLee.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    
       <category term="机器人软件设计" scheme="https://ZhenshengLee.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="深度学习" scheme="https://ZhenshengLee.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="caffe" scheme="https://ZhenshengLee.github.io/tags/caffe/"/>
     
   </entry>
   
   <entry>
-    <title>【库】Cpp常用库集合</title>
+    <title>Cpp常用库集合</title>
     <link href="https://ZhenshengLee.github.io/2016/10/02/161002-Cpp%E5%B8%B8%E7%94%A8%E5%BA%93%E9%9B%86%E5%90%88/"/>
     <id>https://ZhenshengLee.github.io/2016/10/02/161002-Cpp常用库集合/</id>
     <published>2016-10-02T03:35:06.000Z</published>
-    <updated>2016-10-02T03:37:16.000Z</updated>
+    <updated>2017-01-02T15:44:49.868Z</updated>
     
-    <content type="html"><![CDATA[<p>[TOC]</p>
-<h2 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h2><ul>
+    <content type="html"><![CDATA[<h2 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h2><ul>
 <li>&#x6CA1;&#x4E8B;&#x513F;&#x5230;&#x7F51;&#x4E0A;&#x77E5;&#x4E4E;&#x4E86;&#x4E00;&#x4E0B;&#xFF0C;&#x6709;&#x65F6;&#x95F4;&#x5C31;&#x79EF;&#x7D2F;&#xFF0C;&#x5B66;&#x4E60;&#x5427;</li>
 </ul>
 <a id="more"></a>
+<h2 id="&#x76EE;&#x5F55;"><a href="#&#x76EE;&#x5F55;" class="headerlink" title="&#x76EE;&#x5F55;"></a>&#x76EE;&#x5F55;</h2><!-- toc -->
+<ul>
+<li><a href="#&#x6E05;&#x5355;">&#x6E05;&#x5355;</a><ul>
+<li><a href="#&#x6807;&#x51C6;&#x5E93;">&#x6807;&#x51C6;&#x5E93;</a></li>
+<li><a href="#&#x754C;&#x9762;">&#x754C;&#x9762;</a></li>
+<li><a href="#&#x6570;&#x636E;&#x5E93;">&#x6570;&#x636E;&#x5E93;</a></li>
+<li><a href="#&#x5F02;&#x6B65;&#x7F51;&#x7EDC;">&#x5F02;&#x6B65;/&#x7F51;&#x7EDC;</a></li>
+<li><a href="#&#x5E76;&#x53D1;&#x591A;&#x7EBF;&#x7A0B;">&#x5E76;&#x53D1;&#x591A;&#x7EBF;&#x7A0B;</a></li>
+<li><a href="#&#x6570;&#x5B66;">&#x6570;&#x5B66;</a></li>
+<li><a href="#&#x52A8;&#x529B;&#x5B66;&#x4EFF;&#x771F;">&#x52A8;&#x529B;&#x5B66;&#x4EFF;&#x771F;</a></li>
+<li><a href="#&#x673A;&#x5668;&#x4EBA;">&#x673A;&#x5668;&#x4EBA;</a></li>
+<li><a href="#&#x673A;&#x5668;&#x5B66;&#x4E60;">&#x673A;&#x5668;&#x5B66;&#x4E60;</a></li>
+<li><a href="#&#x8BA1;&#x7B97;&#x673A;&#x56FE;&#x5F62;">&#x8BA1;&#x7B97;&#x673A;&#x56FE;&#x5F62;</a></li>
+<li><a href="#&#x65E5;&#x5FD7;&#x5E93;">&#x65E5;&#x5FD7;&#x5E93;</a></li>
+<li><a href="#&#x5176;&#x4ED6;">&#x5176;&#x4ED6;</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
 <h2 id="&#x6E05;&#x5355;"><a href="#&#x6E05;&#x5355;" class="headerlink" title="&#x6E05;&#x5355;"></a>&#x6E05;&#x5355;</h2><h3 id="&#x6807;&#x51C6;&#x5E93;"><a href="#&#x6807;&#x51C6;&#x5E93;" class="headerlink" title="&#x6807;&#x51C6;&#x5E93;"></a>&#x6807;&#x51C6;&#x5E93;</h3><ul>
 <li><p>C/C++ &#x6807;&#x51C6;&#x5E93;</p>
 <ul>
@@ -980,27 +1343,29 @@
     
     <summary type="html">
     
-      &lt;p&gt;[TOC]&lt;/p&gt;
-&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;ul&gt;
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;没事儿到网上知乎了一下，有时间就积累，学习吧&lt;/li&gt;
 &lt;/ul&gt;
     
     </summary>
     
     
+      <category term="机器人" scheme="https://ZhenshengLee.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    
       <category term="机器人软件设计" scheme="https://ZhenshengLee.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="库" scheme="https://ZhenshengLee.github.io/tags/%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>草稿：机器人协作平台软件建模，设计与实现</title>
-    <link href="https://ZhenshengLee.github.io/2016/09/30/160808%E5%8D%8F%E4%BD%9C%E5%B9%B3%E5%8F%B0%E8%BD%AF%E4%BB%B6%E5%BB%BA%E6%A8%A1%E4%B8%8E%E8%AE%BE%E8%AE%A1/"/>
-    <id>https://ZhenshengLee.github.io/2016/09/30/160808协作平台软件建模与设计/</id>
+    <link href="https://ZhenshengLee.github.io/2016/09/30/160808-%E5%8D%8F%E4%BD%9C%E5%B9%B3%E5%8F%B0%E8%BD%AF%E4%BB%B6%E5%BB%BA%E6%A8%A1%E4%B8%8E%E8%AE%BE%E8%AE%A1/"/>
+    <id>https://ZhenshengLee.github.io/2016/09/30/160808-协作平台软件建模与设计/</id>
     <published>2016-09-30T01:14:50.000Z</published>
-    <updated>2016-09-30T01:23:08.000Z</updated>
+    <updated>2017-01-02T15:41:12.162Z</updated>
     
-    <content type="html"><![CDATA[<p>[TOC]</p>
-<h2 id="0-&#x6458;&#x8981;"><a href="#0-&#x6458;&#x8981;" class="headerlink" title="0 &#x6458;&#x8981;"></a>0 &#x6458;&#x8981;</h2><ul>
+    <content type="html"><![CDATA[<h2 id="0-&#x6458;&#x8981;"><a href="#0-&#x6458;&#x8981;" class="headerlink" title="0 &#x6458;&#x8981;"></a>0 &#x6458;&#x8981;</h2><ul>
 <li>&#xFF08;&#x7B2C;&#x4E00;&#x7AE0;&#xFF09;&#x63A2;&#x8BA8;&#x548C;&#x7EFC;&#x8FF0;&#x4E86;&#x673A;&#x5668;&#x4EBA;&#x7CFB;&#x7EDF;&#x8BBE;&#x8BA1;&#x4E2D;&#x7684;&#x590D;&#x7528;&#xFF0C;&#x5305;&#x62EC;&#x8BBE;&#x8BA1;&#x65B9;&#x6CD5;&#x7EA7;&#x522B;&#x590D;&#x7528;&#xFF08;&#x5404;&#x79CD;&#x8BBE;&#x8BA1;&#x65B9;&#x6CD5;&#x548C;&#x539F;&#x5219;&#xFF09;&#x548C;&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#x7EA7;&#x522B;&#x590D;&#x7528;&#xFF08;&#x4F20;&#x7EDF;&#x7684;&#x667A;&#x80FD;&#x7EC4;&#x7EC7;&#x5230;&#x57FA;&#x4E8E;&#x7EC4;&#x4EF6;&#x673A;&#x5668;&#x4EBA;&#x5DE5;&#x7A0B;&#xFF09;&#x3002;&#x4ECB;&#x7ECD;&#x57FA;&#x4E8E;&#x7EC4;&#x4EF6;&#x673A;&#x5668;&#x4EBA;&#x5DE5;&#x7A0B;&#xFF08;&#x8F6F;&#x603B;&#x7EBF;&#x6280;&#x672F;CORBA&#x548C;&#x7EC4;&#x4EF6;&#x5E93;&#x6280;&#x672F;&#xFF09;</li>
 <li>&#xFF08;&#x7B2C;&#x4E00;&#x7AE0;&#xFF09;&#x4ECB;&#x7ECD;&#x673A;&#x5668;&#x4EBA;&#x7CFB;&#x7EDF;&#x8BBE;&#x8BA1;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x6A21;&#x5757;&#xFF0C;&#x4EBA;&#x673A;&#x534F;&#x4F5C;&#x7CFB;&#x7EDF;&#x3002;</li>
 <li>&#xFF08;&#x7B2C;&#x4E8C;&#x7AE0;&#xFF09;&#x57FA;&#x7840;&#x77E5;&#x8BC6;&#x3002;</li>
@@ -1009,6 +1374,133 @@
 <li>&#xFF08;&#x7B2C;&#x516D;&#x7AE0;&#xFF09;&#x9488;&#x5BF9;&#x5F53;&#x524D;&#x8F6F;&#x4EF6;&#x7684;&#x6269;&#x5C55;&#x6027;&#xFF0C;&#x63D0;&#x51FA;&#x4E00;&#x79CD;&#x8F6F;&#x4EF6;&#x8BBE;&#x8BA1;&#x53C2;&#x8003;&#x6A21;&#x578B;&#x3002;</li>
 </ul>
 <a id="more"></a>
+<h2 id="&#x76EE;&#x5F55;"><a href="#&#x76EE;&#x5F55;" class="headerlink" title="&#x76EE;&#x5F55;"></a>&#x76EE;&#x5F55;</h2><!-- toc -->
+<ul>
+<li><a href="#1-&#x7EEA;&#x8BBA;">1 &#x7EEA;&#x8BBA;</a><ul>
+<li><a href="#11-&#x673A;&#x5668;&#x4EBA;&#x7CFB;&#x7EDF;&#x5F00;&#x53D1;&#x6982;&#x8FF0;">1.1 &#x673A;&#x5668;&#x4EBA;&#x7CFB;&#x7EDF;&#x5F00;&#x53D1;&#x6982;&#x8FF0;</a></li>
+<li><a href="#12-&#x4EBA;&#x673A;&#x534F;&#x4F5C;&#x7CFB;&#x7EDF;">1.2 &#x4EBA;&#x673A;&#x534F;&#x4F5C;&#x7CFB;&#x7EDF;</a><ul>
+<li><a href="#121-&#x4EBA;&#x673A;&#x534F;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x63D0;&#x51FA;">1.2.1 &#x4EBA;&#x673A;&#x534F;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x63D0;&#x51FA;</a></li>
+<li><a href="#122-&#x4EBA;&#x673A;&#x534F;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x7279;&#x70B9;&#x738B;&#x633A;-2004">1.2.2 &#x4EBA;&#x673A;&#x534F;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x7279;&#x70B9;&#xFF08;&#x738B;&#x633A;, 2004&#xFF09;</a></li>
+</ul>
+</li>
+<li><a href="#13-&#x672C;&#x9879;&#x76EE;&#x80CC;&#x666F;&#x548C;&#x610F;&#x4E49;">1.3 &#x672C;&#x9879;&#x76EE;&#x80CC;&#x666F;&#x548C;&#x610F;&#x4E49;</a><ul>
+<li><a href="#131-&#x80CC;&#x666F;">1.3.1 &#x80CC;&#x666F;</a></li>
+<li><a href="#132-&#x4E3B;&#x8981;&#x521B;&#x65B0;&#x70B9;">1.3.2 &#x4E3B;&#x8981;&#x521B;&#x65B0;&#x70B9;</a></li>
+</ul>
+</li>
+<li><a href="#14-&#x4EBA;&#x673A;&#x7CFB;&#x7EDF;&#x76F8;&#x5173;&#x5DE5;&#x4F5C;">1.4 &#x4EBA;&#x673A;&#x7CFB;&#x7EDF;&#x76F8;&#x5173;&#x5DE5;&#x4F5C;</a></li>
+</ul>
+</li>
+<li><a href="#2-&#x57FA;&#x7840;">2 &#x57FA;&#x7840;</a><ul>
+<li><a href="#21-&#x672C;&#x9879;&#x76EE;&#x6982;&#x8FF0;">2.1 &#x672C;&#x9879;&#x76EE;&#x6982;&#x8FF0;</a></li>
+<li><a href="#22-labview">2.2 LabVIEW</a><ul>
+<li><a href="#221-labview&#x6267;&#x884C;&#x7CFB;&#x7EDF;&#x591A;&#x7EBF;&#x7A0B;&#x591A;&#x4EFB;&#x52A1;">2.2.1 LabVIEW&#x6267;&#x884C;&#x7CFB;&#x7EDF;&#xFF08;&#x591A;&#x7EBF;&#x7A0B;&#xFF0C;&#x591A;&#x4EFB;&#x52A1;&#xFF09;</a><ul>
+<li><a href="#2211-labview&#x7684;vi&#x81EA;&#x52A8;&#x591A;&#x7EBF;&#x7A0B;">2.2.1.1 LabVIEW&#x7684;VI&#x81EA;&#x52A8;&#x591A;&#x7EBF;&#x7A0B;</a></li>
+<li><a href="#2212-&#x5355;&#x4E2A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x7EBF;&#x7A0B;&#x6A21;&#x578B;">2.2.1.2 &#x5355;&#x4E2A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x7EBF;&#x7A0B;&#x6A21;&#x578B;</a></li>
+<li><a href="#2213-labview&#x4E2D;&#x7684;&#x591A;&#x4EFB;&#x52A1;">2.2.1.3 LabVIEW&#x4E2D;&#x7684;&#x591A;&#x4EFB;&#x52A1;</a></li>
+</ul>
+</li>
+<li><a href="#222-labview&#x8F6F;&#x4EF6;&#x5F00;&#x53D1;&#x9879;&#x76EE;&#x7BA1;&#x7406;&#x9762;&#x5411;&#x5BF9;&#x8C61;cbse&#x6269;&#x5C55;&#x6027;">2.2.2 LabVIEW&#x8F6F;&#x4EF6;&#x5F00;&#x53D1;&#xFF08;&#x9879;&#x76EE;&#x7BA1;&#x7406;&#xFF0C;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#xFF0C;CBSE&#x6269;&#x5C55;&#x6027;&#xFF09;</a><ul>
+<li><a href="#2221-&#x9879;&#x76EE;&#x7BA1;&#x7406;&#x5668;">2.2.2.1 &#x9879;&#x76EE;&#x7BA1;&#x7406;&#x5668;</a></li>
+<li><a href="#2222-&#x9762;&#x5411;&#x5BF9;&#x8C61;">2.2.2.2 &#x9762;&#x5411;&#x5BF9;&#x8C61;</a></li>
+<li><a href="#2223-&#x6269;&#x5C55;&#x6027;">2.2.2.3 &#x6269;&#x5C55;&#x6027;</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#3-&#x673A;&#x5668;&#x4EBA;&#x8F6F;&#x4EF6;&#x7684;&#x5206;&#x6790;&#x5EFA;&#x6A21;">3 &#x673A;&#x5668;&#x4EBA;&#x8F6F;&#x4EF6;&#x7684;&#x5206;&#x6790;&#x5EFA;&#x6A21;</a><ul>
+<li><a href="#31-&#x65E9;&#x671F;&#x9700;&#x6C42;&#x5206;&#x6790;">3.1 &#x65E9;&#x671F;&#x9700;&#x6C42;&#x5206;&#x6790;</a><ul>
+<li><a href="#311-&#x7528;&#x6237;&#x573A;&#x666F;&#x53D9;&#x4E8B;">3.1.1 &#x7528;&#x6237;&#x573A;&#x666F;&#x53D9;&#x4E8B;</a></li>
+<li><a href="#312-&#x9876;&#x5C42;&#x7528;&#x4F8B;&#x56FE;">3.1.2 &#x9876;&#x5C42;&#x7528;&#x4F8B;&#x56FE;</a></li>
+<li><a href="#313-&#x8BED;&#x97F3;&#x534F;&#x4F5C;&#x63A7;&#x5236;&#x7528;&#x4F8B;&#x6587;&#x6863;">3.1.3 &#x201C;&#x8BED;&#x97F3;&#x534F;&#x4F5C;&#x63A7;&#x5236;&#x201D;&#x7528;&#x4F8B;&#x6587;&#x6863;</a></li>
+</ul>
+</li>
+<li><a href="#32-&#x9762;&#x5411;&#x6570;&#x636E;&#x6D41;&#x5EFA;&#x6A21;">3.2 &#x9762;&#x5411;&#x6570;&#x636E;&#x6D41;&#x5EFA;&#x6A21;</a><ul>
+<li><a href="#321-&#x4E3A;&#x4EC0;&#x4E48;&#x4F7F;&#x7528;&#x9762;&#x5411;&#x6D41;&#x7A0B;&#x7684;&#x5EFA;&#x6A21;&#x65B9;&#x6CD5;">3.2.1 &#x4E3A;&#x4EC0;&#x4E48;&#x4F7F;&#x7528;&#x9762;&#x5411;&#x6D41;&#x7A0B;&#x7684;&#x5EFA;&#x6A21;&#x65B9;&#x6CD5;</a></li>
+<li><a href="#322-&#x9876;&#x5C42;&#x6570;&#x636E;&#x6D41;&#x6A21;&#x578B;">3.2.2 &#x9876;&#x5C42;&#x6570;&#x636E;&#x6D41;&#x6A21;&#x578B;</a></li>
+<li><a href="#323-&#x7B2C;&#x4E00;&#x5C42;&#x6570;&#x636E;&#x6D41;&#x6A21;&#x578B;">3.2.3 &#x7B2C;&#x4E00;&#x5C42;&#x6570;&#x636E;&#x6D41;&#x6A21;&#x578B;</a></li>
+<li><a href="#324-&#x6570;&#x636E;&#x6D41;&#x6A21;&#x578B;&#x7684;&#x7CBE;&#x5316;">3.2.4 &#x6570;&#x636E;&#x6D41;&#x6A21;&#x578B;&#x7684;&#x7CBE;&#x5316;</a></li>
+<li><a href="#325-&#x7B2C;&#x4E8C;&#x5C42;dfd">3.2.5 &#x7B2C;&#x4E8C;&#x5C42;DFD</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#4-&#x673A;&#x5668;&#x4EBA;&#x8F6F;&#x4EF6;&#x7684;&#x8BBE;&#x8BA1;&#x5EFA;&#x6A21;">4-&#x673A;&#x5668;&#x4EBA;&#x8F6F;&#x4EF6;&#x7684;&#x8BBE;&#x8BA1;&#x5EFA;&#x6A21;</a><ul>
+<li><a href="#41-&#x4ECE;&#x6570;&#x636E;&#x6D41;&#x56FE;&#x5230;&#x8F6F;&#x4EF6;&#x5B50;&#x7CFB;&#x7EDF;&#x7684;&#x6620;&#x5C04;">4.1 &#x4ECE;&#x6570;&#x636E;&#x6D41;&#x56FE;&#x5230;&#x8F6F;&#x4EF6;&#x5B50;&#x7CFB;&#x7EDF;&#x7684;&#x6620;&#x5C04;</a><ul>
+<li><a href="#411-&#x5173;&#x6CE8;&#x70B9;&#x5206;&#x79BB;">4.1.1 &#x5173;&#x6CE8;&#x70B9;&#x5206;&#x79BB;</a></li>
+</ul>
+</li>
+<li><a href="#412-&#x5C42;&#x6B21;&#x5316;&#x7684;&#x63A7;&#x5236;&#x6A21;&#x5F0F;">4.1.2 &#x5C42;&#x6B21;&#x5316;&#x7684;&#x63A7;&#x5236;&#x6A21;&#x5F0F;</a><ul>
+<li><a href="#413-&#x521D;&#x59CB;&#x8F6F;&#x4EF6;&#x5B50;&#x7CFB;&#x7EDF;&#x56FE;">4.1.3 &#x521D;&#x59CB;&#x8F6F;&#x4EF6;&#x5B50;&#x7CFB;&#x7EDF;&#x56FE;</a></li>
+</ul>
+</li>
+<li><a href="#42-&#x57FA;&#x4E8E;&#x5E76;&#x53D1;&#x6784;&#x4EF6;&#x7684;&#x4F53;&#x7CFB;&#x7ED3;&#x6784;">4.2 &#x57FA;&#x4E8E;&#x5E76;&#x53D1;&#x6784;&#x4EF6;&#x7684;&#x4F53;&#x7CFB;&#x7ED3;&#x6784;</a><ul>
+<li><a href="#421-&#x5B50;&#x7CFB;&#x7EDF;&#x56FE;&#x7684;&#x7CBE;&#x5316;&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#x7684;&#x9759;&#x6001;&#x89C6;&#x56FE;">4.2.1 &#x5B50;&#x7CFB;&#x7EDF;&#x56FE;&#x7684;&#x7CBE;&#x5316;&#x2014;&#x2014;&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#x7684;&#x9759;&#x6001;&#x89C6;&#x56FE;</a></li>
+<li><a href="#422-&#x9AD8;&#x5C42;&#x901A;&#x4FE1;&#x56FE;&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#x7684;&#x52A8;&#x6001;&#x89C6;&#x56FE;">4.2.2 &#x9AD8;&#x5C42;&#x901A;&#x4FE1;&#x56FE;&#x2014;&#x2014;&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#x7684;&#x52A8;&#x6001;&#x89C6;&#x56FE;</a><ul>
+<li><a href="#4221-&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#x901A;&#x4FE1;&#x6A21;&#x5F0F;">4.2.2.1 &#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#x901A;&#x4FE1;&#x6A21;&#x5F0F;</a></li>
+<li><a href="#4222-&#x9AD8;&#x5C42;&#x901A;&#x4FE1;&#x56FE;&#x8BBE;&#x8BA1;">4.2.2.2 &#x9AD8;&#x5C42;&#x901A;&#x4FE1;&#x56FE;&#x8BBE;&#x8BA1;</a></li>
+</ul>
+</li>
+<li><a href="#423-&#x6784;&#x4EF6;&#x95F4;&#x4EA4;&#x4E92;&#x56FE;&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#x7684;&#x52A8;&#x6001;&#x89C6;&#x56FE;">4.2.3 &#x6784;&#x4EF6;&#x95F4;&#x4EA4;&#x4E92;&#x56FE;&#x2014;&#x2014;&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#x7684;&#x52A8;&#x6001;&#x89C6;&#x56FE;</a></li>
+</ul>
+</li>
+<li><a href="#43-&#x8F6F;&#x4EF6;&#x6784;&#x4EF6;&#x90E8;&#x7F72;">4.3 &#x8F6F;&#x4EF6;&#x6784;&#x4EF6;&#x90E8;&#x7F72;</a></li>
+</ul>
+</li>
+<li><a href="#5-&#x8F6F;&#x4EF6;&#x6784;&#x4EF6;&#x7684;&#x8BBE;&#x8BA1;&#x4E0E;&#x5B9E;&#x73B0;">5-&#x8F6F;&#x4EF6;&#x6784;&#x4EF6;&#x7684;&#x8BBE;&#x8BA1;&#x4E0E;&#x5B9E;&#x73B0;</a><ul>
+<li><a href="#51-actor&#x7F16;&#x7A0B;&#x6A21;&#x578B;&#x7684;&#x5E94;&#x7528;">5.1 Actor&#x7F16;&#x7A0B;&#x6A21;&#x578B;&#x7684;&#x5E94;&#x7528;</a><ul>
+<li><a href="#511-labview-actor-framework">5.1.1 LabVIEW Actor Framework</a><ul>
+<li><a href="#5111-&#x64CD;&#x4F5C;&#x8005;&#x6846;&#x67B6;&#x6982;&#x8FF0;">5.1.1.1 &#x64CD;&#x4F5C;&#x8005;&#x6846;&#x67B6;&#x6982;&#x8FF0;</a></li>
+<li><a href="#5112-&#x64CD;&#x4F5C;&#x8005;&#x53CA;&#x6D88;&#x606F;">5.1.1.2 &#x64CD;&#x4F5C;&#x8005;&#x53CA;&#x6D88;&#x606F;</a></li>
+<li><a href="#5113-&#x64CD;&#x4F5C;&#x8005;&#x4E4B;&#x95F4;&#x7684;&#x901A;&#x4FE1;">5.1.1.3 &#x64CD;&#x4F5C;&#x8005;&#x4E4B;&#x95F4;&#x7684;&#x901A;&#x4FE1;</a></li>
+</ul>
+</li>
+<li><a href="#512-&#x672C;&#x9879;&#x76EE;actor&#x7ED3;&#x6784;">5.1.2 &#x672C;&#x9879;&#x76EE;Actor&#x7ED3;&#x6784;</a></li>
+</ul>
+</li>
+<li><a href="#52-&#x57FA;&#x4E8E;&#x6784;&#x4EF6;&#x7684;&#x5F00;&#x53D1;&#x6784;&#x4EF6;&#x9009;&#x62E9;&#x4E0E;&#x590D;&#x7528;">5.2 &#x57FA;&#x4E8E;&#x6784;&#x4EF6;&#x7684;&#x5F00;&#x53D1;&#x2014;&#x2014;&#x6784;&#x4EF6;&#x9009;&#x62E9;&#x4E0E;&#x590D;&#x7528;</a><ul>
+<li><a href="#521-labview-tools-network&#x4ECB;&#x7ECD;&#x548C;&#x6784;&#x4EF6;&#x6E05;&#x5355;">5.2.1 LabVIEW Tools Network&#x4ECB;&#x7ECD;&#x548C;&#x6784;&#x4EF6;&#x6E05;&#x5355;</a></li>
+<li><a href="#522-&#x6784;&#x4EF6;&#x4FEE;&#x6539;&#x53CA;&#x7EC4;&#x88C5;&#x4E3E;&#x4F8B;&#x624B;&#x67C4;&#x64CD;&#x4F5C;&#x8005;&#x7684;&#x6784;&#x5EFA;">5.2.2 &#x6784;&#x4EF6;&#x4FEE;&#x6539;&#x53CA;&#x7EC4;&#x88C5;&#x4E3E;&#x4F8B;&#x2014;&#x2014;&#x624B;&#x67C4;&#x64CD;&#x4F5C;&#x8005;&#x7684;&#x6784;&#x5EFA;</a><ul>
+<li><a href="#5221-&#x624B;&#x67C4;&#x64CD;&#x4F5C;&#x8005;&#x529F;&#x80FD;&#x4E0E;&#x901A;&#x4FE1;&#x5206;&#x6790;">5.2.2.1 &#x624B;&#x67C4;&#x64CD;&#x4F5C;&#x8005;&#x529F;&#x80FD;&#x4E0E;&#x901A;&#x4FE1;&#x5206;&#x6790;</a></li>
+<li><a href="#5222-&#x6838;&#x5FC3;&#x51FD;&#x6570;&#x7F16;&#x5199;">5.2.2.2 &#x6838;&#x5FC3;&#x51FD;&#x6570;&#x7F16;&#x5199;</a></li>
+<li><a href="#5223-&#x6D88;&#x606F;&#x51FD;&#x6570;&#x7F16;&#x5199;">5.2.2.3 &#x6D88;&#x606F;&#x51FD;&#x6570;&#x7F16;&#x5199;</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#53-&#x6784;&#x4EF6;&#x8BBE;&#x8BA1;">5.3 &#x6784;&#x4EF6;&#x8BBE;&#x8BA1;</a><ul>
+<li><a href="#531-&#x6784;&#x4EF6;&#x8BBE;&#x8BA1;&#x4E3E;&#x4F8B;-&#x534F;&#x8C03;&#x8005;&#x6784;&#x4EF6;&#x5E94;&#x7528;&#x72B6;&#x6001;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;">5.3.1 &#x6784;&#x4EF6;&#x8BBE;&#x8BA1;&#x4E3E;&#x4F8B;-&#x534F;&#x8C03;&#x8005;&#x6784;&#x4EF6;&#x5E94;&#x7528;&#x72B6;&#x6001;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;</a></li>
+<li><a href="#532-&#x534F;&#x8C03;&#x8005;&#x64CD;&#x4F5C;&#x8005;&#x529F;&#x80FD;&#x4E0E;&#x901A;&#x4FE1;&#x5206;&#x6790;">5.3.2 &#x534F;&#x8C03;&#x8005;&#x64CD;&#x4F5C;&#x8005;&#x529F;&#x80FD;&#x4E0E;&#x901A;&#x4FE1;&#x5206;&#x6790;</a></li>
+<li><a href="#533-&#x6838;&#x5FC3;&#x51FD;&#x6570;&#x7F16;&#x5199;">5.3.3 &#x6838;&#x5FC3;&#x51FD;&#x6570;&#x7F16;&#x5199;</a></li>
+<li><a href="#534-&#x6D88;&#x606F;&#x51FD;&#x6570;&#x7F16;&#x5199;">5.3.4 &#x6D88;&#x606F;&#x51FD;&#x6570;&#x7F16;&#x5199;</a></li>
+<li><a href="#535">5.3.5</a></li>
+</ul>
+</li>
+<li><a href="#54-&#x57FA;&#x4E8E;labview&#x7684;&#x6784;&#x4EF6;&#x4EFB;&#x52A1;&#x95F4;&#x901A;&#x4FE1;&#x6A21;&#x5F0F;&#x7684;&#x5B9E;&#x73B0;">5.4 &#x57FA;&#x4E8E;LabVIEW&#x7684;&#x6784;&#x4EF6;&#xFF08;&#x4EFB;&#x52A1;&#xFF09;&#x95F4;&#x901A;&#x4FE1;&#x6A21;&#x5F0F;&#x7684;&#x5B9E;&#x73B0;</a><ul>
+<li><a href="#541-&#x6D88;&#x606F;&#x961F;&#x5217;&#x64CD;&#x4F5C;&#x8005;&#x6846;&#x67B6;&#x63D0;&#x4F9B;&#x7684;&#x82E5;&#x5E72;&#x6A21;&#x5F0F;">5.4.1 &#x6D88;&#x606F;&#x961F;&#x5217;&#x2014;&#x2014;&#x64CD;&#x4F5C;&#x8005;&#x6846;&#x67B6;&#x63D0;&#x4F9B;&#x7684;&#x82E5;&#x5E72;&#x6A21;&#x5F0F;</a></li>
+<li><a href="#542-&#x4FE1;&#x53F7;&#x5728;labview&#x4E2D;&#x7684;&#x5B9E;&#x73B0;">5.4.2 &#x4FE1;&#x53F7;&#xFF08;&#x5728;LabVIEW&#x4E2D;&#x7684;&#x5B9E;&#x73B0;&#xFF09;</a></li>
+<li><a href="#543-&#x5171;&#x4EAB;&#x53D8;&#x91CF;">5.4.3 &#x5171;&#x4EAB;&#x53D8;&#x91CF;</a></li>
+<li><a href="#544-socket">5.4.4 Socket</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#6-&#x7ED3;&#x8BBA;&#x4E0E;&#x5C55;&#x671B;">6-&#x7ED3;&#x8BBA;&#x4E0E;&#x5C55;&#x671B;</a><ul>
+<li><a href="#61-&#x7ED3;&#x8BBA;">6.1-&#x7ED3;&#x8BBA;</a></li>
+<li><a href="#62-&#x672A;&#x6765;&#x5DE5;&#x4F5C;&#x4E00;&#x4E2A;&#x53C2;&#x8003;&#x6A21;&#x578B;&#x529F;&#x80FD;&#x6269;&#x5C55;&#x5206;&#x5E03;&#x5F0F;&#x90E8;&#x7F72;">6.2-&#x672A;&#x6765;&#x5DE5;&#x4F5C;&#x2014;&#x2014;&#x4E00;&#x4E2A;&#x53C2;&#x8003;&#x6A21;&#x578B;&#xFF08;&#x529F;&#x80FD;&#x6269;&#x5C55;+&#x5206;&#x5E03;&#x5F0F;&#x90E8;&#x7F72;&#xFF09;</a></li>
+</ul>
+</li>
+<li><a href="#&#x9644;&#x5F55;a-ros&#x7CFB;&#x7EDF;&#x8F6F;&#x4EF6;&#x5F00;&#x53D1;&#x6982;&#x8FF0;">&#x9644;&#x5F55;A-ROS&#x7CFB;&#x7EDF;&#x8F6F;&#x4EF6;&#x5F00;&#x53D1;&#x6982;&#x8FF0;</a><ul>
+<li><a href="#a1">A.1</a></li>
+<li><a href="#a2">A.2</a></li>
+<li><a href="#a3">A.3</a></li>
+</ul>
+</li>
+<li><a href="#&#x53C2;&#x8003;&#x6587;&#x732E;">&#x53C2;&#x8003;&#x6587;&#x732E;</a></li>
+</ul>
+<!-- tocstop -->
 <h2 id="1-&#x7EEA;&#x8BBA;"><a href="#1-&#x7EEA;&#x8BBA;" class="headerlink" title="1 &#x7EEA;&#x8BBA;"></a>1 &#x7EEA;&#x8BBA;</h2><h3 id="11-&#x673A;&#x5668;&#x4EBA;&#x7CFB;&#x7EDF;&#x5F00;&#x53D1;&#x6982;&#x8FF0;"><a href="#1-1-&#x673A;&#x5668;&#x4EBA;&#x7CFB;&#x7EDF;&#x5F00;&#x53D1;&#x6982;&#x8FF0;" class="headerlink" title="1.1 &#x673A;&#x5668;&#x4EBA;&#x7CFB;&#x7EDF;&#x5F00;&#x53D1;&#x6982;&#x8FF0;"></a>1.1 &#x673A;&#x5668;&#x4EBA;&#x7CFB;&#x7EDF;&#x5F00;&#x53D1;&#x6982;&#x8FF0;</h3><ul>
 <li>&#x5982;&#x4F55;&#x79D1;&#x5B66;&#x800C;&#x9AD8;&#x6548;&#x5730;&#x8BBE;&#x8BA1;&#x673A;&#x5668;&#x4EBA;&#x7CFB;&#x7EDF;&#xFF0C;&#x4E00;&#x76F4;&#x662F;&#x4E1A;&#x754C;&#x7684;&#x70ED;&#x70B9;&#x95EE;&#x9898;&#x3002;&#x7531;&#x4E8E;&#x7F3A;&#x4E4F;&#x6709;&#x6548;&#x7684;&#x8F6F;&#x4EF6;&#x96C6;&#x6210;&#x65B9;&#x5F0F;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x5728;&#x4E0D;&#x65AD;&#x5730;&#x91CD;&#x590D;&#x201C;&#x9020;&#x8F6E;&#x5B50;&#x201D;&#xFF0C;&#x5BFC;&#x81F4;&#x5F00;&#x53D1;&#x6548;&#x7387;&#x4F4E;&#x4E0B;&#x3002;&#x4E00;&#x76F4;&#x4EE5;&#x6765;&#xFF0C;&#x5B66;&#x8005;&#x4EEC;&#x4E0D;&#x65AD;&#x5728;&#x63A2;&#x7D22;&#x5728;&#x673A;&#x5668;&#x4EBA;&#x7CFB;&#x7EDF;&#x8BBE;&#x8BA1;&#x4E2D;&#x7684;&#x590D;&#x7528;&#xFF0C;&#x5305;&#x62EC;&#x65B9;&#x6CD5;&#x590D;&#x7528;&#x548C;&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#x590D;&#x7528;&#xFF0C;&#x5728;&#x65B9;&#x6CD5;&#x590D;&#x7528;&#x7684;&#x63A2;&#x7D22;&#x4E0A;&#xFF0C;&#x7814;&#x7A76;&#x8005;&#x4EEC;&#x4E0D;&#x65AD;&#x63D0;&#x51FA;&#x65B0;&#x7684;&#x7CFB;&#x7EDF;&#x5316;&#x7684;&#x673A;&#x5668;&#x4EBA;&#x8BBE;&#x8BA1;&#x65B9;&#x6CD5;&#xFF0C;&#x5728;&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#x590D;&#x7528;&#x65B9;&#x9762;&#xFF0C;&#x7814;&#x7A76;&#x8005;&#x4EEC;&#x671F;&#x671B;&#x80FD;&#x591F;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x901A;&#x7528;&#x7684;&#x7CFB;&#x7EDF;&#x67B6;&#x6784;&#x3002;&#xFF08;Wei and Jiachen et al., 2011&#xFF09;</li>
 <li>&#x5206;&#x6790;&#x9886;&#x57DF;&#x5185;&#x7684;&#x590D;&#x7528;<ul>
@@ -1374,8 +1866,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;[TOC]&lt;/p&gt;
-&lt;h2 id=&quot;0-摘要&quot;&gt;&lt;a href=&quot;#0-摘要&quot; class=&quot;headerlink&quot; title=&quot;0 摘要&quot;&gt;&lt;/a&gt;0 摘要&lt;/h2&gt;&lt;ul&gt;
+      &lt;h2 id=&quot;0-摘要&quot;&gt;&lt;a href=&quot;#0-摘要&quot; class=&quot;headerlink&quot; title=&quot;0 摘要&quot;&gt;&lt;/a&gt;0 摘要&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;（第一章）探讨和综述了机器人系统设计中的复用，包括设计方法级别复用（各种设计方法和原则）和体系结构级别复用（传统的智能组织到基于组件机器人工程）。介绍基于组件机器人工程（软总线技术CORBA和组件库技术）&lt;/li&gt;
 &lt;li&gt;（第一章）介绍机器人系统设计中的一个重要模块，人机协作系统。&lt;/li&gt;
 &lt;li&gt;（第二章）基础知识。&lt;/li&gt;
@@ -1387,21 +1878,35 @@
     </summary>
     
     
+      <category term="机器人" scheme="https://ZhenshengLee.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    
       <category term="机器人软件设计" scheme="https://ZhenshengLee.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="论文" scheme="https://ZhenshengLee.github.io/tags/%E8%AE%BA%E6%96%87/"/>
     
   </entry>
   
   <entry>
-    <title>【整机】安装显卡驱动.md</title>
+    <title>安装显卡驱动.md</title>
     <link href="https://ZhenshengLee.github.io/2016/09/04/160904-%E5%AE%89%E8%A3%85%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8-md/"/>
     <id>https://ZhenshengLee.github.io/2016/09/04/160904-安装显卡驱动-md/</id>
     <published>2016-09-03T16:48:57.000Z</published>
-    <updated>2016-09-03T16:51:49.000Z</updated>
+    <updated>2017-01-02T15:44:30.157Z</updated>
     
     <content type="html"><![CDATA[<h3 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h3><ul>
 <li>&#x8001;&#x677F;&#x529E;&#x516C;&#x5BA4;&#x6765;&#x4E86;&#x53F0;Linux&#x4E3B;&#x673A;&#xFF0C;&#x7ED9;&#x81EA;&#x5DF1;&#x7684;&#x79FB;&#x52A8;&#x786C;&#x76D8;&#x7CFB;&#x7EDF;&#x88C5;&#x4E0B;&#x9A71;&#x52A8;&#xFF0C;&#x4EE5;&#x540E;&#x597D;&#x597D;&#x7528;</li>
 </ul>
 <a id="more"></a>
+<h2 id="&#x76EE;&#x5F55;"><a href="#&#x76EE;&#x5F55;" class="headerlink" title="&#x76EE;&#x5F55;"></a>&#x76EE;&#x5F55;</h2><!-- toc -->
+<ul>
+<li><a href="#&#x6B65;&#x9AA4;">&#x6B65;&#x9AA4;</a><ul>
+<li><a href="#&#x7981;&#x7528;&#x548C;&#x5378;&#x8F7D;">&#x7981;&#x7528;&#x548C;&#x5378;&#x8F7D;</a></li>
+</ul>
+</li>
+<li><a href="#&#x91CD;&#x542F;&#x7535;&#x8111;&#x5230;&#x547D;&#x4EE4;&#x884C;&#x754C;&#x9762;">&#x91CD;&#x542F;&#x7535;&#x8111;&#x5230;&#x547D;&#x4EE4;&#x884C;&#x754C;&#x9762;</a></li>
+<li><a href="#&#x91CD;&#x542F;&#x7535;&#x8111;&#x5B8C;&#x6BD5;">&#x91CD;&#x542F;&#x7535;&#x8111;&#xFF0C;&#x5B8C;&#x6BD5;</a></li>
+</ul>
+<!-- tocstop -->
 <h3 id="&#x6B65;&#x9AA4;"><a href="#&#x6B65;&#x9AA4;" class="headerlink" title="&#x6B65;&#x9AA4;"></a>&#x6B65;&#x9AA4;</h3><h4 id="&#x7981;&#x7528;&#x548C;&#x5378;&#x8F7D;"><a href="#&#x7981;&#x7528;&#x548C;&#x5378;&#x8F7D;" class="headerlink" title="&#x7981;&#x7528;&#x548C;&#x5378;&#x8F7D;"></a>&#x7981;&#x7528;&#x548C;&#x5378;&#x8F7D;</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">sudo subl /etc/modprobe.d/blacklist.conf</span><br><span class="line"></span><br><span class="line">(&#x5C3E;&#x90E8;&#x6DFB;&#x52A0;)</span><br><span class="line"></span><br><span class="line">blacklist vga16fb</span><br><span class="line"></span><br><span class="line">blacklist nouveau</span><br><span class="line"></span><br><span class="line">blacklist rivafb</span><br><span class="line"></span><br><span class="line">blacklist nvidiafb</span><br><span class="line"></span><br><span class="line">blacklist rivatv</span><br><span class="line"></span><br><span class="line">(&#x7A7A;&#x884C;)</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>&#x6CE8;&#x610F;&#xFF1A;code &#x5BF9; sudo &#x7684;&#x652F;&#x6301;&#x4E0D;&#x597D;</p>
@@ -1428,14 +1933,16 @@
     
       <category term="其他" scheme="https://ZhenshengLee.github.io/tags/%E5%85%B6%E4%BB%96/"/>
     
+      <category term="整机" scheme="https://ZhenshengLee.github.io/tags/%E6%95%B4%E6%9C%BA/"/>
+    
   </entry>
   
   <entry>
-    <title>【组件】ompl-open motion planning library1-基础理论</title>
+    <title>ompl-open motion planning library1-基础理论</title>
     <link href="https://ZhenshengLee.github.io/2016/09/03/160903-ompl1/"/>
     <id>https://ZhenshengLee.github.io/2016/09/03/160903-ompl1/</id>
     <published>2016-09-03T07:49:33.000Z</published>
-    <updated>2016-09-03T08:35:36.000Z</updated>
+    <updated>2017-01-02T15:44:23.337Z</updated>
     
     <content type="html"><![CDATA[<h2 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h2><ul>
 <li><p>open motion plan library&#xFF0C;&#x4E00;&#x4E2A;&#x5F00;&#x6E90;&#x7684;&#x8FD0;&#x52A8;&#x89C4;&#x5212;&#x5E93;&#xFF0C;&#x4E3B;&#x8981;&#x4EE5;sample-based planning&#x7B97;&#x6CD5;&#x4E3A;&#x4E3B;</p>
@@ -1444,7 +1951,36 @@
 </li>
 </ul>
 <a id="more"></a>
-<h2 id="&#x76EE;&#x5F55;"><a href="#&#x76EE;&#x5F55;" class="headerlink" title="&#x76EE;&#x5F55;"></a>&#x76EE;&#x5F55;</h2><p>[TOC]</p>
+<h2 id="&#x76EE;&#x5F55;"><a href="#&#x76EE;&#x5F55;" class="headerlink" title="&#x76EE;&#x5F55;"></a>&#x76EE;&#x5F55;</h2><!-- toc -->
+<ul>
+<li><a href="#&#x53C2;&#x8003;">&#x53C2;&#x8003;</a></li>
+<li><a href="#&#x5B89;&#x88C5;">&#x5B89;&#x88C5;</a><ul>
+<li><a href="#&#x8FD0;&#x884C;demo">&#x8FD0;&#x884C;demo</a></li>
+</ul>
+</li>
+<li><a href="#&#x57FA;&#x7840;&#x77E5;&#x8BC6;">&#x57FA;&#x7840;&#x77E5;&#x8BC6;</a><ul>
+<li><a href="#&#x7EEA;&#x8BBA;">&#x7EEA;&#x8BBA;</a></li>
+<li><a href="#sampling-based-motion-planning">Sampling-based Motion Planning</a></li>
+<li><a href="#&#x89C4;&#x5212;&#x7406;&#x8BBA;&#x7684;&#x5386;&#x53F2;&#x8FDB;&#x7A0B;">&#x89C4;&#x5212;&#x7406;&#x8BBA;&#x7684;&#x5386;&#x53F2;&#x8FDB;&#x7A0B;</a></li>
+<li><a href="#&#x57FA;&#x4E8E;&#x91C7;&#x6837;&#x7684;&#x8FD0;&#x52A8;&#x89C4;&#x5212;">&#x57FA;&#x4E8E;&#x91C7;&#x6837;&#x7684;&#x8FD0;&#x52A8;&#x89C4;&#x5212;</a><ul>
+<li><a href="#&#x4E00;&#x4E9B;&#x5B9A;&#x4E49;">&#x4E00;&#x4E9B;&#x5B9A;&#x4E49;</a></li>
+<li><a href="#&#x6982;&#x7387;&#x5730;&#x56FE;prm">&#x6982;&#x7387;&#x5730;&#x56FE;&#xFF08;PRM&#xFF09;</a></li>
+<li><a href="#&#x57FA;&#x4E8E;&#x6811;&#x7684;&#x5730;&#x56FE;rrt&#x5FEB;&#x901F;&#x968F;&#x673A;&#x6811;&#x641C;&#x7D22;">&#x57FA;&#x4E8E;&#x6811;&#x7684;&#x5730;&#x56FE;&#xFF08;RRT&#xFF0C;&#x5FEB;&#x901F;&#x968F;&#x673A;&#x6811;&#x641C;&#x7D22;&#xFF09;</a></li>
+<li><a href="#prm&#x548C;rrt&#x7684;&#x4E0D;&#x540C;">PRM&#x548C;RRT&#x7684;&#x4E0D;&#x540C;</a></li>
+<li><a href="#&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</a></li>
+</ul>
+</li>
+<li><a href="#&#x57FA;&#x4E8E;&#x91C7;&#x6837;&#x7684;&#x89C4;&#x5212;&#x7684;&#x57FA;&#x672C;&#x7EC4;&#x6210;">&#x57FA;&#x4E8E;&#x91C7;&#x6837;&#x7684;&#x89C4;&#x5212;&#x7684;&#x57FA;&#x672C;&#x7EC4;&#x6210;</a><ul>
+<li><a href="#&#x969C;&#x788D;&#x68C0;&#x6D4B;">&#x969C;&#x788D;&#x68C0;&#x6D4B;</a></li>
+<li><a href="#&#x6700;&#x4E34;&#x8FD1;&#x641C;&#x7D22;">&#x6700;&#x4E34;&#x8FD1;&#x641C;&#x7D22;</a></li>
+<li><a href="#ompl">OMPL</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#&#x4E0B;&#x671F;&#x9884;&#x544A;">&#x4E0B;&#x671F;&#x9884;&#x544A;</a></li>
+</ul>
+<!-- tocstop -->
 <h2 id="&#x53C2;&#x8003;"><a href="#&#x53C2;&#x8003;" class="headerlink" title="&#x53C2;&#x8003;"></a>&#x53C2;&#x8003;</h2><blockquote>
 <p><a href="http://ompl.kavrakilab.org/" target="_blank" rel="external">ompl home page</a></p>
 <p><a href="http://ompl.kavrakilab.org/group__demos.html" target="_blank" rel="external">demos</a></p>
@@ -1582,22 +2118,45 @@
     </summary>
     
     
+      <category term="机器人" scheme="https://ZhenshengLee.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    
       <category term="机器人软件设计" scheme="https://ZhenshengLee.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="组件" scheme="https://ZhenshengLee.github.io/tags/%E7%BB%84%E4%BB%B6/"/>
+    
+      <category term="ompl" scheme="https://ZhenshengLee.github.io/tags/ompl/"/>
     
   </entry>
   
   <entry>
-    <title>【ROS实战】机器人抓取仿真1-安装与构造</title>
+    <title>机器人抓取仿真1-安装与构造</title>
     <link href="https://ZhenshengLee.github.io/2016/09/02/160902-%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%8A%93%E5%8F%96%E4%BB%BF%E7%9C%9F1/"/>
     <id>https://ZhenshengLee.github.io/2016/09/02/160902-机器人抓取仿真1/</id>
     <published>2016-09-02T09:15:33.000Z</published>
-    <updated>2016-09-02T09:23:47.000Z</updated>
+    <updated>2017-01-02T15:43:57.274Z</updated>
     
     <content type="html"><![CDATA[<h2 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h2><ul>
 <li>&#x673A;&#x5668;&#x4EBA;&#x6293;&#x53D6;&#x64CD;&#x4F5C;&#x4EFF;&#x771F;&#x5B9E;&#x6218;&#xFF0C;&#x4F7F;&#x7528;nasa_r2&#x673A;&#x5668;&#x4EBA;&#x6A21;&#x578B;&#x548C;gazebo7&#x673A;&#x5668;&#x4EBA;&#x4EFF;&#x771F;&#x5668;</li>
 </ul>
 <a id="more"></a>
-<h2 id="&#x76EE;&#x5F55;"><a href="#&#x76EE;&#x5F55;" class="headerlink" title="&#x76EE;&#x5F55;"></a>&#x76EE;&#x5F55;</h2><p>[TOC]</p>
+<h2 id="&#x76EE;&#x5F55;"><a href="#&#x76EE;&#x5F55;" class="headerlink" title="&#x76EE;&#x5F55;"></a>&#x76EE;&#x5F55;</h2><!-- toc -->
+<ul>
+<li><a href="#&#x53C2;&#x8003;">&#x53C2;&#x8003;</a></li>
+<li><a href="#&#x5B66;&#x4E60;&#x8BB0;&#x5F55;">&#x5B66;&#x4E60;&#x8BB0;&#x5F55;</a><ul>
+<li><a href="#&#x4E0B;&#x8F7D;">&#x4E0B;&#x8F7D;</a></li>
+</ul>
+</li>
+<li><a href="#&#x6784;&#x5EFA;">&#x6784;&#x5EFA;</a><ul>
+<li><a href="#&#x4FEE;&#x6539;&#x5305;nasa_r2_common_msgs&#x6784;&#x9020;&#x63CF;&#x8FF0;&#x6587;&#x4EF6;">&#x4FEE;&#x6539;&#x5305;nasa_r2_common_msgs&#x6784;&#x9020;&#x63CF;&#x8FF0;&#x6587;&#x4EF6;</a></li>
+<li><a href="#&#x4FEE;&#x6539;-gazebo_taskboard-&#x6784;&#x9020;&#x63CF;&#x8FF0;&#x6587;&#x4EF6;">&#x4FEE;&#x6539; gazebo_taskboard &#x6784;&#x9020;&#x63CF;&#x8FF0;&#x6587;&#x4EF6;</a></li>
+<li><a href="#&#x4FEE;&#x6539;gazebo_gripper-gazebo_interface&#x6784;&#x9020;&#x63CF;&#x8FF0;&#x6587;&#x4EF6;">&#x4FEE;&#x6539;gazebo_gripper, gazebo_interface&#x6784;&#x9020;&#x63CF;&#x8FF0;&#x6587;&#x4EF6;</a></li>
+</ul>
+</li>
+<li><a href="#catkin_make">catkin_make</a></li>
+<li><a href="#roslaunch">roslaunch</a></li>
+<li><a href="#&#x4E0B;&#x671F;&#x9884;&#x544A;">&#x4E0B;&#x671F;&#x9884;&#x544A;</a></li>
+</ul>
+<!-- tocstop -->
 <h2 id="&#x53C2;&#x8003;"><a href="#&#x53C2;&#x8003;" class="headerlink" title="&#x53C2;&#x8003;"></a>&#x53C2;&#x8003;</h2><blockquote>
 <p><a href="http://answers.ros.org/question/188982/message-headers-wont-build-first/" target="_blank" rel="external">catkin msg header generation issue</a></p>
 <p><a href="https://bitbucket.org/nasa_ros_pkg/" target="_blank" rel="external">nasa_ros_pkg</a></p>
@@ -1635,7 +2194,11 @@
     </summary>
     
     
+      <category term="机器人" scheme="https://ZhenshengLee.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    
       <category term="机器人软件设计" scheme="https://ZhenshengLee.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="ROS" scheme="https://ZhenshengLee.github.io/tags/ROS/"/>
     
   </entry>
   
@@ -1644,7 +2207,7 @@
     <link href="https://ZhenshengLee.github.io/2016/09/02/160901-%E5%8D%B7%E9%A6%96%E8%AF%AD/"/>
     <id>https://ZhenshengLee.github.io/2016/09/02/160901-卷首语/</id>
     <published>2016-09-01T16:29:20.000Z</published>
-    <updated>2016-09-01T16:37:11.000Z</updated>
+    <updated>2017-01-02T15:43:46.955Z</updated>
     
     <content type="html"><![CDATA[<p>&#x4EB2;&#x7231;&#x7684;&#x670B;&#x53CB;&#xFF1A;</p>
 <p>&#x4F60;&#x597D;&#xFF01;</p>
@@ -1681,16 +2244,16 @@
     </summary>
     
     
-      <category term="写在前面" scheme="https://ZhenshengLee.github.io/tags/%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2/"/>
+      <category term="其他" scheme="https://ZhenshengLee.github.io/tags/%E5%85%B6%E4%BB%96/"/>
     
   </entry>
   
   <entry>
-    <title>【编辑】vscode C++程序设计</title>
+    <title>vscode C++程序设计</title>
     <link href="https://ZhenshengLee.github.io/2016/09/01/160901-vscodeC-%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
     <id>https://ZhenshengLee.github.io/2016/09/01/160901-vscodeC-程序设计/</id>
     <published>2016-09-01T06:43:28.000Z</published>
-    <updated>2016-09-01T06:47:32.000Z</updated>
+    <updated>2017-01-02T15:43:38.688Z</updated>
     
     <content type="html"><![CDATA[<h2 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h2><ul>
 <li><p>&#x6B64;&#x5904;&#x4ECB;&#x7ECD;&#x4F7F;&#x7528;vscode&#x8FDB;&#x884C;cpp&#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;&#xFF0C;&#x4F7F;&#x7528;make&#x8FDB;&#x884C;&#x6784;&#x5EFA;&#xFF0C;gdb&#x8FDB;&#x884C;&#x8C03;&#x8BD5;</p>
@@ -1701,7 +2264,23 @@
 </li>
 </ul>
 <a id="more"></a>
-<h2 id="&#x76EE;&#x5F55;"><a href="#&#x76EE;&#x5F55;" class="headerlink" title="&#x76EE;&#x5F55;"></a>&#x76EE;&#x5F55;</h2><p>[TOC]</p>
+<h2 id="&#x76EE;&#x5F55;"><a href="#&#x76EE;&#x5F55;" class="headerlink" title="&#x76EE;&#x5F55;"></a>&#x76EE;&#x5F55;</h2><!-- toc -->
+<ul>
+<li><a href="#&#x53C2;&#x8003;">&#x53C2;&#x8003;</a></li>
+<li><a href="#&#x5B66;&#x4E60;&#x8BB0;&#x5F55;">&#x5B66;&#x4E60;&#x8BB0;&#x5F55;</a><ul>
+<li><a href="#&#x5B89;&#x88C5;cc&#x63D2;&#x4EF6;">&#x5B89;&#x88C5;c/c++&#x63D2;&#x4EF6;</a></li>
+<li><a href="#&#x6587;&#x4EF6;&#x51C6;&#x5907;">&#x6587;&#x4EF6;&#x51C6;&#x5907;</a><ul>
+<li><a href="#&#x7F16;&#x5199;makefile">&#x7F16;&#x5199;Makefile</a></li>
+</ul>
+</li>
+<li><a href="#&#x7F16;&#x5199;c&#x914D;&#x7F6E;&#x6587;&#x4EF6;c_cpp_propertiesjson">&#x7F16;&#x5199;c++&#x914D;&#x7F6E;&#x6587;&#x4EF6;c_cpp_properties.json</a></li>
+<li><a href="#&#x914D;&#x7F6E;make&#x4EFB;&#x52A1;">&#x914D;&#x7F6E;make&#x4EFB;&#x52A1;</a></li>
+<li><a href="#&#x7F16;&#x5199;&#x8C03;&#x8BD5;&#x914D;&#x7F6E;&#x6587;&#x4EF6;launchjson">&#x7F16;&#x5199;&#x8C03;&#x8BD5;&#x914D;&#x7F6E;&#x6587;&#x4EF6;launch.json</a></li>
+<li><a href="#&#x4F7F;&#x7528;&#x6D41;&#x7A0B;">&#x4F7F;&#x7528;&#x6D41;&#x7A0B;</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
 <h2 id="&#x53C2;&#x8003;"><a href="#&#x53C2;&#x8003;" class="headerlink" title="&#x53C2;&#x8003;"></a>&#x53C2;&#x8003;</h2><blockquote>
 <p><a href="https://stackoverflow.com/questions/30269449/how-do-i-set-up-vscode-to-compile-c-code" target="_blank" rel="external">how-do-i-set-up-vscode-to-compile-c-code</a></p>
 <p><a href="https://code.visualstudio.com/docs/languages/cpp" target="_blank" rel="external">vscode c++ programming</a></p>
@@ -1758,19 +2337,22 @@
     </summary>
     
     
+      <category term="机器人" scheme="https://ZhenshengLee.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    
       <category term="机器人系统开发" scheme="https://ZhenshengLee.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="编辑器" scheme="https://ZhenshengLee.github.io/tags/%E7%BC%96%E8%BE%91%E5%99%A8/"/>
     
   </entry>
   
   <entry>
-    <title>【编辑】vi command</title>
+    <title>vi command</title>
     <link href="https://ZhenshengLee.github.io/2016/08/16/160816-vi-command/"/>
     <id>https://ZhenshengLee.github.io/2016/08/16/160816-vi-command/</id>
     <published>2016-08-16T08:49:48.000Z</published>
-    <updated>2016-08-16T09:18:10.000Z</updated>
+    <updated>2017-01-02T15:43:17.545Z</updated>
     
-    <content type="html"><![CDATA[<p>[TOC]</p>
-<blockquote>
+    <content type="html"><![CDATA[<blockquote>
 <p>&#x300A;&#x5D4C;&#x5165;&#x5F0F;Linux&#x5F00;&#x53D1;&#x57FA;&#x7840;&#x77E5;&#x8BC6;&#x300B;</p>
 </blockquote>
 <h4 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h4><ul>
@@ -1780,6 +2362,24 @@
 </li>
 </ul>
 <a id="more"></a>
+<h2 id="&#x76EE;&#x5F55;"><a href="#&#x76EE;&#x5F55;" class="headerlink" title="&#x76EE;&#x5F55;"></a>&#x76EE;&#x5F55;</h2><!-- toc -->
+<ul>
+<li><a href="#vi&#x5B66;&#x4E60;">VI&#x5B66;&#x4E60;</a></li>
+<li><a href="#&#x5E38;&#x7528;&#x547D;&#x4EE4;">&#x5E38;&#x7528;&#x547D;&#x4EE4;</a><ul>
+<li><a href="#&#x547D;&#x4EE4;&#x6A21;&#x5F0F;esc&#x8FDB;&#x5165;">&#x547D;&#x4EE4;&#x6A21;&#x5F0F;&#xFF08;ESC&#x8FDB;&#x5165;&#xFF09;</a><ul>
+<li><a href="#&#x67E5;&#x770B;">&#x67E5;&#x770B;</a></li>
+<li><a href="#&#x8FDB;&#x5165;&#x7F16;&#x8F91;&#x6A21;&#x5F0F;">&#x8FDB;&#x5165;&#x7F16;&#x8F91;&#x6A21;&#x5F0F;</a></li>
+</ul>
+</li>
+<li><a href="#&#x7F16;&#x8F91;&#x6A21;&#x5F0F;">&#x7F16;&#x8F91;&#x6A21;&#x5F0F;</a></li>
+<li><a href="#&#x641C;&#x7D22;">&#x641C;&#x7D22;</a></li>
+<li><a href="#&#x590D;&#x5236;&#x4E0E;&#x7C98;&#x8D34;">&#x590D;&#x5236;&#x4E0E;&#x7C98;&#x8D34;</a></li>
+<li><a href="#&#x53E6;&#x5B58;&#x4E3A;">&#x53E6;&#x5B58;&#x4E3A;</a></li>
+<li><a href="#&#x8F6C;&#x5230;shell&#x6267;&#x884C;">&#x8F6C;&#x5230;shell&#x6267;&#x884C;</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
 <h4 id="vi&#x5B66;&#x4E60;"><a href="#VI&#x5B66;&#x4E60;" class="headerlink" title="VI&#x5B66;&#x4E60;"></a>VI&#x5B66;&#x4E60;</h4><ul>
 <li><p>&#x6709;&#x4E09;&#x79CD;&#x72B6;&#x6001;&#xFF1A;&#x7F16;&#x8F91;&#x65B9;&#x5F0F;&#xFF0C;&#x63D2;&#x5165;&#x65B9;&#x5F0F;&#x548C;&#x547D;&#x4EE4;&#x65B9;&#x5F0F;&#xFF0C;&#x5F53;&#x4F60;&#x8FDB;&#x5165;vi&#x65F6;&#xFF0C;&#x4F1A;&#x9996;&#x5148;&#x8FDB;&#x5165;&#x547D;&#x4EE4;&#x65B9;&#x5F0F;&#xFF08;&#x540C;&#x65F6;&#x4E5F;&#x662F;&#x7F16;&#x8F91;&#x65B9;&#x5F0F;&#xFF09;&#xFF0C;&#x6309;&#x4E0B;i&#x8FDB;&#x5165;&#x63D2;&#x5165;&#x65B9;&#x5F0F;&#xFF0C;&#x6309;&#x4E0B;ESC&#x56DE;&#x5230;&#x547D;&#x4EE4;&#x72B6;&#x6001;&#xFF08;&#x4E5F;&#x662F;&#x7F16;&#x8F91;&#x65B9;&#x5F0F;&#xFF09;</p>
 </li>
@@ -1903,8 +2503,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;[TOC]&lt;/p&gt;
-&lt;blockquote&gt;
+      &lt;blockquote&gt;
 &lt;p&gt;《嵌入式Linux开发基础知识》&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h4 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h4&gt;&lt;ul&gt;
@@ -1917,22 +2516,54 @@
     </summary>
     
     
+      <category term="机器人" scheme="https://ZhenshengLee.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    
       <category term="机器人系统开发" scheme="https://ZhenshengLee.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="编辑器" scheme="https://ZhenshengLee.github.io/tags/%E7%BC%96%E8%BE%91%E5%99%A8/"/>
     
   </entry>
   
   <entry>
-    <title>【编译】catkin build system</title>
+    <title>catkin build system</title>
     <link href="https://ZhenshengLee.github.io/2016/08/16/160816-catkin-build-system/"/>
     <id>https://ZhenshengLee.github.io/2016/08/16/160816-catkin-build-system/</id>
     <published>2016-08-16T08:47:24.000Z</published>
-    <updated>2016-08-16T09:17:52.000Z</updated>
+    <updated>2017-01-02T15:41:23.817Z</updated>
     
     <content type="html"><![CDATA[<p>[TOC]</p>
 <h3 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h3><ul>
 <li>&#x662F;&#x57FA;&#x4E8E;CMake&#xFF0C;&#x4F7F;&#x7528;&#x4E00;&#x7CFB;&#x5217;CMake &#x5B8F;&#x5236;&#x4F5C;&#x800C;&#x6210;&#x7684;ROS&#x6784;&#x9020;&#x7CFB;&#x7EDF;</li>
 </ul>
 <a id="more"></a>
+<h2 id="&#x76EE;&#x5F55;"><a href="#&#x76EE;&#x5F55;" class="headerlink" title="&#x76EE;&#x5F55;"></a>&#x76EE;&#x5F55;</h2><!-- toc -->
+<ul>
+<li><a href="#&#x53C2;&#x8003;">&#x53C2;&#x8003;</a></li>
+<li><a href="#cmakelistshttpwikirosorgcatkincmakeliststxt">CMakeLists</a><ul>
+<li><a href="#&#x7EFC;&#x8FF0;">&#x7EFC;&#x8FF0;</a></li>
+<li><a href="#&#x603B;&#x4F53;&#x7ED3;&#x6784;&#x4E25;&#x683C;&#x6309;&#x7167;&#x987A;&#x5E8F;">&#x603B;&#x4F53;&#x7ED3;&#x6784;&#xFF08;&#x4E25;&#x683C;&#x6309;&#x7167;&#x987A;&#x5E8F;&#xFF09;</a></li>
+<li><a href="#find_package&#x601D;&#x60F3;">find_package()&#x601D;&#x60F3;</a></li>
+<li><a href="#catkin_package&#x601D;&#x60F3;">catkin_package()&#x601D;&#x60F3;</a></li>
+<li><a href="#&#x5173;&#x4E8E;&#x6807;&#x7684;&#x7684;&#x6784;&#x5EFA;&#x9009;&#x9879;">&#x5173;&#x4E8E;&#x6807;&#x7684;&#x7684;&#x6784;&#x5EFA;&#x9009;&#x9879;</a></li>
+<li><a href="#&#x6D88;&#x606F;&#x670D;&#x52A1;&#x548C;&#x52A8;&#x4F5C;">&#x6D88;&#x606F;&#xFF0C;&#x670D;&#x52A1;&#x548C;&#x52A8;&#x4F5C;</a><ul>
+<li><a href="#&#x4E00;&#x7CFB;&#x5217;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#x61D2;&#x5F97;&#x7FFB;&#x8BD1;&#x4E86;">&#x4E00;&#x7CFB;&#x5217;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#xFF08;&#x61D2;&#x5F97;&#x7FFB;&#x8BD1;&#x4E86;&#xFF09;</a></li>
+</ul>
+</li>
+<li><a href="#&#x5355;&#x5143;&#x6D4B;&#x8BD5;">&#x5355;&#x5143;&#x6D4B;&#x8BD5;</a></li>
+<li><a href="#&#x5B89;&#x88C5;&#x7565;">&#x5B89;&#x88C5;&#xFF08;&#x7565;&#xFF09;</a></li>
+</ul>
+</li>
+<li><a href="#packagexmlhttpwikirosorgcatkinpackagexml">Package.xml</a><ul>
+<li><a href="#&#x4F7F;&#x7528;xml&#x8BED;&#x8A00;&#x8BBE;&#x7F6E;&#x4F9D;&#x8D56;&#x7565;">&#x4F7F;&#x7528;XML&#x8BED;&#x8A00;&#x8BBE;&#x7F6E;&#x4F9D;&#x8D56;&#xFF08;&#x7565;&#xFF09;</a></li>
+</ul>
+</li>
+<li><a href="#&#x4E13;&#x9898;&#x6D88;&#x606F;&#x670D;&#x52A1;&#x91CD;&#x914D;&#x7F6E;&#x7684;&#x6784;&#x9020;&#x63CF;&#x8FF0;&#x6587;&#x4EF6;">&#x4E13;&#x9898;&#xFF1A;&#x6D88;&#x606F;&#xFF0C;&#x670D;&#x52A1;&#xFF0C;&#x91CD;&#x914D;&#x7F6E;&#x7684;&#x6784;&#x9020;&#x63CF;&#x8FF0;&#x6587;&#x4EF6;</a></li>
+<li><a href="#&#x5B9E;&#x4F8B;&#x89E3;&#x51B3;zsdoor&#x6A21;&#x5757;&#x7F3A;&#x5931;&#x95EE;&#x9898;">&#x5B9E;&#x4F8B;&#xFF1A;&#x89E3;&#x51B3;zsDoor&#x6A21;&#x5757;&#x7F3A;&#x5931;&#x95EE;&#x9898;</a><ul>
+<li><a href="#&#x67E5;&#x770B;stereo_wall_detection&#x7684;cmakeliststxt">&#x67E5;&#x770B;stereo_wall_detection&#x7684;CMakeLists.txt</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
 <h3 id="&#x53C2;&#x8003;"><a href="#&#x53C2;&#x8003;" class="headerlink" title="&#x53C2;&#x8003;"></a>&#x53C2;&#x8003;</h3><blockquote>
 <p><a href="http://docs.ros.org/api/catkin/html/" target="_blank" rel="external">Catkin Documentation</a></p>
 <p><a href="http://wiki.ros.org/catkin" target="_blank" rel="external">ROS Wiki</a></p>
@@ -2076,17 +2707,22 @@
     
       <category term="机器人软件构造" scheme="https://ZhenshengLee.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%BD%AF%E4%BB%B6%E6%9E%84%E9%80%A0/"/>
     
+      <category term="机器人" scheme="https://ZhenshengLee.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    
+      <category term="ROS" scheme="https://ZhenshengLee.github.io/tags/ROS/"/>
+    
+      <category term="编译" scheme="https://ZhenshengLee.github.io/tags/%E7%BC%96%E8%AF%91/"/>
+    
   </entry>
   
   <entry>
-    <title>【测试】gtest and rostest</title>
+    <title>gtest and rostest</title>
     <link href="https://ZhenshengLee.github.io/2016/08/16/160816-gtest-and-rostest/"/>
     <id>https://ZhenshengLee.github.io/2016/08/16/160816-gtest-and-rostest/</id>
     <published>2016-08-16T08:44:05.000Z</published>
-    <updated>2016-08-16T09:17:39.000Z</updated>
+    <updated>2017-01-02T15:42:09.737Z</updated>
     
-    <content type="html"><![CDATA[<p>[TOC]</p>
-<h2 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h2><h3 id="&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x5B66;gtest"><a href="#&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x5B66;GTest" class="headerlink" title="&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x5B66;GTest"></a>&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x5B66;GTest</h3><ul>
+    <content type="html"><![CDATA[<h2 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h2><h3 id="&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x5B66;gtest"><a href="#&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x5B66;GTest" class="headerlink" title="&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x5B66;GTest"></a>&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x5B66;GTest</h3><ul>
 <li><p>&#x5F00;&#x6E90;&#x6846;&#x67B6;&#xFF0C;&#x5B8C;&#x5168;&#x514D;&#x8D39;</p>
 </li>
 <li><p>&#x7528;&#x5F97;&#x4EBA;&#x591A;&#xFF0C;&#x9879;&#x76EE;&#x591A;&#xFF0C;&#x6BD4;&#x5982;ROS&#x5C31;&#x7528;&#x8FD9;&#x4E2A;&#x505A;&#x6D4B;&#x8BD5;&#xFF0C;&#x8FD9;&#x662F;&#x6211;&#x5B66;&#x4E60;GTEST&#x7684;&#x76F4;&#x63A5;&#x539F;&#x56E0;</p>
@@ -2095,6 +2731,34 @@
 </li>
 </ul>
 <a id="more"></a>
+<h2 id="&#x76EE;&#x5F55;"><a href="#&#x76EE;&#x5F55;" class="headerlink" title="&#x76EE;&#x5F55;"></a>&#x76EE;&#x5F55;</h2><!-- toc -->
+<ul>
+<li><a href="#&#x81F4;&#x8C22;">&#x81F4;&#x8C22;</a></li>
+<li><a href="#&#x597D;&#x7684;&#x6D4B;&#x8BD5;&#x6846;&#x67B6;&#x5E94;&#x8BE5;&#x662F;&#x8F6F;&#x4EF6;&#x6D4B;&#x8BD5;&#x601D;&#x60F3;">&#x597D;&#x7684;&#x6D4B;&#x8BD5;&#x6846;&#x67B6;&#x5E94;&#x8BE5;&#x662F;&#xFF08;&#x8F6F;&#x4EF6;&#x6D4B;&#x8BD5;&#x601D;&#x60F3;&#xFF09;</a><ul>
+<li><a href="#&#x79D1;&#x666E;">&#x79D1;&#x666E;</a></li>
+</ul>
+</li>
+<li><a href="#gtest-&#x5165;&#x95E8;">GTest &#x5165;&#x95E8;</a><ul>
+<li><a href="#&#x7EFC;&#x8FF0;">&#x7EFC;&#x8FF0;</a></li>
+<li><a href="#&#x65AD;&#x8A00;assertion">&#x65AD;&#x8A00;assertion</a></li>
+<li><a href="#&#x521B;&#x5EFA;&#x4E00;&#x4E2A;test">&#x521B;&#x5EFA;&#x4E00;&#x4E2A;test</a></li>
+<li><a href="#&#x8FD0;&#x884C;&#x6D4B;&#x8BD5;">&#x8FD0;&#x884C;&#x6D4B;&#x8BD5;</a></li>
+<li><a href="#&#x7F16;&#x5199;&#x6D4B;&#x8BD5;&#x7684;main&#x51FD;&#x6570;">&#x7F16;&#x5199;&#x6D4B;&#x8BD5;&#x7684;main&#x51FD;&#x6570;</a></li>
+</ul>
+</li>
+<li><a href="#rostest-&#x5B66;&#x4E60;">ROSTest &#x5B66;&#x4E60;</a><ul>
+<li><a href="#&#x7F16;&#x5199;&#x6D4B;&#x8BD5;">&#x7F16;&#x5199;&#x6D4B;&#x8BD5;</a><ul>
+<li><a href="#&#x524D;&#x671F;&#x6982;&#x5FF5;">&#x524D;&#x671F;&#x6982;&#x5FF5;</a></li>
+<li><a href="#&#x7F16;&#x5199;">&#x7F16;&#x5199;</a></li>
+<li><a href="#&#x6784;&#x9020;&#x63CF;&#x8FF0;&#x6587;&#x4EF6;">&#x6784;&#x9020;&#x63CF;&#x8FF0;&#x6587;&#x4EF6;</a></li>
+<li><a href="#&#x8FD0;&#x884C;">&#x8FD0;&#x884C;</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#&#x9879;&#x76EE;&#x6D4B;&#x8BD5;zsdoor&#x9879;&#x76EE;">&#x9879;&#x76EE;&#xFF1A;&#x6D4B;&#x8BD5;zsDoor&#x9879;&#x76EE;</a></li>
+</ul>
+<!-- tocstop -->
 <h2 id="&#x81F4;&#x8C22;"><a href="#&#x81F4;&#x8C22;" class="headerlink" title="&#x81F4;&#x8C22;"></a>&#x81F4;&#x8C22;</h2><blockquote>
 <p><a href="http://roclinux.cn/?p=2873" target="_blank" rel="external">Linux &#x5927;&#x68DA;</a></p>
 <p><a href="http://wiki.ros.org/rostest" target="_blank" rel="external">ROSTest</a></p>
@@ -2208,8 +2872,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;[TOC]&lt;/p&gt;
-&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;h3 id=&quot;为什么要学GTest&quot;&gt;&lt;a href=&quot;#为什么要学GTest&quot; class=&quot;headerlink&quot; title=&quot;为什么要学GTest&quot;&gt;&lt;/a&gt;为什么要学GTest&lt;/h3&gt;&lt;ul&gt;
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;h3 id=&quot;为什么要学GTest&quot;&gt;&lt;a href=&quot;#为什么要学GTest&quot; class=&quot;headerlink&quot; title=&quot;为什么要学GTest&quot;&gt;&lt;/a&gt;为什么要学GTest&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;开源框架，完全免费&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;用得人多，项目多，比如ROS就用这个做测试，这是我学习GTEST的直接原因&lt;/p&gt;
@@ -2223,17 +2886,20 @@
     
       <category term="机器人软件构造" scheme="https://ZhenshengLee.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%BD%AF%E4%BB%B6%E6%9E%84%E9%80%A0/"/>
     
+      <category term="机器人" scheme="https://ZhenshengLee.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    
+      <category term="ROS" scheme="https://ZhenshengLee.github.io/tags/ROS/"/>
+    
   </entry>
   
   <entry>
-    <title>【调试】gdb, ros and roslaunch</title>
+    <title>gdb, ros and roslaunch</title>
     <link href="https://ZhenshengLee.github.io/2016/08/16/160816-gdb-ros-and-roslaunch/"/>
     <id>https://ZhenshengLee.github.io/2016/08/16/160816-gdb-ros-and-roslaunch/</id>
     <published>2016-08-16T08:42:12.000Z</published>
-    <updated>2016-08-16T09:17:23.000Z</updated>
+    <updated>2017-01-02T15:41:37.240Z</updated>
     
-    <content type="html"><![CDATA[<p>[TOC]</p>
-<h3 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h3><ul>
+    <content type="html"><![CDATA[<h3 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h3><ul>
 <li><p>&#x8FD9;&#x662F;&#x5FC5;&#x987B;&#x5B66;&#x4E60;&#x7684;&#x6280;&#x80FD;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x9700;&#x8981;&#x7CBE;&#x901A;&#xFF0C;&#x5E94;&#x8BE5;&#x5229;&#x7528;&#x66F4;&#x9AD8;&#x5C42;&#x7684;&#x5DE5;&#x5177;</p>
 </li>
 <li><p>&#x5728;ROS&#x9879;&#x76EE;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x4E2D;&#x5E94;&#x7528;&#xFF0C;&#x5728;&#x4F7F;&#x7528;roslaunch&#x8FC7;&#x7A0B;&#x4E2D;&#x5E94;&#x7528;gdb</p>
@@ -2242,6 +2908,18 @@
 </li>
 </ul>
 <a id="more"></a>
+<h2 id="&#x76EE;&#x5F55;"><a href="#&#x76EE;&#x5F55;" class="headerlink" title="&#x76EE;&#x5F55;"></a>&#x76EE;&#x5F55;</h2><!-- toc -->
+<ul>
+<li><a href="#&#x53C2;&#x8003;">&#x53C2;&#x8003;</a></li>
+<li><a href="#gdb&#x5B66;&#x4E60;">gdb&#x5B66;&#x4E60;</a><ul>
+<li><a href="#&#x4F7F;&#x7528;&#x8981;&#x70B9;">&#x4F7F;&#x7528;&#x8981;&#x70B9;</a></li>
+</ul>
+</li>
+<li><a href="#ros-node-debug-with-gdb&#x4F7F;&#x7528;gdb&#x8C03;&#x8BD5;ros&#x8282;&#x70B9;">ROS node debug with gdb&#xFF08;&#x4F7F;&#x7528;gdb&#x8C03;&#x8BD5;ROS&#x8282;&#x70B9;&#xFF09;</a></li>
+<li><a href="#roslaunch-&#x5B66;&#x4E60;&#x548C;&#x8C03;&#x8BD5;">roslaunch &#x5B66;&#x4E60;&#x548C;&#x8C03;&#x8BD5;</a></li>
+<li><a href="#&#x5B9E;&#x4F8B;&#x8C03;&#x8BD5;ros&#x9879;&#x76EE;">&#x5B9E;&#x4F8B;&#xFF1A;&#x8C03;&#x8BD5;ROS&#x9879;&#x76EE;</a></li>
+</ul>
+<!-- tocstop -->
 <h3 id="&#x53C2;&#x8003;"><a href="#&#x53C2;&#x8003;" class="headerlink" title="&#x53C2;&#x8003;"></a>&#x53C2;&#x8003;</h3><blockquote>
 <p>&#x300A;ROS&#x673A;&#x5668;&#x4EBA;&#x7A0B;&#x5E8F;&#x5F00;&#x53D1;&#x300B;</p>
 <p>&#x300A;&#x5D4C;&#x5165;&#x5F0F;Linux&#x5F00;&#x53D1;&#x57FA;&#x7840;&#x77E5;&#x8BC6;&#x300B;</p>
@@ -2282,8 +2960,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;[TOC]&lt;/p&gt;
-&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;ul&gt;
+      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;这是必须学习的技能，但是不需要精通，应该利用更高层的工具&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;在ROS项目开发过程中应用，在使用roslaunch过程中应用gdb&lt;/p&gt;
@@ -2297,23 +2974,36 @@
     
       <category term="机器人软件构造" scheme="https://ZhenshengLee.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%BD%AF%E4%BB%B6%E6%9E%84%E9%80%A0/"/>
     
+      <category term="机器人" scheme="https://ZhenshengLee.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    
+      <category term="ROS" scheme="https://ZhenshengLee.github.io/tags/ROS/"/>
+    
+      <category term="调试" scheme="https://ZhenshengLee.github.io/tags/%E8%B0%83%E8%AF%95/"/>
+    
   </entry>
   
   <entry>
-    <title>【部署】Git拉取远程分支</title>
+    <title>Git拉取远程分支</title>
     <link href="https://ZhenshengLee.github.io/2016/08/16/160816-Git%E6%8B%89%E5%8F%96%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF/"/>
     <id>https://ZhenshengLee.github.io/2016/08/16/160816-Git拉取远程分支/</id>
     <published>2016-08-16T08:38:48.000Z</published>
-    <updated>2016-08-16T09:17:12.000Z</updated>
+    <updated>2017-01-02T15:41:53.558Z</updated>
     
-    <content type="html"><![CDATA[<p>[TOC]</p>
-<h3 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h3><ul>
+    <content type="html"><![CDATA[<h3 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h3><ul>
 <li><p>&#x81EA;&#x5DF1;&#x662F;git&#x65B0;&#x624B;&#xFF0C;&#x5728;&#x672C;&#x5730;&#x6CA1;&#x6709;&#x5206;&#x652F;&#x7684;&#x65F6;&#x5019;&#x4E0D;&#x77E5;&#x9053;&#x600E;&#x4E48;&#x62C9;&#x53D6;&#xFF08;&#x4ECE;&#x522B;&#x7684;&#x7535;&#x8111;push&#x7684;&#xFF09;&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#xFF0C;&#x5B8C;&#x5168;&#x6CA1;&#x529E;&#x6CD5;&#xFF0C;&#x53EA;&#x597D;&#x5220;&#x9664;&#x6574;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#x91CD;&#x65B0;clone&#xFF0C;&#x540E;&#x6765;&#x5230;&#x7F51;&#x4E0A;&#x597D;&#x597D;&#x5B66;&#x4E86;&#x5B66;&#xFF0C;&#x603B;&#x7B97;&#x77E5;&#x9053;&#x4E86;&#x3002;</p>
 </li>
 <li><p>&#x8FD9;&#x91CC;&#x91CD;&#x70B9;&#x4ECB;&#x7ECD;&#x4E00;&#x4E0B;&#x672C;&#x5730;&#x6CA1;&#x6709;&#x8BE5;&#x5206;&#x652F;&#xFF0C;&#x9700;&#x8981;&#x5230;&#x8FDC;&#x7A0B;&#x62C9;&#x53D6;&#x8BE5;&#x5206;&#x652F;&#x7684;&#x65B9;&#x6CD5;</p>
 </li>
 </ul>
 <a id="more"></a>
+<h2 id="&#x76EE;&#x5F55;"><a href="#&#x76EE;&#x5F55;" class="headerlink" title="&#x76EE;&#x5F55;"></a>&#x76EE;&#x5F55;</h2><!-- toc -->
+<ul>
+<li><a href="#&#x81F4;&#x8C22;">&#x81F4;&#x8C22;</a></li>
+<li><a href="#&#x9519;&#x8BEF;&#x505A;&#x6CD5;">&#x9519;&#x8BEF;&#x505A;&#x6CD5;</a></li>
+<li><a href="#&#x6B63;&#x786E;&#x7528;&#x6CD5;">&#x6B63;&#x786E;&#x7528;&#x6CD5;</a></li>
+<li><a href="#&#x7ED3;&#x8BED;">&#x7ED3;&#x8BED;</a></li>
+</ul>
+<!-- tocstop -->
 <h3 id="&#x81F4;&#x8C22;"><a href="#&#x81F4;&#x8C22;" class="headerlink" title="&#x81F4;&#x8C22;"></a>&#x81F4;&#x8C22;</h3><p><a href="http://blog.csdn.net/xqs83/article/details/7382074" target="_blank" rel="external">xqs83</a></p>
 <h3 id="&#x9519;&#x8BEF;&#x505A;&#x6CD5;"><a href="#&#x9519;&#x8BEF;&#x505A;&#x6CD5;" class="headerlink" title="&#x9519;&#x8BEF;&#x505A;&#x6CD5;"></a>&#x9519;&#x8BEF;&#x505A;&#x6CD5;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">git branch link-rosforlv</span><br><span class="line"></span><br><span class="line">git checkout link-rosforlv</span><br><span class="line"></span><br><span class="line">git pull origin link-rosforlv</span><br></pre></td></tr></table></figure>
 <ul>
@@ -2351,8 +3041,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;[TOC]&lt;/p&gt;
-&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;ul&gt;
+      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;自己是git新手，在本地没有分支的时候不知道怎么拉取（从别的电脑push的）远程分支，完全没办法，只好删除整个文件夹重新clone，后来到网上好好学了学，总算知道了。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;这里重点介绍一下本地没有该分支，需要到远程拉取该分支的方法&lt;/p&gt;
@@ -2364,14 +3053,20 @@
     
       <category term="机器人软件构造" scheme="https://ZhenshengLee.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%BD%AF%E4%BB%B6%E6%9E%84%E9%80%A0/"/>
     
+      <category term="机器人" scheme="https://ZhenshengLee.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    
+      <category term="部署" scheme="https://ZhenshengLee.github.io/tags/%E9%83%A8%E7%BD%B2/"/>
+    
+      <category term="git" scheme="https://ZhenshengLee.github.io/tags/git/"/>
+    
   </entry>
   
   <entry>
-    <title>【ROS】标记工具-Marker</title>
-    <link href="https://ZhenshengLee.github.io/2016/08/16/160816%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7-Marker/"/>
-    <id>https://ZhenshengLee.github.io/2016/08/16/160816可视化工具-Marker/</id>
+    <title>标记工具-Marker</title>
+    <link href="https://ZhenshengLee.github.io/2016/08/16/160816-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7-Marker/"/>
+    <id>https://ZhenshengLee.github.io/2016/08/16/160816-可视化工具-Marker/</id>
     <published>2016-08-16T08:34:55.000Z</published>
-    <updated>2016-08-16T08:37:23.000Z</updated>
+    <updated>2017-01-02T15:43:26.944Z</updated>
     
     <content type="html"><![CDATA[<h2 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h2><ul>
 <li><p>&#x987E;&#x540D;&#x601D;&#x4E49;&#xFF0C;&#x6807;&#x8BB0;&#x5DE5;&#x5177;&#x5C31;&#x662F;&#x5728;&#x6570;&#x636E;&#x53EF;&#x89C6;&#x5316;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x52A0;&#x4E0A;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x6807;&#x8BB0;&#xFF0C;&#x7528;&#x6765;&#x5F3A;&#x8C03;&#x67D0;&#x79CD;&#x7279;&#x5F81;&#x6216;&#x8005;&#x6DFB;&#x52A0;&#x7528;&#x6237;&#x81EA;&#x5DF1;&#x60F3;&#x52A0;&#x4E0A;&#x7684;&#x4E1C;&#x897F;</p>
@@ -2380,7 +3075,31 @@
 </li>
 </ul>
 <a id="more"></a>
-<p>[TOC]</p>
+<h2 id="&#x76EE;&#x5F55;"><a href="#&#x76EE;&#x5F55;" class="headerlink" title="&#x76EE;&#x5F55;"></a>&#x76EE;&#x5F55;</h2><!-- toc -->
+<ul>
+<li><a href="#&#x53C2;&#x8003;">&#x53C2;&#x8003;</a></li>
+<li><a href="#visuallization_msgsmarkers">visuallization_msgs/markers</a><ul>
+<li><a href="#sending-basic-shapes-to-rvizhttpwikirosorgrviztutorialsmarkers3a20basic20shapes">Sending Basic Shapes to RViz</a><ul>
+<li><a href="#&#x57FA;&#x672C;&#x539F;&#x7406;">&#x57FA;&#x672C;&#x539F;&#x7406;</a></li>
+<li><a href="#&#x5173;&#x952E;&#x4EE3;&#x7801;">&#x5173;&#x952E;&#x4EE3;&#x7801;</a></li>
+</ul>
+</li>
+<li><a href="#sending-points-and-lineshttpwikirosorgrviztutorialsmarkers3a20points20and20lines">Sending Points and lines</a></li>
+<li><a href="#interactive-markerhttpwikirosorgrviztutorialsinteractive20markers3a20getting20started">Interactive Marker</a><ul>
+<li><a href="#&#x57FA;&#x672C;&#x539F;&#x7406;-1">&#x57FA;&#x672C;&#x539F;&#x7406;</a></li>
+<li><a href="#simple-interactive-marker-serverhttpwikirosorgrviztutorialsinteractive20markers3a20writing20a20simple20interactive20marker20server">Simple Interactive Marker Server</a></li>
+<li><a href="#basic-controlhttpwikirosorgrviztutorialsinteractive20markers3a20basic20controls">Basic Control</a></li>
+<li><a href="#&#x6309;&#x94AE;">&#x6309;&#x94AE;</a></li>
+<li><a href="#context-menuhttpwikirosorgrviztutorialsinteractive20markers3a20basic20controls">Context Menu</a></li>
+<li><a href="#&#x591A;&#x5BA2;&#x6237;&#x7AEF;&#x5355;&#x670D;&#x52A1;&#x5668;&#x4EA4;&#x4E92;">&#x591A;&#x5BA2;&#x6237;&#x7AEF;&#x5355;&#x670D;&#x52A1;&#x5668;&#x4EA4;&#x4E92;</a></li>
+</ul>
+</li>
+<li><a href="#&#x4E3A;rviz&#x5199;&#x63D2;&#x4EF6;">[&#x4E3A;RViz&#x5199;&#x63D2;&#x4EF6;]</a></li>
+<li><a href="#&#x4F7F;&#x7528;qt&#x548C;librviz&#x8FDB;&#x884C;&#x7A97;&#x53E3;&#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;httpdocsrosorgindigoapilibrviz_tutorialhtmlindexhtml">&#x4F7F;&#x7528;QT&#x548C;librviz&#x8FDB;&#x884C;&#x7A97;&#x53E3;&#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
 <h2 id="&#x53C2;&#x8003;"><a href="#&#x53C2;&#x8003;" class="headerlink" title="&#x53C2;&#x8003;"></a>&#x53C2;&#x8003;</h2><blockquote>
 <p><a href="http://wiki.ros.org/visualization_msgs" target="_blank" rel="external">visualization_msgs</a></p>
 <p><a href="http://wiki.ros.org/visualization/Tutorials" target="_blank" rel="external">Tutorials</a></p>
@@ -2501,120 +3220,11 @@
     </summary>
     
     
-      <category term="机器人软件设计" scheme="https://ZhenshengLee.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【ROS】Param reconfig讨论</title>
-    <link href="https://ZhenshengLee.github.io/2016/08/16/160816Param-reconfig%E8%AE%A8%E8%AE%BA/"/>
-    <id>https://ZhenshengLee.github.io/2016/08/16/160816Param-reconfig讨论/</id>
-    <published>2016-08-16T08:32:01.000Z</published>
-    <updated>2016-08-16T08:33:31.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>[TOC]</p>
-<h3 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h3><ul>
-<li><p>&#x56E0;&#x4E3A;windows&#x5E73;&#x53F0;&#x7684;ROS for LV &#x6CA1;&#x6709;&#x663E;&#x5F0F;&#x652F;&#x6301;action&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x7ED9;move_base&#x8282;&#x70B9;&#x53D1;&#x9001;move_base/cancel (actionlib_msgs/GoalID)&#xFF0C;&#x6545;&#x5728;ROS&#x7AEF;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;Proxy&#x6765;&#x4EE3;&#x7406;&#x89E3;&#x51B3;</p>
-</li>
-<li><p>&#x8BE5;&#x4EE3;&#x7406;&#x7684;&#x529F;&#x80FD;&#x8FD8;&#x5305;&#x62EC;ROSARIA&#x548C;move_base&#x7684;reconfigure&#xFF0C;&#x6240;&#x4EE5;&#x8981;&#x4ECE;&#x547D;&#x4EE4;&#x884C;&#x8FD0;&#x884C;&#x91CD;&#x65B0;&#x914D;&#x7F6E;&#x547D;&#x4EE4;</p>
-</li>
-<li><p>&#x8FD8;&#x4FEE;&#x6B63;&#x4E00;&#x4E2A;ROSARIA&#x53D1;&#x9001;&#x7684;pose_msg&#x5185;&#x5BB9;&#x4E3A;&#x76F8;&#x5BF9;&#x5750;&#x6807;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x6539;&#x4E3A;&#x53D1;&#x9001;&#x76F8;&#x5BF9;&#x4E8E;zsWorld&#x5750;&#x6807;&#x7CFB;&#x7684;&#x7EDD;&#x5BF9;&#x5750;&#x6807;&#xFF08;&#x5728;rosaria&#x5305;&#x4E2D;&#x5B8C;&#x6210;&#xFF09;</p>
-</li>
-<li><p>&#x4EE5;&#x540E;&#x8FD8;&#x53EF;&#x4EE5;&#x627F;&#x62C5;&#x6253;&#x5F00;&#x548C;&#x5173;&#x95ED;&#x5404;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x4EFB;&#x52A1;&#xFF01;</p>
-</li>
-</ul>
-<a id="more"></a>
-<h3 id="&#x53C2;&#x8003;"><a href="#&#x53C2;&#x8003;" class="headerlink" title="&#x53C2;&#x8003;"></a>&#x53C2;&#x8003;</h3><p><a href="http://wiki.ros.org/ROS/Tutorials/CreatingPackage" target="_blank" rel="external">ROS WIKI</a></p>
-<p><a href="http://wiki.ros.org/dynamic_reconfigure/Tutorials" target="_blank" rel="external">dynamic_reconfigure</a></p>
-<h3 id="&#x5DE5;&#x4F5C;"><a href="#&#x5DE5;&#x4F5C;" class="headerlink" title="&#x5DE5;&#x4F5C;"></a>&#x5DE5;&#x4F5C;</h3><ol>
-<li><p>ROSARIA&#x5750;&#x6807;&#x4FEE;&#x6B63;&#xFF0C;&#x5E76;&#x5236;&#x4F5C;&#x4E00;&#x4E2A;reconfiguration_server&#xFF08;&#x5728;rosaria&#x5305;&#x4E2D;&#x5B8C;&#x6210;&#xFF09;</p>
-</li>
-<li><p>&#x63A5;&#x6536;&#x4E0A;&#x7EA7;&#x8282;&#x70B9;&#x53D1;&#x9001;&#x7684;&#x53D6;&#x6D88;service_call&#xFF0C;&#x8F6C;&#x53D1;&#x7ED9;move_base&#x53D6;&#x6D88;action_msg</p>
-</li>
-<li><p>&#x63A5;&#x6536;&#x6765;&#x81EA;&#x4E0A;&#x7EA7;&#x8282;&#x70B9;&#x7684;move_base reconfigure_msg&#xFF0C;&#x8FD0;&#x884C;&#x547D;&#x4EE4;&#x884C;&#x8FDB;&#x884C;&#x91CD;&#x65B0;&#x914D;&#x7F6E;</p>
-</li>
-<li><p>&#x63A5;&#x6536;&#x6765;&#x81EA;&#x4E0A;&#x7EA7;&#x8282;&#x70B9;&#x7684;rosaria reconfigure_msg&#xFF0C;&#x8FD0;&#x884C;&#x547D;&#x4EE4;&#x884C;&#x8FDB;&#x884C;&#x91CD;&#x65B0;&#x914D;&#x7F6E;</p>
-</li>
-<li><p>&#x63A5;&#x6536;&#x6765;&#x53CA;&#x4E0A;&#x7EA7;&#x8282;&#x70B9;&#x7684;&#x91CD;&#x65B0;&#x5B9A;&#x4F4D;&#x7684;msg&#xFF0C;&#x8FD0;&#x884C;&#x547D;&#x4EE4;&#x884C;&#x91CD;&#x65B0;&#x914D;&#x7F6E;tf&#xFF0C;&#x4E3B;&#x8981;&#x662F;zsWorld&#x4E0E;odom&#x7684;&#x5750;&#x6807;&#x7CFB;&#x8F6C;&#x6362;&#x5173;&#x7CFB;</p>
-</li>
-<li><p>&#x786E;&#x8BA4;ROS for LV&#x4E0E;ROS&#x7684;&#x8FDE;&#x63A5;&#x5173;&#x7CFB;</p>
-</li>
-<li><p>&#x7528;rosaria_client&#x8FDB;&#x884C;&#x6D4B;&#x8BD5;</p>
-</li>
-</ol>
-<h3 id="&#x6B65;&#x9AA4;"><a href="#&#x6B65;&#x9AA4;" class="headerlink" title="&#x6B65;&#x9AA4;"></a>&#x6B65;&#x9AA4;</h3><h4 id="&#x5750;&#x6807;&#x4FEE;&#x6B63;"><a href="#&#x5750;&#x6807;&#x4FEE;&#x6B63;" class="headerlink" title="&#x5750;&#x6807;&#x4FEE;&#x6B63;"></a>&#x5750;&#x6807;&#x4FEE;&#x6B63;</h4><ul>
-<li>&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x5305;</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">catkin_create_pkg zsProxy std_msgs roscpp</span><br></pre></td></tr></table></figure>
-<ul>
-<li>&#x4FEE;&#x6539;vscode &#x914D;&#x7F6E;&#x6587;&#x4EF6;c_cpp_properties.json</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">subl ./.vscode/c_cpp_properties.json</span><br><span class="line"></span><br><span class="line">{</span><br><span class="line"></span><br><span class="line">            &quot;name&quot;: &quot;Linux&quot;,</span><br><span class="line"></span><br><span class="line">            &quot;includePath&quot;: [&quot;/usr/include&quot;,</span><br><span class="line"></span><br><span class="line">            &quot;/opt/ros/indigo/include&quot;,</span><br><span class="line"></span><br><span class="line">            &quot;${ROS_PACKAGE_PATH}&quot;,</span><br><span class="line"></span><br><span class="line">            &quot;/opt/ros/kinetic/include&quot;]</span><br><span class="line"></span><br><span class="line">},</span><br></pre></td></tr></table></figure>
-<ul>
-<li>&#x4FEE;&#x6539; .gitignore&#xFF0C;vscode&#x7684;&#x6570;&#x636E;&#x6587;&#x4EF6;&#x5C31;&#x4E0D;&#x8981;&#x4E0A;&#x4F20;&#x4E86;</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">.vscode/</span><br></pre></td></tr></table></figure>
-<ul>
-<li>&#x8BD5;&#x7528;&#x5B8C;vscode&#x4E4B;&#x540E;&#xFF0C;&#x53D1;&#x73B0;&#x8FD8;&#x662F;CLion IDE&#x723D;&#xFF0C;&#x914D;&#x5408;git &#x4F7F;&#x7528;&#x9700;&#x8981;&#x505A;&#x4E00;&#x4E0B;&#x7279;&#x6B8A;&#x8BBE;&#x7F6E;&#xFF0C;&#x4E0D;&#x7136;&#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x73B0;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x95EE;&#x9898;</li>
-</ul>
-<blockquote>
-<p><a href="https://stackoverflow.com/questions/27566999/git-with-intellij-idea-could-not-read-from-remote-repository" target="_blank" rel="external">settings&#x2013;&gt;Version Control&#x2013;&gt;Git ,and then, In the SSH executable dropdown, choose Native</a></p>
-</blockquote>
-<ul>
-<li><p>&#x4FEE;&#x6539;rosaria&#x5305;&#xFF0C;&#x589E;&#x52A0;zs_pose_msg</p>
-</li>
-<li><p>&#x63A5;&#x4E0B;&#x6765;&#x4FEE;&#x6539;reconfiguration server&#x53CA;&#x914D;&#x7F6E;</p>
-</li>
-</ul>
-<h4 id="&#x5B66;&#x4E60;dynamic-config"><a href="#&#x5B66;&#x4E60;dynamic-config" class="headerlink" title="&#x5B66;&#x4E60;dynamic config"></a>&#x5B66;&#x4E60;dynamic config</h4><ul>
-<li><a href="http://wiki.ros.org/sig/NextGenerationROS/Parameters" target="_blank" rel="external">&#x5173;&#x4E8E;&#x53C2;&#x6570;&#x6982;&#x5FF5;&#x7684;&#x8BE6;&#x7EC6;&#x8BA8;&#x8BBA;</a></li>
-</ul>
-<blockquote>
-<p><strong><em>&#x4E3B;&#x8981;&#x6709;&#x4E24;&#x79CD;&#x8BBF;&#x95EE;&#x53C2;&#x6570;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4E00;&#x79CD;&#x662F;&#x53C2;&#x6570;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x751F;&#x547D;&#x5468;&#x671F;&#x968F;roscore&#xFF1B;&#x53E6;&#x5916;&#x4E00;&#x79CD;&#x5C31;&#x662F;&#x52A8;&#x6001;&#x91CD;&#x65B0;&#x914D;&#x7F6E;&#x53C2;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x65F6;&#x8FDB;&#x884C;&#x91CD;&#x65B0;&#x914D;&#x7F6E;&#x53C2;&#x6570;</em></strong></p>
-</blockquote>
-<ul>
-<li><a href="http://wiki.ros.org/ROS/Patterns/Parameterization" target="_blank" rel="external">&#x5173;&#x4E8E;&#x53C2;&#x6570;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x548C;&#x6A21;&#x5F0F;&#x7684;&#x8BA8;&#x8BBA;</a></li>
-</ul>
-<blockquote>
-<p>In roslaunch files, <param> tags are for setting a single parameter and <rosparam> tags are for setting groups or more complex structures of parameters.</rosparam></p>
-</blockquote>
-<p>The value set by the <param> tag may only be a string, int, bool, or double, which may be set through the xml attribute value, or by reading in from a text file, bin file, or the output of a command line command.</p>
-<p>The <rosparam> tag enables users to define a batch of related parameters simultaneously. These can be read from a YAML string which can either be put inline in the launchfile or can be loaded from a file (the rosparam dump command generates YAML output). Unlike the <param> tag, the YAML specification allows nested structures of parameters and parameters with list values. While these data can be represented on the ROS parameter server, it is up to the various client libraries to support complex parameter access.</rosparam></p>
-<p>A good example of the <rosparam> tag use in practice is the move_base package, where there are many, many parameters to be set, it&#x2019;s less cumbersome to just use the YAML format.</rosparam></p>
-<h4 id="dynamic-reconfig&#x5177;&#x4F53;&#x6280;&#x672F;"><a href="#dynamic-reconfig&#x5177;&#x4F53;&#x6280;&#x672F;" class="headerlink" title="dynamic reconfig&#x5177;&#x4F53;&#x6280;&#x672F;"></a>dynamic reconfig&#x5177;&#x4F53;&#x6280;&#x672F;</h4><ul>
-<li><p>&#x7A97;&#x53E3;&#x7A0B;&#x5E8F;&#x754C;&#x9762;&#x4E0B;&#x7684;&#x91CD;&#x65B0;&#x914D;&#x7F6E;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x8FD9;&#x662F;&#x6807;&#x51C6;&#x7684;&#x91CD;&#x65B0;&#x914D;&#x7F6E;&#x754C;&#x9762;</p>
-</li>
-<li><p>&#x53E6;&#x5916;&#x5C31;&#x662F;&#x4F7F;&#x7528;<a href="http://wiki.ros.org/hokuyo_node/Tutorials/UsingDynparamToChangeHokuyoLaserParameters" target="_blank" rel="external">dynparam command-line tool</a></p>
-</li>
-</ul>
-<h4 id="service-call-based-re-configuration-&#x5B9E;&#x8DF5;"><a href="#Service-Call-Based-Re-configuration-&#x5B9E;&#x8DF5;" class="headerlink" title="Service Call-Based Re-configuration &#x5B9E;&#x8DF5;"></a>Service Call-Based Re-configuration &#x5B9E;&#x8DF5;</h4><ul>
-<li>&#x4F7F;&#x7528;&#x4E0A;&#x9762;&#x6240;&#x8FF0;&#x7B2C;&#x4E8C;&#x79CD;&#x65B9;&#x6CD5;&#xFF0C;&#x4F7F;&#x7528;&#x547D;&#x4EE4;&#x884C;&#x6267;&#x884C;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;shell&#x4E2D;&#x6267;&#x884C;&#xFF0C;&#x4E0D;&#x8FC7;&#x6700;&#x597D;&#x5728;C++&#x4E2D;&#x6267;&#x884C;</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">rosrun dynamic_reconfigure dynparam set /&lt;node_name&gt; &lt;param&gt; &lt;value&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">system(<span class="string">&quot;rosrun dynamic_reconfigure dynparam set camera_synchronizer_node narrow_stereo_trig_mode 3&quot;</span>);</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><a href="http://wiki.ros.org/dynamic_reconfigure" target="_blank" rel="external">&#x5173;&#x4E8E;dynparam&#x66F4;&#x8BE6;&#x7EC6;&#x7684;&#x7528;&#x6CD5;</a></p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;[TOC]&lt;/p&gt;
-&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;因为windows平台的ROS for LV 没有显式支持action，所以不能直接给move_base节点发送move_base/cancel (actionlib_msgs/GoalID)，故在ROS端添加一个Proxy来代理解决&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;该代理的功能还包括ROSARIA和move_base的reconfigure，所以要从命令行运行重新配置命令&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;还修正一个ROSARIA发送的pose_msg内容为相对坐标的问题，改为发送相对于zsWorld坐标系的绝对坐标（在rosaria包中完成）&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;以后还可以承担打开和关闭各个节点的任务！&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
+      <category term="机器人" scheme="https://ZhenshengLee.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
     
       <category term="机器人软件设计" scheme="https://ZhenshengLee.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="ROS" scheme="https://ZhenshengLee.github.io/tags/ROS/"/>
     
   </entry>
   
